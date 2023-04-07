@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{clemen1989combining}
+Robert~T Clemen.
+\newblock Combining forecasts: A review and annotated bibliography.
+\newblock {\em International journal of forecasting}, 5(4):559--583, 1989.
+
+\bibitem{shiny1}
+RStudio.
+\newblock Welcome to shiny.
+\newblock \url{https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/}.
+
+\end{thebibliography}

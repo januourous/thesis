@@ -1,0 +1,356 @@
+\documentclass[12pt,oneside]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Zusaetzliche Pakete  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{acronym}
+\usepackage{enumerate}
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{palatino}
+\usepackage{blindtext}
+\usepackage{multirow}
+\usepackage[ruled,longend]{algorithm2e}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+%folgende Zeile auskommentieren für englische Arbeiten
+%\usepackage[ngerman]{babel}
+
+\usepackage[bookmarks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a-1b]{pdfx}
+\usepackage[justification=centering]{caption}
+%\usepackage[style=unsrt,natbib=true,backend=biber]{biblatex}
+\usepackage{csquotes}
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Definition der Kopfzeile %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\setlength{\headheight}{16pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Definition des Deckblattes und der Titelseite  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\HSFTitle}[8]{
+
+  \thispagestyle{empty}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{logo.eps} \\
+    \vspace*{\stretch{1}}
+    \end{center}
+
+  %\vspace*{\stretch{1}}
+  {\parindent0cm
+  \rule{\linewidth}{.7ex}}
+  \begin{center}
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\Huge
+    #1\\
+    \vspace*{\stretch{1}}
+    \sffamily\bfseries\large
+    #3
+    \vspace*{\stretch{1}}
+  \end{center}
+  \rule{\linewidth}{.7ex}
+
+  \vspace*{\stretch{2}}
+  \begin{center}
+    %\Large #2 am #5 der HAW Fulda \\
+    \Large #5 \\
+    \vspace*{\stretch{1}}
+
+    \large Matriculation No:  #4 \\[1mm]
+    \large Supervisor:  #7 \\[1mm]
+    \large Co-Supervisor:  #8 \\[1mm]
+
+    \vspace*{\stretch{1}}
+    \large Submitted on #6
+  \end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Beginn des Dokuments  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+  \HSFTitle
+      {A study of reinforcement learning algorithms in simulated robotics scenarios }        % Titel der Arbeit
+      {Masters Thesis} % Typ der Arbeit
+      {Alejandro Pajares Chirre}          % Vor- und Nachname des Autors
+      {1331534}
+      {Masters Thesis submitted to the Faculty of AI at HS Fulda}  % Name des FBs
+      {dd.mm.yyyy}        % Tag der Abgabe
+      {Prof. Dr. Alexander Gepperth}     % Name des Erstgutachters
+      {Prof. Dr. David James}    % Name des Zweitgutachters
+
+  \clearpage
+
+\lhead{}
+\pagenumbering{Roman}
+    \setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Kurzzusammenfassung   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%
+\markboth{Abstract}{Abstract}
+\section*{Abstract}
+The length of a thesis can vary depending on the subject. However, 50-55 pages for a master thesis is common, a little less for a bachelor thesis.
+Please pay careful attention to visual impression (sufficiently many and nicely made pictures/graphs, elegant formatting) as well as language (flawless English, elegant formulations), since these two points have are important for the grade. Furthermore, the introduction, discussion and conclusion chapters have a high impact on the grade, since people often read only those (which means they should be nice). 
+\clearpage
+\tableofcontents
+\clearpage
+
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Einstellungen  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\pagenumbering{arabic}
+    \setcounter{page}{1}
+\lhead{\nouppercase{\leftmark}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Hauptteil  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction} \label{sec:einleitung}
+Generally, the introduction should be VERY detailed, with a focus on pedagogical value. 10-15 pages are expected here!
+Everything that contributes to clarity (pictures, diagrams, ...) is allowed or even expected. The introduction is meant for people who DO NOT have a computer science degree, or even any particular affinity to computers, so focus on the "big picture".  
+%
+\subsection{Context}
+What is the context of the presented work? If you work in a company, present the company first. Then the broad scientific or technological background in which the work is embedded should be presented and explained.
+%
+\subsection{Problem statement}
+What is the problem that is being addressed or solved? Why is it important or beneficial to find a solution to this problem? 
+%
+\subsection{Goals}\label{sec:ziele}
+Here, give a list of bullet points of quantifiable goals of the presented work. These achievement of these goals will be shown in the experiments section. The list should have 3-4 entries. No blabla here, hard goals!
+%
+\subsection{Related Work}
+List works that have a similar goals, plus a short explanation (3-4 sentences at most) as to how they differ from your work. Do NOT make comparisons here (better than my work or similar), that happens in the discussion section.
+
+Admissible related work is (in descending order of acceptability):
+\begin{itemize}
+\item Peer-reviewed scientific publications, ideally with a DOI. Use Google scholar for searching (GS can export BibTeX entries that you can copy into the .bib file of this project). 
+
+\item White papers and publicly available documents without review, cite with title, URL and date of access. In addition, you need to submit the PDFs in electronic form.
+
+\item Web pages, especially for software projects (e.g., TensorFlow, nginx, react, Django). Cite via URL and date of access. A github/gitlab/etc link is acceptable as well. Nothing needs to be submitted electronically, but only use such sources of there is no other way. 
+\end{itemize}
+
+Literature is cited like this: as shown in {clemen1989combining}, blablaba. Or: \cite{clemen1989combining} has a similar scope in the domain of perverted numerical integration, however without considering the aspect of cupidity. Or: In \cite{clemen1989combining}, a study of perverted diagonal matrix perversions is presented. You need not include page numbers.
+
+See also  Kap.~\ref{sec:zitate}, \ref{sec:webquellen}. 
+
+\subsection{Contribution}
+Here, you present a bullet ist of your personal contributions to the topic of the thesis. For example: 
+\begin{itemize}
+    \item Implementation of a bash script that did not work and was hard to read
+    \item Comparison of different implementations for matrix perversion
+    \item Implementation of a web service that provides jokes about professors via a ReST API.
+\end{itemize}
+
+\section{Foundations}\label{sec:grundlagen}
+The targeted group are computer scientists with at least a Bachelor's degree. Here, you explain aspects that go beyond what this group would not usually know.
+For example:
+\begin{itemize}
+\item Specialized libraries and their use
+\item Complex concepts of the chosen programming language
+\item Basics of machine learning, or neural networks, or both
+\item Description of used databases or datasets
+\end{itemize}
+%
+In subsequent chapters, you can reference this one to avoid having to explain everything over and over again. This means that you just include things here that are necessary for the understanding of later chapters, nothing more.
+\subsection{Topic 1}\label{sec:grundlagen1}
+\subsection{Topic 2}\label{sec:grundlagen2}
+\subsection{Topic 3}\label{sec:grundlagen3}
+%
+\section{Implementation}\label{sec:umsetzung}
+Should refer, where possible, to the preceding chapter, e.e.:
+Singular value decomposition of the matrix $\Sigma$ is conducted as explained in Sec.~\ref{sec:grundagen1} using the \textit{lapack} library (see Sec.~\ref{sec:grundlagen2}).
+
+For software development: what is the logic of the developed code, which of it was done by yourself? Sequence diagrams or UML are good tools here.
+
+Please give code snippets only if they take up less that 0.25 pages, and only if it is unavoidable. Longer snippets go to the appendix and are referenced like this: see App.~\ref{Snippet}.
+
+\section{Experiments}\label{sec:exp}
+Show here that the goals from the introduction were achieved (or not achieved), you need at least one experiment per goal. Use screenshots, diagrams, plots, photos, etc. as necessary.
+
+\section{Discussion}
+2-3 pages are a good idea here. Picks up goals from the introduction (see \ref{sec:ziele}) and experiments (see \ref{sec:exp}) and explains what was achieved and what was not (and why not in this case). Compares results with results from related work, see Sec.~\ref{sec:relwork}. Draws a preliminary conclusion for the whole thesis.
+
+\section{Conclusion}
+Give an executive summary for important decision makers here, as well as an outlook (what would you do if you had another 3 months). 2-3 pages are ok here.
+
+\section{Using LaTeX, erase this chapter later}
+%
+I was too lazy to translate this, it will be translated later. But I believe the ideas are clear!
+%
+\subsection{Mathematische Gleichungen}
+Eine mehrzeilige Gleichung sieht so aus (die Symbole nach den und-Zeichen werden untereinander gesetzt). Die nonmber-Befehle verhindern dass die Gleichung nummertiert wird (Geschmackssache, ist nie falsch wenn eine Gleichung nummeriert ist). Aber: eine Gleichung auf die man refernziert (also die ein Label hat), muss nummeriert sein!
+\begin{align}
+    A &= \sum_{i=1}^N x_i \label{eq:1}\nonumber\\
+    B &= \frac{\pi}{2}
+\end{align}
+
+Eine inline-Gleichung: $x=45b + \frac{2}{3}\pi$. Der Text geht weiter! Auf inline-Gleichungen kann man keine Refernzen erstellen.
+
+\subsection{Das ist eine Auflistung}
+\begin{enumerate}
+\item Element 1
+\item Element 2
+\end{enumerate}
+
+\subsection{Das ist eine Bullet-Liste}
+\begin{itemize}
+\item Element 1
+\item Element 2
+\end{itemize}
+
+
+\subsection{Eine Grafik bindet man so ein}
+Zulässige Formate sind generell eps, pdf und png.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{logo.pdf}
+    \caption{Logo der HAW Fulda}
+    \label{fig:bildchen}
+\end{figure}
+
+\subsection{So schreibt man einen Algorithmus}
+
+\begin{algorithm}[H]
+ \KwData{this text}
+ \KwResult{how to write algorithm }
+ initialization\;
+ \While{not at end of this document}{
+  read current\;
+  \eIf{understand}{
+   go to next section\;
+   current section becomes this one\;
+   }{
+   go back to the beginning of current section\;
+  }
+ }
+ \caption{How to write algorithms\label{alg:dummy}
+ }
+\end{algorithm}
+
+\subsection{So gestaltet man eine Tabelle}
+
+\begin{table}[H]
+\caption{Beispielstabelle\label{tab:beispiel}
+}
+\centering
+\begin{tabular}{llr}
+\hline
+A    & B & C \\
+\hline
+D      & per gram    & 11.65      \\
+          & each        & 1.01       \\
+E       & stuffed     & 32.54      \\
+F       & stuffed     & 73.23      \\
+G & frozen      & 8.39       \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Interne Referenzen}
+So wird ein Kapitel oder Unterkapitel referenziert: Kap.~\ref{sec:einleitung},
+Kap.~\ref{sec:webquellen}. Auf Gleichungen bezieht man sich so: Wie in Gl.~(\ref{eq:1}) gezeigt,
+sehen Gleichungen in der Regel gut aus. Auf Abb.~\ref{fig:bildchen} bezieht man sich so. Auf
+Tab.~\ref{tab:beispiel} referenziert man so. Algorithmen sind analog: siehe Alg.~\ref{alg:dummy}.
+Generell kann man alles zitieren was ein Label hat.
+
+\subsection{Textformatierung}
+\textbf{So wird dick geschrieben} und \textit{so kursiv}.
+
+\subsection{Zitieren}\label{sec:zitate}
+Generell zitiert man so: wie in \cite{clemen1989combining} gezeigt, blablaba. Für jedes zitierte Werk ist ein BibTex-Eintrag nötig! Eine gute Quelle ist Google Scholar!!
+
+\subsection{Webquellen zitieren}\label{sec:webquellen}
+So wird eine Webquelle zitiert: \cite{shiny1}, siehe auch den Eintag im BibTeX-File.
+Wichtig: für jede Web-Quelle ein BibTeX-Eintrag! Wenn Sie das auf die hier gezeigte Art machen, werden URLs (fast) automatisch getrennt. Kontrollieren Sie trotztdem die Literaturliste, es kann sein dass das nicht immer funktioniert.
+
+\subsection{Literaturverzichnis erstellen}
+Hierzu müssen BibTeX-Einträge in die Datei literatur.bib eingefügt werden. Die BibTeX-Keys sind jeweils Argumente für die cite-Kommandos! Wenn Sie literatur.bib ändern müssen Sie alles mindestens 5x compilieren: 3x mit latex, 1x mit BibTex und dann noch 2x mit LaTeX (in der Reihengfolge). Am besten Sie machen ein Skript dafür!
+
+%\subsection{Erstellung eines PDFs im PDF-A Format}
+%Durch Einbinden geeigneter Packages (pdfx) wird diese Vorlage bereits als PDF-A erzeugt. Sie sollten allerdings die Metadaten in der Datei main.xmpdata anpassen!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Literaturverzeichnis wird
+%% automatisch eingefügt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{literatur}
+
+%\lhead{}
+%\printbibliography
+%\addcontentsline{toc}{section}{\bibname}
+\appendix
+\section{Code Snippets}
+\begin{figure}
+    \centering
+    %\includegraphics{s}
+    \caption{Normalerweise bindet man Snippets als Bilder ein...\label{Snippet}
+    }
+\end{figure}
+
+\section{Thesis defence}
+The defence is 15/20 minutes for Bachelor/Master, followed by questions and a discussion. Both examiners are present, and you can invite external persons since defences are generally public.
+
+Targetted group are non-computer scientists, e.g., from higher management, NOT the examiners. Means that at least $\frac 1 3$ if the presentation is introduction/context/problem statement. You should re-use text/images/graphs/etc from the corresponding chapters here!
+
+1 Slide per minute is a good guideline. If you can guess that some questions are going to be asked anyway, prepare some slides specifically for these questions, makes a good impression, and you can show them in the discussion time, not during the 15 minutes of the presentation.
+
+Defences are not graded, you can only pass or not pass. 
+
+Students are responsible for finding dates for the defence and coordinating this with both supervisors. 
+
+Some common advice is:
+\begin{itemize}
+    \item Speak slowly and loadly
+    \item If you do not have enough time left for all slides, leave some out rather than rushing through all of them!!
+    \item Slide numbers!
+    \item In presence: be there 10 minutes ahead of time to check projectors etc. Makes a very bad impression if this is not working. Same for online presentations: be there 5 minutes ahead of time to verify screen sharing works.
+    \item do not read text from the slides. These should contains key words only, and you explain the rest in free presentation
+    \item Defences can by all means be online, more convenient for companies
+    \item in presence: always carry a USB key with a PDF of your slides. If you have to use another PC than yours, PowerPoint slides may look very differently (fonts, page setup etc.)
+    \item No-Go: spelling errors on slides!!!
+    \item Do not use animations, they may not work in an online setting
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Eidesstattliche Erklärung
+%% muss angepasst werden
+%% in Erklaerung.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Erklaerung.tex}
+
+\end{document}
+
