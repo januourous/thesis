@@ -109,8 +109,19 @@
 %
 \markboth{Abstract}{Abstract}
 \section*{Abstract}
-The length of a thesis can vary depending on the subject. However, 50-55 pages for a master thesis is common, a little less for a bachelor thesis.
-Please pay careful attention to visual impression (sufficiently many and nicely made pictures/graphs, elegant formatting) as well as language (flawless English, elegant formulations), since these two points have are important for the grade. Furthermore, the introduction, discussion and conclusion chapters have a high impact on the grade, since people often read only those (which means they should be nice). 
+
+The world of robotics has seen significant advancements in recent years, and this is largely due to the integration of machine learning techniques. Robots are now able to learn from their surroundings, make decisions, and carry out tasks with minimal human intervention. 
+Machine learning has enabled robots to interact with humans and perform tasks that were previously considered impossible. In particular, reinforcement learning (RL) is a type of machine learning that models how humans learn from sensory input and motor responses in response to rewards. RL is based on the idea that an agent interacts with an environment by taking actions and receiving feedback in the form of rewards or punishments. Q-learning is a popular algorithm used in RL to learn the optimal policy, i.e., the best sequence of actions to maximize reward, for an agent. 
+This thesis focuses on the application of reinforcement learning (RL) and Q-learning algorithms in controlling the motion of three joints of a six-degree-of-freedom (6-DOF) robotic arm in a simulated environment. To apply the Q-learning algorithms, the problem needs to be modeled as a Markov Decision Process, and during the learning process, the exploration and exploitation rate need to be balanced.
+The robotic arm is modeled in Gazebo, and the control commands are sent using the Robot Operating System (ROS 2). The objective of the robotic arm is to touch the target. The RL algorithm learns to maximize the reward function, which is based on the current and previous distance between the target and one end of the robotic arm and the angles of the three joints being controlled. 
+The experimental results demonstrate that RL and Q-learning algorithms can effectively control the motion of a robotic arm in a simulated environment. The robotic arm successfully learns to approach and touch the target.
+
+
+
+% \par\noindent\rule{\textwidth}{0.4pt}
+
+%The length of a thesis can vary depending on the subject. However, 50-55 pages for a master thesis is common, a little less for a bachelor thesis.
+%Please pay careful attention to visual impression (sufficiently many and nicely made pictures/graphs, elegant formatting) as well as language (flawless English, elegant formulations), since these two points have are important for the grade. Furthermore, the introduction, discussion and conclusion chapters have a high impact on the grade, since people often read only those (which means they should be nice). 
 \clearpage
 \tableofcontents
 \clearpage
