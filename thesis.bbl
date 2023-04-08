@@ -1,5 +1,15 @@
 \begin{thebibliography}{1}
 
+\bibitem{suttonAndBarto}
+R.~S. Sutton and A.~G. Barto.
+\newblock {\em Reinforcement Learning: An Introduction}.
+\newblock MIT Press, 2018.
+
+\bibitem{kaelblingLittmanAndMoore}
+M.~L.~Littman L.~P.~Kaelbling and A.~R. Moore.
+\newblock Reinforcement learning: A survey.
+\newblock {\em Journal of Artificial Intelligence Research}, 4:237--285, 1996.
+
 \bibitem{clemen1989combining}
 Robert~T Clemen.
 \newblock Combining forecasts: A review and annotated bibliography.

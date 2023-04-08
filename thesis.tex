@@ -147,8 +147,25 @@ The experimental results demonstrate that RL and Q-learning algorithms can effec
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction} \label{sec:einleitung}
-Generally, the introduction should be VERY detailed, with a focus on pedagogical value. 10-15 pages are expected here!
-Everything that contributes to clarity (pictures, diagrams, ...) is allowed or even expected. The introduction is meant for people who DO NOT have a computer science degree, or even any particular affinity to computers, so focus on the "big picture".  
+Robotic systems are increasingly being used in a wide range of applications, from manufacturing and logistics to healthcare and entertainment. However, the effectiveness of these systems depends on their ability to perform tasks accurately and efficiently, which requires the development of intelligent control strategies that can adapt to different environments and objectives. Reinforcement learning offers a promising approach to achieve this goal, by enabling robots to learn from feedback and optimize their behavior based on the rewards received from the environment.
+Numerous companies have embraced the use of robotics to aid humans in tasks that are monotonous, physically demanding, or hazardous. Yet, acquiring a robot and hiring a robotic engineer to create a tailored solution for a particular task requires a significant investment of resources.
+The duties of a robot engineer include setting up communication, designing control scripts, computing coordinate transformations, and creating error-handling programs. Typically, a technician takes on the task of operating the robot on a daily basis, or the robot operates on its own. However, if the task requirements or processes change, it is difficult to modify the existing robotic solution to suit a new configuration or application without the assistance of a robot engineer, despite the significant resources invested in acquiring and developing it.
+Instead of relying on a robotic engineer to manually program a robot's operations for a new application, companies could employ deep reinforcement learning to train an intelligent agent to control the robot specifically for that application. This approach would enable the resources invested in robotics to be more adaptable and versatile, suitable for a broader range of applications and purposes.
+
+This thesis is about reinforcement learning which is a type of machine learning that involves an agent learning from its interactions with an environment in order to maximize a reward signal over time \cite{suttonAndBarto}. It is a method of learning that involves trial and error, with the agent receiving feedback in the form of rewards or punishments for its actions. According to Kaelbling, Littman, and Moore \cite{kaelblingLittmanAndMoore}, reinforcement learning can be defined as "a problem faced by an agent that learns behavior through trial-and-error interactions with a dynamic environment".
+
+
+% Reinforcement learning has been successfully applied to a variety of domains, including robotics [3], game playing [4], and recommendation systems [5]. It has also been used in combination with other machine learning techniques, such as deep learning [4] and transfer learning [6], to achieve even better performance in complex tasks. Overall, reinforcement learning is a powerful approach to developing intelligent systems that can learn and adapt to new environments and tasks.
+
+
+
+% Reinforcement learning has been successfully applied to a variety of domains, including robotics (Kober, Bagnell, & Peters, 2013), game playing (Mnih et al., 2015), and recommendation systems (Wang et al., 2016). It has also been used in combination with other machine learning techniques, such as deep learning (Mnih et al., 2015) and transfer learning (Taylor & Stone, 2009), to achieve even better performance in complex tasks.
+
+
+%Reinforcement learning involves an agent learning a particular behavior by receiving feedback on its interactions with a dynamic environment in order to reach a specific goal. Kaelbling, Littman, and Moore define reinforcement learning as "a problem faced by an agent that learns behavior through trial-and-error interactions with a dynamic environment" [4]. Although there are other approaches to reinforcement learning that are less goal-oriented, this paper specifically focuses on the Policy Gradient approach. To explore this variant of reinforcement learning, the study involved training a simulated robot to drive towards and push basic objects with the colors blue or green, while avoiding objects with the color red.
+
+%Generally, the introduction should be VERY detailed, with a focus on pedagogical value. 10-15 pages are expected here!
+%Everything that contributes to clarity (pictures, diagrams, ...) is allowed or even expected. The introduction is meant for people who DO NOT have a computer science degree, or even any particular affinity to computers, so focus on the "big picture".  
 %
 \subsection{Context}
 What is the context of the presented work? If you work in a company, present the company first. Then the broad scientific or technological background in which the work is embedded should be presented and explained.
