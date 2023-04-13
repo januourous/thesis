@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{n+nt}{\PYGZlt{}gazebo} \PYG{n+na}{reference=}\PYG{l+s}{\PYGZdq{}link\PYGZus{}4\PYGZdq{}}\PYGZgt{}
+    \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{ contact sensor }\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}sensor} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}end\PYGZus{}effector\PYGZus{}sensor\PYGZdq{}} type=\PYG{l+s}{\PYGZdq{}contact\PYGZdq{}}\PYGZgt{}
+      \PYG{n+nt}{\PYGZlt{}selfCollide}\PYG{n+nt}{\PYGZgt{}}true\PYG{n+nt}{\PYGZlt{}/selfCollide\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}alwaysOn}\PYG{n+nt}{\PYGZgt{}}true\PYG{n+nt}{\PYGZlt{}/alwaysOn\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}update\PYGZus{}rate}\PYG{n+nt}{\PYGZgt{}}500\PYG{n+nt}{\PYGZlt{}/update\PYGZus{}rate\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}contact}\PYG{n+nt}{\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}collision}\PYG{n+nt}{\PYGZgt{}}link\PYGZus{}4\PYGZus{}collision\PYG{n+nt}{\PYGZlt{}/collision\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}/contact\PYGZgt{}}
+      \PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{}}\PYG{c}{ gazebo plugin }\PYG{c}{\PYGZhy{}\PYGZhy{}\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}plugin} \PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}gazebo\PYGZus{}ros\PYGZus{}bumper\PYGZus{}sensor\PYGZdq{}} filename=\PYG{l+s}{\PYGZdq{}libgazebo\PYGZus{}ros\PYGZus{}bumper.so\PYGZdq{}}\PYGZgt{}
+        \PYG{n+nt}{\PYGZlt{}ros}\PYG{n+nt}{\PYGZgt{}}
+          \PYG{n+nt}{\PYGZlt{}namespace}\PYG{n+nt}{\PYGZgt{}}contact\PYGZus{}sensor\PYG{n+nt}{\PYGZlt{}/namespace\PYGZgt{}}
+          \PYG{n+nt}{\PYGZlt{}remapping}\PYG{n+nt}{\PYGZgt{}}bumper\PYGZus{}states:=bumper\PYGZus{}link\PYGZus{}4\PYG{n+nt}{\PYGZlt{}/remapping\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}/ros\PYGZgt{}}
+        \PYG{n+nt}{\PYGZlt{}frame\PYGZus{}name}\PYG{n+nt}{\PYGZgt{}}link\PYGZus{}4\PYG{n+nt}{\PYGZlt{}/frame\PYGZus{}name\PYGZgt{}}
+      \PYG{n+nt}{\PYGZlt{}/plugin\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/sensor\PYGZgt{}}
+  \PYG{n+nt}{\PYGZlt{}/gazebo\PYGZgt{}}
+\end{Verbatim}

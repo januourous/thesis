@@ -10,10 +10,20 @@ M.~L.~Littman L.~P.~Kaelbling and A.~R. Moore.
 \newblock Reinforcement learning: A survey.
 \newblock {\em Journal of Artificial Intelligence Research}, 4:237--285, 1996.
 
-\bibitem{clemen1989combining}
-Robert~T Clemen.
-\newblock Combining forecasts: A review and annotated bibliography.
-\newblock {\em International journal of forecasting}, 5(4):559--583, 1989.
+\bibitem{LevinePastorKrizhevsky}
+Sergey Levine, Peter Pastor, Alex Krizhevsky, Julian Ibarz, and Deirdre
+  Quillen.
+\newblock Learning hand-eye coordination for robotic grasping with deep
+  learning and large-scale data collection.
+\newblock {\em The International Journal of Robotics Research},
+  37(4-5):421--436, 2018.
+
+\bibitem{GuShixiangHolly}
+Shixiang Gu, Ethan Holly, Timothy Lillicrap, and Sergey Levine.
+\newblock Deep reinforcement learning for robotic manipulation with
+  asynchronous off-policy updates.
+\newblock In {\em 2017 IEEE International Conference on Robotics and Automation
+  (ICRA)}, page 3389–3396. IEEE Press, 2017.
 
 \bibitem{shiny1}
 RStudio.

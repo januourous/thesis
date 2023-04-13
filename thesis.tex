@@ -29,6 +29,8 @@
 \usepackage{csquotes}
 \usepackage{url}
 
+\usepackage{minted}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Definition der Kopfzeile %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,19 +155,15 @@ The duties of a robot engineer include setting up communication, designing contr
 Instead of relying on a robotic engineer to manually program a robot's operations for a new application, companies could employ deep reinforcement learning to train an intelligent agent to control the robot specifically for that application. This approach would enable the resources invested in robotics to be more adaptable and versatile, suitable for a broader range of applications and purposes.
 
 This thesis is about reinforcement learning which is a type of machine learning that involves an agent learning from its interactions with an environment in order to maximize a reward signal over time \cite{suttonAndBarto}. It is a method of learning that involves trial and error, with the agent receiving feedback in the form of rewards or punishments for its actions. According to Kaelbling, Littman, and Moore \cite{kaelblingLittmanAndMoore}, reinforcement learning can be defined as "a problem faced by an agent that learns behavior through trial-and-error interactions with a dynamic environment".
+Many different concepts and methodologies can be used to break down reinforcement learning. This work focuses on Deep Q learning and to study it a simulated robotic arm is trained to touch a can.
 
 
-% Reinforcement learning has been successfully applied to a variety of domains, including robotics [3], game playing [4], and recommendation systems [5]. It has also been used in combination with other machine learning techniques, such as deep learning [4] and transfer learning [6], to achieve even better performance in complex tasks. Overall, reinforcement learning is a powerful approach to developing intelligent systems that can learn and adapt to new environments and tasks.
 
 
 
-% Reinforcement learning has been successfully applied to a variety of domains, including robotics (Kober, Bagnell, & Peters, 2013), game playing (Mnih et al., 2015), and recommendation systems (Wang et al., 2016). It has also been used in combination with other machine learning techniques, such as deep learning (Mnih et al., 2015) and transfer learning (Taylor & Stone, 2009), to achieve even better performance in complex tasks.
 
 
-%Reinforcement learning involves an agent learning a particular behavior by receiving feedback on its interactions with a dynamic environment in order to reach a specific goal. Kaelbling, Littman, and Moore define reinforcement learning as "a problem faced by an agent that learns behavior through trial-and-error interactions with a dynamic environment" [4]. Although there are other approaches to reinforcement learning that are less goal-oriented, this paper specifically focuses on the Policy Gradient approach. To explore this variant of reinforcement learning, the study involved training a simulated robot to drive towards and push basic objects with the colors blue or green, while avoiding objects with the color red.
-
-%Generally, the introduction should be VERY detailed, with a focus on pedagogical value. 10-15 pages are expected here!
-%Everything that contributes to clarity (pictures, diagrams, ...) is allowed or even expected. The introduction is meant for people who DO NOT have a computer science degree, or even any particular affinity to computers, so focus on the "big picture".  
+% Generally, the introduction should be VERY detailed, with a focus on pedagogical value. 10-15 pages are expected here! Everything that contributes to clarity (pictures, diagrams, ...) is allowed or even expected. The introduction is meant for people who DO NOT have a computer science degree, or even any particular affinity to computers, so focus on the "big picture".  
 %
 \subsection{Context}
 What is the context of the presented work? If you work in a company, present the company first. Then the broad scientific or technological background in which the work is embedded should be presented and explained.
@@ -177,6 +175,16 @@ What is the problem that is being addressed or solved? Why is it important or be
 Here, give a list of bullet points of quantifiable goals of the presented work. These achievement of these goals will be shown in the experiments section. The list should have 3-4 entries. No blabla here, hard goals!
 %
 \subsection{Related Work}
+Deep Q-learning has been successfully applied in various robotic control tasks, including manipulators and robotic arms. In this section, we summarize the results and contributions of six relevant papers on deep Q-learning for robotic arm control.
+
+In \cite{LevinePastorKrizhevsky}, the authors proposed a method for robotic grasping using deep Q-networks (DQNs). The results showed that the proposed method outperforms other traditional grasping methods in terms of grasping success rate and efficiency.
+
+In \cite{GuShixiangHolly}, the authors presented a framework for real-time control of a robotic arm using deep reinforcement learning. They used a DQN-based algorithm to learn the control policy for the robotic arm, and the results demonstrated that the proposed method can achieve accurate and robust control.
+
+
+\par\noindent\rule{\textwidth}{0.4pt}
+
+
 List works that have a similar goals, plus a short explanation (3-4 sentences at most) as to how they differ from your work. Do NOT make comparisons here (better than my work or similar), that happens in the discussion section.
 
 Admissible related work is (in descending order of acceptability):
@@ -208,6 +216,12 @@ For example:
 \item Complex concepts of the chosen programming language
 \item Basics of machine learning, or neural networks, or both
 \item Description of used databases or datasets
+
+\item rviz
+\item rqt
+\item urdf file
+\item sdf file
+\item stl file
 \end{itemize}
 %
 In subsequent chapters, you can reference this one to avoid having to explain everything over and over again. This means that you just include things here that are necessary for the understanding of later chapters, nothing more.
@@ -216,6 +230,94 @@ In subsequent chapters, you can reference this one to avoid having to explain ev
 \subsection{Topic 3}\label{sec:grundlagen3}
 %
 \section{Implementation}\label{sec:umsetzung}
+The simulated scenario is implemented using Gazebo and ROS 2 libraries, which are described in chapters AAA and BBB respectively. The robotic arm kuka kr210 simulation was taken from https://github.com/udacity/RoboND-Kinematics-Project, this was done by taking the urdf, dae, and stl files containing the specifications of the robotic arm and placing them in our ROS 2 package. 
+The robotic arm consists of six joints and seven links that connect them.
+The six joints of the KR210 are numbered J1 to J6, and they allow the robot to move in various directions and orientations.
+\begin{itemize}
+	\item J1: The first joint is the base joint, which allows the robot to rotate horizontally around its vertical axis.
+	
+	\item J2: The second joint is the shoulder joint, which allows the robot to lift and lower its arm vertically.
+	
+	\item J3: The third joint is the elbow joint, which allows the robot to bend its arm vertically.
+	
+	\item J4: The fourth joint is the wrist roll joint, which allows the robot to rotate its wrist around its vertical axis.
+	
+	\item J5: The fifth joint is the wrist pitch joint, which allows the robot to tilt its wrist up and down.
+	
+	\item J6: The sixth joint is the wrist yaw joint, which allows the robot to rotate its wrist horizontally.	 
+\end{itemize}
+
+The arm also has links that connect the joints, including the base, lower arm, upper arm, wrist, and end-effector. These links are designed to provide strength and rigidity to the robot arm while allowing for smooth and precise movement. These links are:
+
+\begin{itemize}
+	\item Base Link: This is the fixed part of the robot that is attached to the ground.
+	
+	\item Link 1: This is the first link that connects the base to joint 1.
+	
+	\item Link 2: This link connects joint 1 to joint 2.
+	
+	\item Link 3: This link connects joint 2 to joint 3.
+	
+	\item Link 4: This link connects joint 3 to joint 4.
+	
+	\item Link 5: This link connects joint 4 to joint 5.
+	
+	\item End Effector (Link 6): This is the final link that connects to the tool or object being manipulated.
+	
+\end{itemize}
+
+A Bumper sensor was added to links 4, 5, and 6 to detect collisions with these links (As shown in the code snippet).
+
+
+
+
+
+The object the robotic arm has to learn to touch is a can taken from gazebo models (http://models.gazebosim.org/beer). A world file is created containing the can.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{kuka1}
+	\caption[short caption]{long caption}
+	\label{fig:kuka1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{kuka3}
+	\caption[short caption]{long caption}
+	\label{fig:kuka3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\linewidth]{kuka4}
+	\caption[short caption]{long caption}
+	\label{fig:kuka4}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\linewidth]{kuka5}
+	\caption[short caption]{long caption}
+	\label{fig:kuka5}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{kuka6}
+	\caption[short caption]{long caption}
+	\label{fig:kuka6}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{kuka7}
+	\caption[short caption]{long caption}
+	\label{fig:kuka7}
+\end{figure}
+
+
 Should refer, where possible, to the preceding chapter, e.e.:
 Singular value decomposition of the matrix $\Sigma$ is conducted as explained in Sec.~\ref{sec:grundagen1} using the \textit{lapack} library (see Sec.~\ref{sec:grundlagen2}).
 
@@ -224,6 +326,10 @@ For software development: what is the logic of the developed code, which of it w
 Please give code snippets only if they take up less that 0.25 pages, and only if it is unavoidable. Longer snippets go to the appendix and are referenced like this: see App.~\ref{Snippet}.
 
 \section{Experiments}\label{sec:exp}
+
+
+
+\par\noindent\rule{\textwidth}{0.4pt}
 Show here that the goals from the introduction were achieved (or not achieved), you need at least one experiment per goal. Use screenshots, diagrams, plots, photos, etc. as necessary.
 
 \section{Discussion}
@@ -342,6 +448,33 @@ Hierzu müssen BibTeX-Einträge in die Datei literatur.bib eingefügt werden. Di
 %\addcontentsline{toc}{section}{\bibname}
 \appendix
 \section{Code Snippets}
+
+\begin{listing}[htbp]
+\begin{minted}[fontsize=\footnotesize,linenos=false,escapeinside=||,]{xml} 
+  <gazebo reference="link_4">
+    <!-- contact sensor -->
+    <sensor name="end_effector_sensor" type="contact">
+      <selfCollide>true</selfCollide>
+      <alwaysOn>true</alwaysOn>
+      <update_rate>500</update_rate>
+      <contact>
+        <collision>link_4_collision</collision>
+      </contact>
+      <!-- gazebo plugin -->
+      <plugin name="gazebo_ros_bumper_sensor" filename="libgazebo_ros_bumper.so">
+        <ros>
+          <namespace>contact_sensor</namespace>
+          <remapping>bumper_states:=bumper_link_4</remapping>
+        </ros>
+        <frame_name>link_4</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+\end{minted}
+\caption{Example XML listing using minted}
+\label{lst:XML}
+\end{listing}
+
 \begin{figure}
     \centering
     %\includegraphics{s}
