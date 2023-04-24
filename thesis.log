@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  24 APR 2023 11:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  24 APR 2023 18:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -941,7 +941,7 @@ Package epstopdf Info: Source file: <logo.eps>
 ogo.eps>
 (epstopdf)             \includegraphics on input line 102.
 Package epstopdf Info: Output file is already uptodate.
-<logo-eps-converted-to.pdf, id=154, 569.12625pt x 142.5325pt>
+<logo-eps-converted-to.pdf, id=242, 569.12625pt x 142.5325pt>
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-eps-converted-to.pdf>
 Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 102.
@@ -987,92 +987,93 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.180 \subsection
-                 {Related Work} [1
+l.173 
+       [1
 
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
-95.
+] [2] [3] [4] [5] [6]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
+09.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
-Overfull \hbox (0.26552pt too wide) in paragraph at lines 199--200
+) [7] [8] [9]
+Overfull \hbox (0.26552pt too wide) in paragraph at lines 283--284
 []\T1/ppl/m/n/12 Web pages, es-pe-cially for soft-ware projects (e.g., Ten-sor-
 Flow, ng-inx, re-act, Django).
  []
 
 
-LaTeX Warning: Citation `clemen1989combining' on page 2 undefined on input line
- 202.
+LaTeX Warning: Citation `clemen1989combining' on page 10 undefined on input lin
+e 286.
 
 
-LaTeX Warning: Citation `clemen1989combining' on page 2 undefined on input line
- 202.
+LaTeX Warning: Citation `clemen1989combining' on page 10 undefined on input lin
+e 286.
 
-[2] [3]
-<kuka1.png, id=262, 376.40625pt x 301.125pt>
+[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
+<kuka1.png, id=568, 376.40625pt x 301.125pt>
 File: kuka1.png Graphic file (type png)
 <use kuka1.png>
-Package pdftex.def Info: kuka1.png  used on input line 243.
+Package pdftex.def Info: kuka1.png  used on input line 473.
 (pdftex.def)             Requested size: 322.50345pt x 258.02051pt.
- [4 <./kuka1.png>]
-<kuka5.png, id=268, 376.40625pt x 301.125pt>
+ [22 <./kuka1.png>]
+<kuka5.png, id=573, 376.40625pt x 301.125pt>
 File: kuka5.png Graphic file (type png)
 <use kuka5.png>
-Package pdftex.def Info: kuka5.png  used on input line 285.
+Package pdftex.def Info: kuka5.png  used on input line 515.
 (pdftex.def)             Requested size: 414.6463pt x 331.73933pt.
-<kuka6.png, id=269, 376.40625pt x 301.125pt>
+<kuka6.png, id=574, 376.40625pt x 301.125pt>
 File: kuka6.png Graphic file (type png)
 <use kuka6.png>
-Package pdftex.def Info: kuka6.png  used on input line 292.
+Package pdftex.def Info: kuka6.png  used on input line 522.
 (pdftex.def)             Requested size: 207.32315pt x 165.86278pt.
-<kuka7.png, id=270, 376.40625pt x 301.125pt>
+<kuka7.png, id=575, 376.40625pt x 301.125pt>
 File: kuka7.png Graphic file (type png)
 <use kuka7.png>
-Package pdftex.def Info: kuka7.png  used on input line 294.
+Package pdftex.def Info: kuka7.png  used on input line 524.
 (pdftex.def)             Requested size: 207.32315pt x 165.86278pt.
 File: kuka6.png Graphic file (type png)
 <use kuka6.png>
-Package pdftex.def Info: kuka6.png  used on input line 303.
+Package pdftex.def Info: kuka6.png  used on input line 533.
 (pdftex.def)             Requested size: 322.50345pt x 258.02051pt.
- [5] [6 <./kuka5.png> <./kuka6.png> <./kuka7.png>]
-Overfull \hbox (4.78972pt too wide) in paragraph at lines 323--324
+
+[23] [24 <./kuka5.png> <./kuka6.png> <./kuka7.png>]
+Overfull \hbox (4.78972pt too wide) in paragraph at lines 553--554
 \T1/ppl/m/n/12 gin pre-vi-ously used takes care of pub-lish-ing the im-ages to 
 the topic /cam-era/image_raw,
  []
 
-[7]
-<kuka3.png, id=287, 376.40625pt x 301.125pt>
+[25]
+<kuka3.png, id=592, 376.40625pt x 301.125pt>
 File: kuka3.png Graphic file (type png)
 <use kuka3.png>
-Package pdftex.def Info: kuka3.png  used on input line 339.
+Package pdftex.def Info: kuka3.png  used on input line 569.
 (pdftex.def)             Requested size: 230.36061pt x 184.29248pt.
-<kuka4.png, id=288, 1045.65656pt x 539.01375pt>
+<kuka4.png, id=593, 1045.65656pt x 539.01375pt>
 File: kuka4.png Graphic file (type png)
 <use kuka4.png>
-Package pdftex.def Info: kuka4.png  used on input line 346.
+Package pdftex.def Info: kuka4.png  used on input line 576.
 (pdftex.def)             Requested size: 437.68376pt x 225.61932pt.
- [8 <./kuka3.png>]
-<can.png, id=294, 58.71938pt x 84.315pt>
+ [26 <./kuka3.png>]
+<can.png, id=599, 58.71938pt x 84.315pt>
 File: can.png Graphic file (type png)
 <use can.png>
-Package pdftex.def Info: can.png  used on input line 355.
+Package pdftex.def Info: can.png  used on input line 585.
 (pdftex.def)             Requested size: 46.07492pt x 66.15909pt.
 
 
-LaTeX Warning: Reference `sec:grundagen1' on page 9 undefined on input line 363
-.
+LaTeX Warning: Reference `sec:grundagen1' on page 27 undefined on input line 59
+3.
 
 
-LaTeX Warning: Reference `Snippet' on page 9 undefined on input line 367.
+LaTeX Warning: Reference `Snippet' on page 27 undefined on input line 597.
 
 
-LaTeX Warning: Reference `sec:relwork' on page 9 undefined on input line 377.
+LaTeX Warning: Reference `sec:relwork' on page 27 undefined on input line 607.
 
-[9 <./kuka4.png (PNG copy)> <./can.png (PNG copy)>]
-Overfull \hbox (10.0093pt too wide) in paragraph at lines 387--388
+[27 <./kuka4.png (PNG copy)> <./can.png (PNG copy)>]
+Overfull \hbox (10.0093pt too wide) in paragraph at lines 617--618
 \T1/ppl/m/n/12 un-tere-inan-der gesetzt). Die nonmber-Befehle ver-hin-dern dass
  die Gle-ichung num-mertiert
  []
@@ -1081,23 +1082,38 @@ Overfull \hbox (10.0093pt too wide) in paragraph at lines 387--388
 
 pdfTeX warning: /usr/bin/pdflatex (file ./logo.pdf): PDF inclusion: found PDF v
 ersion <1.7>, but at most version <1.5> allowed
-<logo.pdf, id=303, 569.05598pt x 142.26149pt>
+<logo.pdf, id=608, 569.05598pt x 142.26149pt>
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 412.
+Package pdftex.def Info: logo.pdf  used on input line 642.
 (pdftex.def)             Requested size: 368.57838pt x 92.14542pt.
-[10] [11 <./logo.pdf>]
+[28] [29 <./logo.pdf>]
 
-LaTeX Warning: Citation `clemen1989combining' on page 12 undefined on input lin
-e 467.
+LaTeX Warning: Citation `clemen1989combining' on page 30 undefined on input lin
+e 697.
 
-[12] (./thesis.bbl
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 31
+[30] (./thesis.bbl [31
+
+]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 91
 .
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Underfull \hbox (badness 1668) in paragraph at lines 29--32
+) [32]
+Underfull \hbox (badness 6758) in paragraph at lines 163--169
+\T1/ppl/m/n/12 and []$\T1/pcr/m/n/12 https : / / aischool . microsoft . com / e
+n-[]us / autonomous-[]systems /
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 185--189
+[]\T1/ppl/m/n/12 Volodymyr Mnih, Ko-ray Kavukcuoglu, David Sil-ver, Alex Graves
+, Ioan-nis
+ []
+
+[33]
+Underfull \hbox (badness 1005) in paragraph at lines 296--299
 []\T1/ppl/m/n/12 RStudio.  Wel-come to shiny.  []$\T1/pcr/m/n/12 https : / / sh
 iny . rstudio . com / tutorial /
  []
@@ -1113,7 +1129,7 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 3.
 )
 Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
-t line 514.
+t line 744.
 \openout4 = `thesis.pyg'.
 
 
@@ -1138,12 +1154,12 @@ FB8.pygtex)
 
 
 (./_minted-thesis/B4F1338073347058D0DC56CECEF049FB35DA72F391F0EE3A0648FBA0246F4
-FB8.pygtex) [13
-
-] [14]
-Package mdframed Info: Not enough space on this page on input line 668.
- [15] [16] (./Erklaerung.tex) [17] [18]
-Overfull \hbox (58.5764pt too wide) in paragraph at lines 770--771
+FB8.pygtex)
+Package mdframed Info: Not enough space on this page on input line 898.
+ [34] [35]
+Package mdframed Info: Not enough space on this page on input line 898.
+ [36] [37] [38] (./Erklaerung.tex) [39] [40]
+Overfull \hbox (58.5764pt too wide) in paragraph at lines 1000--1001
 []\T1/ppl/m/n/12 With prob-a-bil-ity $\OML/cmm/m/it/12 ^^O$ \T1/ppl/m/n/12 se-l
 ect a ran-dom ac-tion $\OML/cmm/m/it/12 a[]$\T1/ppl/m/n/12 , oth-er-wise se-lec
 t $\OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 Q\OT1/cmr/m/
@@ -1151,31 +1167,31 @@ n/12 (\OML/cmm/m/it/12 s[]; a\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 ^^R\OT1/cmr/m/n
 /12 )$\T1/ppl/m/n/12 . 
  []
 
-[19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 805.
- [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 805.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1035.
+[41]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1035.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 805.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 805.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1035.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1035.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6BD3BBB8FDC6A9F7B43D12B19572BF08;2458.
+(rerunfilecheck)             Checksum: BDA7B739C5F8D8E4B802271A16E6BE4A;4239.
 
 
 LaTeX Warning: There were undefined references.
 
 runsystem(rm thesis.pyg)...executed.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 805.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1035.
  ) 
 Here is how much of TeX's memory you used:
- 21590 strings out of 483107
- 339476 string characters out of 5964630
- 657795 words of memory out of 5000000
- 36082 multiletter control sequences out of 15000+600000
+ 21774 strings out of 483107
+ 342513 string characters out of 5964630
+ 664013 words of memory out of 5000000
+ 36145 multiletter control sequences out of 15000+600000
  565618 words of font info for 82 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 43i,12n,49p,927b,2514s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,12n,49p,1694b,2514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
@@ -1192,9 +1208,9 @@ onts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
 
-Output written on thesis.pdf (25 pages, 1046459 bytes).
+Output written on thesis.pdf (46 pages, 1147542 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
- 354 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 849 PDF objects out of 1000 (max. 8388607)
+ 232 named destinations out of 1000 (max. 500000)
+ 530 words of extra memory for PDF output out of 10000 (max. 10000000)
 

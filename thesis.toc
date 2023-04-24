@@ -1,37 +1,59 @@
 \contentsline {section}{List of Figures}{IV}{section*.2}%
 \contentsline {section}{List of Tables}{IV}{section*.3}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Context}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Problem statement}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Goals}{2}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Related Work}{2}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Contribution}{3}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Foundations}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Topic 1}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Topic 2}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Topic 3}{4}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Implementation}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Robotic Arm}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Moving the robotic arm}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Getting Images from the camera}{7}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Experiments}{9}{section.4}%
-\contentsline {section}{\numberline {5}Discussion}{10}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{10}{section.6}%
-\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{10}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{10}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{10}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{10}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{11}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{11}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{11}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{12}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Textformatierung}{12}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Zitieren}{12}{subsection.7.9}%
-\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{12}{subsection.7.10}%
-\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{12}{subsection.7.11}%
-\contentsline {section}{\numberline {A}Code Snippets}{13}{appendix.A}%
-\contentsline {section}{\numberline {B}Thesis defence}{17}{appendix.B}%
-\contentsline {section}{\numberline {C}Extras}{18}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{18}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{18}{subsection.C.2}%
-\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{19}{subsection.C.3}%
+\contentsline {subsection}{\numberline {1.1}Context}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Simulated Robotics}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Industrial Automation}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Robotic Arm}{3}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Robot Operating System (ROS)}{4}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}Simulations}{4}{subsubsection.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.6}Reinforcement Learning}{5}{subsubsection.1.1.6}%
+\contentsline {subsubsection}{\numberline {1.1.7}Deep Reinforcement Learning}{6}{subsubsection.1.1.7}%
+\contentsline {subsubsection}{\numberline {1.1.8}Double Q-Learning}{8}{subsubsection.1.1.8}%
+\contentsline {subsection}{\numberline {1.2}Problem statement}{8}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Goals}{9}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Related Work}{10}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Contribution}{11}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Foundations}{11}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Python}{11}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Pytorch}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Gazebo}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}ROS 2}{14}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}DDQN}{15}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Machine Learning Algorithms}{17}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Neural Networks}{19}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}Structure of Neural Networks}{19}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Training of Neural Networks}{19}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}Types of Neural Networks}{19}{subsubsection.2.7.3}%
+\contentsline {subsubsection}{\numberline {2.7.4}Applications of Neural Networks}{20}{subsubsection.2.7.4}%
+\contentsline {subsubsection}{\numberline {2.7.5}Neural networks in robotics}{20}{subsubsection.2.7.5}%
+\contentsline {subsubsection}{\numberline {2.7.6}Neural Network for the robotic arm}{21}{subsubsection.2.7.6}%
+\contentsline {subsection}{\numberline {2.8}Reinforcement Learning Algorithms}{21}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Topic 1}{22}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Topic 2}{22}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Topic 3}{22}{subsection.2.11}%
+\contentsline {section}{\numberline {3}Implementation}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Robotic Arm}{22}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Moving the robotic arm}{25}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Getting Images from the camera}{25}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Experiments}{27}{section.4}%
+\contentsline {section}{\numberline {5}Discussion}{28}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{28}{section.6}%
+\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{28}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{28}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{28}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{28}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{29}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{29}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{29}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{30}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Textformatierung}{30}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Zitieren}{30}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{30}{subsection.7.10}%
+\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{30}{subsection.7.11}%
+\contentsline {section}{\numberline {A}Code Snippets}{34}{appendix.A}%
+\contentsline {section}{\numberline {B}Thesis defence}{38}{appendix.B}%
+\contentsline {section}{\numberline {C}Extras}{39}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{39}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{40}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{40}{subsection.C.3}%
