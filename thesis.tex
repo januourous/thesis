@@ -30,7 +30,10 @@
 \usepackage{url}
 
 \usepackage{minted}
-
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{multicol}
+\usepackage{mdframed}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Definition der Kopfzeile %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -230,7 +233,17 @@ In subsequent chapters, you can reference this one to avoid having to explain ev
 \subsection{Topic 3}\label{sec:grundlagen3}
 %
 \section{Implementation}\label{sec:umsetzung}
-The simulated scenario is implemented using Gazebo and ROS 2 libraries, which are described in chapters AAA and BBB respectively. The robotic arm kuka kr210 simulation was taken from https://github.com/udacity/RoboND-Kinematics-Project, this was done by taking the urdf, dae, and stl files containing the specifications of the robotic arm and placing them in our ROS 2 package. 
+\subsection{Robotic Arm}
+The robotic arm used in the simulation is the Kuka KR210. The simulation was taken from https://github.com/udacity/RoboND-Kinematics-Project. 
+To use the simulated arm, a ROS2 package was created and after that the files of type \emph{URDF, DAE,} and \emph{STL} were copied into our package.
+To make the robotic arm compatible with ROS2, the necessary plugins ros2\_control and gazebo\_ros2\_control{} were added to the \emph{URDF} file.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{kuka1}
+	\caption[Rviz2 kuka]{Kuka KR210 in Rviz2.}
+	\label{fig:kuka1}
+\end{figure}
 The robotic arm consists of six joints and seven links that connect them.
 The six joints of the KR210 are numbered J1 to J6, and they allow the robot to move in various directions and orientations.
 \begin{itemize}
@@ -266,20 +279,61 @@ The arm also has links that connect the joints, including the base, lower arm, u
 	
 \end{itemize}
 
-A Bumper sensor was added to links 4, 5, and 6 to detect collisions with these links (As shown in the code snippet).
+
+\begin{figure}[!tbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{kuka5}
+	\caption[short caption]{long caption}
+	\label{fig:kuka5}
+\end{figure}
+
+\begin{figure}[!tbp]
+  \centering
+  \subfloat[subcaption.]{\includegraphics[width=0.45\textwidth]{kuka6}\label{fig:kuka6}}
+  \hfill
+  \subfloat[subcaption.]{\includegraphics[width=0.45\textwidth]{kuka7}\label{fig:kuka7}}
+  \caption{caption.}
+\end{figure}
 
 
 
-
-
-The object the robotic arm has to learn to touch is a can taken from gazebo models (http://models.gazebosim.org/beer). A world file is created containing the can.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{kuka1}
+	\includegraphics[width=0.7\linewidth]{kuka6}
 	\caption[short caption]{long caption}
-	\label{fig:kuka1}
+	\label{fig:kuka6o}
 \end{figure}
+
+
+A Bumper sensor was added to links 4, 5, and 6 to detect collisions with these links (As shown in the code snippet) to the URDF.
+
+A Camera sensor is added (As shown in the code snippet) to the URDF.
+
+The object the robotic arm has to learn to touch is a can taken from gazebo models (http://models.gazebosim.org/beer). A world file is created containing the can.
+
+The Gazebo ROS state plugin was added (as shown in \ref{gazeboRosStatePluginXml}) to the world file to have the positions, velocities, and other properties from our models published and to be able to modify them programmatically.
+
+
+
+\subsection{Moving the robotic arm}
+The AnglesPublisher node was created to move the arm by publishing the target angles for the joints. To do this the Joint Trajectory Controller is used, this controller generates and executes trajectories for the robot joints. It subscribes to a JointTrajectory message that specifies the desired trajectory, and then generates a control signal to move the robot's joints along the trajectory. By publishing messages of type JointTrajectory to the joint\_trajectory topic the arm is moved.
+
+\subsection{Getting Images from the camera}
+The CameraSubscriber node was created to get images from the environment. The plugin previously used takes care of publishing the images to the topic /camera/image\_raw, the CameraSubscriber just subscribes to this topic and gets the images as messages of type Image.
+
+
+
+ROS control module is used to move the arm. ROS Control is a framework for building and controlling robots in ROS (Robot Operating System). It provides a standardized way to manage hardware interfaces, controllers, and state machines, making it easier to develop and integrate robot applications.
+
+The Joint State Broadcaster is a ROS node that broadcasts the state of robot joints. It reads joint positions, velocities, and efforts from a robot's hardware interfaces or controllers and publishes them as a JointState message on a ROS topic. This message contains the current state of all joints in the robot's model, allowing other ROS nodes to subscribe and use this information.
+
+The Joint Trajectory Controller is a ROS controller that generates and executes trajectories for robot joints. It subscribes to a JointTrajectory message that specifies the desired trajectory, and then generates a control signal to move the robot's joints along the trajectory. It can use different algorithms to generate this control signal, such as PID, computed-torque, or model-predictive control. This controller is often used in combination with the Joint State Broadcaster to provide closed-loop control of the robot's joints.
+
+Overall, the Joint State Broadcaster and Joint Trajectory Controller are two important components of ROS Control that enable the control of robot joints. The Joint State Broadcaster provides the current state of the joints to other ROS nodes, while the Joint Trajectory Controller generates and executes trajectories for the joints based on desired goals. Together, these components provide a powerful toolset for controlling robot motion in ROS. 
+
+
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{kuka3}
@@ -294,28 +348,15 @@ The object the robotic arm has to learn to touch is a can taken from gazebo mode
 	\label{fig:kuka4}
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.95\linewidth]{kuka5}
-	\caption[short caption]{long caption}
-	\label{fig:kuka5}
-\end{figure}
 
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{kuka6}
-	\caption[short caption]{long caption}
-	\label{fig:kuka6}
+\centering
+\includegraphics[width=0.1\linewidth]{can}
+\caption[short description]{long description}
+\label{fig:can}
 \end{figure}
 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{kuka7}
-	\caption[short caption]{long caption}
-	\label{fig:kuka7}
-\end{figure}
 
 
 Should refer, where possible, to the preceding chapter, e.e.:
@@ -448,9 +489,8 @@ Hierzu müssen BibTeX-Einträge in die Datei literatur.bib eingefügt werden. Di
 %\addcontentsline{toc}{section}{\bibname}
 \appendix
 \section{Code Snippets}
-
 \begin{listing}[htbp]
-\begin{minted}[fontsize=\footnotesize,linenos=false,escapeinside=||,]{xml} 
+\begin{minted}[fontsize=\footnotesize,linenos=false,escapeinside=||,samepage]{xml} 
   <gazebo reference="link_4">
     <!-- contact sensor -->
     <sensor name="end_effector_sensor" type="contact">
@@ -471,16 +511,168 @@ Hierzu müssen BibTeX-Einträge in die Datei literatur.bib eingefügt werden. Di
     </sensor>
   </gazebo>
 \end{minted}
-\caption{Example XML listing using minted}
-\label{lst:XML}
+\caption{Bumper Sensor}
+\label{bumperSensorXml}
 \end{listing}
 
-\begin{figure}
-    \centering
-    %\includegraphics{s}
-    \caption{Normalerweise bindet man Snippets als Bilder ein...\label{Snippet}
-    }
-\end{figure}
+\begin{listing}[htbp]
+\begin{minted}[fontsize=\footnotesize,linenos=false,escapeinside=||,samepage]{xml} 
+  <gazebo reference="camera_link">
+    <material>Gazebo/Black</material>
+    <sensor name="camera" type="camera">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <camera>
+        <horizontal_fov>1.089</horizontal_fov>
+        <image>
+          <format>R8G8B8</format>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>8.0</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <frame_name>camera_link_optical</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+\end{minted}
+\caption{Camera Sensor}
+\label{cameraSensorXml}
+\end{listing}
+
+\begin{listing}[htbp]
+\begin{minted}[fontsize=\footnotesize,linenos=false,escapeinside=||,samepage]{xml} 
+<plugin name='gazebo_ros_state' filename='libgazebo_ros_state.so'>
+  <ros>
+    <namespace>/gazebo_state</namespace>
+    <argument>model_states:=model_states_demo</argument>
+    <argument>link_states:=link_states_demo</argument>
+  </ros>
+  <update_rate>1.0</update_rate>
+</plugin>
+\end{minted}
+\caption{Gazebo ROS state plugin}
+\label{gazeboRosStatePluginXml}
+\end{listing}
+
+\begin{listing}[htbp]
+\begin{minted}[fontsize=\footnotesize,linenos=false,escapeinside=||,samepage]{xml} 
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+      <parameters>/home/ros/ros2-projects/my-workspace/src/kuka_kr210/config/jtc.yaml</parameters>
+    </plugin>
+  </gazebo>
+\end{minted}
+\caption{Gazebo plugin and ROS2 controller configuration file.}
+\label{gazeboPluginControllerConfigFile}
+\end{listing}
+
+\begin{mdframed}[linecolor=black, topline=false, bottomline=false,leftline=false, rightline=false, backgroundcolor=white]
+\begin{minted}[fontsize=\small,linenos=false,escapeinside=||,]{xml} 
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <param name="initial_position">0.0</param>
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <param name="initial_position">-1.57</param>
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.15</param>
+        <param name="max">3.15</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <param name="initial_position">0.0</param>
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <param name="initial_position">-1.57</param>
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <param name="initial_position">0.0</param>
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position">
+        <param name="min">-3.14</param>
+        <param name="max">3.14</param>
+      </command_interface>
+      <command_interface name="velocity">
+        <param name="min">-3.2</param>
+        <param name="max">3.2</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+      <param name="initial_position">0.0</param>
+    </joint>
+  </ros2_control>
+\end{minted}
+\end{mdframed}
+
+%\begin{figure}
+%    \centering
+%    %\includegraphics{s}
+%    \caption{Normalerweise bindet man Snippets als Bilder ein...\label{Snippet}
+%    }
+%\end{figure}
 
 \section{Thesis defence}
 The defence is 15/20 minutes for Bachelor/Master, followed by questions and a discussion. Both examiners are present, and you can invite external persons since defences are generally public.
@@ -512,6 +704,103 @@ Some common advice is:
 %% in Erklaerung.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Erklaerung.tex}
+
+\section{Extras}
+\subsection{Markov Decision Process}
+A Markov Decision Process (MDP) is defined by a tuple $<S, A, P, R, \gamma>$, where:
+
+\begin{itemize}
+\item $S$ is the set of states in the environment
+\item $A$ is the set of actions that can be taken in each state
+\item $P$ is the state transition probability matrix, where $P_{ss'}^a = \mathbb{P}[S_{t+1} = s' \mid S_t = s, A_t = a]$
+\item $R$ is the reward function, where $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$
+\item $\gamma$ is the discount factor, where $\gamma \in [0, 1]$
+\end{itemize}
+
+The goal of an agent in a Markov Decision Process is to find a policy $\pi: S \rightarrow A$ that maximizes the expected discounted reward:
+
+\begin{equation*}
+V_\pi(s) = \mathbb{E}\pi\Bigg[\sum{k=0}^\infty \gamma^k R_{t+k+1} \Bigg| S_t = s\Bigg]
+\end{equation*}
+
+or the corresponding action-value function:
+
+\begin{equation*}
+Q_\pi(s, a) = \mathbb{E}\pi\Bigg[\sum{k=0}^\infty \gamma^k R_{t+k+1} \Bigg| S_t = s, A_t = a\Bigg]
+\end{equation*}
+
+\subsection{Q learning Algorithm}
+The Q-learning algorithm is an off-policy temporal difference learning algorithm for finding the optimal action-value function $Q^(s, a)$ in a Markov Decision Process (MDP). The algorithm updates an estimate of $Q^(s, a)$ by iteratively applying the following update rule:
+
+\begin{equation*}
+Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha\Big[ R_{t+1} + \gamma\max_{a} Q(s_{t+1}, a) - Q(s_t, a_t) \Big]
+\end{equation*}
+
+where $s_t$ and $a_t$ are the current state and action, $R_{t+1}$ is the reward received after taking action $a_t$ in state $s_t$ and transitioning to state $s_{t+1}$, $\alpha$ is the learning rate, and $\gamma$ is the discount factor.
+
+The Q-learning algorithm can be summarized as follows:
+
+\begin{enumerate}
+\item Initialize the Q-value function $Q(s, a)$ for all state-action pairs.
+\item Observe the current state $s_t$.
+\item Choose an action $a_t$ based on a policy, such as $\epsilon$-greedy or softmax.
+\item Take the action $a_t$ and observe the next state $s_{t+1}$ and reward $R_{t+1}$.
+\item Update the Q-value function using the update rule: $Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha\Big[ R_{t+1} + \gamma\max_{a} Q(s_{t+1}, a) - Q(s_t, a_t) \Big]$.
+\item Set $s_t = s_{t+1}$ and repeat from step 3 until the end of the episode or termination of the task.
+\end{enumerate}
+
+The Q-learning algorithm is guaranteed to converge to the optimal action-value function $Q^*(s, a)$ under certain conditions, such as the MDP being finite and the learning rate $\alpha$ decaying over time.
+
+\subsection{Deep Q Learning}
+Deep Q-learning is a variant of the Q-learning algorithm that uses a deep neural network to approximate the action-value function $Q(s, a)$ in a Markov Decision Process (MDP). The algorithm combines reinforcement learning with deep neural networks to enable learning in high-dimensional and continuous state spaces.
+
+The Deep Q-learning algorithm can be summarized as follows:
+
+\textbf{Algorithm: Deep Q-learning}
+
+\begin{enumerate}
+\item Initialize the replay memory buffer $D$ with capacity $N$.
+\item Initialize the Q-network with random weights $\theta$.
+\item Initialize the target Q-network with weights $\theta^{-} = \theta$.
+\item For each episode $e=1,2,...,E$ do the following:
+\begin{enumerate}
+\item Initialize the environment with initial state $s_0$.
+\item For each step $t=1,2,...,T$ do the following:
+\begin{enumerate}
+\item With probability $\epsilon$ select a random action $a_t$, otherwise select $a_t=\arg\max_{a} Q(s_t, a; \theta)$.
+\item Execute action $a_t$ and observe reward $r_t$ and next state $s_{t+1}$.
+\item Store the transition $(s_t, a_t, r_t, s_{t+1})$ in the replay memory buffer $D$.
+\item Sample a mini-batch of transitions $(s_j, a_j, r_j, s_{j+1})$ from the replay memory buffer $D$.
+
+\item Compute the Q-learning target for each transition $(s_j, a_j, r_j, s_{j+1})$:
+
+ $y_j = \begin{cases} r_j & \text{if episode terminates at step } j+1 \\ r_j + \gamma\max_{a'}Q(s_{j+1},a';\theta^{-}) & \text{otherwise} \end{cases}$.
+
+\item Compute the loss between the predicted Q-value and the target Q-value: $L(\theta) = \frac{1}{B}\sum_{j=1}^B(y_j-Q(s_j,a_j;\theta))^2$.
+\item Update the Q-network weights using stochastic gradient descent: $\theta \leftarrow \theta - \alpha\nabla_\theta L(\theta)$.
+\item Every $C$ steps update the target Q-network weights: $\theta^{-} \leftarrow \tau\theta + (1-\tau)\theta^{-}$.
+\item Set $s_t=s_{t+1}$.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+In the Deep Q-learning algorithm, the replay memory buffer $D$ is used to store experiences in order to prevent overfitting and stabilize learning. The target Q-network is used to compute the target Q-value in the Q-learning update, and its weights are periodically updated from the Q-network to prevent target overestimation.
+
+The Deep Q-learning algorithm has been successfully applied to various tasks, such as playing Atari games, controlling robots, and playing board games.
+
+
+
+
+The Deep Q-learning algorithm uses experience replay and target networks to improve stability and convergence of the algorithm. Experience replay randomly samples transitions from the replay memory buffer to decorrelate the data and prevent overfitting. Target networks are used to stabilize the training by keeping a separate target network with fixed parameters and periodically updating it with the weights of the online network.
+
+The Deep Q-learning algorithm has been successfully applied to various tasks, such as playing Atari games, controlling robots, and playing board games.
+
+
+
+
+
+
+
 
 \end{document}
 
