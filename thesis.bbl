@@ -292,6 +292,49 @@ R.~Villegas, J.~Yang, D.~Ceylan, and H.~Lee.
 \newblock In {\em Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pages 8639--8648, 2018.
 
+\bibitem{45_1_lim2020federated}
+H.~K. Lim, J.~B. Kim, J.~S. Heo, and Y.~H. Han.
+\newblock Federated reinforcement learning for training control policies on
+  multiple iot devices.
+\newblock {\em Sensors}, 20(5):1359, 2020.
+
+\bibitem{45_kim2020motion}
+M.~Kim, D.~K. Han, J.~H. Park, and J.~S. Kim.
+\newblock Motion planning of robot manipulators for a smoother path using a
+  twin delayed deep deterministic policy gradient with hindsight experience
+  replay.
+\newblock {\em Applied Sciences}, 10(2):575, 2020.
+
+\bibitem{46_han2023survey}
+D.~Han, B.~Mulyana, V.~Stankovic, and S.~Cheng.
+\newblock A survey on deep reinforcement learning algorithms for robotic
+  manipulation.
+\newblock {\em Sensors}, 23(7):3762, 2023.
+
+\bibitem{47_gupta2021deep}
+Shubhanshu Gupta, Gaurav Singal, and Deepak Garg.
+\newblock Deep reinforcement learning techniques in diversified domains: a
+  survey.
+\newblock {\em Archives of Computational Methods in Engineering},
+  28(7):4715--4754, 2021.
+
+\bibitem{48_schulman2017proximal}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\newblock Proximal policy optimization algorithms.
+\newblock {\em arXiv preprint arXiv:1707.06347}, 2017.
+
+\bibitem{49_delage2010percentile}
+Erick Delage and Shie Mannor.
+\newblock Percentile optimization for markov decision processes with parameter
+  uncertainty.
+\newblock {\em Operations research}, 58(1):203--213, 2010.
+
+\bibitem{50_kaufmann2012bayesian}
+Emilie Kaufmann, Olivier Capp{\'e}, and Aur{\'e}lien Garivier.
+\newblock On bayesian upper confidence bounds for bandit problems.
+\newblock In {\em Artificial Intelligence and Statistics}, pages 592--600.
+  PMLR, 2012.
+
 \bibitem{shiny1}
 RStudio.
 \newblock Welcome to shiny.

@@ -341,7 +341,50 @@ ROS2 (Robot Operating System 2) \cite{40_phueakthong2021development} is the seco
 Conclusively, ROS2 is intended to provide a more robust, dependable, and adaptable platform for developing and deploying robotic systems. It is interoperable with a broad range of robotic hardware and software platforms, and it has a big and active development and user community.
 In robotics research and development, ROS2 is often used to operate robotic arms. Developers may use ROS2 to design a software stack that contains the control algorithms, sensors, and communication interfaces needed to control the robotic arm. ROS2 is a flexible and modular design that enables developers to construct software modules known as nodes that connect with one another via a publish-subscribe messaging model. For example, one node may be in charge of reading sensor data from the robotic arm, while another node may be in charge of operating the motors of the arm depending on the sensor data. A large selection of software libraries and tools referred to as packages, are also offered by ROS2 and may be used to create and test robotic arm control software. For instance, the \textit{ros\_control} package offers a variety of hardware interfaces and controllers for interacting with robotic arm hardware, while the \textit{MoveIt} package offers a set of motion planning and control algorithms for robotic arms. Developers often begin by specifying the hardware interface for the arm, which comprises the joints, motors, and sensors, in order to control a robotic arm using ROS2. Then, using ROS2 nodes and packages, they create the control algorithms and sensor interfaces needed to control the arm. Finally, before implementing their robotic arm control software on the MoveItactual robot, engineers may test and evaluate it using simulation tools like Gazebo. This enables the software to be developed and iterated upon quickly without endangering the physical robot or its surroundings.
 
+\subsection{Unified Robot Description Format (URDF)}\label{urdf}
+Unified Robot Description Format is an XML-based file format used to describe the kinematics and dynamics of a robot for simulation or visualization purposes. The main purpose of URDF is to provide a standardized way to represent robots that can be easily shared and used across different robotics platforms and simulation tools.
+
+Here are some of the main tags used in a URDF file and their brief explanations:
+\begin{itemize}
+\item \textbf{<robot>:} The root tag of the URDF file that defines the robot and its properties.
+\item \textbf{<link>:} Defines the properties of a rigid body link of the robot, such as its name, its visual and collision geometries, and its inertial properties.
+\item \textbf{<joint>:} Defines a joint that connects two links together and specifies the type of joint, its name, and its parent and child links.
+\item \textbf{<gazebo>:} Defines the properties of the robot for Gazebo, a popular open-source physics engine used for robot simulation. This tag includes sub-tags such as \textit{<plugin>} to specify Gazebo plugins, \textit{<material>} to define material properties, and \textit{<sensor>} to define sensors attached to the robot.
+\item \textbf{<transmission>:} Defines the transmission properties of the robot, which specify how the input and output shafts of a joint are connected and how torque, force, or velocity is transmitted between them.
+\end{itemize}
+
+\subsection{Simulation Description Format (SDF)}\label{sdf}
+Simulation Description Format is a file format used to describe the physical properties and dynamics of objects in a simulation environment. It is often used in robotics and autonomous systems, and is supported by popular simulators such as Gazebo, Ignition, and Webots. Here are the main tags used in SDF:
+\begin{enumerate}
+\item \textbf{<sdf>:} This is the root tag of the SDF file, and it specifies the version of the SDF format being used.
+\item \textbf{<model>:} This tag is used to define a model in the simulation environment. It contains sub-tags such as \textit{<link>},\textit{ <joint>}, and \textit{<plugin>} that define the properties of the model.
+\item \textbf{<link>: }This tag is used to define a link in a model. It contains sub-tags such as \textit{<inertial>}, \textit{<collision>}, and \textit{<visual> }that define the physical properties of the link.
+\item \textbf{<joint>:} This tag is used to define a joint that connects two links in a model. It contains sub-tags such as \textit{<axis>}, \textit{<dynamics>}, and \textit{<limit>} that define the properties of the joint.
+\item \textbf{<plugin>:} This tag is used to define a plugin that provides additional functionality to the simulation. It contains attributes such as name and filename that specify the name and location of the plugin.
+\item \textbf{<sensor>:} This tag is used to define a sensor that can be attached to a link in a model. It contains sub-tags such as \textit{<camera>}, \textit{<imu>}, and \textit{<ray>} that define the properties of the sensor.
+\item \textbf{<collision>:} This tag is used to define the collision properties of a link. It contains sub-tags such as \textit{<geometry>} and \textit{<surface>} that define the shape and surface properties of the link.
+\item \textbf{<visual>:} This tag is used to define the visual properties of a link. It contains sub-tags such as \textit{<geometry>} and \textit{<material>} that define the shape and appearance of the link.
+\item \textbf{<inertial>:} This tag is used to define the inertial properties of a link. It contains sub-tags such as \textit{<mass>} and \textit{<inertia>} that define the mass and moment of inertia of the link.
+\item \textbf{<geometry>:} This tag is used to define the shape of a link or collision object. It contains sub-tags such as \textit{<box>}, \textit{<cylinder>}, and \textit{<mesh>} that define the shape of the object.
+\item \textbf{<material>: }This tag is used to define the appearance of a link or collision object. It contains sub-tags such as \textit{<ambient>}, \textit{<diffuse>}, and \textit{<specular>} that define the color and reflectivity of the object.
+\item \textbf{<include>: }This tag is used to include another SDF file into the current SDF file. It contains attributes such as uri that specify the location of the included file.
+\end{enumerate}
+
+Overall, SDF is a powerful format that allows developers to describe complex robotic systems with multiple links, joints, sensors, and plugins. It provides a standardized way to simulate and test robots in a variety of environments and scenarios, which can greatly improve the performance and safety of the final product.
+
+\subsubsection{RViz, RQt, and RQt Graph}\label{rviz_rqt}
+RViz, RQt, and RQt Graph are three useful tools in the ROS ecosystem that allow developers to visualize, interact with, and analyze data from ROS nodes and topics. Here's a brief explanation of each tool:
+\begin{enumerate}
+\item \textbf{RViz:} RViz is a 3D visualization tool for ROS that allows developers to visualize robot models, sensor data, and other information in a simulated environment. With RViz, developers can view and manipulate 3D models of robots and their surroundings, as well as plot sensor data in real-time. RViz is useful for debugging and testing robot algorithms and behaviors, as well as for creating realistic simulations of robot environments.
+\item \textbf{RQt:} RQt is a graphical user interface (GUI) tool for ROS that provides a suite of plugins for analyzing and debugging ROS nodes and topics. RQt plugins allow developers to monitor and visualize ROS topics, plot data, and inspect the internal state of nodes. With RQt, developers can easily interact with the ROS network and analyze the data flowing between nodes.
+\item \textbf{RQt Graph: }RQt Graph is a visualization tool for ROS that allows developers to see the ROS network graph and visualize the data flow between nodes. With RQt Graph, developers can see the connections between nodes and topics, as well as the current state of each node (e.g., whether it is running, paused, or stopped). RQt Graph is useful for understanding the overall architecture of a ROS system and for debugging issues with data flow between nodes.
+\end{enumerate}
+
+In summary, RViz, RQt, and RQt Graph are three powerful tools in the ROS ecosystem that allow developers to visualize, interact with, and analyze data from ROS nodes and topics. RViz provides 3D visualization capabilities, while RQt provides a suite of plugins for analyzing and debugging ROS nodes and topics. RQt Graph provides a visualization of the ROS network graph and data flow between nodes.
+
+
 \subsection{DDQN}
+
 Double Deep Q Learning (DDQN) \cite{42_hamdia2021efficient} is a Q-Learning algorithm extension that overcomes Q-value overestimation in standard Q-Learning. DDQN is a DRL method that combines a deep neural network with the Q-Learning technique to develop an optimum policy for an agent to make decisions in an environment.
 The Double Deep Q-Learning (DDQN) method is an extension of the classic Q-Learning algorithm, which is widely used in Reinforcement Learning (RL) for robotics and robotic arm control. Deep RL method DDQN combines two deep neural networks to estimate the Q-values of state-action pairings in an environment. In this section, we will go through the DDQN idea, its benefits, and how it may be applied in robotics and robotic arm control.
 Q-Learning is a well-known RL method that may be used to identify the best policy for an agent in a given environment. The agent in Q-Learning attempts to learn a function Q(s, a) that calculates the anticipated reward for doing an action in state s. The best policy is then found by choosing the action that maximizes the Q-value for a particular state. Q-Learning, on the other hand, can only be employed in tiny settings with a limited number of states and actions. It is unsuitable for big and complicated situations.
@@ -441,7 +484,46 @@ In robotics, neural networks may be used to control the movement of robotic arms
 A neural network must be trained on a dataset of sensor readings and matching arm positions before it can be used for arms control. The network's inputs might comprise joint angles, velocities, and end-effector locations, with the output being the joint torques necessary to move the arm to the desired position.
 The training method generally consists of iteratively modifying the network's weights to minimize the gap between the network's expected and true outputs. This may be accomplished through the use of various optimization techniques, such as stochastic gradient descent. Once trained, the network may be utilized to operate the arm in real time. The network receives sensor values from the arm and predicts the control signals required to move the arm to the desired position. The control signals may then be delivered to the arm's actuators, causing the arm to move. Other tasks connected to robotic arms, such as object identification and grasping, can also be performed using neural networks. A neural network, for example, may be trained on a collection of photographs of items and their related grasping stances and then used to predict the optimal gripping pose for a specific object.
 
-\subsection{Reinforcement Learning Algorithms}
+\subsection{Reinforcement Learning Algorithms and The Markov Decision Process (MDP)}
+Reinforcement learning (RL) methods are particularly well-suited for robotics applications, such as robotic arm control. RL algorithms learn to control the arm by picking actions that maximize a reward signal, which may be a measure of how successfully the arm performs a task or how far it progresses toward a goal. Here are some popular RL algorithms used in robotics and for operating robotic arms:
+
+\begin{itemize}
+\item \textbf{Deep Deterministic Policy Gradient (DDPG):} The Deep Deterministic Policy Gradient (DDPG) is an actor-critic method that is meant to handle continuous action spaces, which is vital for directing the movement of a robotic arm \cite{44_villegas2018neural}. It estimates the action-value function using a deterministic policy function and a critic network and has been effectively applied to tasks such as reaching and grasping.
+\item \textbf{Trust Region Policy Optimization (TRPO):} TRPO is a policy optimization algorithm that is well-suited for jobs requiring precise and accurate control, such as managing the position of a robotic arm \cite{45_1_lim2020federated}, \cite{45_kim2020motion}. It employs a trust region strategy to guarantee that policy adjustments are not too significant, which aids in maintaining stability.
+\item \textbf{Asynchronous Advantage Actor-Critic (A3C): }A3C is a scalable and efficient RL technique designed to teach robotic arms to do complicated tasks such as item manipulation in crowded surroundings \cite{46_han2023survey}. It explores the state space and updates the policy using numerous simultaneous agents, which can dramatically accelerate the learning process.
+\item \textbf{Deep Neural Networks for Q-Learning:} Q-Learning is a value-based RL algorithm that learns to assess the worth of actions in a given state. When Deep Q-Networks (DQN) are merged with deep neural networks, they form Deep Q-Networks (DQN), which are particularly helpful for applications involving high-dimensional sensory input, such as vision-based control of a robotic arm \cite{47_gupta2021deep}.
+\item \textbf{Proximal Policy Optimization (PPO):} PPO is a policy optimization algorithm that updates the policy using a clipped surrogate objective function \cite{48_schulman2017proximal}. It has been used effectively in a variety of robotics activities, including regulating the movement of a robotic arm to conduct pick-and-place operations.
+
+\end{itemize}
+
+\subsubsection{The Markov Decision Process (MDP)}
+MDP is a framework for modeling decision-making issues when the consequence of an action is unknown \cite{49_delage2010percentile}. It is commonly used in the field of reinforcement learning to simulate issues like robotic arm control, autonomous vehicle navigation, and gameplay. The decision-making agent in a MDP interacts with the environment in discrete time steps. At each time step, the agent performs an action depending on the current state of the environment and is rewarded with a new state. The agent's purpose is to discover a policy that maximizes the cumulative reward over time.
+To convert a situation to an MDP framework, we must first identify the MDP components: state space, action space, transition probabilities, and reward function. Here's a quick rundown of each component:
+\begin{enumerate}
+\item \textbf{The state space} is the collection of all conceivable states in which the environment can exist. The state space of a robotic arm might comprise variables such as the arm's position and orientation, the placement of items in the environment, and the status of any sensors or actuators.
+\item \textbf{The action space} is the collection of all conceivable actions that the agent can do in a given condition. The action space for a robotic arm might comprise orders to move the arm in different directions, alter its hold on an item, or activate sensors.
+\item \textbf{Transition Probabilities} indicate the possibility of a state changing when a certain action is done. The transition probabilities of a robotic arm can be affected by the physical qualities of the arm and the objects in the surroundings, as well as any noise or uncertainty in the sensors or actuators.
+\item \textbf{The reward function} assigns a monetary incentive to each state-action pair that represents the agent's aim. The reward function for a robotic arm can offer a positive reward for successfully gripping an object, a negative reward for colliding with an impediment, and zero otherwise.
+\end{enumerate}
+Reinforcement learning algorithms use MDPs to learn how to make decisions in a sequential decision-making problem.
+These are only a few examples of RL algorithms that have been employed in robotics and robotic arm control. The algorithm used will be determined by the specific job and surroundings, as well as the features of the robot and sensors. RL algorithms offer the potential to make robotic arms more independent and adaptable, allowing them to adapt to changing surroundings and tasks in real-time.
+
+\subsubsection{The exploration and exploitation trade-off in RL}
+The exploration-exploitation trade-off in Reinforcement Learning (RL) refers to the issue encountered by an agent when deciding whether to continue exploring the environment to obtain additional knowledge or exploit the information it has already received to maximize its rewards.
+Exploration is the process of attempting new behaviors and evaluating their effects in order to understand more about the environment. It entails attempting actions that have never been attempted before or attempting previously attempted actions with a new parameter configuration. Exploitation, on the other hand, refers to the practice of maximizing the cumulative benefit by utilizing knowledge learned from prior acts. It entails doing behaviors that have provided high benefits in the past or are expected to bring high returns in the future.
+In RL, the trade-off between exploration and exploitation is crucial because if the agent concentrates just on exploration, it may not get enough incentives to develop an effective strategy. On the other side, if the agent is overly focused on exploitation, it may miss out on learning about other feasible, but lesser-known, positive acts that could contribute to higher long-term benefits.
+To balance the exploration-exploitation trade-off, several ways can be applied, including:
+\begin{itemize}
+\item \textbf{Epsilon-greedy:} The agent chooses the action with the largest expected payoff with a probability of (1-epsilon) and a random action with a probability of epsilon. This enables the agent to explore the environment while still taking advantage of actions with high expected returns.
+\item \textbf{Upper Confidence Bound (UCB):} The action with the highest upper confidence bound is chosen, which is determined by the mean reward and the variance of the reward distribution \cite{50_kaufmann2012bayesian}. This method encourages the agent to investigate less-explored behaviors while continuing to exploit acts with greater predicted rewards.
+\item \textbf{Thompson Sampling:} In this method, the agent keeps a probability distribution over the reward of each action and chooses an action based on a sample from that distribution. This technique strikes a balance between exploration and exploitation by choosing activities with a high likelihood of high rewards while also investigating actions with a low probability of high rewards.
+\end{itemize}
+
+\subsection{Gazebo}
+
+
+
+
 
 For example:
 \begin{itemize}
@@ -458,9 +540,7 @@ For example:
 \end{itemize}
 %
 In subsequent chapters, you can reference this one to avoid having to explain everything over and over again. This means that you just include things here that are necessary for the understanding of later chapters, nothing more.
-\subsection{Topic 1}\label{sec:grundlagen1}
-\subsection{Topic 2}\label{sec:grundlagen2}
-\subsection{Topic 3}\label{sec:grundlagen3}
+\subsection{Topic 01}\label{sec:grundlagen1}
 %
 \section{Implementation}\label{sec:umsetzung}
 \subsection{Robotic Arm}
