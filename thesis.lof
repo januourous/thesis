@@ -1,10 +1,14 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Rviz2 kuka}}{27}{figure.caption.5}%
-\contentsline {figure}{\numberline {4}{\ignorespaces short caption}}{28}{figure.caption.8}%
-\contentsline {figure}{\numberline {2}{\ignorespaces short caption}}{29}{figure.caption.6}%
-\contentsline {figure}{\numberline {3}{\ignorespaces caption.\relax }}{29}{figure.caption.7}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {subcaption.}}}{29}{subfigure.3.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {subcaption.}}}{29}{subfigure.3.2}%
-\contentsline {figure}{\numberline {5}{\ignorespaces short caption}}{31}{figure.caption.9}%
+\contentsline {figure}{\numberline {3}{\ignorespaces caption.\relax }}{28}{figure.caption.7}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Project structure after copying the \textit {dae}, \textit {stl}, and \textit {urdf} files.}}}{28}{subfigure.3.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {subcaption.}}}{28}{subfigure.3.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces The ROS \textbf {robot\_state\_publisher} node takes the URDF file and publishes its content to the \textbf {/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.\relax }}{28}{figure.caption.6}%
+\contentsline {figure}{\numberline {4}{\ignorespaces short caption}}{30}{figure.caption.8}%
+\contentsline {figure}{\numberline {5}{\ignorespaces caption.\relax }}{30}{figure.caption.9}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {subcaption.}}}{30}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {subcaption.}}}{30}{subfigure.5.2}%
 \contentsline {figure}{\numberline {6}{\ignorespaces short caption}}{31}{figure.caption.10}%
-\contentsline {figure}{\numberline {7}{\ignorespaces short description}}{32}{figure.caption.11}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Logo der HAW Fulda\relax }}{33}{figure.caption.12}%
+\contentsline {figure}{\numberline {7}{\ignorespaces short caption}}{32}{figure.caption.11}%
+\contentsline {figure}{\numberline {8}{\ignorespaces short caption}}{33}{figure.caption.12}%
+\contentsline {figure}{\numberline {9}{\ignorespaces short description}}{33}{figure.caption.13}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Logo der HAW Fulda\relax }}{35}{figure.caption.14}%

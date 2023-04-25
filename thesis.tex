@@ -372,7 +372,14 @@ Simulation Description Format is a file format used to describe the physical pro
 
 Overall, SDF is a powerful format that allows developers to describe complex robotic systems with multiple links, joints, sensors, and plugins. It provides a standardized way to simulate and test robots in a variety of environments and scenarios, which can greatly improve the performance and safety of the final product.
 
-\subsubsection{RViz, RQt, and RQt Graph}\label{rviz_rqt}
+\subsection{DAE and STL file formats }\label{dae_stl}
+DAE stands for Digital Asset Exchange, and it is a file format used for exchanging 3D digital assets between different software applications. DAE files can contain information about the geometry, materials, textures, animations, and other properties of 3D models. DAE files are supported by many 3D modeling software applications such as Blender \cite{Blender}, Autodesk Maya \cite{Maya}, and SketchUp \cite{SketchUp}.
+
+STL stands for Standard Triangle Language, and it is a file format used for storing 3D models as a series of connected triangles. STL files only represent the surface geometry of a 3D model and do not include information about materials, textures, or other properties. STL files are commonly used for 3D printing and rapid prototyping, as they can be easily sliced into layers and printed using a 3D printer.
+
+Both DAE and STL files are commonly used in 3D modeling and engineering applications. While DAE files are more versatile and can contain a wider range of information about a 3D model, STL files are simpler and more commonly used in the 3D printing industry.
+
+\subsection{RViz, RQt, and RQt Graph}\label{rviz_rqt}
 RViz, RQt, and RQt Graph are three useful tools in the ROS ecosystem that allow developers to visualize, interact with, and analyze data from ROS nodes and topics. Here's a brief explanation of each tool:
 \begin{enumerate}
 \item \textbf{RViz:} RViz is a 3D visualization tool for ROS that allows developers to visualize robot models, sensor data, and other information in a simulated environment. With RViz, developers can view and manipulate 3D models of robots and their surroundings, as well as plot sensor data in real-time. RViz is useful for debugging and testing robot algorithms and behaviors, as well as for creating realistic simulations of robot environments.
@@ -519,34 +526,19 @@ To balance the exploration-exploitation trade-off, several ways can be applied, 
 \item \textbf{Thompson Sampling:} In this method, the agent keeps a probability distribution over the reward of each action and chooses an action based on a sample from that distribution. This technique strikes a balance between exploration and exploitation by choosing activities with a high likelihood of high rewards while also investigating actions with a low probability of high rewards.
 \end{itemize}
 
-\subsection{Gazebo}
+\hrule 
 
-
-
-
-
-For example:
-\begin{itemize}
-\item Specialized libraries and their use
-\item Complex concepts of the chosen programming language
-\item Basics of machine learning, or neural networks, or both
-\item Description of used databases or datasets
-
-\item rviz
-\item rqt
-\item urdf file
-\item sdf file
-\item stl file
-\end{itemize}
-%
 In subsequent chapters, you can reference this one to avoid having to explain everything over and over again. This means that you just include things here that are necessary for the understanding of later chapters, nothing more.
 \subsection{Topic 01}\label{sec:grundlagen1}
+\hrule
 %
 \section{Implementation}\label{sec:umsetzung}
 \subsection{Robotic Arm}
-The robotic arm used in the simulation is the Kuka KR210. The simulation was taken from https://github.com/udacity/RoboND-Kinematics-Project. 
-To use the simulated arm, a ROS2 package was created and after that the files of type \emph{URDF, DAE,} and \emph{STL} were copied into our package.
-To make the robotic arm compatible with ROS2, the necessary plugins ros2\_control and gazebo\_ros2\_control{} were added to the \emph{URDF} file.
+The robotic arm used in the simulation is the Kuka KR210. The necessary files to simulate such a robotic arm were taken from ~\cite{RoboND-Kinematics-Project}. 
+
+The first step is to create a ROS2 workspace and package in which we would place the simulation files, having a folder structure as the one in Figure \ref{fig:project_structure_1}.
+
+With the simulation files in our package, we can use the \textit{ROS robot\_state\_publisher} node and Rviz \ref{rviz_rqt} to visualize the robotic arm, the result is shown in Figure \ref{fig:kuka1}. 
 
 \begin{figure}[H]
 	\centering
@@ -554,6 +546,29 @@ To make the robotic arm compatible with ROS2, the necessary plugins ros2\_contro
 	\caption[Rviz2 kuka]{Kuka KR210 in Rviz2.}
 	\label{fig:kuka1}
 \end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{rosgraph1}
+\caption{The ROS \textbf{robot\_state\_publisher} node takes the URDF file and publishes its content to the \textbf{/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.}
+\label{fig:rosgraph1}
+\end{figure}
+
+
+\begin{figure}[!tbp]
+  \centering
+  \subfloat[Project structure after copying the \textit{dae}, \textit{stl}, and \textit{urdf} files.]{\includegraphics[width=0.3\textwidth]{project_structure_1}\label{fig:project_structure_1}}
+  \hfill
+  \subfloat[subcaption.]{\includegraphics[width=0.3\textwidth]{project_structure_1}\label{fig:project_structure_2}}
+  \caption{caption.}
+\end{figure}
+
+
+
+To use the simulated arm, a ROS2 package was created and after that the files of type \emph{URDF, DAE,} and \emph{STL} were copied into our package.
+To make the robotic arm compatible with ROS2, the necessary plugins ros2\_control and gazebo\_ros2\_control{} were added to the \emph{URDF} file.
+
+
 The robotic arm consists of six joints and seven links that connect them.
 The six joints of the KR210 are numbered J1 to J6, and they allow the robot to move in various directions and orientations.
 \begin{itemize}

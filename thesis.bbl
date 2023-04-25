@@ -274,6 +274,18 @@ Pattaraporn Phueakthong and Jinda Varagul.
 \newblock In {\em 2021 International Electronics Symposium (IES)}, pages
   517--520. IEEE, 2021.
 
+\bibitem{Blender}
+{Blender Foundation}.
+\newblock Blender, 1998--\emph{present}.
+
+\bibitem{Maya}
+{Autodesk}.
+\newblock Autodesk maya, 1998--\emph{present}.
+
+\bibitem{SketchUp}
+{Trimble Inc.}
+\newblock Sketchup, 2000--\emph{present}.
+
 \bibitem{42_hamdia2021efficient}
 Khaled~M Hamdia, Xiaoying Zhuang, and Timon Rabczuk.
 \newblock An efficient optimization approach for designing machine learning
@@ -334,6 +346,12 @@ Emilie Kaufmann, Olivier Capp{\'e}, and Aur{\'e}lien Garivier.
 \newblock On bayesian upper confidence bounds for bandit problems.
 \newblock In {\em Artificial Intelligence and Statistics}, pages 592--600.
   PMLR, 2012.
+
+\bibitem{RoboND-Kinematics-Project}
+Udacity.
+\newblock Robond-kinematics-project.
+\newblock \url{https://github.com/udacity/RoboND-Kinematics-Project}, 2019.
+\newblock Accessed: April 25, 2023.
 
 \bibitem{shiny1}
 RStudio.
