@@ -37,9 +37,8 @@
 \contentsline {subsubsection}{\numberline {2.12.2}The exploration and exploitation trade-off in RL}{26}{subsubsection.2.12.2}%
 \contentsline {subsection}{\numberline {2.13}Topic 01}{27}{subsection.2.13}%
 \contentsline {section}{\numberline {3}Implementation}{27}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Robotic Arm}{27}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Moving the robotic arm}{31}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Getting Images from the camera}{31}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.1}Moving the robotic arm}{32}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Getting Images from the camera}{33}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Experiments}{33}{section.4}%
 \contentsline {section}{\numberline {5}Discussion}{34}{section.5}%
 \contentsline {section}{\numberline {6}Conclusion}{34}{section.6}%

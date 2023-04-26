@@ -533,13 +533,22 @@ In subsequent chapters, you can reference this one to avoid having to explain ev
 \hrule
 %
 \section{Implementation}\label{sec:umsetzung}
-\subsection{Robotic Arm}
+
+A SDF file containing the object the robotic arm has to learn to touch was created (Figure \ref{fig:can}).
 The robotic arm used in the simulation is the Kuka KR210. The necessary files to simulate such a robotic arm were taken from ~\cite{RoboND-Kinematics-Project}. 
 
 The first step is to create a ROS2 workspace and package in which we would place the simulation files, having a folder structure as the one in Figure \ref{fig:project_structure_1}.
 
-With the simulation files in our package, we can use the \textit{ROS robot\_state\_publisher} node and Rviz \ref{rviz_rqt} to visualize the robotic arm, the result is shown in Figure \ref{fig:kuka1}. 
+\begin{figure}[H]
+  \centering
+ % \includegraphics[width=0.3\linewidth]{project_structure_1}
+  \subfloat[Created SDF file in Gazebo which only contains the object to be touched by the robotic arm.]{\includegraphics[width=0.47\textwidth]{can}\label{fig:can}}
+  \hfill
+  \subfloat[Project structure after copying the \textit{dae}, \textit{stl}, and \textit{urdf} files into our package.]{\includegraphics[width=0.35\textwidth]{project_structure_1}\label{fig:project_structure_1}}
+  \caption{World created in Gazebo and starting directory structure after copying the robotic arm simulation files.}
+\end{figure}
 
+With the simulation files in our package, we can use the \textit{ROS robot\_state\_publisher} node and Rviz \ref{rviz_rqt} to visualize the robotic arm, the result is shown in Figure \ref{fig:kuka1}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{kuka1}
@@ -547,97 +556,120 @@ With the simulation files in our package, we can use the \textit{ROS robot\_stat
 	\label{fig:kuka1}
 \end{figure}
 
+\textit{ROS robot\_state\_publisher} node takes the \textit{urdf} file as an input and publishes its content to a \textit{/robot\_description} topic to which \textit{Rviz} subscribes to get the \textit{urdf} content and show it (Figure \ref{fig:rosgraph1}). 
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\linewidth]{rosgraph1}
-\caption{The ROS \textbf{robot\_state\_publisher} node takes the URDF file and publishes its content to the \textbf{/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.}
+\caption{The ROS \textbf{robot\_state\_publisher} node takes the URDF file content and publishes it to the \textbf{/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.}
 \label{fig:rosgraph1}
 \end{figure}
 
-
-\begin{figure}[!tbp]
-  \centering
-  \subfloat[Project structure after copying the \textit{dae}, \textit{stl}, and \textit{urdf} files.]{\includegraphics[width=0.3\textwidth]{project_structure_1}\label{fig:project_structure_1}}
-  \hfill
-  \subfloat[subcaption.]{\includegraphics[width=0.3\textwidth]{project_structure_1}\label{fig:project_structure_2}}
-  \caption{caption.}
-\end{figure}
-
-
-
-To use the simulated arm, a ROS2 package was created and after that the files of type \emph{URDF, DAE,} and \emph{STL} were copied into our package.
-To make the robotic arm compatible with ROS2, the necessary plugins ros2\_control and gazebo\_ros2\_control{} were added to the \emph{URDF} file.
-
-
-The robotic arm consists of six joints and seven links that connect them.
-The six joints of the KR210 are numbered J1 to J6, and they allow the robot to move in various directions and orientations.
+The robotic arm consists of six joints and seven links that connect them. The six joints of the KR210 are numbered J1 to J6, and they allow the robot to move in various directions and orientations.
 \begin{itemize}
-	\item J1: The first joint is the base joint, which allows the robot to rotate horizontally around its vertical axis.
+	\item \textbf{J1:} The first joint is the base joint, which allows the robot to rotate horizontally around its vertical axis.
 	
-	\item J2: The second joint is the shoulder joint, which allows the robot to lift and lower its arm vertically.
+	\item \textbf{J2:} The second joint is the shoulder joint, which allows the robot to lift and lower its arm vertically.
 	
-	\item J3: The third joint is the elbow joint, which allows the robot to bend its arm vertically.
+	\item \textbf{J3:} The third joint is the elbow joint, which allows the robot to bend its arm vertically.
 	
-	\item J4: The fourth joint is the wrist roll joint, which allows the robot to rotate its wrist around its vertical axis.
+	\item \textbf{J4:} The fourth joint is the wrist roll joint, which allows the robot to rotate its wrist around its vertical axis.
 	
-	\item J5: The fifth joint is the wrist pitch joint, which allows the robot to tilt its wrist up and down.
+	\item \textbf{J5:} The fifth joint is the wrist pitch joint, which allows the robot to tilt its wrist up and down.
 	
-	\item J6: The sixth joint is the wrist yaw joint, which allows the robot to rotate its wrist horizontally.	 
+	\item \textbf{J6:} The sixth joint is the wrist yaw joint, which allows the robot to rotate its wrist horizontally.	 
 \end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{kuka5}
+	\caption[kuka kr210 joints]{Joints and axis around which they allow movement in the Kuka KR210 arm.}
+	\label{fig:kuka5}
+\end{figure}
 
 The arm also has links that connect the joints, including the base, lower arm, upper arm, wrist, and end-effector. These links are designed to provide strength and rigidity to the robot arm while allowing for smooth and precise movement. These links are:
 
 \begin{itemize}
-	\item Base Link: This is the fixed part of the robot that is attached to the ground.
+	\item \textbf{Base Link:} This is the fixed part of the robot that is attached to the ground.
 	
-	\item Link 1: This is the first link that connects the base to joint 1.
+	\item \textbf{Link 1:} This is the first link that connects the base to joint 1.
 	
-	\item Link 2: This link connects joint 1 to joint 2.
+	\item \textbf{Link 2:} This link connects joint 1 to joint 2.
 	
-	\item Link 3: This link connects joint 2 to joint 3.
+	\item \textbf{Link 3:} This link connects joint 2 to joint 3.
 	
-	\item Link 4: This link connects joint 3 to joint 4.
+	\item \textbf{Link 4: }This link connects joint 3 to joint 4.
 	
-	\item Link 5: This link connects joint 4 to joint 5.
+	\item \textbf{Link 5: }This link connects joint 4 to joint 5.
 	
-	\item End Effector (Link 6): This is the final link that connects to the tool or object being manipulated.
+	\item \textbf{End Effector (Link 6):} This is the final link that connects to the tool or object being manipulated.
 	
 \end{itemize}
 
 
-\begin{figure}[!tbp]
-	\centering
-	\includegraphics[width=0.9\linewidth]{kuka5}
-	\caption[short caption]{long caption}
-	\label{fig:kuka5}
-\end{figure}
-
-\begin{figure}[!tbp]
+\begin{figure}[H]
   \centering
-  \subfloat[subcaption.]{\includegraphics[width=0.45\textwidth]{kuka6}\label{fig:kuka6}}
+  \subfloat[Links 1, 3 and 5 in the Kuka KR210.]{\includegraphics[width=0.45\textwidth]{kuka6}\label{fig:kuka6}}
   \hfill
-  \subfloat[subcaption.]{\includegraphics[width=0.45\textwidth]{kuka7}\label{fig:kuka7}}
-  \caption{caption.}
+  \subfloat[Base Link, Link 2, 4 and 6 in the Kuka KR210.]{\includegraphics[width=0.45\textwidth]{kuka7}\label{fig:kuka7}}
+  \caption{Links in the Kuka KR210.}
 \end{figure}
 
+After setting up the robotic arm, the following step is to add sensors to it and to configure it to work with ROS 2 and Gazebo.
+\begin{itemize}
+\item To detect collisions between the robotic arm and the object it should learn to touch, a bumper sensor is added to links 4, 5, and 6. This is done by adding the code in Listing \ref{bumperSensorXml} to the URDF file.
 
+\item A camera is added to the URDF file as well, this is done by adding the code in Listing \ref{cameraSensorXml}
 
+\item In the SDF file, the Gazebo ROS state plugin was added. This is done by adding the code in Listing \ref{gazeboRosStatePluginXml} in the SDF file. This plugin not only allows us to monitor our models' positions and velocities but also modify them programmatically.
+\end{itemize}
+
+Once everything mentioned is done we launch our SDF file in Gazebo and spawn the robotic arm into the world to finally have our setup as in Figure \ref{fig:kuka4}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{kuka6}
-	\caption[short caption]{long caption}
-	\label{fig:kuka6o}
+	\includegraphics[width=0.95\linewidth]{kuka4}
+	\caption[Gazebo World]{Gazebo world containing the robotic arm, the object to be touched, plus the sensors and plugins added.}
+	\label{fig:kuka4}
 \end{figure}
 
+A launch file was created to spawn everything as in Figure \ref{fig:kuka4}, also the ROS nodes and topics in figures \ref{fig:rosgraph00}, \ref{fig:rosgraph01}, \ref{fig:rosgraph02}, \ref{fig:rosgraph03}, \ref{fig:rosgraph04} are created.
 
-A Bumper sensor was added to links 4, 5, and 6 to detect collisions with these links (As shown in the code snippet) to the URDF.
 
-A Camera sensor is added (As shown in the code snippet) to the URDF.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{rosgraph00}
+\caption{The joint state broadcaster node publishes the current state of each joint in the robot's body to the ROS (Robot Operating System) network. This state includes the joint's position, velocity, and effort (torque) values. }
+\label{fig:rosgraph00}
+\end{figure}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{rosgraph01}
+\caption{The node \textit{/gazebo\_state/gazebo\_ros\_state} publishes the state of the models in the gazebo world to the topics \textit{/gazebo\_state/link\_states\_demo} and \textit{/gazebo\_state/model\_states\_demo} as specified in Listing \ref{gazeboRosStatePluginXml}}
+\label{fig:rosgraph01}
+\end{figure}
 
-The object the robotic arm has to learn to touch is a can taken from gazebo models (http://models.gazebosim.org/beer). A world file is created containing the can.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{rosgraph02}
+\caption{As a result of adding Listing \ref{cameraSensorXml} a node \textit{camera\_controller} is created and it publishes to the topics \textit{/camera/image\_raw/*}.}
+\label{fig:rosgraph02}
+\end{figure}
 
-The Gazebo ROS state plugin was added (as shown in \ref{gazeboRosStatePluginXml}) to the world file to have the positions, velocities, and other properties from our models published and to be able to modify them programmatically.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{rosgraph03}
+\caption{As a result of adding Listing \ref{bumperSensorXml} there are \textit{/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit{/contact\_sensor/bumper\_link\_4}, \textit{/contact\_sensor/bumper\_link\_5}, and\textit{ /contact\_sensor/bumper\_link\_6}. }
+\label{fig:rosgraph03}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{rosgraph04}
+\caption{The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm}.
+\label{fig:rosgraph04}
+\end{figure}
 
 
 
@@ -659,28 +691,8 @@ Overall, the Joint State Broadcaster and Joint Trajectory Controller are two imp
 
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{kuka3}
-	\caption[short caption]{long caption}
-	\label{fig:kuka3}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.95\linewidth]{kuka4}
-	\caption[short caption]{long caption}
-	\label{fig:kuka4}
-\end{figure}
 
 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.1\linewidth]{can}
-\caption[short description]{long description}
-\label{fig:can}
-\end{figure}
 
 
 
@@ -897,6 +909,7 @@ Hierzu müssen BibTeX-Einträge in die Datei literatur.bib eingefügt werden. Di
 \caption{Gazebo plugin and ROS2 controller configuration file.}
 \label{gazeboPluginControllerConfigFile}
 \end{listing}
+
 
 \begin{mdframed}[linecolor=black, topline=false, bottomline=false,leftline=false, rightline=false, backgroundcolor=white]
 \begin{minted}[fontsize=\small,linenos=false,escapeinside=||,]{xml} 
