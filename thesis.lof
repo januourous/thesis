@@ -13,4 +13,5 @@
 \contentsline {figure}{\numberline {9}{\ignorespaces As a result of adding Listing \ref {cameraSensorXml} a node \textit {camera\_controller} is created and it publishes to the topics \textit {/camera/image\_raw/*}.\relax }}{32}{figure.caption.13}%
 \contentsline {figure}{\numberline {10}{\ignorespaces As a result of adding Listing \ref {bumperSensorXml} there are \textit {/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit {/contact\_sensor/bumper\_link\_4}, \textit {/contact\_sensor/bumper\_link\_5}, and\textit { /contact\_sensor/bumper\_link\_6}. \relax }}{32}{figure.caption.14}%
 \contentsline {figure}{\numberline {11}{\ignorespaces The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm\relax }}{32}{figure.caption.15}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Logo der HAW Fulda\relax }}{35}{figure.caption.16}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Classes present in the python script that runs the environment experiments for the arm to learn to touch the object.\relax }}{33}{figure.caption.16}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Logo der HAW Fulda\relax }}{38}{figure.caption.17}%

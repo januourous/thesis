@@ -671,6 +671,89 @@ A launch file was created to spawn everything as in Figure \ref{fig:kuka4}, also
 \label{fig:rosgraph04}
 \end{figure}
 
+With the robotic arm spawn and the nodes and topics running to interact with it, the script to define the environment and the steps to be taken in the experiment is created. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{classDiagramComplete}
+\caption{Classes present in the python script that runs the environment experiments for the arm to learn to touch the object.}
+\label{fig:classdiagramcomplete}
+\end{figure}
+
+The main components are:
+\begin{itemize}
+\item The action space is defined as angle variations of 0.03 radians for the Joints 1, 2 and 3. That is a space of 3 dimensional vectors whose components can only be three possible values (i.e. -0.03, 0, and 0.03).
+\item The state space consists of four dimensional vectors whose components are the angle values of Joints 1, 2, and 3, and the distance between Link 6 and the object the arm has to touch.
+\item The function computeReward in the EnvironmentManager class takes care of computing the reward, it is executed when the function takeAction in the EnvironmentManager class is executed. The computeReward function is as follows: 
+
+$reward = 
+ \begin{cases} 
+ 	100 	& \text{if the arm touches the object.} \\ 
+ 	1 		& \text{if episode terminates at step.} \\ 
+ 	-1 		& \text{if the arm moves away from the object.} 
+ \end{cases}$
+
+\item The ReplayMemory class keeps record of experiences, for every step it records the current state, the action taken, the reward, and the new state.
+\item The EpsilonGreedyStrategy class provides the exploration probability, at the beginning the exploration probability is high and as the simulation continues this is defined to decay up to a minimum, at which point mostly exploitation is done.
+\item The class NN defines the neural network used. The one used has two hidden layers with 32 and 64 nodes and ReLU as the activation function. The input and output layers are defined by the dimension of the state space and the number of actions in the action space respectively.
+\item The Agent class takes care of selecting an action based on the exploration probability given by the EpsilonGreedyStrategy class.
+
+\end{itemize} 
+
+The following steps are implemented:
+\begin{enumerate}
+\item Initialize ReplayMemory. An object of the class is created with the given capacity.
+\item Initialize the policy network with random weights
+\item Clone the policy network, and name it as the target network
+\item Then for each episode:
+	\begin{enumerate}
+	\item Reset the environment (set the arm and object to the starting state).
+	\item Then for each step:
+		\begin{enumerate}
+		\item Select an action, via exploration or exploitation.
+		\item Perform the action and observe the reward and the next state.
+		\item Store the experience into the ReplayMemory.
+		\item Sample a random batch from replay memory.
+		\item Get the states from the batch.
+		\item Pass the states to the policy network to obtain the Q-values.
+		\item Pass the next states to the target network, and calculate the target Q-values.
+		\item Calculate the loss between Q-values and target Q-values.
+		\item Do gradient descent in the policy network to minimize the loss.
+		\item If the required number of steps have passed, update the weights in the target network with the weights in the policy network.
+		\end{enumerate}
+	\end{enumerate}
+
+\end{enumerate}
+
+\hrule
+\begin{enumerate}
+\item  \label{itm:dqn_1} Initialize the replay memory buffer $D$ with capacity $N$.
+\item Initialize the policy Q-network with random weights $\theta$.
+\item Clone the policy Q-network and let that be the target Q-network with weights $\theta^{-} = \theta$.
+\item For each episode $e=1,2,...,E$ do the following:
+	\begin{enumerate}
+	\item Initialize the environment with initial state $s_0$.
+	\item For each step $t=1,2,...,T$ do the following:
+		\begin{enumerate}
+		\item With probability $\epsilon$ select a random action $a_t$, otherwise select $a_t=\arg\max_{a} Q(s_t, a; \theta)$.
+		\item Execute action $a_t$ and observe reward $r_t$ and next state $s_{t+1}$.
+		\item Store the experience $(s_t, a_t, r_t, s_{t+1})$ in the replay memory buffer $D$.
+		\item Sample a mini-batch of experiences $(s_j, a_j, r_j, s_{j+1})$ from the replay memory buffer $D$.
+		
+		\item Compute the Q-learning target value for each experience $(s_j, a_j, r_j, s_{j+1})$:
+		
+		 $y_j = 
+		 \begin{cases} 
+		 r_j & \text{if episode terminates at step } j+1 \\ 
+		 r_j + \gamma\max_{a'}Q(s_{j+1},a';\theta^{-}) & \text{otherwise} \end{cases}$.
+		
+		\item Compute the loss between the predicted Q-value and the target Q-value: $L(\theta) = \frac{1}{B}\sum_{j=1}^B(y_j-Q(s_j,a_j;\theta))^2$.
+		\item Update the policy Q-network weights using gradient descent: $\theta \leftarrow \theta - \alpha\nabla_\theta L(\theta)$.
+		\item Every $C$ steps update the target Q-network weights: $\theta^{-} \leftarrow \theta$.
+		\item Update the current state, set $s_t=s_{t+1}$.
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
 
 
 \subsection{Moving the robotic arm}
