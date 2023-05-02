@@ -240,6 +240,12 @@ Shixiang Gu, Ethan Holly, Timothy Lillicrap, and Sergey Levine.
 \newblock In {\em 2017 IEEE International Conference on Robotics and Automation
   (ICRA)}, page 3389–3396. IEEE Press, 2017.
 
+\bibitem{python-docs}
+{Python Software Foundation}.
+\newblock {Python} documentation.
+\newblock \url{https://docs.python.org/}, 2021.
+\newblock Accessed: May 2, 2023.
+
 \bibitem{37_wang2019various}
 Zhihua Wang, Kehan Liu, Jian Li, Yuchao Zhu, and Yifei Zhang.
 \newblock Various frameworks and libraries of machine learning and deep
@@ -352,6 +358,15 @@ Udacity.
 \newblock Robond-kinematics-project.
 \newblock \url{https://github.com/udacity/RoboND-Kinematics-Project}, 2019.
 \newblock Accessed: April 25, 2023.
+
+\bibitem{pytorch}
+Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory
+  Chanan, Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban
+  Desmaison, Andreas Kopf, Edward Yang, Zachary DeVito, Martin Raison, Alykhan
+  Tejani, Sasank Chilamkurthy, Benoit Steiner, Lu~Fang, Junjie Bai, and Soumith
+  Chintala.
+\newblock Pytorch: An imperative style, high-performance deep learning library.
+\newblock \url{https://pytorch.org/}, 2019.
 
 \bibitem{shiny1}
 RStudio.

@@ -34,6 +34,7 @@
 \usepackage{subfig}
 \usepackage{multicol}
 \usepackage{mdframed}
+\usepackage[most]{tcolorbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Definition der Kopfzeile %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,7 +84,6 @@
     \large Submitted on #6
   \end{center}
 }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  Beginn des Dokuments  %%
@@ -318,6 +318,25 @@ Python's popularity in robotics is growing due to its simplicity of use, adaptab
 \item Integration with other languages: Python can readily integrate with other programming languages used in robotics, such as C++ and MATLAB. This enables robotics engineers, regardless of programming language, to employ the finest tools for the job.
 \end{enumerate}
 
+\subsubsection{Python Deque Data Structure}{\label{python:deque}}
+A \texttt{deque} in Python is a double-ended queue data structure that allows efficient adding and removing of elements from both ends. It is provided as a built-in class in the \texttt{collections} module \cite{python-docs}.
+
+The following are the main methods available for a \texttt{deque}:
+
+\begin{itemize}
+  \item \texttt{append(x)}: Adds an element \texttt{x} to the right end of the deque.
+  \item \texttt{appendleft(x)}: Adds an element \texttt{x} to the left end of the deque.
+  \item \texttt{pop()}: Removes and returns the rightmost element from the deque.
+  \item \texttt{popleft()}: Removes and returns the leftmost element from the deque.
+  \item \texttt{rotate(n)}: Rotates the deque \texttt{n} steps to the right (if \texttt{n} is positive) or to the left (if \texttt{n} is negative).
+  \item \texttt{count(x)}: Counts the number of occurrences of an element \texttt{x} in the deque.
+  \item \texttt{extend(iterable)}: Extends the deque by appending all elements from the iterable to the right end.
+  \item \texttt{extendleft(iterable)}: Extends the deque by appending all elements from the iterable to the left end (in reverse order).
+\end{itemize}
+
+One of the main advantages of using a \texttt{deque} over a list for implementing a queue or a stack is that both append and pop operations have O(1) time complexity. This means that adding or removing elements from either end of the deque is very efficient, even for very large data sets \cite{python-docs}.
+
+
 \subsection{Pytorch}
 PyTorch is a Python-based open-source machine learning library based on the Torch library, which was created by Facebook's AI Research (FAIR) team \cite{37_wang2019various}. It is generally employed for creating deep learning models for applications like speech recognition, computer vision, and natural language processing. PyTorch uses a dynamic computational network to construct and adapt models, which gives it a competitive advantage over competing deep learning frameworks. It also provides a variety of tools and utilities for developing, training, and assessing deep learning models, including as data loaders, optimizers, and loss functions. One of PyTorch's primary advantages is its ability to easily integrate with Python, making it simple to use for developers and researchers who are already familiar with Python. Furthermore, PyTorch provides a user-friendly interface for developing and training deep learning models, reducing the time and effort necessary to design and deploy models.
 PyTorch provides a versatile and fast framework for creating and training deep neural networks, making it an excellent candidate for DDQN implementation. Typically, the procedure entails establishing the neural network architecture, configuring the environment, and performing training loops to update the network weights depending on the agent's actions and rewards. PyTorch also has several important DDQN capabilities, such as the ability to build various optimization algorithms and loss functions, which can assist to increase the efficiency and efficacy of the learning process. Furthermore, PyTorch's automated differentiation capability can make it easier to construct and debug complicated DDQN algorithms by automatically calculating gradients during the training phase.
@@ -520,11 +539,11 @@ The exploration-exploitation trade-off in Reinforcement Learning (RL) refers to 
 Exploration is the process of attempting new behaviors and evaluating their effects in order to understand more about the environment. It entails attempting actions that have never been attempted before or attempting previously attempted actions with a new parameter configuration. Exploitation, on the other hand, refers to the practice of maximizing the cumulative benefit by utilizing knowledge learned from prior acts. It entails doing behaviors that have provided high benefits in the past or are expected to bring high returns in the future.
 In RL, the trade-off between exploration and exploitation is crucial because if the agent concentrates just on exploration, it may not get enough incentives to develop an effective strategy. On the other side, if the agent is overly focused on exploitation, it may miss out on learning about other feasible, but lesser-known, positive acts that could contribute to higher long-term benefits.
 To balance the exploration-exploitation trade-off, several ways can be applied, including:
-\begin{itemize}
-\item \textbf{Epsilon-greedy:} The agent chooses the action with the largest expected payoff with a probability of (1-epsilon) and a random action with a probability of epsilon. This enables the agent to explore the environment while still taking advantage of actions with high expected returns.
+\begin{enumerate}
+\item\label{epsilon-greedy} \textbf{Epsilon-greedy:} The agent chooses the action with the largest expected payoff with a probability of (1-epsilon) and a random action with a probability of epsilon. This enables the agent to explore the environment while still taking advantage of actions with high expected returns.
 \item \textbf{Upper Confidence Bound (UCB):} The action with the highest upper confidence bound is chosen, which is determined by the mean reward and the variance of the reward distribution \cite{50_kaufmann2012bayesian}. This method encourages the agent to investigate less-explored behaviors while continuing to exploit acts with greater predicted rewards.
 \item \textbf{Thompson Sampling:} In this method, the agent keeps a probability distribution over the reward of each action and chooses an action based on a sample from that distribution. This technique strikes a balance between exploration and exploitation by choosing activities with a high likelihood of high rewards while also investigating actions with a low probability of high rewards.
-\end{itemize}
+\end{enumerate}
 
 \hrule 
 
@@ -533,7 +552,7 @@ In subsequent chapters, you can reference this one to avoid having to explain ev
 \hrule
 %
 \section{Implementation}\label{sec:umsetzung}
-
+\subsection{Environment Preparation}
 A SDF file containing the object the robotic arm has to learn to touch was created (Figure \ref{fig:can}).
 The robotic arm used in the simulation is the Kuka KR210. The necessary files to simulate such a robotic arm were taken from ~\cite{RoboND-Kinematics-Project}. 
 
@@ -700,32 +719,8 @@ $reward =
 
 \end{itemize} 
 
-The following steps are implemented:
-\begin{enumerate}
-\item Initialize ReplayMemory. An object of the class is created with the given capacity.
-\item Initialize the policy network with random weights
-\item Clone the policy network, and name it as the target network
-\item Then for each episode:
-	\begin{enumerate}
-	\item Reset the environment (set the arm and object to the starting state).
-	\item Then for each step:
-		\begin{enumerate}
-		\item Select an action, via exploration or exploitation.
-		\item Perform the action and observe the reward and the next state.
-		\item Store the experience into the ReplayMemory.
-		\item Sample a random batch from replay memory.
-		\item Get the states from the batch.
-		\item Pass the states to the policy network to obtain the Q-values.
-		\item Pass the next states to the target network, and calculate the target Q-values.
-		\item Calculate the loss between Q-values and target Q-values.
-		\item Do gradient descent in the policy network to minimize the loss.
-		\item If the required number of steps have passed, update the weights in the target network with the weights in the policy network.
-		\end{enumerate}
-	\end{enumerate}
-
-\end{enumerate}
-
-\hrule
+\subsection{The Deep Q Learning Algorithm}
+Once we have our environment prepared, we are ready to implement the following Deep Q Learning Algorithm:
 \begin{enumerate}
 \item  \label{itm:dqn_1} Initialize the replay memory buffer $D$ with capacity $N$.
 \item Initialize the policy Q-network with random weights $\theta$.
@@ -755,9 +750,134 @@ The following steps are implemented:
 	\end{enumerate}
 \end{enumerate}
 
+\subsection{The Deep Q Network (DQN)}               
+PyTorch \cite{pytorch} was used for the neural network, specifically the \textit{nn.Module}. 
+The nn package contains a Module class which serves as the foundation for all neural network modules. This means that the used network and its layers will inherit from the Module class. To implement the DQN, the class NN that extends the nn.Module class is created. The DQN will be fed the current state as follows:
+\begin{align}
+	input &= (\theta_1, \theta_2, \theta_3, d) \label{eq:1}
+\end{align}
+
+where, $\theta_1, \theta_2, and \theta_3$ represent the joint angles of the robotic arm, and $d$ represents the distance between the end effector of the arm and the object. 
+
+A simple DQN with two fully connected layers and an output layer is used.
+\begin{listing}[htbp]
+\caption{Used Deep Q Neural Network (DQN).}
+\label{code:nn_class_1}
+\begin{minted}[fontsize=\scriptsize]{python}
+ class NN(nn.Module):
+     def __init__(self, nInputs=4, nOutputs=27):
+         super().__init__()
+         # input current angles and distance
+         self.fc1 = nn.Linear(nInputs, out_features=32)
+         self.fc2 = nn.Linear(in_features=32, out_features=64)
+         self.out = nn.Linear(in_features=64, out_features=nOutputs)
+\end{minted}
+\end{listing} 
+
+In listing \ref{code:nn_class_1} The fully connected layers are referred to as $Linear$ layers in PyTorch.
+
+The first Linear layer will accept input with dimension of 4. This first layer will generate 32 outputs, which will serve as the input for the second Linear layer. The second Linear layer will have 64 outputs, and the output layer will have 27 outputs (as there are 27 possible actions as in Box 1), taking 64 inputs from the previous layer.
+
+\begin{tcolorbox}[label=mybox, titlebox=visible, title=Box 1. Possible actions that the agent can take]
+$A$ = \{(-0.03, -0.03, -0.03), (-0.03, -0.03, 0), (-0.03, -0.03, 0.03),
+ (-0.03, 0, -0.03), (-0.03, 0, 0), (-0.03, 0, 0.03), 
+ (-0.03, 0.03, -0.03), (-0.03, 0.03, 0), (-0.03, 0.03, 0.03),
+  (0, -0.03, -0.03), (0, -0.03, 0), (0, -0.03, 0.03), 
+  (0, 0, -0.03), (0, 0, 0), (0, 0, 0.03), (0, 0.03, -0.03), 
+  (0, 0.03, 0), (0, 0.03, 0.03), (0.03, -0.03, -0.03), 
+  (0.03, -0.03, 0), (0.03, -0.03, 0.03), (0.03, 0, -0.03), 
+  (0.03, 0, 0), (0.03, 0, 0.03), (0.03, 0.03, -0.03), 
+  (0.03, 0.03, 0), (0.03, 0.03, 0.03)\}
+\end{tcolorbox}
+
+The network outputs \textit{Q-values} that correspond to each possible action that the agent can take from a given state. Note that the network used does not have convolutional layers because no image processing takes place.
+The final step in defining the DQN class is to create a function called $forward()$. This function will carry out a forward pass through the network. It's important to keep in mind that $forward()$ is a necessary function for all PyTorch neural networks.
+
+\begin{listing}[htbp]
+\caption{Implementation of the $forward()$ function needed for the DQN.}
+\label{code:nn_class_2}
+\begin{minted}[fontsize=\scriptsize]{python}
+def forward(self, s):
+    s = F.relu(self.fc1(s))
+    s = F.relu(self.fc2(s))
+    s = self.out(s)
+    return s
+\end{minted}
+\end{listing} 
+When the network receives a state $s$; it passes it to the first fully connected layer and applies $relu$ to the output before sending it to the second fully connected layer. After that, $relu$ is applied before passing the result to the output layer. The $forward()$ function then returns the result obtained from the output layer.
+
+\subsection{The Replay Memory}
+To define the ReplayMemory class, the Experience class which defines $Experience=(s_j, a_j, r_j, s_j+1)$ is used. The capacity of the Replay Memory is the only parameter needed when creating it.
+\begin{listing}[htbp]
+\caption{Implementation of the Replay Memory class.}
+\label{code:replay_memory}
+\begin{minted}[fontsize=\scriptsize]{python}
+class ReplayMemory:
+    def __init__(self, capacity):
+        self.memory = deque(maxlen=capacity)
+    def push(self, experience):
+        self.memory.append(experience)
+    def sample(self, batchSize):
+        return random.sample(self.memory, batchSize)
+    def canSample(self, batchSize):
+        return len(self.memory) >= batchSize
+\end{minted}
+\end{listing} 
+
+Using the code in Listing \ref{code:replay_memory}, ReplayMemory's capacity is initialized to $capacity$, and the $memory$ attribute is defined as a \textbf{deque} \ref{python:deque}. To add and store $experiences$ the $push$ function is defined, which is just a wrapper for the append built-in function in. When the number of experiences in $memory$ reaches $capacity$, new experiences are kept and old ones are removed. The $sample()$ function provides a batch of random experiences which is used to train the DQN. Finally, the function $canSample()$ tells us whether we can sample from memory or not.
+
+\subsection{The Epsilon Greedy Strategy}
+To balance exploration and exploitation the epsilon greedy strategy is used. An exploration rate called $epsilon$ is defined. Epsilon is the probability that the agent will choose a random action (exploration). An $epsilon$ value of 1 means that the agent will explore the environment. As the agent learns $epsilon$ decays by a defined decay rate meaning that the agent knows more about the environment.
+\begin{listing}[H]
+\caption{Implementation of the EpsilonGreedyStrategy class.}
+\label{code:epsilon-greedy}
+\begin{minted}[fontsize=\scriptsize]{python}
+class EpsilonGreedyStrategy:
+    def __init__(self, start, end, decay):
+        self.start = start
+        self.end = end
+        self.decay = decay
+    def getExplorationRate(self, currentStep):
+        return self.end + (self.start - self.end) * math.exp(-1. * currentStep * self.decay)
+\end{minted}
+\end{listing} 
+In Listing \ref{code:epsilon-greedy}, $start$, $end$, and $decay$ correspond to the starting, ending, and decay rate for $epsilon$. The function $get_exploration_rate()$ has the $currentStep$ of the agent as parameter and returns the calculated exploration rate.
+
+\subsection{The Agent}
+The implemented Agent class in Listing \ref{code:agent} has a $strategy$ and $nActions$ as inputs. So, an instance of the EpsilonGreedyStrategy class, is needed to create the agent. The $nActions$ parameter refers to the number of possible actions that the agent can take from a given state. In this case, this number is always be twenty seven as all possible actions are written in Box 1.
+
+\begin{listing}[H]
+\caption{Implementation of the Agent class.}
+\label{code:agent}
+\begin{minted}[fontsize=\scriptsize]{python}
+class Agent:
+    def __init__(self, strategy, nActions):
+        self.strategy = strategy
+        self.nActions = nActions
+        self.currentStep = 0
+    def selectAction(self, state, policyNetwork):
+        rate = self.strategy.getExplorationRate(self.currentStep)
+        self.currentStep += 1
+        if rate > random.random():  # explore
+            action = torch.tensor([random.randrange(self.nActions)])
+        else:  # exploit
+        	with torch.no_grad():
+            	action = policyNetwork(state).argmax(dim=1)
+        return action
+\end{minted}
+\end{listing} 
+
+The parameter $currentStep$ is set to zero at the beginning and indicates the current step of the agent in the environment.
+
+The policy network refers to a deep Q-network that is trained to learn the optimal policy. In the $selectAction()$ function, the rate variable is set to the exploration rate returned from the epsilon greedy strategy that was passed in when creating the agent, and the $currentStep$ attribute of the agent is incremented by 1. 
+Then, we check whether the exploration rate is greater than a random number generated between 0 and 1. If it is, we explore the environment by randomly selecting an action from our action space $A$. If not, we exploit the environment by selecting the action that corresponds to the highest Q-value output from our policy network for the given state. To perform inference, the $torch.no\_grad()$ method is used to turn off gradient tracking since the model is only used for prediction, not training. During training, PyTorch tracks all the forward pass calculations that occur within the network. By turning off gradient tracking,  PyTorch does not to keep track of any forward pass calculations.
+
+\subsection{The Environment Manager}
+
+
 
 \subsection{Moving the robotic arm}
-The AnglesPublisher node was created to move the arm by publishing the target angles for the joints. To do this the Joint Trajectory Controller is used, this controller generates and executes trajectories for the robot joints. It subscribes to a JointTrajectory message that specifies the desired trajectory, and then generates a control signal to move the robot's joints along the trajectory. By publishing messages of type JointTrajectory to the joint\_trajectory topic the arm is moved.
+The AnglesPublisher node was created \ref{mybox:1} to move the arm by publishing the target angles for the joints. To do this the Joint Trajectory Controller is used, this controller generates and executes trajectories for the robot joints. It subscribes to a JointTrajectory message that specifies the desired trajectory, and then generates a control signal to move the robot's joints along the trajectory. By publishing messages of type JointTrajectory to the joint\_trajectory topic the arm is moved.
 
 \subsection{Getting Images from the camera}
 The CameraSubscriber node was created to get images from the environment. The plugin previously used takes care of publishing the images to the topic /camera/image\_raw, the CameraSubscriber just subscribes to this topic and gets the images as messages of type Image.
@@ -795,7 +915,11 @@ Show here that the goals from the introduction were achieved (or not achieved), 
 
 \section{Discussion}
 2-3 pages are a good idea here. Picks up goals from the introduction (see \ref{sec:ziele}) and experiments (see \ref{sec:exp}) and explains what was achieved and what was not (and why not in this case). Compares results with results from related work, see Sec.~\ref{sec:relwork}. Draws a preliminary conclusion for the whole thesis.
+\begin{tcolorbox}[label=mybox]
+This is some text.
+\end{tcolorbox}
 
+As we can see in box \ref{mybox}, ...
 \section{Conclusion}
 Give an executive summary for important decision makers here, as well as an outlook (what would you do if you had another 3 months). 2-3 pages are ok here.
 

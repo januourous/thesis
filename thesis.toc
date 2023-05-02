@@ -16,47 +16,55 @@
 \contentsline {subsection}{\numberline {1.5}Contribution}{11}{subsection.1.5}%
 \contentsline {section}{\numberline {2}Foundations}{11}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Python}{11}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Python Deque Data Structure}{13}{subsubsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.2}Pytorch}{13}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Gazebo}{13}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}ROS 2}{14}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Unified Robot Description Format (URDF)}{15}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Simulation Description Format (SDF)}{16}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}DAE and STL file formats }{17}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}RViz, RQt, and RQt Graph}{17}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}DDQN}{18}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.3}Gazebo}{14}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}ROS 2}{15}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Unified Robot Description Format (URDF)}{16}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Simulation Description Format (SDF)}{17}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}DAE and STL file formats }{18}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}RViz, RQt, and RQt Graph}{18}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}DDQN}{19}{subsection.2.9}%
 \contentsline {subsection}{\numberline {2.10}Machine Learning Algorithms}{20}{subsection.2.10}%
 \contentsline {subsection}{\numberline {2.11}Neural Networks}{22}{subsection.2.11}%
 \contentsline {subsubsection}{\numberline {2.11.1}Structure of Neural Networks}{22}{subsubsection.2.11.1}%
-\contentsline {subsubsection}{\numberline {2.11.2}Training of Neural Networks}{22}{subsubsection.2.11.2}%
-\contentsline {subsubsection}{\numberline {2.11.3}Types of Neural Networks}{22}{subsubsection.2.11.3}%
+\contentsline {subsubsection}{\numberline {2.11.2}Training of Neural Networks}{23}{subsubsection.2.11.2}%
+\contentsline {subsubsection}{\numberline {2.11.3}Types of Neural Networks}{23}{subsubsection.2.11.3}%
 \contentsline {subsubsection}{\numberline {2.11.4}Applications of Neural Networks}{23}{subsubsection.2.11.4}%
-\contentsline {subsubsection}{\numberline {2.11.5}Neural networks in robotics}{23}{subsubsection.2.11.5}%
+\contentsline {subsubsection}{\numberline {2.11.5}Neural networks in robotics}{24}{subsubsection.2.11.5}%
 \contentsline {subsubsection}{\numberline {2.11.6}Neural Network for the robotic arm}{24}{subsubsection.2.11.6}%
-\contentsline {subsection}{\numberline {2.12}Reinforcement Learning Algorithms and The Markov Decision Process (MDP)}{24}{subsection.2.12}%
-\contentsline {subsubsection}{\numberline {2.12.1}The Markov Decision Process (MDP)}{25}{subsubsection.2.12.1}%
+\contentsline {subsection}{\numberline {2.12}Reinforcement Learning Algorithms and The Markov Decision Process (MDP)}{25}{subsection.2.12}%
+\contentsline {subsubsection}{\numberline {2.12.1}The Markov Decision Process (MDP)}{26}{subsubsection.2.12.1}%
 \contentsline {subsubsection}{\numberline {2.12.2}The exploration and exploitation trade-off in RL}{26}{subsubsection.2.12.2}%
 \contentsline {subsection}{\numberline {2.13}Topic 01}{27}{subsection.2.13}%
 \contentsline {section}{\numberline {3}Implementation}{27}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Moving the robotic arm}{35}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Getting Images from the camera}{36}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Experiments}{36}{section.4}%
-\contentsline {section}{\numberline {5}Discussion}{37}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{37}{section.6}%
-\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{37}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{37}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{37}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{37}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{38}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{38}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{38}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{39}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Textformatierung}{39}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Zitieren}{39}{subsection.7.9}%
-\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{39}{subsection.7.10}%
-\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{39}{subsection.7.11}%
-\contentsline {section}{\numberline {A}Code Snippets}{44}{appendix.A}%
-\contentsline {section}{\numberline {B}Thesis defence}{48}{appendix.B}%
-\contentsline {section}{\numberline {C}Extras}{49}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{49}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{49}{subsection.C.2}%
-\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{50}{subsection.C.3}%
+\contentsline {subsection}{\numberline {3.1}Environment Preparation}{27}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}The Deep Q Learning Algorithm}{35}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The Deep Q Network (DQN)}{36}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}The Replay Memory}{37}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}The Epsilon Greedy Strategy}{38}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}The Agent}{38}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}The Environment Manager}{39}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Moving the robotic arm}{39}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Getting Images from the camera}{39}{subsection.3.9}%
+\contentsline {section}{\numberline {4}Experiments}{40}{section.4}%
+\contentsline {section}{\numberline {5}Discussion}{40}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{40}{section.6}%
+\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{41}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{41}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{41}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{41}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{41}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{42}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{42}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{42}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Textformatierung}{42}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Zitieren}{42}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{43}{subsection.7.10}%
+\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{43}{subsection.7.11}%
+\contentsline {section}{\numberline {A}Code Snippets}{48}{appendix.A}%
+\contentsline {section}{\numberline {B}Thesis defence}{52}{appendix.B}%
+\contentsline {section}{\numberline {C}Extras}{53}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{53}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{53}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{54}{subsection.C.3}%
