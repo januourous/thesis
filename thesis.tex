@@ -35,6 +35,7 @@
 \usepackage{multicol}
 \usepackage{mdframed}
 \usepackage[most]{tcolorbox}
+\usepackage[T1]{fontenc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Definition der Kopfzeile %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -359,6 +360,95 @@ ROS2 (Robot Operating System 2) \cite{40_phueakthong2021development} is the seco
 
 Conclusively, ROS2 is intended to provide a more robust, dependable, and adaptable platform for developing and deploying robotic systems. It is interoperable with a broad range of robotic hardware and software platforms, and it has a big and active development and user community.
 In robotics research and development, ROS2 is often used to operate robotic arms. Developers may use ROS2 to design a software stack that contains the control algorithms, sensors, and communication interfaces needed to control the robotic arm. ROS2 is a flexible and modular design that enables developers to construct software modules known as nodes that connect with one another via a publish-subscribe messaging model. For example, one node may be in charge of reading sensor data from the robotic arm, while another node may be in charge of operating the motors of the arm depending on the sensor data. A large selection of software libraries and tools referred to as packages, are also offered by ROS2 and may be used to create and test robotic arm control software. For instance, the \textit{ros\_control} package offers a variety of hardware interfaces and controllers for interacting with robotic arm hardware, while the \textit{MoveIt} package offers a set of motion planning and control algorithms for robotic arms. Developers often begin by specifying the hardware interface for the arm, which comprises the joints, motors, and sensors, in order to control a robotic arm using ROS2. Then, using ROS2 nodes and packages, they create the control algorithms and sensor interfaces needed to control the arm. Finally, before implementing their robotic arm control software on the MoveItactual robot, engineers may test and evaluate it using simulation tools like Gazebo. This enables the software to be developed and iterated upon quickly without endangering the physical robot or its surroundings.
+
+\subsubsection{ROS2 Nodes}\label{ros2-nodes}
+ROS2 nodes are the fundamental building blocks of a ROS2 system. A node is a process that performs computation and communicates with other nodes in the ROS2 system. In ROS2, nodes are implemented using the rclpy.node.Node class in Python. This class provides a way to create a node and interact with the ROS2 middleware. It provides methods to create publishers, subscribers, services, clients, timers, and parameters. By inheriting from this class, a Python class can become a ROS2 node and use these methods to interact with the ROS2 system.
+To create a ROS2 node, one needs to create a ROS2 package and a Python file inside it. The Python file should inherit from the $rclpy.node.Node$ class and override its $\_\_init\_\_()$ method to create publishers, subscribers, services, clients, timers, and parameters. The $main()$ function initializes the ROS2 system, creates an instance of the Python class, and spins the node to process callbacks. Finally, the $rclpy.shutdown()$ function is called to shut down the ROS2 system.\cite{ros2docs}
+ROS2 nodes can be created using object-oriented programming (OOP) techniques. OOP is the recommended way to write a node in ROS2, and it works pretty well. OOP allows for better code organization, encapsulation, and reusability. It also makes it easier to write testable code.
+In conclusion, ROS2 nodes are the fundamental building blocks of a ROS2 system. They are implemented using the rclpy.node.Node class in Python. By inheriting from this class, a Python class can become a ROS2 node and use its methods to interact with the ROS2 system. OOP is the recommended way to write a node in ROS2, and it allows for better code organization, encapsulation, and reusability.
+
+\subsubsection{ROS2 Services}\label{ros2-services}
+ROS2 services provide a way for nodes to communicate with each other by requesting and providing specific functionalities or operations. This is done through a client-server communication model where the node requesting the service acts as the client and the node providing the service acts as the server.
+
+One advantage of ROS2 services is their ability to handle both synchronous and asynchronous communication. Synchronous communication blocks the client node until a response is received from the server node. Asynchronous communication allows the client node to continue with other operations while waiting for a response from the server node.
+
+ROS2 services also provide a way to handle errors that may occur during service communication. In the case of a failure, the server node can send an error message to the client node, indicating the reason for the failure. This makes it easier for developers to debug their code and troubleshoot issues that may arise.
+
+ROS2 services can easily scale. Multiple nodes can request the same service from a single server node, which can handle all requests concurrently. This can improve the overall performance of the system and reduce latency.
+
+However, ROS2 services also have some limitations. For example, they do not support streaming data or continuous communication. They are intended for point-to-point communication, where a client node requests a specific operation from a server node and receives a single response.
+
+In summary, ROS2 services provide a flexible and reliable way for nodes to communicate with each other by requesting and providing specific functionalities or operations. They are suitable for point-to-point communication and can handle both synchronous and asynchronous communication, making them a valuable tool for ROS2 developers.
+
+\subsubsection{ROS2 Topics}\label{ros2-topics}
+ROS2 topics provide a way for nodes to communicate with each other by exchanging messages on a specific topic. This is done through a publish-subscribe communication model where the node publishing the message acts as the publisher and the node receiving the message acts as the subscriber.
+
+ROS2 topics can handle asynchronous communication. This means that the publisher node does not have to wait for the subscriber node to receive the message before continuing with other operations. This can improve the overall performance of the system and reduce latency.
+
+ROS2 topics also provide a way to handle errors that may occur during message communication. In the case of a failure, the subscriber node can request that the publisher node resend the message or ignore the message and continue receiving subsequent messages. This makes it easier for developers to debug their code and troubleshoot issues that may arise.
+
+Another advantage of ROS2 topics is their flexibility. Multiple nodes can subscribe to the same topic, and publishers can send messages to multiple subscribers simultaneously. This can improve the overall efficiency of the system and reduce the amount of code required to implement certain functionalities.
+
+One limitation of ROS2 topics is that they do not provide any mechanism for ensuring that messages are received in a particular order, and they do not guarantee message delivery. Additionally, topics are not suitable for point-to-point communication, as any node subscribed to a topic will receive all messages published on that topic.
+
+Finally, ROS2 topics provide a flexible and reliable way for nodes to communicate with each other by exchanging messages on a specific topic. They are suitable for asynchronous communication, and can handle multiple subscribers and publishers, making them a valuable tool for ROS2 developers. However, they have some limitations and may not be suitable for all communication scenarios.
+
+\subsubsection{ROS2 Actions}\label{ros2-actions}
+ROS2 actions provide a way for nodes to communicate with each other by executing a specific goal and receiving a result. This is done through an action client-server communication model where the node requesting the action acts as the client and the node executing the action acts as the server.
+
+One advantage of ROS2 actions is their ability to handle long-running operations. Unlike ROS2 services, which are intended for point-to-point communication, ROS2 actions can handle operations that may take a significant amount of time to complete. This makes them ideal for tasks such as robot arm motion planning, where the task may take several seconds or even minutes to complete.
+
+ROS2 actions also provide a way to handle feedback during the execution of an action. The server node can send periodic updates to the client node, indicating the progress of the operation. This makes it easier for developers to monitor the execution of an action and respond to any issues that may arise.
+
+Another advantage of ROS2 actions is their ability to handle cancel requests. If the client node needs to abort the execution of an action, it can send a cancel request to the server node. The server node can then gracefully stop the execution of the action and return a result indicating that the action was canceled.
+
+However, ROS2 actions also have some limitations. For example, they are more complex than ROS2 topics and services and require more code to implement. Additionally, they are not suitable for operations that do not have a clear goal and result, such as continuous data streams.
+
+In the end, ROS2 actions provide a powerful and flexible way for nodes to communicate with each other by executing long-running operations and providing feedback and cancellation capabilities. They are suitable for tasks that require a clear goal and result, such as robot arm motion planning, and can handle operations that may take several seconds or minutes to complete. However, they are more complex to implement than ROS2 topics and services and may not be suitable for all communication scenarios.
+
+\subsubsection{The tf\_ros.TransformListener}\label{ros2-transform-listener}
+The tf2\_ros.TransformListener is a ROS2 utility class that allows a node to receive the transform between two frames from the tf2 system. This class provides a simple way to listen for and access transforms between frames in a ROS2 system.
+
+To use the tf2\_ros.TransformListener, a node must first initialize a tf2\_ros.Buffer object. This buffer object is used to store and manage the transforms that the node receives from the tf2 system. Once the buffer is initialized, the node can then create an instance of the tf2\_ros.TransformListener class, passing in a reference to the buffer object.
+
+Here is an example of how to use the tf2\_ros.TransformListener to get the transform between two frames:
+\begin{listing}[H]
+\caption{Example of how to use TransformListener to obtain the transform between two frames.}
+\label{code:transformliseter}
+\begin{minted}[fontsize=\scriptsize]{python}
+import rclpy
+import tf2_ros
+
+def main(args=None):
+    rclpy.init(args=args)
+
+    # Initialize the buffer and listener
+    buffer = tf2_ros.Buffer()
+    listener = tf2_ros.TransformListener(buffer)
+
+    # Wait for the transform to become available
+    try:
+        buffer.lookup_transform('map', 'robot', rclpy.time.Time())
+    except tf2_ros.TransformException as ex:
+        print(ex)
+
+    # Get the transform between map and robot
+    transform = buffer.lookup_transform('map', 'robot', rclpy.time.Time())
+
+    # Print the transform
+    print(transform)
+
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+
+\end{minted}
+\end{listing} 
+In this example, the node initializes a tf2\_ros.Buffer object and a tf2\_ros.TransformListener object. The node then waits for the transform between the map and robot frames to become available. Once the transform is available, the node retrieves it from the buffer and prints it to the console.
+
+The tf2\_ros.TransformListener class is a useful tool for nodes that need to access transforms between frames in a ROS2 system. It provides a simple interface for listening for and accessing transforms, allowing nodes to easily interact with the tf2 system.
+
 
 \subsection{Unified Robot Description Format (URDF)}\label{urdf}
 Unified Robot Description Format is an XML-based file format used to describe the kinematics and dynamics of a robot for simulation or visualization purposes. The main purpose of URDF is to provide a standardized way to represent robots that can be easily shared and used across different robotics platforms and simulation tools.
@@ -873,6 +963,33 @@ The policy network refers to a deep Q-network that is trained to learn the optim
 Then, we check whether the exploration rate is greater than a random number generated between 0 and 1. If it is, we explore the environment by randomly selecting an action from our action space $A$. If not, we exploit the environment by selecting the action that corresponds to the highest Q-value output from our policy network for the given state. To perform inference, the $torch.no\_grad()$ method is used to turn off gradient tracking since the model is only used for prediction, not training. During training, PyTorch tracks all the forward pass calculations that occur within the network. By turning off gradient tracking,  PyTorch does not to keep track of any forward pass calculations.
 
 \subsection{The Environment Manager}
+
+Finally the class that manages the environment is the EnvironmentManager class. This class implements the $rclpy.node.Node$ class in Python to create a node and interact with the other nodes in the environment.
+The following properties are initialized when the EnvironmentManager class is instantiated:
+\begin{enumerate}
+\item The $done$ property indicates whether the episode has finished or not. An episode ends when there is a collision between the end effector of the arm and the object or when the episode has reached its maximum defined number of steps.
+\item The $distance$ property stores the latest distance between the end effector of the arm and the object.
+\item\label{env-manager:arm-coordinates} The $armX$, $armY$, and $armZ$ properties store the latest $(x, y, z)$ coordinates of the end effector of the arm.
+\item The $joint1State$, $joint2State$, $joint3State$, $joint4State$, $joint5State$, and $joint6State$ properties store the latest angles of the arm joints of the same name. 
+\item The $joint1Max$, $joint1Min$, $joint2Max$, $joint2Min$, $joint3Max$, and $joint3Min$ properties define the maximum each joint can move without causing collisions within the arm or with the floor. These values were found using Rviz \ref{rviz_rqt}.
+\item The $tfBuffer = tf2\_ros.Buffer()$ and
+
+$tfListener = tf2\_ros.TransformListener(self.tfBuffer, self)$ properties are defined in order to calculate the $armX$, $armY$, and $armZ$ properties in ~\ref{env-manager:arm-coordinates}.
+\item\label{env-manager:angle-diff} The $angleDiff$ property defines how much each joint's angle can vary per step per episode in radians.
+\item The $anglesVariation$ property defines the possible movements for each joints. Each joint can move $-angleDiff$, $0$, or $+angleDiff$ rads.
+\item The $actions$ property stores all the possible actions in the action space $A$
+\item The $nActions$ property stores the number of actions in the action space $A$. The action space is defined as:
+\begin{equation}
+  \begin{aligned}
+A = \{(-\theta, -\theta, -\theta), (-\theta, -\theta, 0), (-\theta, -\theta, \theta), (-\theta, 0, -\theta), (-\theta, 0, 0), (-\theta, 0, \theta),\\
+ (-\theta, \theta, -\theta), (-\theta, \theta, 0), (-\theta, \theta, \theta), (0, -\theta, -\theta), (0, -\theta, 0), (0, -\theta, \theta),(\theta, \theta, -\theta),\\
+ (\theta, -\theta, -\theta), (\theta, -\theta, 0), (\theta, -\theta, \theta), (\theta, 0, -\theta), (\theta, 0, 0), (\theta, 0, \theta),(\theta, \theta, 0),\\
+ (0, 0, -\theta), (0, 0, 0), (0, 0, \theta), (0, \theta, -\theta), (0, \theta, 0), (0, \theta, \theta), (\theta, \theta, \theta)\} \label{eq:action-space}
+  \end{aligned}
+\end{equation}
+where $\theta$ is the $angleDiff$ defined in ~\ref{env-manager:angle-diff}.
+\end{enumerate}
+% The $ are not needed here since the align environment is in math mode.
 
 
 
