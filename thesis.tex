@@ -171,10 +171,27 @@ Many different concepts and methodologies can be used to break down reinforcemen
 Simulated robotics is a rapidly developing field of study that strives to create intelligent systems that can communicate with virtual worlds in a manner that is comparable to how actual robots communicate with the real world \cite{4_choi2021use}. Compared to traditional robots, simulated robotics has many benefits, such as lower costs, more flexibility, and the ability to test and improve algorithms in a secure setting. Simulated robotic systems can be applied to a variety of tasks, from straightforward ones like object detection and manipulation to more difficult ones including autonomous navigation, group decision-making, and experience-based learning.  
 The application of virtual environments for autonomous vehicle training and testing is an illustration of simulated robotics \cite{5_elmquist2021sensor}. To train and test the computer programs that operate autonomous vehicles, researchers can develop realistic simulations of numerous driving circumstances and scenarios, like traffic patterns, atmospheric conditions, and unforeseen incidents. With this strategy, researchers may evaluate the dependability and safety of autonomous vehicles in a safe setting before placing them on public roads. The application of virtual environments to train and test robots for search and rescue missions is another illustration of simulated robotics \cite{6_sampedro2019fully}. In order to train and test robotics that can aid in rescue operations, researchers can develop simulations of emergencies such as earthquakes or floods. With this method, researchers may test the efficacy and security of various robotic systems and algorithms in a range of circumstances without endangering human responders.
 Systems for industrial automation can also be developed using simulated robotics. For instance, manufacturers can build and test robotic assembly lines, improve production workflows, and spot possible bottlenecks or safety risks using simulations. Before installing physical systems in the real world, this method enables manufacturers to optimize their procedures and increase productivity.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{gazebo_city}
+\caption{Simulated urban scenario created in Gazebo \cite{yigit2020real}.}
+\label{fig:gazebocity}
+\end{figure}
+
+
+
 
 \subsubsection{Industrial Automation}
 Automation of industrial processes, such as manufacturing and construction, via the use of technological devices and control systems is known as industrial automation \cite{7_leitao2016industrial}. Industrial automation can be accomplished utilizing simulated robotic arms to carry out operations that would typically be carried out by human workers or actual robots. This entails creating the algorithms and control frameworks necessary for the virtual robotic arm to move and handle items precisely and effectively, as well as incorporating the virtual arm into a larger system that is capable of carrying out difficult tasks on its own.
 Applications for simulated robotic arms in industrial automation include material handling, manufacturing work, quality control examinations, and machine maintaining. Companies can decrease the expenses of real robots and human labor while boosting production and efficiency by deploying virtual robotic arms \cite{8_javaid2021substantial}. Additionally, for increased flexibility and scalability, simulated robotic arms can be flexibly customized and adapted to various industrial environments. All things considered, the employment of simulated automated arms for automation in industry is a promising area of study and development, with tremendous potential for enhancing industrial procedures and developing the field of robotics.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{gazebo_city1}
+\caption{Small Warehouse Gazebo simulation \cite{aws-robomaker-small-warehouse-world}.}
+\label{fig:gazebocity1}
+\end{figure}
+
 
 \subsubsection{Robotic Arm}
 Traditionally developed industrial robots have been confined to closed cells or limited-access warehouse areas \cite{9_lucchi2020robo}. They typically perform repetitive operations on standardized objects without human interaction. Programming these robots is usually a time-consuming process that requires specialized knowledge of the machine's software. However, current trends in robotics aim to make robots capable of operating in dynamic and open environments where they can work alongside humans. This presents new challenges that require equipping the robot with sensors to perceive its surroundings and interact with objects. However, integrating and utilizing sensor data for planning the robot's actions is not an easy task.
@@ -190,6 +207,14 @@ One of the key features of ROS is its ability to handle communication between di
 Simulations serve as an entry point for Digital Twins, which are highly accurate depictions of the physical world \cite{19_lu2020digital}. These Twins can aid in boosting manufacturing output and improving the flexibility of supply chains. To streamline the implementation of manufacturing processes during production line changes, digital twinning involves linking simulation software to an actual self-governing robotic system. A robotic arm digital twin solution is showcased in a recent study \cite{20_tavares2018flexible}, where the authors employed ROS \cite{21_ros} to achieve smooth functioning between the virtual and real worlds. Simulating software has its limitations as it cannot accurately represent the real world due to the imperfections in their physics engines. Additionally, simulations have the advantage of providing perfect data with no interference, which has supported the exploration of deep learning approaches in robotics research.
 Simulations are a powerful tool for designing and testing robotic arms. They allow engineers to create virtual models of robotic arms and simulate their behavior in different scenarios, without the need for a physical prototype. In a robotic arm simulation, the arm's mechanical structure, control system, and sensors are modeled in a virtual environment. The simulation can then be used to test the arm's performance in various tasks, such as picking and placing objects, assembling parts, or performing complex movements. One of the key benefits of using simulations for robotic arm design is that they can help identify potential issues or inefficiencies before a physical prototype is built \cite{22_browning2001applying}. This can save time and resources, as well as improve the overall design of the arm. Simulations can also be used to optimize the control system of a robotic arm. By simulating the arm's behavior in different scenarios, engineers can identify the optimal control strategy for achieving a specific task or movement. 
 The ROS framework includes a useful tool called RVIZ, which enables us to observe the robot's pose or estimation in a 3D environment \cite{23_kulkarni2021visual}. With the correct configuration of the URDF file, the robot model can be visualized in RVIZ.  Furthermore, simulations can help train and test algorithms for robotic arm control, such as RL methods or deep learning approaches. This can be done by running simulations with different environments and scenarios and using the resulting data to train and refine the algorithms.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{gazebo_robotic_arm}
+\caption{Gazebo simulation of a Robotic Arm \cite{yigit2020trajectory}.}
+\label{fig:gazeboroboticarm}
+\end{figure}
+
 
 \subsubsection{Reinforcement Learning}
 Artificial neural networks (ANNs) are gaining importance in the field of robotics. In 2016, Levine et al.'s study \cite{24_ball2017comprehensive} provided encouraging outcomes, indicating a direction toward a more straightforward approach to constructing robot behaviors. The end-to-end approach described in the study is more scalable than traditional programming methods. To meet the demand for autonomous systems that cater to societal needs, it is necessary to replace conventional, unsophisticated autonomous systems with intelligent ones. Intelligent systems can take on various forms of intervention, such as aiding humans with image and video analysis, language translation, simplifying sentences, solving math problems, managing portfolios, undertaking monotonous tasks in the manufacturing industry, driving cars, flying helicopters, and more. 
@@ -220,7 +245,7 @@ Deep Reinforcement Learning (DRL) leverages deep learning architectures as funct
 The field of Reinforcement Learning (RL) has seen significant contributions from various researchers who have proposed different network architectures and action selection criteria. Some methods include trial and error without human intervention, learning via demonstrations, learning via criticism, and learning with adversaries to tackle complex problems. Despite these advancements, the challenge of discovering an optimal policy that is both robust and able to meet multiple goals remains a topic of active research and an open area of investigation.
 
 \subsubsection{Double Q-Learning}
-The Q-learning algorithm, a well-liked RL method, has a version called double Q-learning \cite{33_ogunniyi2014energy}. The fundamental tenet of Q-learning is to acquire knowledge of a function Q(s,a), which denotes the anticipated reward for performing action in a given state s. The agent employs this feature to determine the optimal course of action in each state. However, Q-learning may be hampered by an overestimation of the Q-values, which could result in ineffective policies. This problem is addressed by double Q-learning, which estimates the greatest expected reward by switching between two different Q-functions.
+The Q-learning algorithm, a well-liked RL method, has a version called double Q-learning \cite{33_ogunniyi2014energy}. The fundamental tenet of Q-learning is to acquire knowledge of a function $Q(s,a)$, which denotes the anticipated reward for performing action in a given state s. The agent employs this feature to determine the optimal course of action in each state. However, Q-learning may be hampered by an overestimation of the Q-values, which could result in ineffective policies. This problem is addressed by double Q-learning, which estimates the greatest expected reward by switching between two different Q-functions.
 The robot's arm would operate as the agent in a Double Q-learning simulation \cite{34_weng2020mean}, interacting with its surroundings and receiving rewards or punishments as a result of its actions. The orientation and position of the robotic arm, along with the location and characteristics of the object it is attempting to touch, would all be included in the state space. The robotic arm's range of potential motions for approaching the object would make up the action space. The goal of the reward function is to persuade the robotic arm to touch the target without causing a collision or any other unfavorable outcomes.
 The Double Q-learning method is used by the robotic arm to investigate its environment during training and modify its Q-functions in response to incentives. By estimating the expected reward for every action using the two Q-functions, the algorithm would select the action featuring the largest expected reward. The robotic arm would develop a policy that enables it to consistently touch the target by continuing this process over a large number of attempts. In this thesis, we explore the use of Double Q-Learning in a simulated robotic arm to learn effective control policies for the arm.
 %The simulated robotic arm used in this study consists of three joints, each of which can rotate through an angle of 360 degrees
@@ -445,10 +470,89 @@ if __name__ == '__main__':
 
 \end{minted}
 \end{listing} 
+
 In this example, the node initializes a tf2\_ros.Buffer object and a tf2\_ros.TransformListener object. The node then waits for the transform between the map and robot frames to become available. Once the transform is available, the node retrieves it from the buffer and prints it to the console.
 
 The tf2\_ros.TransformListener class is a useful tool for nodes that need to access transforms between frames in a ROS2 system. It provides a simple interface for listening for and accessing transforms, allowing nodes to easily interact with the tf2 system.
 
+\subsubsection{The /joint\_trajectory\_controller/follow\_joint\_trajectory action server}\label{ros2-joint-trajectory-controller}
+The $/joint\_trajectory\_controller/follow\_joint\_trajectory$ is an action server in ROS (Robot Operating System) that allows a client to send a joint trajectory command to a joint trajectory controller. This action server is part of the ros\_controllers package and is typically used to control the motion of a robot arm or any other mechanism with multiple joints.
+
+The joint trajectory command is specified in a FollowJointTrajectory.Goal message, which contains a JointTrajectory message that specifies the desired joint positions, velocities, accelerations, and time stamps. The joint trajectory controller then uses this command to interpolate a trajectory and generate the corresponding joint motion for the robot.
+
+The $/joint\_trajectory\_controller/follow\_joint\_trajectory$ action server follows the standard ROS action interface, which consists of a goal, feedback, and result. When a client sends a joint trajectory goal to the action server, it sends a FollowJointTrajectory.Goal message as the action goal. The action server then sends a FollowJointTrajectory.Feedback message to the client periodically during the trajectory execution, which can be used to provide real-time feedback on the robot's progress. Finally, when the trajectory execution is complete, the action server sends a FollowJointTrajectory.Result message to the client.
+
+For example, assuming that we have a robotic arm with a joint trajectory controller set up in a ROS 2 system, the following steps demonstrate how to send a trajectory command to the controller using the $/joint\_trajectory\_controller/follow\_joint\_trajectory$ action server:
+
+\begin{enumerate}
+\item Create a rclpy node that acts as the client for the\\ $/joint\_trajectory\_controller/follow\_joint\_trajectory$ action server. This node should import the necessary ROS libraries and create an instance of the $rclpy.action.ActionClient$ class to communicate with the server.
+\begin{minted}[fontsize=\scriptsize, breaklines]{python}
+import rclpy
+from rclpy.action import ActionClient
+from control_msgs.action import FollowJointTrajectory
+
+rclpy.init(args=None)
+node = rclpy.create_node('joint_trajectory_controller_client')
+client = ActionClient(node, FollowJointTrajectory, '/joint_trajectory_controller/follow_joint_trajectory')
+\end{minted}
+\item Construct a $FollowJointTrajectory.Goal$ object that contains the desired trajectory for the robot arm. This object should contain a $JointTrajectory$ message, which specifies the joint positions, velocities, accelerations, and time stamps for the trajectory. Here's an example $FollowJointTrajectory.Goal$ object for a simple two-joint robot arm:
+\begin{minted}[fontsize=\scriptsize, breaklines]{python}
+from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
+
+goal_msg = FollowJointTrajectory.Goal()
+goal_msg.trajectory.joint_names = ['joint1', 'joint2']
+point1 = JointTrajectoryPoint()
+point1.positions = [0.0, 0.0]
+point1.time_from_start = rclpy.time.Duration(seconds=1.0).to_msg()
+point2 = JointTrajectoryPoint()
+point2.positions = [1.0, 1.0]
+point2.time_from_start = rclpy.time.Duration(seconds=2.0).to_msg()
+goal_msg.trajectory.points = [point1, point2]
+\end{minted}
+This $FollowJointTrajectory.Goal$ object specifies a trajectory with two points, where the first point has joint positions of $[0.0, 0.0]$ and occurs 1 second after the start of the trajectory, and the second point has joint positions of $[1.0, 1.0]$ and occurs 2 seconds after the start of the trajectory.
+\item Send the $FollowJointTrajectory.Goal$ object to the $/joint\_trajectory\_controller/follow\_joint\_trajectory$ action server using the $send\_goal$ method of the $ActionClient$ object.
+\begin{minted}[fontsize=\scriptsize, breaklines]{python}
+future = client.send_goal_async(goal_msg)
+\end{minted}
+\item Wait for the server to complete the trajectory by calling the result method of the Future object returned by the $send\_goal\_async$ method. This method will block until the server reports that the trajectory has been completed or an error occurs
+\begin{minted}[fontsize=\scriptsize, breaklines]{python}
+rclpy.spin_until_future_complete(node, future)
+result = future.result()
+\end{minted}
+\end{enumerate}
+\subsubsection{The /joint\_states topic}\label{ros2-joint-state}
+The $/joint\_states$ topic is a standard ROS 2 topic that provides the current joint positions, velocities, and effort (torque or force) values for all joints in a robot. This topic is typically published by a robot's joint state publisher node, which reads the joint positions, velocities, and effort values from the robot's joint sensors and publishes them on the $/joint\_states$ topic.
+
+Here's an example Python script that subscribes to the /joint\_states topic and prints the current joint positions for a robot arm:
+\begin{minted}[fontsize=\scriptsize, breaklines]{python}
+import rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import JointState
+
+class JointStateSubscriber(Node):
+    def __init__(self):
+        super().__init__('joint_state_subscriber')
+        self.subscription = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
+
+    def joint_state_callback(self, msg):
+        # Print the current joint positions
+        for i, name in enumerate(msg.name):
+            position = msg.position[i]
+            self.get_logger().info(f"Joint {name} position: {position}")
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = JointStateSubscriber()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+\end{minted}
+This script creates a $JointStateSubscriber$ node that subscribes to the $/joint\_states$ topic and defines a $joint\_state\_callback$ function that prints the current joint positions for each joint in the robot arm. The $create\_subscription$ method of the Node class is used to create a subscription to the $/joint\_states$ topic, and the spin method is called to start the ROS event loop and receive messages from the subscription.
+
+Assuming that the joint state publisher node is running and publishing joint state messages on the $/joint\_states$ topic, running this script will cause the current joint positions for each joint in the robot arm to be printed to the console whenever a new joint state message is received on the $/joint\_states$ topic.
 
 \subsection{Unified Robot Description Format (URDF)}\label{urdf}
 Unified Robot Description Format is an XML-based file format used to describe the kinematics and dynamics of a robot for simulation or visualization purposes. The main purpose of URDF is to provide a standardized way to represent robots that can be easily shared and used across different robotics platforms and simulation tools.
@@ -968,7 +1072,7 @@ Finally the class that manages the environment is the EnvironmentManager class. 
 The following properties are initialized when the EnvironmentManager class is instantiated:
 \begin{enumerate}
 \item The $done$ property indicates whether the episode has finished or not. An episode ends when there is a collision between the end effector of the arm and the object or when the episode has reached its maximum defined number of steps.
-\item The $distance$ property stores the latest distance between the end effector of the arm and the object.
+\item\label{env-manager:distance} The $distance$ property stores the latest distance between the end effector of the arm and the object.
 \item\label{env-manager:arm-coordinates} The $armX$, $armY$, and $armZ$ properties store the latest $(x, y, z)$ coordinates of the end effector of the arm.
 \item The $joint1State$, $joint2State$, $joint3State$, $joint4State$, $joint5State$, and $joint6State$ properties store the latest angles of the arm joints of the same name. 
 \item The $joint1Max$, $joint1Min$, $joint2Max$, $joint2Min$, $joint3Max$, and $joint3Min$ properties define the maximum each joint can move without causing collisions within the arm or with the floor. These values were found using Rviz \ref{rviz_rqt}.
@@ -988,7 +1092,37 @@ A = \{(-\theta, -\theta, -\theta), (-\theta, -\theta, 0), (-\theta, -\theta, \th
   \end{aligned}
 \end{equation}
 where $\theta$ is the $angleDiff$ defined in ~\ref{env-manager:angle-diff}.
+\item\label{env-manager:model-client} The $modelClient$ property is a service client for the \textit{gazebo\_state/set\_entity\_state} service, it is used to set the object's position in the simulated world. 
+\item\label{env-manager:client-get-state} The $modelClientGetState$ is a service client for the \textit{gazebo\_state/get\_entity\_state} service, it is used to obtain the object's position programmatically.
+\item The properties $modelX$, $modelY$, and $modelZ$ store the $(x, y, z)$ coordinates of the object. When the environment manager class is instantiated the $modelClientGetState$ in ~\ref{env-manager:client-get-state} property is used to obtain these values.
+\item\label{env-manager:trajectory-action-client} The property $trajectoryActionClient$ is an action client. It is used to send messages to the $/joint\_trajectory\_controller/follow\_joint\_trajectory$ server in order to move the arm. The messages are of type $FollowJointTrajectory$ as in \ref{ros2-joint-trajectory-controller}.
+\item\label{env-manager:model-subscription} The property $modelSubscription$ defines a subscription to the $/gazebo_state/model_states_demo$ topic and is used to check the position of the object programmatically.
+\item\label{env-manager:joint-state-subscription} The property $jointStateSubscription$ is a subscription to the $/joint\_states$ topic. It is created and used later as in \ref{ros2-joint-state}
+\item The property $contactSensorSubscription$ is a subscription to the collision sensor topic. 
+\item The property $collision$ indicates if there is a collision in the simulated environment.
 \end{enumerate}
+
+The $EnvironmentManager$ class implements the following methods :
+\begin{enumerate}
+\item The $jointStateSubscriptionCallback()$ is a callback defined when creating the property $jointStateSubscription$ \ref{env-manager:joint-state-subscription}. This method calculates the $distance$ property in \ref{env-manager:distance}. This method is executed every time a new message is received in the $/joint\_states$ topic. That is, every time the arm moves.
+\item The $modelSubscriptionCallback$ is a callback defined when creating the property $modelSubscription$ \ref{env-manager:model-subscription}. This method is executed every time a new message is received in the $/gazebo\_state/model\_states\_demo$ topic. It is used to obtain the position of the object in the world.
+\item\label{env-manager:move-arm-to-position} The $moveArmToPosition(self, positions)$ function is used to move the arm to a certain position. The argument $positions$ is the end position of the joints. It works by using the $trajectoryActionClient$ property in \ref{env-manager:trajectory-action-client}.
+\item\label{env-manager:move-model-to-position} The $moveModelToPosition(self, model, x, y, z)$ method is used to move the object to a certain position $(x, y, z)$. It works by using the $modelClient$ property in \ref{env-manager:model-client}.
+\item The $resetEnvironment$ method moves the arm to the starting position $positions = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]$ using \ref{env-manager:move-arm-to-position}, moves the object to the starting position by using \ref{env-manager:move-model-to-position}, and sets the $done$ and $collision$ property to false. 
+\item The $contactSensorCallback4$, $contactSensorCallback5$, and $contactSensorCallback6$ methods are executed when a collision between the Links 4, 5 o 6 and the object happens respectively.
+\item The $getState$ method returns the current state of the environment. The state is composed of the first three joints angles and the distance between the end effector or Link 6 and the object. 
+\item The $takeAction(actionIndex)$ method takes the $actionIndex$ parameter which identifies the action to be taken. Its responsibility is to move the arm according to the action given and returns the $reward$ which is consequence of the given action.
+\item The $computeReward(previousDistance)$ computes the reward in the current state given the $previousDistance$. The $previousDistance$ is compared with the current distance between the End Effector or Link6 and the object to know if the arm is getting closer to the object or not. The reward is computed as follows:\\
+
+$reward = 
+ \begin{cases} 
+ 	100 	& \text{if the arm touches the object.} \\ 
+ 	1 		& \text{if episode terminates at current step.} \\ 
+ 	-1 		& \text{if the arm moves away from the object.} 
+ \end{cases}$
+\end{enumerate}
+
+
 % The $ are not needed here since the align environment is in math mode.
 
 

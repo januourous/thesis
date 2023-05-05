@@ -10,45 +10,45 @@ Name 1 in "L. P. Kaelbling, M. L. Littman, and A. R. Moore" has a comma at the e
 while executing---line 944 of file unsrt.bst
 Warning--empty publisher in 14_banks1999introduction
 Warning--can't use both volume and number fields in 15_quigley2009ros
-You've used 60 entries,
+You've used 63 entries,
             1791 wiz_defined-function locations,
-            781 strings with 15552 characters,
-and the built_in function-call counts, 15999 in all, are:
-= -- 1425
-> -- 784
+            796 strings with 16042 characters,
+and the built_in function-call counts, 16603 in all, are:
+= -- 1479
+> -- 810
 < -- 20
-+ -- 286
-- -- 226
-* -- 1045
-:= -- 2424
-add.period$ -- 191
-call.type$ -- 60
-change.case$ -- 58
++ -- 296
+- -- 233
+* -- 1086
+:= -- 2522
+add.period$ -- 201
+call.type$ -- 63
+change.case$ -- 61
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 707
-empty$ -- 1518
-format.name$ -- 226
-if$ -- 3656
+cite$ -- 65
+duplicate$ -- 730
+empty$ -- 1581
+format.name$ -- 233
+if$ -- 3789
 int.to.chr$ -- 0
-int.to.str$ -- 60
-missing$ -- 49
-newline$ -- 303
-num.names$ -- 60
-pop$ -- 227
+int.to.str$ -- 63
+missing$ -- 51
+newline$ -- 319
+num.names$ -- 63
+pop$ -- 235
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 407
+skip$ -- 415
 stack$ -- 0
-substring$ -- 1070
-swap$ -- 246
+substring$ -- 1107
+swap$ -- 249
 text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 148
-width$ -- 62
-write$ -- 656
+while$ -- 154
+width$ -- 65
+write$ -- 690
 (There was 1 error message)
