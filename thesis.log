@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  6 MAY 2023 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  7 MAY 2023 22:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1377,13 +1377,13 @@ ry ac-tion server[] [][]
 \openout10 = `thesis.toc'.
 
  [4] (./thesis.lof
-Overfull \hbox (32.02985pt too wide) in paragraph at lines 17--17
+Overfull \hbox (32.02985pt too wide) in paragraph at lines 19--19
  [][] [][]\T1/ppl/m/n/12 As a re-sult of adding List-ing []7[] there are \T1/pp
 l/m/it/12 /con-tact_sensor/gazebo_ros_bumper_sensor 
  []
 
 
-Overfull \hbox (33.01308pt too wide) in paragraph at lines 17--17
+Overfull \hbox (33.01308pt too wide) in paragraph at lines 19--19
  \T1/ppl/m/n/12 nodes pub-lish-ing the col-li-sion de-tails to the top-ics \T1/
 ppl/m/it/12 /con-tact_sensor/bumper_link_4\T1/ppl/m/n/12 , 
  []
@@ -1399,7 +1399,7 @@ ppl/m/it/12 /con-tact_sensor/bumper_link_4\T1/ppl/m/n/12 ,
  [5
 
 ]
-<gazebo_city.png, id=534, 639.89063pt x 332.74312pt>
+<gazebo_city.png, id=541, 639.89063pt x 332.74312pt>
 File: gazebo_city.png Graphic file (type png)
 <use gazebo_city.png>
 Package pdftex.def Info: gazebo_city.png  used on input line 176.
@@ -1413,47 +1413,45 @@ l.179 \end{figure}
 
 
 ] [2]
-<gazebo_city1.png, id=555, 1166.10657pt x 664.73344pt>
+<gazebo_city1.png, id=562, 1166.10657pt x 664.73344pt>
 File: gazebo_city1.png Graphic file (type png)
 <use gazebo_city1.png>
 Package pdftex.def Info: gazebo_city1.png  used on input line 190.
 (pdftex.def)             Requested size: 414.6463pt x 236.36238pt.
- [3 <./gazebo_city.png (PNG copy)>] [4 <./gazebo_city1.png (PNG copy)>] [5]
-<gazebo_robotic_arm.png, id=596, 544.28343pt x 313.9228pt>
+ [3 <./gazebo_city.png (PNG copy)>] [4 <./gazebo_city1.png (PNG copy)>]
+<robotic_arm_real_world.png, id=583, 572.1375pt x 322.20375pt>
+File: robotic_arm_real_world.png Graphic file (type png)
+<use robotic_arm_real_world.png>
+Package pdftex.def Info: robotic_arm_real_world.png  used on input line 204.
+(pdftex.def)             Requested size: 322.50345pt x 181.62263pt.
+ [5 <./robotic_arm_real_world.png (PNG copy)>]
+<gazebo_robotic_arm.png, id=604, 776.9025pt x 540.51938pt>
 File: gazebo_robotic_arm.png Graphic file (type png)
 <use gazebo_robotic_arm.png>
-Package pdftex.def Info: gazebo_robotic_arm.png  used on input line 213.
-(pdftex.def)             Requested size: 414.6463pt x 239.14903pt.
- [6] [7 <./gazebo_robotic_arm.png (PNG copy)>] [8]
+Package pdftex.def Info: gazebo_robotic_arm.png  used on input line 222.
+(pdftex.def)             Requested size: 414.6463pt x 288.48633pt.
+ [6]
+<mdp1.png, id=622, 552.56438pt x 199.49532pt>
+File: mdp1.png Graphic file (type png)
+<use mdp1.png>
+Package pdftex.def Info: mdp1.png  used on input line 237.
+(pdftex.def)             Requested size: 322.50345pt x 116.43488pt.
+ [7 <./gazebo_robotic_arm.png (PNG copy)>]
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
-35.
+45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-) [9] [10] [11]
-Overfull \hbox (0.26552pt too wide) in paragraph at lines 309--310
-[]\T1/ppl/m/n/12 Web pages, es-pe-cially for soft-ware projects (e.g., Ten-sor-
-Flow, ng-inx, re-act, Django).
- []
+) [8 <./mdp1.png (PNG copy)>] [9] [10] [11] [12] [13] [14]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 36
+5.
 
-[12]
-
-LaTeX Warning: Citation `clemen1989combining' on page 13 undefined on input lin
-e 312.
-
-
-LaTeX Warning: Citation `clemen1989combining' on page 13 undefined on input lin
-e 312.
-
-[13] [14]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 34
-8.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [15]
-[16] [17] [18] [19] [20]
+) [15] [16] [17]
+[18] [19] [20]
 Package hyperref Info: bookmark level for unknown listing defaults to 0 on inpu
-t line 441.
+t line 458.
 \openout4 = `thesis.pyg'.
 
  (./_minted-thesis/default-pyg-prefix.pygstyle)
@@ -1466,30 +1464,31 @@ LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
 4.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-))
-Overfull \hbox (27.35902pt too wide) in paragraph at lines 474--475
+)) [21]
+Overfull \hbox (27.35902pt too wide) in paragraph at lines 491--492
 []\T1/ppl/m/n/12 In this ex-am-ple, the node ini-tial-izes a tf2_ros.Buffer ob-
 ject and a tf2_ros.TransformListener
  []
 
-[21]
-Overfull \hbox (16.75273pt too wide) in paragraph at lines 479--480
+
+Overfull \hbox (16.75273pt too wide) in paragraph at lines 496--497
 \T1/ppl/m/n/12 The $\OML/cmm/m/it/12 =joint[]trajectory[]controller=follow[]joi
 nt[]trajectory$ \T1/ppl/m/n/12 is an ac-tion server in ROS (Robot
  []
 
+[22]
 \openout4 = `thesis.pyg'.
 
 
 (./_minted-thesis/6CAE4F85E01DE000F8E2ECF18FEB1A610102E502927AACB428B4F294F23E2
 359.pygtex
-Overfull \hbox (17.28035pt too wide) in paragraph at lines 488--1
+Overfull \hbox (17.28035pt too wide) in paragraph at lines 505--1
 \OML/cmm/m/it/12 =joint[]trajectory[]controller=follow[]joint[]trajectory$ \T1/
 ppl/m/n/12 ac-tion server. This node should
  []
 
 
-Overfull \hbox (34.4247pt too wide) in paragraph at lines 488--1
+Overfull \hbox (34.4247pt too wide) in paragraph at lines 505--1
 \T1/ppl/m/n/12 im-port the nec-es-sary ROS li-braries and cre-ate an in-stance 
 of the $\OML/cmm/m/it/12 rclpy:action:ActionClient$
  []
@@ -1499,8 +1498,8 @@ of the $\OML/cmm/m/it/12 rclpy:action:ActionClient$
 
 
 (./_minted-thesis/5F1F698139A473191CBD4B2D1C7C18410102E502927AACB428B4F294F23E2
-359.pygtex [22])
-Overfull \hbox (10.15048pt too wide) in paragraph at lines 512--513
+359.pygtex)
+Overfull \hbox (10.15048pt too wide) in paragraph at lines 529--530
 \T1/ppl/m/n/12 This $\OML/cmm/m/it/12 FollowJointTrajectory:Goal$ \T1/ppl/m/n/1
 2 ob-ject spec-i-fies a tra-jec-tory with two points, where
  []
@@ -1510,13 +1509,13 @@ Overfull \hbox (10.15048pt too wide) in paragraph at lines 512--513
 
 (./_minted-thesis/6F48F03C7D5B865905BD99B427C33B9C0102E502927AACB428B4F294F23E2
 359.pygtex
-Overfull \hbox (117.45331pt too wide) in paragraph at lines 513--1
+Overfull \hbox (117.45331pt too wide) in paragraph at lines 530--1
 []\T1/ppl/m/n/12 Send the $\OML/cmm/m/it/12 FollowJointTrajectory:Goal$ \T1/ppl
 /m/n/12 ob-ject to the $\OML/cmm/m/it/12 =joint[]trajectory[]controller=follow[
 ]joint[]trajectory$
  []
 
-)
+[23])
 \openout4 = `thesis.pyg'.
 
 
@@ -1526,93 +1525,94 @@ Overfull \hbox (117.45331pt too wide) in paragraph at lines 513--1
 
 
 (./_minted-thesis/F53FCF21B18AF63215AADB9EB4F491280102E502927AACB428B4F294F23E2
-359.pygtex [23]) [24] [25] [26] [27] [28] [29] [30] [31] [32]
-Overfull \hbox (2.0056pt too wide) in paragraph at lines 711--712
+359.pygtex) [24] [25] [26] [27] [28] [29] [30] [31] [32]
+Overfull \hbox (2.0056pt too wide) in paragraph at lines 728--729
 []\T1/ppl/b/n/12 Deep De-ter-min-is-tic Pol-icy Gra-di-ent (DDPG): \T1/ppl/m/n/
 12 The Deep De-ter-min-is-tic Pol-icy Gra-
  []
 
-[33] [34]
-<can.png, id=865, 58.71938pt x 84.315pt>
+[33] [34] [35]
+<can.png, id=885, 58.71938pt x 84.315pt>
 File: can.png Graphic file (type png)
 <use can.png>
-Package pdftex.def Info: can.png  used on input line 758.
+Package pdftex.def Info: can.png  used on input line 775.
 (pdftex.def)             Requested size: 216.53954pt x 310.93002pt.
-<project_structure_1.png, id=866, 211.54031pt x 410.2828pt>
+<project_structure_1.png, id=886, 211.54031pt x 410.2828pt>
 File: project_structure_1.png Graphic file (type png)
 <use project_structure_1.png>
-Package pdftex.def Info: project_structure_1.png  used on input line 760.
+Package pdftex.def Info: project_structure_1.png  used on input line 777.
 (pdftex.def)             Requested size: 161.25523pt x 312.76349pt.
- [35]
-<kuka1.png, id=880, 376.40625pt x 301.125pt>
+ [36]
+<kuka1.png, id=899, 376.40625pt x 301.125pt>
 File: kuka1.png Graphic file (type png)
 <use kuka1.png>
-Package pdftex.def Info: kuka1.png  used on input line 767.
+Package pdftex.def Info: kuka1.png  used on input line 784.
 (pdftex.def)             Requested size: 322.50345pt x 258.02051pt.
- [36 <./can.png (PNG copy)> <./project_structure_1.png (PNG copy)>]
-<rosgraph1.png, id=886, 851.43094pt x 60.97781pt>
+ [37 <./can.png (PNG copy)> <./project_structure_1.png (PNG copy)>]
+<rosgraph1.png, id=906, 851.43094pt x 60.97781pt>
 File: rosgraph1.png Graphic file (type png)
 <use rosgraph1.png>
-Package pdftex.def Info: rosgraph1.png  used on input line 776.
+Package pdftex.def Info: rosgraph1.png  used on input line 793.
 (pdftex.def)             Requested size: 322.50345pt x 23.09737pt.
- [37 <./kuka1.png> <./rosgraph1.png (PNG copy)>]
-<kuka5.png, id=892, 376.40625pt x 301.125pt>
+ [38 <./kuka1.png> <./rosgraph1.png (PNG copy)>]
+<kuka5.png, id=911, 376.40625pt x 301.125pt>
 File: kuka5.png Graphic file (type png)
 <use kuka5.png>
-Package pdftex.def Info: kuka5.png  used on input line 798.
+Package pdftex.def Info: kuka5.png  used on input line 815.
 (pdftex.def)             Requested size: 414.6463pt x 331.73933pt.
- [38 <./kuka5.png>]
-<kuka6.png, id=897, 376.40625pt x 301.125pt>
+ [39 <./kuka5.png>]
+<kuka6.png, id=916, 376.40625pt x 301.125pt>
 File: kuka6.png Graphic file (type png)
 <use kuka6.png>
-Package pdftex.def Info: kuka6.png  used on input line 825.
+Package pdftex.def Info: kuka6.png  used on input line 842.
 (pdftex.def)             Requested size: 207.32315pt x 165.86278pt.
-<kuka7.png, id=898, 376.40625pt x 301.125pt>
+<kuka7.png, id=917, 376.40625pt x 301.125pt>
 File: kuka7.png Graphic file (type png)
 <use kuka7.png>
-Package pdftex.def Info: kuka7.png  used on input line 827.
+Package pdftex.def Info: kuka7.png  used on input line 844.
 (pdftex.def)             Requested size: 207.32315pt x 165.86278pt.
-<kuka4.png, id=903, 1045.65656pt x 539.01375pt>
+<kuka4.png, id=922, 1045.65656pt x 539.01375pt>
 File: kuka4.png Graphic file (type png)
 <use kuka4.png>
-Package pdftex.def Info: kuka4.png  used on input line 844.
+Package pdftex.def Info: kuka4.png  used on input line 861.
 (pdftex.def)             Requested size: 437.68376pt x 225.61932pt.
- [39 <./kuka6.png> <./kuka7.png>]
-<rosgraph00.png, id=916, 953.81343pt x 138.5175pt>
+
+[40 <./kuka6.png> <./kuka7.png>]
+<rosgraph00.png, id=935, 953.81343pt x 138.5175pt>
 File: rosgraph00.png Graphic file (type png)
 <use rosgraph00.png>
-Package pdftex.def Info: rosgraph00.png  used on input line 854.
+Package pdftex.def Info: rosgraph00.png  used on input line 871.
 (pdftex.def)             Requested size: 437.68376pt x 63.56451pt.
-<rosgraph01.png, id=917, 782.925pt x 133.24782pt>
+<rosgraph01.png, id=936, 782.925pt x 133.24782pt>
 File: rosgraph01.png Graphic file (type png)
 <use rosgraph01.png>
-Package pdftex.def Info: rosgraph01.png  used on input line 861.
+Package pdftex.def Info: rosgraph01.png  used on input line 878.
 (pdftex.def)             Requested size: 322.50345pt x 54.88814pt.
-<rosgraph02.png, id=920, 716.6775pt x 130.23656pt>
+<rosgraph02.png, id=939, 716.6775pt x 130.23656pt>
 File: rosgraph02.png Graphic file (type png)
 <use rosgraph02.png>
-Package pdftex.def Info: rosgraph02.png  used on input line 868.
+Package pdftex.def Info: rosgraph02.png  used on input line 885.
 (pdftex.def)             Requested size: 322.50345pt x 58.6059pt.
- [40 <./kuka4.png (PNG copy)> <./rosgraph00.png (PNG copy)> <./rosgraph01.png (
+ [41 <./kuka4.png (PNG copy)> <./rosgraph00.png (PNG copy)> <./rosgraph01.png (
 PNG copy)>]
-<rosgraph03.png, id=927, 822.82407pt x 178.41656pt>
+<rosgraph03.png, id=946, 822.82407pt x 178.41656pt>
 File: rosgraph03.png Graphic file (type png)
 <use rosgraph03.png>
-Package pdftex.def Info: rosgraph03.png  used on input line 875.
+Package pdftex.def Info: rosgraph03.png  used on input line 892.
 (pdftex.def)             Requested size: 322.50345pt x 69.93063pt.
-<rosgraph04.png, id=930, 874.01532pt x 237.13594pt>
+<rosgraph04.png, id=949, 874.01532pt x 237.13594pt>
 File: rosgraph04.png Graphic file (type png)
 <use rosgraph04.png>
-Package pdftex.def Info: rosgraph04.png  used on input line 882.
+Package pdftex.def Info: rosgraph04.png  used on input line 899.
 (pdftex.def)             Requested size: 322.50345pt x 87.50009pt.
-<classDiagramComplete.png, id=931, 669.2503pt x 630.85687pt>
+<classDiagramComplete.png, id=950, 669.2503pt x 630.85687pt>
 File: classDiagramComplete.png Graphic file (type png)
 <use classDiagramComplete.png>
-Package pdftex.def Info: classDiagramComplete.png  used on input line 891.
+Package pdftex.def Info: classDiagramComplete.png  used on input line 908.
 (pdftex.def)             Requested size: 437.68376pt x 412.58377pt.
- [41 <./rosgraph02.png (PNG copy)> <./rosgraph03.png (PNG copy)> <./rosgraph04.
-png (PNG copy)>] [42 <./classDiagramComplete.png (PNG copy)>]
-Overfull \hbox (58.5764pt too wide) in paragraph at lines 927--928
+ [42 <./rosgraph02.png (PNG copy)> <./rosgraph03.png (PNG copy)> <./rosgraph04.
+png (PNG copy)>] [43 <./classDiagramComplete.png (PNG copy)>]
+Overfull \hbox (58.5764pt too wide) in paragraph at lines 944--945
 []\T1/ppl/m/n/12 With prob-a-bil-ity $\OML/cmm/m/it/12 ^^O$ \T1/ppl/m/n/12 se-l
 ect a ran-dom ac-tion $\OML/cmm/m/it/12 a[]$\T1/ppl/m/n/12 , oth-er-wise se-lec
 t $\OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 Q\OT1/cmr/m/
@@ -1620,12 +1620,12 @@ n/12 (\OML/cmm/m/it/12 s[]; a\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 ^^R\OT1/cmr/m/n
 /12 )$\T1/ppl/m/n/12 . 
  []
 
-[43]
+[44]
 \openout4 = `thesis.pyg'.
 
 
 (./_minted-thesis/2F5D30D9D24D8503544EB789C85C512F0102E502927AACB428B4F294F23E2
-359.pygtex) [44]
+359.pygtex) [45]
 \openout4 = `thesis.pyg'.
 
 
@@ -1640,13 +1640,13 @@ n/12 (\OML/cmm/m/it/12 s[]; a\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 ^^R\OT1/cmr/m/n
 
 
 (./_minted-thesis/2169DCB3103F2701491D306DCEC6E2770102E502927AACB428B4F294F23E2
-359.pygtex) [45]
+359.pygtex) [46]
 \openout4 = `thesis.pyg'.
 
 
 (./_minted-thesis/09AB9EC6795A0CD638473BA526131EF80102E502927AACB428B4F294F23E2
-359.pygtex) [46]
-Overfull \hbox (2.83482pt too wide) in paragraph at lines 1077--1078
+359.pygtex) [47]
+Overfull \hbox (2.83482pt too wide) in paragraph at lines 1094--1095
 []\T1/ppl/m/n/12 The $\OML/cmm/m/it/12 joint\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 S
 tate$\T1/ppl/m/n/12 , $\OML/cmm/m/it/12 joint\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 
 State$\T1/ppl/m/n/12 , $\OML/cmm/m/it/12 joint\OT1/cmr/m/n/12 3\OML/cmm/m/it/12
@@ -1656,116 +1656,139 @@ State$\T1/ppl/m/n/12 , $\OML/cmm/m/it/12 joint\OT1/cmr/m/n/12 3\OML/cmm/m/it/12
 m/it/12 State$
  []
 
-[47]
-Overfull \hbox (12.8001pt too wide) in paragraph at lines 1097--1098
+[48]
+Overfull \hbox (12.8001pt too wide) in paragraph at lines 1114--1115
 \T1/ppl/m/n/12 ob-ject. When the en-vi-ron-ment man-ager class is in-stan-ti-at
 ed the $\OML/cmm/m/it/12 modelClientGetState$
  []
 
 
-Overfull \hbox (46.33696pt too wide) in paragraph at lines 1099--1100
+Overfull \hbox (46.33696pt too wide) in paragraph at lines 1116--1117
 []\T1/ppl/m/n/12 The prop-erty $\OML/cmm/m/it/12 modelSubscription$ \T1/ppl/m/n
 /12 de-fines a sub-scrip-tion to the $\OML/cmm/m/it/12 =gazebo[]tate=model[]tat
 es[]emo$
  []
 
 
-Overfull \hbox (1.66716pt too wide) in paragraph at lines 1107--1108
+Overfull \hbox (1.66716pt too wide) in paragraph at lines 1124--1125
 []\T1/ppl/m/n/12 The $\OML/cmm/m/it/12 jointStateSubscriptionCallback\OT1/cmr/m
 /n/12 ()$ \T1/ppl/m/n/12 is a call-back de-fined when cre-at-ing the prop-
  []
 
-[48]
-Overfull \hbox (3.0431pt too wide) in paragraph at lines 1112--1113
+[49]
+Overfull \hbox (3.0431pt too wide) in paragraph at lines 1129--1130
 []\T1/ppl/m/n/12 The $\OML/cmm/m/it/12 contactSensorCallback\OT1/cmr/m/n/12 4$\
 T1/ppl/m/n/12 , $\OML/cmm/m/it/12 contactSensorCallback\OT1/cmr/m/n/12 5$\T1/pp
 l/m/n/12 , and $\OML/cmm/m/it/12 contactSensorCallback\OT1/cmr/m/n/12 6$
  []
 
 
-Overfull \hbox (0.51207pt too wide) in paragraph at lines 1114--1115
+Overfull \hbox (0.51207pt too wide) in paragraph at lines 1131--1132
 []\T1/ppl/m/n/12 The $\OML/cmm/m/it/12 takeAction\OT1/cmr/m/n/12 (\OML/cmm/m/it
 /12 actionIndex\OT1/cmr/m/n/12 )$ \T1/ppl/m/n/12 method takes the $\OML/cmm/m/i
 t/12 actionIndex$ \T1/ppl/m/n/12 pa-ram-e-ter which iden-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1115--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1132--1133
 
  []
 
 
-LaTeX Warning: Reference `mybox:1' on page 49 undefined on input line 1131.
-
-[49]
-
-LaTeX Warning: Reference `sec:grundagen1' on page 50 undefined on input line 11
-54.
-
-
-LaTeX Warning: Reference `sec:grundlagen2' on page 50 undefined on input line 1
-154.
-
-
-LaTeX Warning: Reference `Snippet' on page 50 undefined on input line 1158.
-
-
-LaTeX Warning: Reference `sec:relwork' on page 50 undefined on input line 1168.
-
+LaTeX Warning: Reference `mybox:1' on page 50 undefined on input line 1148.
 
 [50]
-Overfull \hbox (10.0093pt too wide) in paragraph at lines 1182--1183
+
+LaTeX Warning: Reference `sec:grundagen1' on page 51 undefined on input line 11
+71.
+
+
+LaTeX Warning: Reference `sec:grundlagen2' on page 51 undefined on input line 1
+171.
+
+
+LaTeX Warning: Reference `Snippet' on page 51 undefined on input line 1175.
+
+
+LaTeX Warning: Reference `sec:relwork' on page 51 undefined on input line 1185.
+
+
+[51]
+Overfull \hbox (10.0093pt too wide) in paragraph at lines 1199--1200
 \T1/ppl/m/n/12 un-tere-inan-der gesetzt). Die nonmber-Befehle ver-hin-dern dass
  die Gle-ichung num-mertiert
  []
 
-[51]
+[52]
 
 pdfTeX warning: /usr/bin/pdflatex (file ./logo.pdf): PDF inclusion: found PDF v
 ersion <1.7>, but at most version <1.5> allowed
-<logo.pdf, id=1058, 569.05598pt x 142.26149pt>
+<logo.pdf, id=1076, 569.05598pt x 142.26149pt>
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 1207.
+Package pdftex.def Info: logo.pdf  used on input line 1224.
 (pdftex.def)             Requested size: 368.57838pt x 92.14542pt.
-[52 <./logo.pdf>]
+[53 <./logo.pdf>]
 
-LaTeX Warning: Citation `clemen1989combining' on page 53 undefined on input lin
-e 1262.
+LaTeX Warning: Citation `clemen1989combining' on page 54 undefined on input lin
+e 1279.
 
-[53] (./thesis.bbl
+[54] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 9--15
 \T1/pcr/m/n/12 github . com / aws-[]robotics / aws-[]robomaker-[]small-[]wareho
 use-[]world$[]\T1/ppl/m/n/12 ,
  []
 
-[54
 
-] [55]
-Underfull \hbox (badness 6758) in paragraph at lines 183--189
+Underfull \hbox (badness 10000) in paragraph at lines 23--29
+[]\T1/ppl/m/n/12 MathWorks.  Pick and place work-flow in gazebo us-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--29
+\T1/ppl/m/n/12 ros.  []$\T1/pcr/m/n/12 https : / / de . mathworks . com / help 
+/ robotics / ug /
+ []
+
+
+Underfull \hbox (badness 5133) in paragraph at lines 23--29
+\T1/pcr/m/n/12 pick-[]and-[]place-[]workflow-[]in-[]gazebo-[]using-[]ros . html
+$[]\T1/ppl/m/n/12 , 2021.  Ac-
+ []
+
+[55
+
+] [56]
+Underfull \hbox (badness 6758) in paragraph at lines 190--196
 \T1/ppl/m/n/12 and []$\T1/pcr/m/n/12 https : / / aischool . microsoft . com / e
 n-[]us / autonomous-[]systems /
  []
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 205--209
+Underfull \hbox (badness 1681) in paragraph at lines 212--216
 []\T1/ppl/m/n/12 Volodymyr Mnih, Ko-ray Kavukcuoglu, David Sil-ver, Alex Graves
 , Ioan-nis
  []
 
-[56] [57]
-Underfull \hbox (badness 4699) in paragraph at lines 381--385
+[57]
+Underfull \hbox (badness 1067) in paragraph at lines 261--266
+[]\T1/ppl/m/n/12 Andrea Franceschetti, Elisa Tosello, Nicola Cas-ta-man, and St
+e-fano Ghi-doni.
+ []
+
+[58] [59]
+Underfull \hbox (badness 4699) in paragraph at lines 397--401
 []\T1/ppl/m/n/12 Udacity.  Robond-kinematics-project.  []$\T1/pcr/m/n/12 https 
 : / / github . com / udacity /
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 396--399
+Underfull \hbox (badness 1005) in paragraph at lines 412--415
 []\T1/ppl/m/n/12 RStudio.  Wel-come to shiny.  []$\T1/pcr/m/n/12 https : / / sh
 iny . rstudio . com / tutorial /
  []
 
-[58])
+)
 \openout4 = `thesis.pyg'.
 
 
@@ -1793,8 +1816,12 @@ FB8.pygtex)
 
 
 (./_minted-thesis/B4F1338073347058D0DC56CECEF049FB35DA72F391F0EE3A0648FBA0246F4
-FB8.pygtex) [59] [60] [61] [62] (./Erklaerung.tex) [63] [64]
-Overfull \hbox (58.5764pt too wide) in paragraph at lines 1566--1567
+FB8.pygtex)
+Package mdframed Info: Not enough space on this page on input line 1481.
+ [60] [61]
+Package mdframed Info: Not enough space on this page on input line 1481.
+ [62] [63] (./Erklaerung.tex) [64] [65]
+Overfull \hbox (58.5764pt too wide) in paragraph at lines 1583--1584
 []\T1/ppl/m/n/12 With prob-a-bil-ity $\OML/cmm/m/it/12 ^^O$ \T1/ppl/m/n/12 se-l
 ect a ran-dom ac-tion $\OML/cmm/m/it/12 a[]$\T1/ppl/m/n/12 , oth-er-wise se-lec
 t $\OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 Q\OT1/cmr/m/
@@ -1802,12 +1829,12 @@ n/12 (\OML/cmm/m/it/12 s[]; a\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 ^^R\OT1/cmr/m/n
 /12 )$\T1/ppl/m/n/12 . 
  []
 
-[65] [66]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1601.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1601.
+[66] [67]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1618.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1618.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1601.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1601.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1618.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1618.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: EB6B1C0576AF2781BF90818032792F4B;6008.
@@ -1820,13 +1847,13 @@ LaTeX Warning: There were multiply-defined labels.
 
 runsystem(rm thesis.pyg)...executed.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1601.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1618.
  ) 
 Here is how much of TeX's memory you used:
- 37745 strings out of 483107
- 711634 string characters out of 5964630
- 1048051 words of memory out of 5000000
- 51632 multiletter control sequences out of 15000+600000
+ 37770 strings out of 483107
+ 712067 string characters out of 5964630
+ 1040847 words of memory out of 5000000
+ 51651 multiletter control sequences out of 15000+600000
  570410 words of font info for 95 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  64i,12n,103p,1694b,2514s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1846,9 +1873,9 @@ ist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pala
 tino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (72 pages, 3426520 bytes).
+Output written on thesis.pdf (73 pages, 4979318 bytes).
 PDF statistics:
- 1328 PDF objects out of 1440 (max. 8388607)
- 379 named destinations out of 1000 (max. 500000)
- 880 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1351 PDF objects out of 1440 (max. 8388607)
+ 385 named destinations out of 1000 (max. 500000)
+ 890 words of extra memory for PDF output out of 10000 (max. 10000000)
 

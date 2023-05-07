@@ -199,6 +199,15 @@ A robotic arm functions like a human arm and is a mechanical system that typical
 These arms are commonly used in a variety of applications, such as manufacturing, assembly, material handling, and surgery. Robotic arms can be controlled by various means, including joystick or slider controls, keyboard-based interfaces, and programmed motions. They can be programmed to perform repetitive tasks with high precision and speed, which makes them ideal for use in industrial settings where consistency and efficiency are crucial. These arms can be equipped with various end-effectors, such as grippers, cameras, or welding tools, depending on the specific task that needs to be performed. They can also be designed to have multiple joints or degrees of freedom, which enables them to move in a wide range of directions and perform complex tasks. Advancements in robotics technology have led to the development of lightweight and portable robotic arms that can be easily integrated into various systems \cite{11_singh2013evolution}. These arms are becoming increasingly popular in areas such as healthcare and rehabilitation, where they can assist with tasks such as lifting and moving patients.
 The primary focus of current research efforts is on training the robot’s arm to carry out various tasks autonomously using deep learning technologies. However, due to the massive amount of data required to teach a robot effectively, a data-driven approach is necessary. This can be challenging to achieve using a physical robotic arm. Therefore, developers have turned to robot simulation software \cite{12_oRobotics}, \cite{13_pybullet} to overcome the limitations of data-intensive AI approaches and to provide a stable environment \cite{14_banks1999introduction}. In a simulated environment, it is possible to control every aspect of the world, including impractical factors in reality. Moreover, there is no risk of damaging robots or human operators in simulations, and time control allows for faster data collection.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{robotic_arm_real_world}
+\caption{A robot arm helps make engine components at a Volkswagen factory in Germany \cite{wamu2013}}
+\label{fig:roboticarmrealworld}
+\end{figure}
+
+
+
 \subsubsection{Robot Operating System (ROS)}
 The Robot Operating System (ROS) is a set of software libraries and tools that enables developers to build robotic applications \cite{15_quigley2009ros}. It provides a framework for writing and running code across multiple computers and devices, making it easier to create complex robotic systems. ROS was first developed in 2007 by Willow Garage, at robotics research lab \cite{16_cousins2014willow}. Since then, it has become widely adopted by the robotics community and is now supported by the Open Robotics organization. It offers a comprehensive platform for managing robotic systems. Originally designed to facilitate research in robotics, ROS is a unique framework. To grasp the fundamentals of the ROS framework, it is essential to comprehend the concept of message communication between nodes using topics.
 One of the key features of ROS is its ability to handle communication between different components of a robotic system, such as sensors, actuators, and controllers \cite{17_emmi2014new}. This communication is done using a publish-subscribe messaging system, which allows components to share data and commands in real-time. ROS also provides a wide range of tools and libraries for tasks such as perception, navigation, and manipulation, which can be used to build complex robotic applications. These tools include algorithms for object recognition, path planning, and motion control, among others. Another advantage of ROS is its open-source nature, which means that developers can contribute to the development of the software and share their own code with the community. This has led to a large and active community of developers working on ROS, which has helped to drive its development and adoption.
@@ -211,7 +220,7 @@ The ROS framework includes a useful tool called RVIZ, which enables us to observ
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{gazebo_robotic_arm}
-\caption{Gazebo simulation of a Robotic Arm \cite{yigit2020trajectory}.}
+\caption{Gazebo simulation of a Robotic Arm in a Pick and Place setup. \cite{mathworks2021}.}
 \label{fig:gazeboroboticarm}
 \end{figure}
 
@@ -222,10 +231,22 @@ The complexity of certain tasks makes it impractical to solve them by specifying
 Reinforcement learning (RL) \cite{24_ball2017comprehensive} presents new opportunities for addressing various challenges. In the past, RL techniques were only effective in domains where handcrafted features or low-dimensional input were utilized, and could only handle discrete state and action spaces. However, recent advancements in Deep Learning (DL) have yielded promising results in several fields such as speech, vision, wireless communication, natural language translation, and assistive devices. These advancements in DL-based techniques have made it possible to overcome the challenges faced by RL, and to process raw data for better performance.
 The progress in deep learning techniques has paved the way for resolving the difficulties encountered in RL and processing raw data. The latest developments that merge RL with deep learning, such as those highlighted in \cite{26_bonsai}, \cite{27_mnih2016asynchronous} increase their suitability to domains where handcrafted features are not present, and the state or action space is either vast or continuous. Such advanced methods can address both perception and planning issues, whereas RL can only handle the planning problem and deep learning only the perception problem.
 Rewarding or punishing agents for their actions, reinforcement learning (RL) is a kind of machine learning that enables agents to learn through interactions with an environment. RL deals with the development of decision-making algorithms. Its main focus is on creating a set of actions that an agent can perform in a specific environment. At each time step, the agent takes an action and receives feedback in the form of an observation and a reward. The ultimate goal of RL is to maximize the agent's total reward through a learning process that involves experimentation and feedback. 
-In the learning process, an agent creates a policy. The agent begins in a particular state 's' of the environment, performs an action 'a', and transitions to another state 's'. The agent receives scalar feedback in the form of a reward 'r' after taking the action. This cycle is repeated many times during the learning process, as illustrated in Figure 1.
-\par\noindent\rule{\textwidth}{0.4pt}
- The action space represents the possible actions that the agent can take in a given state. In the past, the tabular approach was used to store state and action values. However, in environments with a large number of states or actions, the approximation approach has replaced the tabular method. Neural networks are commonly used as approximation methods, as shown in Figures 2a and b. There are two types of action spaces, as illustrated.
- \par\noindent\rule{\textwidth}{0.4pt}
+In the learning process, an agent creates a policy. The agent begins in a particular state $S_t$ of the environment, performs an action $A_t$, and transitions to another state $S_t+1$. The agent receives scalar feedback in the form of a reward $R_t+1$ after taking the action $A_t$. This cycle is repeated many times during the learning process, as illustrated in Figure \ref{fig:mdp1}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{mdp1}
+\caption{Agent Environment interaction in the Reinforcement Learning Model.}
+\label{fig:mdp1}
+\end{figure}
+
+% \par\noindent\rule{\textwidth}{0.4pt}
+ The action space represents the possible actions that the agent can take in a given state. In the past, the tabular approach was used to store state and action values. However, in environments with a large number of states or actions, the approximation approach has replaced the tabular method. Neural networks are commonly used as approximation methods. There are two types of action spaces:
+ \begin{itemize}
+\item \textbf{ Discrete action space:} A discrete action space is one in which the set of possible actions is finite and well-defined. The agent can choose only one of the available actions at a time. For example, in a game of tic-tac-toe, the action space consists of the nine possible positions on the board where a player can place their mark (X or O). This is a discrete action space because there are a finite number of possible actions (9) and the actions are well-defined (placing a mark in a specific location on the board).
+\item \textbf{ Continuous action space:} A continuous action space is one in which the set of possible actions is infinite and not well-defined. The agent can choose any action within a continuous range of values. For example, in a self-driving car scenario, the action space might consist of the possible steering angles and accelerations that the car can take at any given moment. This is a continuous action space because the possible actions are not well-defined, as the car can take any steering angle or acceleration within a continuous range of values.
+ \end{itemize}
+
+% \par\noindent\rule{\textwidth}{0.4pt}
 Deep Reinforcement Learning (DRL) is a field of study in which neural networks are utilized as function approximators to improve the performance of RL. Recently, several DRL techniques have achieved remarkable success in learning complex behavior skills and solving challenging control tasks in high-dimensional state-space \cite{28_wu2017scalable} environments. However, many benchmarked environments such as Atari \cite{29_mnih2013playing} and Mujoco \cite{30_todorov2012mujoco} lack complexity or realism, which is often present in robotics. Additionally, these benchmarked environments \cite{31_nogueira2017autonomously} do not use commonly used tools in the field such as ROS.
 The research conducted in the previous work requires a considerable amount of effort for each specific robot, and therefore, the scalability of previous methods for modular robots is questionable. Consequently, trial and error learning process is often needed to apply the previous research to real-world robots. Training robotic arms to carry out certain actions, including touching an object in a virtual environment, is an intriguing use of RL. The robotic arm in this scenario must navigate a complicated state space while selecting actions that would maximize its reward while avoiding collisions with the environment. 
 
@@ -246,7 +267,7 @@ The field of Reinforcement Learning (RL) has seen significant contributions from
 
 \subsubsection{Double Q-Learning}
 The Q-learning algorithm, a well-liked RL method, has a version called double Q-learning \cite{33_ogunniyi2014energy}. The fundamental tenet of Q-learning is to acquire knowledge of a function $Q(s,a)$, which denotes the anticipated reward for performing action in a given state s. The agent employs this feature to determine the optimal course of action in each state. However, Q-learning may be hampered by an overestimation of the Q-values, which could result in ineffective policies. This problem is addressed by double Q-learning, which estimates the greatest expected reward by switching between two different Q-functions.
-The robot's arm would operate as the agent in a Double Q-learning simulation \cite{34_weng2020mean}, interacting with its surroundings and receiving rewards or punishments as a result of its actions. The orientation and position of the robotic arm, along with the location and characteristics of the object it is attempting to touch, would all be included in the state space. The robotic arm's range of potential motions for approaching the object would make up the action space. The goal of the reward function is to persuade the robotic arm to touch the target without causing a collision or any other unfavorable outcomes.
+In the context of a robotic arm, The robotic arm would operate as the agent in a Double Q-learning simulation \cite{34_weng2020mean}, interacting with its surroundings and receiving rewards or punishments as a result of its actions. The orientation and position of the robotic arm, along with the location and characteristics of the object it is attempting to touch, would all be included in the state space. The robotic arm's range of potential motions for approaching the object would make up the action space. The goal of the reward function is to persuade the robotic arm to touch the target without causing a collision or any other unfavorable outcomes.
 The Double Q-learning method is used by the robotic arm to investigate its environment during training and modify its Q-functions in response to incentives. By estimating the expected reward for every action using the two Q-functions, the algorithm would select the action featuring the largest expected reward. The robotic arm would develop a policy that enables it to consistently touch the target by continuing this process over a large number of attempts. In this thesis, we explore the use of Double Q-Learning in a simulated robotic arm to learn effective control policies for the arm.
 %The simulated robotic arm used in this study consists of three joints, each of which can rotate through an angle of 360 degrees
 %\cite{35_megalingam2013kinect}. The objective of the arm is to reach a target position specified by the RL algorithm. The state of the arm is represented by the joint angles, and the action is the change in joint angles to reach the target position. The reward function is defined as the negative Euclidean distance between the current position of the arm and the target position. The implementation of Double Q-Learning involves maintaining two Q-functions, Q1 and Q2, which are updated alternately. In each update, one of the Q-functions is used to select the best action, while the other Q-function is used to evaluate the selected action. This approach reduces the overestimation of action values, leading to more accurate estimation of the optimal policy.
@@ -256,9 +277,8 @@ The Double Q-learning method is used by the robotic arm to investigate its envir
 \subsection{Problem statement}
 
 Many studies have demonstrated that utilizing reinforcement learning (RL) presented a viable solution for addressing the limitations of conventional methods in tackling intricate robotics tasks. Numerous AI experts have created various frameworks and toolkits to examine and assess their algorithms' effectiveness in solving challenging problems \cite{36_wu2020ethical}. Although the outcomes were remarkable, these applications were generally limited to simulated environments and seldom deployed in real-world scenarios. Numerous researchers are presently focused on a highly promising mission of bridging the gap between simulation and reality. However, proficiency in various domains is crucial in the intricate field of RL, which might be an obstacle to entry for roboticists.
-For Problems involving an agent interacting with the environment to maximize a reward signal, RL, a potent branch of machine learning (ML), is used. Gaming, robotics, and finance are just a few of the industries where RL has been successfully used. RL has been applied to robotics to tackle a variety of problems, including grasping, manipulating, and navigating. One of these tasks involves teaching a virtual robotic arm to touch an object using reinforcement learning.
-The objective of this proposed study is to create a simulated robotic arm that can learn the Double Q Learning method for RL in order to learn how to touch an object. The object should not be knocked over or sustain any damage when the robotic arm moves its end-effector opposite direction and touches it. 
-The following are the study's primary obstacles:
+For problems involving an agent interacting with the environment to maximize a reward signal, RL, a potent branch of machine learning (ML), is used. Gaming, robotics, and finance are just a few of the industries where RL has been successfully used. RL has been applied to robotics to tackle a variety of problems, including grasping, manipulating, and navigating. One of these tasks involves teaching a virtual robotic arm to touch an object using reinforcement learning.
+The objective of this proposed study is to create a simulated environment in which a simulated robotic arm learns to touch an object by using the Double Q Learning method for RL. Implementing this brings the following challenges:
 \begin{itemize}
 \item Designing the incentive function: It is difficult to create a reward mechanism that encourages the robotic arm to interact with the object without damaging it or knocking it over.
 \item Tackling high-dimensional events and action spaces: It is difficult to apply RL methods to the robotic arm's highly dimensional state space and continuous action space.
@@ -270,55 +290,52 @@ We will utilize the Double Q Learning technique to address this issue since it 
 %What is the problem that is being addressed or solved? Why is it important or beneficial to find a solution to this problem? 
 %
 \subsection{Goals}\label{sec:ziele}
-The following are the main goals of this study:
+The goal of this thesis is to develop a robotic arm that can learn to touch an object using the double Q-learning algorithm. The focus will be on creating the simulated environment as well as implementing and evaluating the algorithm's performance in the simulated environment, with the aim of demonstrating the effectiveness of the approach and the potential for real-world applications. The thesis will also explore the impact of different hyperparameters on the performance of the algorithm, and investigate ways to enhance the system's robustness and generalization capabilities. Ultimately, the goal is to provide insights into the use of reinforcement learning algorithms for robotic manipulation tasks and pave the way for further research in this area. Specifically the goals are:
+
 \begin{itemize}
-\item Use RL to instruct the robotic arm to approach and grasp an object.
-\item To train a robot's arm, use the Double Q-learning algorithm.
-\item Establish a reward mechanism to motivate the robotic arm to effectively touch the target.
-\item Create a simulated space where the robotic arm is capable of touching things.
-\item Define the robotic arm's state space in the simulation environment.
-\item Define the robotic arm's reaction space in the simulation environment.
-\item Train the robot's arm on the best ways to touch an object so it can learn them.
-\item To get the greatest performance, fine-tune the Double Q-learning algorithm's hyperparameters.
-\item By counting the number of times, the robotic arm successfully touches an object, you may evaluate how well it is working.
-\item Continually enhance the training procedure by modifying the algorithm or its reward function as necessary.
+\item Creating a robotic arm simulation in Gazebo and ROS2 that can be treated as a Markov Decision Process, that will enable future integration of various reinforcement learning algorithms.
+\item Training a robotic arm, using the Double Q-learning algorithm to learn to touch an object.
+\item Defining an appropriate reward mechanism to motivate the robotic arm to effectively touch the target.
+\item Tackling the exploration vs exploration problem in the case of a simulated robotic arm learning to touch an object.
 
 \end{itemize}
 
-Here, give a list of bullet points of quantifiable goals of the presented work. These achievement of these goals will be shown in the experiments section. The list should have 3-4 entries. No blabla here, hard goals!
+%Here, give a list of bullet points of quantifiable goals of the presented work. These achievement of these goals will be shown in the experiments section. The list should have 3-4 entries. No blabla here, hard goals!
 %
 \subsection{Related Work}
-Deep Q-learning has been successfully applied in various robotic control tasks, including manipulators and robotic arms. In this section, we summarize the results and contributions of six relevant papers on deep Q-learning for robotic arm control.
+Reinforcement learning has been widely used for controlling robotic arms, and the deep Q-network (DQN) algorithm has shown great potential in this regard. Some related work regarding the field of Reinforcement Learning is described in this section.
 
-In \cite{LevinePastorKrizhevsky}, the authors proposed a method for robotic grasping using deep Q-networks (DQNs). The results showed that the proposed method outperforms other traditional grasping methods in terms of grasping success rate and efficiency.
+In \cite{james20163d}, the author uses deep Q-networks to train a 7-DOF robotic arm in
+a control task without any prior knowledge. The only input for the arm controller is images from the environment and the output is actions in order to achieve the task of locating, and grasping a cube. An interesting thing to mention regarding this work is how they define the reward function for intermediate steps. Similarly to the presented work, in this scenario the robotic arm also has to learn to approach an object. 
+In \cite{franceschetti2022robotic}, the authors examine the impact of reward functions and hyper-parameters on the effectiveness of policy learning using four deep reinforcement learning (DRL) algorithms for continuous torque control policies in model-free manipulation tasks. They simulate a manipulator robot and define two tasks, random target reaching and pick\&place, each with two distinct reward functions. The authors compare the performance of the algorithms using multiple hyper-parameters and analyze their results across the two tasks. The study includes both simulated and real-world executions of their best policies, which demonstrate the effectiveness of their approach. The authors suggest that their approach can be used to select the best-performing algorithm for different tasks and manipulator robots, with policies that can be easily transferred to physical setups, ensuring a match between simulated and real-world behaviors.
+Similarly,  in \cite{malik2022deep}, the authors use the DQN algorithm for solving the Inverse Kinematics problem of a 7-Degree of Freedom (DOF) robotic manipulator. It is shown that DQNs can also be applied to create joint space trajectories in the continuous joint angles space instead of in just discrete solution space scenarios.
+Finally in \cite{abdi2022computer} the authors combine computer vision, Q-learning, and neural networks to generate paths for a robotic arm to move. The proposed method uses two images to obtain accurate spatial coordinates of objects in real-time, Q-learning to determine a sequence of simple actions, and a trained neural network to determine a sequence of joint angles. The results of simulation and experimental tests prove that the robotic arm is able to follow the path avoiding obstacles and reaching the target.
 
-In \cite{GuShixiangHolly}, the authors presented a framework for real-time control of a robotic arm using deep reinforcement learning. They used a DQN-based algorithm to learn the control policy for the robotic arm, and the results demonstrated that the proposed method can achieve accurate and robust control.
+   
+%\par\noindent\rule{\textwidth}{0.4pt}
 
+%List works that have a similar goals, plus a short explanation (3-4 sentences at most) as to how they differ from your work. Do NOT make comparisons here (better than my work or similar), that happens in the discussion section.
 
-\par\noindent\rule{\textwidth}{0.4pt}
-
-
-List works that have a similar goals, plus a short explanation (3-4 sentences at most) as to how they differ from your work. Do NOT make comparisons here (better than my work or similar), that happens in the discussion section.
-
-Admissible related work is (in descending order of acceptability):
-\begin{itemize}
-\item Peer-reviewed scientific publications, ideally with a DOI. Use Google scholar for searching (GS can export BibTeX entries that you can copy into the .bib file of this project). 
-
-\item White papers and publicly available documents without review, cite with title, URL and date of access. In addition, you need to submit the PDFs in electronic form.
-
-\item Web pages, especially for software projects (e.g., TensorFlow, nginx, react, Django). Cite via URL and date of access. A github/gitlab/etc link is acceptable as well. Nothing needs to be submitted electronically, but only use such sources of there is no other way. 
-\end{itemize}
-
-Literature is cited like this: as shown in {clemen1989combining}, blablaba. Or: \cite{clemen1989combining} has a similar scope in the domain of perverted numerical integration, however without considering the aspect of cupidity. Or: In \cite{clemen1989combining}, a study of perverted diagonal matrix perversions is presented. You need not include page numbers.
-
-See also  Kap.~\ref{sec:zitate}, \ref{sec:webquellen}. 
+%Admissible related work is (in descending order of acceptability):
+%\begin{itemize}
+%\item Peer-reviewed scientific publications, ideally with a DOI. Use Google scholar for searching (GS can export BibTeX entries that you can copy into the .bib file of this project). 
+%
+%\item White papers and publicly available documents without review, cite with title, URL and date of access. In addition, you need to submit the PDFs in electronic form.
+%
+%\item Web pages, especially for software projects (e.g., TensorFlow, nginx, react, Django). Cite via URL and date of access. A github/gitlab/etc link is acceptable as well. Nothing needs to be submitted electronically, but only use such sources of there is no other way. 
+%\end{itemize}
+%
+%Literature is cited like this: as shown in {clemen1989combining}, blablaba. Or: \cite{clemen1989combining} has a similar scope in the domain of perverted numerical integration, however without considering the aspect of cupidity. Or: In \cite{clemen1989combining}, a study of perverted diagonal matrix perversions is presented. You need not include page numbers.
+%
+%See also  Kap.~\ref{sec:zitate}, \ref{sec:webquellen}. 
 
 \subsection{Contribution}
-Here, you present a bullet ist of your personal contributions to the topic of the thesis. For example: 
+The main contributions of this work can be listed as follows:
+%Here, you present a bullet ist of your personal contributions to the topic of the thesis. For example: 
 \begin{itemize}
-    \item Implementation of a bash script that did not work and was hard to read
-    \item Comparison of different implementations for matrix perversion
-    \item Implementation of a web service that provides jokes about professors via a ReST API.
+    \item Implementation of a simulated robotic arm environment that in Gazebo compatible with ROS2 that publishes images, and other sensor reading from the simulated environment to topics accessible from outside the simulation.
+    \item Implementation of the Double Q learning algorithm in the ROS2 framework.
+    \item Implementation of a communication pipeline between the robotic arm simulation in Gazebo and the reinforcement learning algorithm in ROS2 so that these two can interact with each other.
 \end{itemize}
 
 \section{Foundations}\label{sec:grundlagen}

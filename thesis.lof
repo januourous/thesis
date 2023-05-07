@@ -1,20 +1,22 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Simulated urban scenario created in Gazebo \cite {yigit2020real}.\relax }}{3}{figure.caption.5}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Small Warehouse Gazebo simulation \cite {aws-robomaker-small-warehouse-world}.\relax }}{4}{figure.caption.6}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Gazebo simulation of a Robotic Arm \cite {yigit2020trajectory}.\relax }}{7}{figure.caption.7}%
-\contentsline {figure}{\numberline {4}{\ignorespaces World created in Gazebo and starting directory structure after copying the robotic arm simulation files.\relax }}{36}{figure.caption.8}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Created SDF file in Gazebo which only contains the object to be touched by the robotic arm.}}}{36}{subfigure.4.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Project structure after copying the \textit {dae}, \textit {stl}, and \textit {urdf} files into our package.}}}{36}{subfigure.4.2}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Rviz2 kuka}}{37}{figure.caption.9}%
-\contentsline {figure}{\numberline {6}{\ignorespaces The ROS \textbf {robot\_state\_publisher} node takes the URDF file content and publishes it to the \textbf {/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.\relax }}{37}{figure.caption.10}%
-\contentsline {figure}{\numberline {7}{\ignorespaces kuka kr210 joints}}{38}{figure.caption.11}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Links in the Kuka KR210.\relax }}{39}{figure.caption.12}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Links 1, 3 and 5 in the Kuka KR210.}}}{39}{subfigure.8.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Base Link, Link 2, 4 and 6 in the Kuka KR210.}}}{39}{subfigure.8.2}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Gazebo World}}{40}{figure.caption.13}%
-\contentsline {figure}{\numberline {10}{\ignorespaces The joint state broadcaster node publishes the current state of each joint in the robot's body to the ROS (Robot Operating System) network. This state includes the joint's position, velocity, and effort (torque) values. \relax }}{40}{figure.caption.14}%
-\contentsline {figure}{\numberline {11}{\ignorespaces The node \textit {/gazebo\_state/gazebo\_ros\_state} publishes the state of the models in the gazebo world to the topics \textit {/gazebo\_state/link\_states\_demo} and \textit {/gazebo\_state/model\_states\_demo} as specified in Listing \ref {gazeboRosStatePluginXml}\relax }}{40}{figure.caption.15}%
-\contentsline {figure}{\numberline {12}{\ignorespaces As a result of adding Listing \ref {cameraSensorXml} a node \textit {camera\_controller} is created and it publishes to the topics \textit {/camera/image\_raw/*}.\relax }}{41}{figure.caption.16}%
-\contentsline {figure}{\numberline {13}{\ignorespaces As a result of adding Listing \ref {bumperSensorXml} there are \textit {/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit {/contact\_sensor/bumper\_link\_4}, \textit {/contact\_sensor/bumper\_link\_5}, and\textit { /contact\_sensor/bumper\_link\_6}. \relax }}{41}{figure.caption.17}%
-\contentsline {figure}{\numberline {14}{\ignorespaces The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm\relax }}{41}{figure.caption.18}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Classes present in the python script that runs the environment experiments for the arm to learn to touch the object.\relax }}{42}{figure.caption.19}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Logo der HAW Fulda\relax }}{52}{figure.caption.20}%
+\contentsline {figure}{\numberline {3}{\ignorespaces A robot arm helps make engine components at a Volkswagen factory in Germany \cite {wamu2013}\relax }}{5}{figure.caption.7}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Gazebo simulation of a Robotic Arm in a Pick and Place setup. \cite {mathworks2021}.\relax }}{7}{figure.caption.8}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Agent Environment interaction in the Reinforcement Learning Model.\relax }}{8}{figure.caption.9}%
+\contentsline {figure}{\numberline {6}{\ignorespaces World created in Gazebo and starting directory structure after copying the robotic arm simulation files.\relax }}{37}{figure.caption.10}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Created SDF file in Gazebo which only contains the object to be touched by the robotic arm.}}}{37}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Project structure after copying the \textit {dae}, \textit {stl}, and \textit {urdf} files into our package.}}}{37}{subfigure.6.2}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Rviz2 kuka}}{38}{figure.caption.11}%
+\contentsline {figure}{\numberline {8}{\ignorespaces The ROS \textbf {robot\_state\_publisher} node takes the URDF file content and publishes it to the \textbf {/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.\relax }}{38}{figure.caption.12}%
+\contentsline {figure}{\numberline {9}{\ignorespaces kuka kr210 joints}}{39}{figure.caption.13}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Links in the Kuka KR210.\relax }}{40}{figure.caption.14}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Links 1, 3 and 5 in the Kuka KR210.}}}{40}{subfigure.10.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Base Link, Link 2, 4 and 6 in the Kuka KR210.}}}{40}{subfigure.10.2}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Gazebo World}}{41}{figure.caption.15}%
+\contentsline {figure}{\numberline {12}{\ignorespaces The joint state broadcaster node publishes the current state of each joint in the robot's body to the ROS (Robot Operating System) network. This state includes the joint's position, velocity, and effort (torque) values. \relax }}{41}{figure.caption.16}%
+\contentsline {figure}{\numberline {13}{\ignorespaces The node \textit {/gazebo\_state/gazebo\_ros\_state} publishes the state of the models in the gazebo world to the topics \textit {/gazebo\_state/link\_states\_demo} and \textit {/gazebo\_state/model\_states\_demo} as specified in Listing \ref {gazeboRosStatePluginXml}\relax }}{41}{figure.caption.17}%
+\contentsline {figure}{\numberline {14}{\ignorespaces As a result of adding Listing \ref {cameraSensorXml} a node \textit {camera\_controller} is created and it publishes to the topics \textit {/camera/image\_raw/*}.\relax }}{42}{figure.caption.18}%
+\contentsline {figure}{\numberline {15}{\ignorespaces As a result of adding Listing \ref {bumperSensorXml} there are \textit {/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit {/contact\_sensor/bumper\_link\_4}, \textit {/contact\_sensor/bumper\_link\_5}, and\textit { /contact\_sensor/bumper\_link\_6}. \relax }}{42}{figure.caption.19}%
+\contentsline {figure}{\numberline {16}{\ignorespaces The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm\relax }}{42}{figure.caption.20}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Classes present in the python script that runs the environment experiments for the arm to learn to touch the object.\relax }}{43}{figure.caption.21}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Logo der HAW Fulda\relax }}{53}{figure.caption.22}%

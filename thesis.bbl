@@ -13,12 +13,19 @@ Amazon~Web Services.
   2019.
 \newblock Accessed: May 5, 2023.
 
-\bibitem{yigit2020trajectory}
-Abdullah Yigit, Gorkem Guzel, and Hakan Guler.
-\newblock Trajectory tracking performance analysis of underwater manipulator
-  for autonomous manipulation.
-\newblock {\em Journal of Intelligent \& Robotic Systems}, 98(1):209--224,
-  2020.
+\bibitem{wamu2013}
+Jenny Hsu.
+\newblock Car factories turn robots and humans into co-workers.
+\newblock {\em WAMU 88.5 American University Radio}, September 2013.
+\newblock Accessed on May 7, 2023.
+
+\bibitem{mathworks2021}
+MathWorks.
+\newblock Pick and place workflow in gazebo using ros.
+\newblock
+  \url{https://de.mathworks.com/help/robotics/ug/pick-and-place-workflow-in-gazebo-using-ros.html},
+  2021.
+\newblock Accessed on May 7, 2023.
 
 \bibitem{1_o2019legal}
 S~O'Sullivan, N~Nevejans, C~Allen, A~Blyth, S~Leonard, U~Pagallo, and
@@ -245,20 +252,29 @@ Wei Wu, Tingting Huang, and Ke~Gong.
   china.
 \newblock {\em Engineering}, 6(3):302--309, 2020.
 
-\bibitem{LevinePastorKrizhevsky}
-Sergey Levine, Peter Pastor, Alex Krizhevsky, Julian Ibarz, and Deirdre
-  Quillen.
-\newblock Learning hand-eye coordination for robotic grasping with deep
-  learning and large-scale data collection.
-\newblock {\em The International Journal of Robotics Research},
-  37(4-5):421--436, 2018.
+\bibitem{james20163d}
+Stephen James and Edward Johns.
+\newblock 3d simulation for robot arm control with deep q-learning.
+\newblock {\em arXiv preprint arXiv:1609.03759}, 2016.
 
-\bibitem{GuShixiangHolly}
-Shixiang Gu, Ethan Holly, Timothy Lillicrap, and Sergey Levine.
-\newblock Deep reinforcement learning for robotic manipulation with
-  asynchronous off-policy updates.
-\newblock In {\em 2017 IEEE International Conference on Robotics and Automation
-  (ICRA)}, page 3389–3396. IEEE Press, 2017.
+\bibitem{franceschetti2022robotic}
+Andrea Franceschetti, Elisa Tosello, Nicola Castaman, and Stefano Ghidoni.
+\newblock Robotic arm control and task training through deep reinforcement
+  learning.
+\newblock In {\em Intelligent Autonomous Systems 16: Proceedings of the 16th
+  International Conference IAS-16}, pages 532--550. Springer, 2022.
+
+\bibitem{malik2022deep}
+Aryslan Malik, Yevgeniy Lischuk, Troy Henderson, and Richard Prazenica.
+\newblock A deep reinforcement-learning approach for inverse kinematics
+  solution of a high degree of freedom robotic manipulator.
+\newblock {\em Robotics}, 11(2):44, 2022.
+
+\bibitem{abdi2022computer}
+Ali Abdi, Mohammad~Hassan Ranjbar, and Ju~Hong Park.
+\newblock Computer vision-based path planning for robot arms in
+  three-dimensional workspaces using q-learning and neural networks.
+\newblock {\em Sensors}, 22(5):1697, 2022.
 
 \bibitem{python-docs}
 {Python Software Foundation}.
