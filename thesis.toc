@@ -52,25 +52,28 @@
 \contentsline {subsection}{\numberline {3.5}The Agent class}{47}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}The Environment Manager class}{48}{subsection.3.6}%
 \contentsline {subsection}{\numberline {3.7}The Main Program}{50}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Technology Stack}{52}{subsection.3.8}%
-\contentsline {section}{\numberline {4}Experiments}{52}{section.4}%
-\contentsline {section}{\numberline {5}Discussion}{52}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{53}{section.6}%
-\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{53}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{53}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{53}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{53}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{53}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{54}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{54}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{54}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Textformatierung}{55}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Zitieren}{55}{subsection.7.9}%
-\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{55}{subsection.7.10}%
-\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{55}{subsection.7.11}%
-\contentsline {section}{\numberline {A}Code Snippets}{61}{appendix.A}%
-\contentsline {section}{\numberline {B}Thesis defence}{65}{appendix.B}%
-\contentsline {section}{\numberline {C}Extras}{66}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{66}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{66}{subsection.C.2}%
-\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{67}{subsection.C.3}%
+\contentsline {subsection}{\numberline {3.8}Hardware and Development Environment}{53}{subsection.3.8}%
+\contentsline {section}{\numberline {4}Experiments}{53}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Testing the Environment}{53}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Moving the Arm}{53}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Reading Images from the Camera Sensor}{55}{subsubsection.4.1.2}%
+\contentsline {section}{\numberline {5}Discussion}{57}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{57}{section.6}%
+\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{57}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{57}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{58}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{58}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{58}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{58}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{59}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{59}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Textformatierung}{59}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Zitieren}{59}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{59}{subsection.7.10}%
+\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{59}{subsection.7.11}%
+\contentsline {section}{\numberline {A}Code Snippets}{65}{appendix.A}%
+\contentsline {section}{\numberline {B}Thesis defence}{69}{appendix.B}%
+\contentsline {section}{\numberline {C}Extras}{70}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{70}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{70}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{71}{subsection.C.3}%

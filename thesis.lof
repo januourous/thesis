@@ -19,4 +19,14 @@
 \contentsline {figure}{\numberline {15}{\ignorespaces As a result of adding Listing \ref {bumperSensorXml} there are \textit {/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit {/contact\_sensor/bumper\_link\_4}, \textit {/contact\_sensor/bumper\_link\_5}, and\textit { /contact\_sensor/bumper\_link\_6}. \relax }}{42}{figure.caption.19}%
 \contentsline {figure}{\numberline {16}{\ignorespaces The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm.\relax }}{43}{figure.caption.20}%
 \contentsline {figure}{\numberline {17}{\ignorespaces Classes defining the reinforcement learning framework that will run the environment experiments for the arm to learn to touch the object.\relax }}{44}{figure.caption.21}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Logo der HAW Fulda\relax }}{54}{figure.caption.22}%
+\contentsline {figure}{\numberline {18}{\ignorespaces ROS nodes and topics active when running the main program.\relax }}{52}{figure.caption.22}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Robotic arm before and after publishing the target angles.\relax }}{54}{figure.caption.24}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kuka Kr210 in starting position.}}}{54}{subfigure.19.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Kuka Kr210 after moving every joint to 0.5 rads}}}{54}{subfigure.19.2}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Image of the gazebo world and from the camera sensor at starting position.\relax }}{56}{figure.caption.26}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gazebo world and robotic arm at the beginning of the experiment.}}}{56}{subfigure.20.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script after moving the arm.}}}{56}{subfigure.20.2}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Image of the gazebo world and from the camera sensor after moving the arm.\relax }}{56}{figure.caption.27}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gazebo world and robotic arm position after executing a moving command.}}}{56}{subfigure.21.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script after moving the arm.}}}{56}{subfigure.21.2}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Logo der HAW Fulda\relax }}{58}{figure.caption.28}%

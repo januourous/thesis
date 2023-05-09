@@ -36,6 +36,11 @@
 \usepackage{mdframed}
 \usepackage[most]{tcolorbox}
 \usepackage[T1]{fontenc}
+\usepackage{tabu}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{xcolor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Definition der Kopfzeile %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1253,27 +1258,133 @@ optimizer.step()
 		\end{itemize} 
 		\item Update the $targetNetwork$ weights if $targetUpdate$ episodes have passed
 	\end{itemize}
-
 \end{enumerate}
+Figure \ref{fig:rosgraphlatest} shows all the ROS nodes and topics present when running the main program.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.99\linewidth]{rosgraph_latest}
+\caption{ROS nodes and topics active when running the main program.}
+\label{fig:rosgraphlatest}
+\end{figure}
+
+\subsection{Hardware and Development Environment} 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ | c | c | }
+\hline
+\rowcolor{gray!50}
+\multicolumn{2}{|c|}{\textbf{Environment Setup}} \\
+\hline
+\rowcolor{gray!25}
+\textbf{Main Component} & \textbf{Metric} \\
+\hline
+Operating System & Ubuntu 20.04.3 LTS \\
+\rowcolor{gray!10}
+Processor & Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz \\
+Memory / Disk Capacity & 16GB / 500GB \\
+\rowcolor{gray!10}
+Graphics Card (GPU) & NVIDIA GeForce GTX 1660 Ti \\
+GPU Memory (VRAM) & 6GB \\
+\rowcolor{gray!10}
+Robot Operating System
+(ROS) Version & ROS 2 Foxy \\
+Python Version & 3.8.10 \\
+
+\hline
+\end{tabular}
+\caption{Development environment setup.}
+\label{table:hardware-specs}
+\end{table}
 
 
-\subsection{Technology Stack} 
+%Should refer, where possible, to the preceding chapter, e.e.:
+%Singular value decomposition of the matrix $\Sigma$ is conducted as explained in Sec.~\ref{sec:grundagen1} using the \textit{lapack} library (see Sec.~\ref{sec:grundlagen2}).
 
+%For software development: what is the logic of the developed code, which of it was done by yourself? Sequence diagrams or UML are good tools here.
 
-
-
-
-
-
-
-Should refer, where possible, to the preceding chapter, e.e.:
-Singular value decomposition of the matrix $\Sigma$ is conducted as explained in Sec.~\ref{sec:grundagen1} using the \textit{lapack} library (see Sec.~\ref{sec:grundlagen2}).
-
-For software development: what is the logic of the developed code, which of it was done by yourself? Sequence diagrams or UML are good tools here.
-
-Please give code snippets only if they take up less that 0.25 pages, and only if it is unavoidable. Longer snippets go to the appendix and are referenced like this: see App.~\ref{Snippet}.
+%Please give code snippets only if they take up less that 0.25 pages, and only if it is unavoidable. Longer snippets go to the appendix and are referenced like this: see App.~\ref{Snippet}.
 
 \section{Experiments}\label{sec:exp}
+\subsection{Testing the Environment}
+\subsubsection{Moving the Arm}
+The script $anglesPublisher.py$ defining the class $AnglesPublisher$ allows us to move the arm by making use of the $/joint\_trajectory\_controller/joint\_trajectory$ and specifying the joint angles in radians via command line. To collect the data in Table \ref{table:final-angles} the following was run 5 times:
+\begin{minted}[fontsize=\scriptsize,linenos=false,bgcolor=white]{bash}
+ros2 run kuka_kr_210_pkg anglesPublisher 0.5 0.5 0.5 0.5 0.5 0.5
+\end{minted}
+After running the script specifying a target angle of 0.5 rads for all the joints, the results in Table \ref{table:final-angles} are obtained.
+
+Making use of the values in Table \ref{table:final-angles}, a measurement of \\
+$0.49999900427046 \pm 3.86729542790782 * 10^{-06}$ rad is obtained when the controller gets 0.5 rad as target value.
+\begin{figure}[H]
+  \centering
+  \subfloat[Kuka Kr210 in starting position.]{\includegraphics[width=0.49\textwidth]{kuka_start_position_new.png}\label{fig:kuka_start_position}}
+  \hfill
+  \subfloat[Kuka Kr210 after moving every joint to 0.5 rads]{\includegraphics[width=0.49\textwidth]{kuka_end_position1_new.png}\label{fig:kuka_end_position1}}
+  \caption{Robotic arm before and after publishing the target angles.}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c}
+\hline
+Real Value (Radians) & Target Value (Radians) & Difference (Radians) \\
+\hline
+0.499999687205044 & 0.5 & 0.000000312794956103257 \\
+0.499999668258356 & 0.5 & 0.000000331741643877503 \\
+0.499997756395531 & 0.5 & 0.00000224360446932081 \\
+0.499999687185443 & 0.5 & 0.000000312814556535645 \\
+0.499999687205041 & 0.5 & 0.000000312794958823304 \\
+0.50000422755606 & 0.5 & -0.00000422755605988812 \\
+0.500004208609269 & 0.5 & -0.00000420860926908517 \\
+0.500002296736044 & 0.5 & -0.00000229673604401626 \\
+0.50000422753646 & 0.5 & -0.00000422753645956675 \\
+0.500004227556057 & 0.5 & -0.00000422755605722358 \\
+0.500000658598723 & 0.5 & -0.000000658598723113357 \\
+0.500000639652042 & 0.5 & -0.000000639652042444538 \\
+0.499998727789975 & 0.5 & 0.00000127221002532707 \\
+0.500000658579123 & 0.5 & -0.000000658579122791991 \\
+0.50000065859872 & 0.5 & -0.0000006585987203378 \\
+0.499992295778437 & 0.5 & 0.00000770422156293193 \\
+0.499992276831646 & 0.5 & 0.00000772316835362386 \\
+0.499990364958472 & 0.5 & 0.00000963504152823314 \\
+0.499992295758838 & 0.5 & 0.00000770424116236512 \\
+0.499992295778435 & 0.5 & 0.00000770422156470829 \\
+0.50000168446693 & 0.5 & -0.00000168446693038504 \\
+0.500001665520483 & 0.5 & -0.00000166552048330715 \\
+0.499999753682106 & 0.5 & 0.000000246317894136983 \\
+0.50000168444733 & 0.5 & -0.00000168444733006368 \\
+0.500001684466927 & 0.5 & -0.00000168446692683233 \\
+0.499997811745677 & 0.5 & 0.00000218825432352077 \\
+0.499997792799086 & 0.5 & 0.00000220720091448356 \\
+0.49999588094579 & 0.5 & 0.00000411905420971692 \\
+0.499997811726076 & 0.5 & 0.00000218827392378662 \\
+0.499997811745674 & 0.5 & 0.0000021882543261853 \\
+\hline
+\end{tabular}
+\caption{Final values for the joints angles after setting a target of 0.5 radians.}
+\label{table:final-angles}
+\end{table}
+
+\subsubsection{Reading Images from the Camera Sensor}
+To test if it is really possible to get images from the camera sensor, the script $cameraSubscriber.py$ was created. 
+\begin{figure}[H]
+  \centering
+  \subfloat[Gazebo world and robotic arm at the beginning of the experiment.]{\includegraphics[width=0.49\textwidth]{kuka_camera_1_new.png}\label{fig:kuka_camera_1}}
+  \hfill
+  \subfloat[Image captured by the cameraSubscriber.py script after moving the arm.]{\includegraphics[width=0.49\textwidth]{kuka_camera_2_new.png}\label{fig:kuka_camera_2}}
+  \caption{Image of the gazebo world and from the camera sensor at starting position.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Gazebo world and robotic arm position after executing a moving command.]{\includegraphics[width=0.49\textwidth]{kuka_camera_3_new.png}\label{fig:kuka_camera_3}}
+  \hfill
+  \subfloat[Image captured by the cameraSubscriber.py script after moving the arm.]{\includegraphics[width=0.49\textwidth]{kuka_camera_4_new.png}\label{fig:kuka_camera_4}}
+  \caption{Image of the gazebo world and from the camera sensor after moving the arm.}
+\end{figure}
+
+The $cameraSubscriber.py$ subscribes to the $/camera/image_raw$ and as Figures \ref{fig:kuka_camera_2} and \ref{fig:kuka_camera_4} show, the script can obtain the images and in this case just shows them in a new window.
 
 
 
