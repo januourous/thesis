@@ -242,7 +242,7 @@ In the learning process, an agent creates a policy. The agent begins in a partic
 % \par\noindent\rule{\textwidth}{0.4pt}
  The action space represents the possible actions that the agent can take in a given state. In the past, the tabular approach was used to store state and action values. However, in environments with a large number of states or actions, the approximation approach has replaced the tabular method. Neural networks are commonly used as approximation methods. There are two types of action spaces:
  \begin{itemize}
-\item \textbf{ Discrete action space:} A discrete action space is one in which the set of possible actions is finite and well-defined. The agent can choose only one of the available actions at a time. For example, in a game of tic-tac-toe, the action space consists of the nine possible positions on the board where a player can place their mark (X or O). This is a discrete action space because there are a finite number of possible actions (9) and the actions are well-defined (placing a mark in a specific location on the board).
+\item \textbf{ Discrete action space:} A discrete action space is one in which the set of possible actions is finite and well-defined. The agent can choose only one of the available actions at a time. For example, in a game of tic-tac-toe, the action space consists of the nine possible positions on the board where a player can place their mark ($X$ or $O$). This is a discrete action space because there are a finite number of possible actions (9) and the actions are well-defined (placing a mark in a specific location on the board).
 \item \textbf{ Continuous action space:} A continuous action space is one in which the set of possible actions is infinite and not well-defined. The agent can choose any action within a continuous range of values. For example, in a self-driving car scenario, the action space might consist of the possible steering angles and accelerations that the car can take at any given moment. This is a continuous action space because the possible actions are not well-defined, as the car can take any steering angle or acceleration within a continuous range of values.
  \end{itemize}
 
@@ -448,49 +448,67 @@ However, ROS2 actions also have some limitations. For example, they are more com
 
 In the end, ROS2 actions provide a powerful and flexible way for nodes to communicate with each other by executing long-running operations and providing feedback and cancellation capabilities. They are suitable for tasks that require a clear goal and result, such as robot arm motion planning, and can handle operations that may take several seconds or minutes to complete. However, they are more complex to implement than ROS2 topics and services and may not be suitable for all communication scenarios.
 
-\subsubsection{The tf\_ros.TransformListener}\label{ros2-transform-listener}
-The tf2\_ros.TransformListener is a ROS2 utility class that allows a node to receive the transform between two frames from the tf2 system. This class provides a simple way to listen for and access transforms between frames in a ROS2 system.
+\subsubsection{The gazebo\_ros package}
+Gazebo\_ros is an essential package for robotics researchers and developers as it enables the testing and verification of algorithms and systems on simulated robots.
 
-To use the tf2\_ros.TransformListener, a node must first initialize a tf2\_ros.Buffer object. This buffer object is used to store and manage the transforms that the node receives from the tf2 system. Once the buffer is initialized, the node can then create an instance of the tf2\_ros.TransformListener class, passing in a reference to the buffer object.
+The gazebo\_ros package provides a bridge between the Gazebo simulator and ROS. It includes plugins for various types of sensors and actuators commonly used in robotics, such as cameras, lidars, and motors. These plugins allow the user to publish and subscribe to ROS topics, enabling communication between the simulated robot and other ROS nodes. The package also includes a set of launch files that provide an easy way to set up the simulator with various sensors and actuators.
 
-Here is an example of how to use the tf2\_ros.TransformListener to get the transform between two frames:
-\begin{listing}[H]
-\caption{Example of how to use TransformListener to obtain the transform between two frames.}
-\label{code:transformliseter}
-\begin{minted}[fontsize=\scriptsize]{python}
+One of the main advantages of the gazebo\_ros package is its ability to simulate complex environments that are difficult or impossible to replicate in the real world. For example, testing a drone in a windy environment or a ground vehicle on a slippery surface can be challenging and risky in the real world. With Gazebo, developers can create realistic virtual environments that simulate these conditions and test their algorithms and controllers without any risk. Additionally, the package allows for easy customization of the robot model, sensor configuration, and other parameters, providing flexibility and control over the simulation environment.
+
+At a high level, the communication between ROS 2 and Gazebo using the gazebo\_ros package follows these steps:
+\begin{itemize}
+\item The Gazebo server is started with a specific world file that defines the simulation environment.
+\item The gazebo\_ros node is launched, which connects to the Gazebo server and initializes the ROS 2 interface.
+\item ROS 2 nodes can then be launched to control the simulated robots and sensors, and to receive data from them.
+\item ROS 2 messages are translated into Gazebo messages and sent to the Gazebo server, which updates the simulation environment accordingly.
+\item Gazebo messages are translated into ROS 2 messages and published on the ROS 2 network for other nodes to consume.
+\end{itemize}
+
+As an example, let's consider a simple simulation scenario involving a two-wheeled robot. The robot's motion is controlled by a ROS 2 node that publishes velocity commands on a topic. A gazebo\_ros node subscribes to this topic and sends the commands to the Gazebo server, which updates the robot's position and orientation accordingly. Another ROS 2 node subscribes to a topic that publishes sensor data from the robot, such as sonar or lidar measurements. The gazebo\_ros node reads the sensor data from Gazebo and publishes it on the corresponding ROS 2 topic.
+
+
+\subsubsection{The /joint\_states topic}\label{ros2-joint-state}
+The $/joint\_states$ topic is a standard ROS 2 topic that provides the current joint positions, velocities, and effort (torque or force) values for all joints in a robot. This topic is typically published by a robot's joint state publisher node, which reads the joint positions, velocities, and effort values from the robot's joint sensors and publishes them on the $/joint\_states$ topic.
+
+Here's an example Python script that subscribes to the /joint\_states topic and prints the current joint positions for a robot arm:
+\begin{minted}[fontsize=\scriptsize, breaklines]{python}
 import rclpy
-import tf2_ros
+from rclpy.node import Node
+from sensor_msgs.msg import JointState
+
+class JointStateSubscriber(Node):
+    def __init__(self):
+        super().__init__('joint_state_subscriber')
+        self.subscription = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
+
+    def joint_state_callback(self, msg):
+        # Print the current joint positions
+        for i, name in enumerate(msg.name):
+            position = msg.position[i]
+            self.get_logger().info(f"Joint {name} position: {position}")
 
 def main(args=None):
     rclpy.init(args=args)
-
-    # Initialize the buffer and listener
-    buffer = tf2_ros.Buffer()
-    listener = tf2_ros.TransformListener(buffer)
-
-    # Wait for the transform to become available
-    try:
-        buffer.lookup_transform('map', 'robot', rclpy.time.Time())
-    except tf2_ros.TransformException as ex:
-        print(ex)
-
-    # Get the transform between map and robot
-    transform = buffer.lookup_transform('map', 'robot', rclpy.time.Time())
-
-    # Print the transform
-    print(transform)
-
+    node = JointStateSubscriber()
+    rclpy.spin(node)
+    node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
-
 \end{minted}
-\end{listing} 
+This script creates a $JointStateSubscriber$ node that subscribes to the $/joint\_states$ topic and defines a $joint\_state\_callback$ function that prints the current joint positions for each joint in the robot arm. The $create\_subscription$ method of the Node class is used to create a subscription to the $/joint\_states$ topic, and the spin method is called to start the ROS event loop and receive messages from the subscription.
 
-In this example, the node initializes a tf2\_ros.Buffer object and a tf2\_ros.TransformListener object. The node then waits for the transform between the map and robot frames to become available. Once the transform is available, the node retrieves it from the buffer and prints it to the console.
+Assuming that the joint state publisher node is running and publishing joint state messages on the $/joint\_states$ topic, running this script will cause the current joint positions for each joint in the robot arm to be printed to the console whenever a new joint state message is received on the $/joint\_states$ topic.
 
-The tf2\_ros.TransformListener class is a useful tool for nodes that need to access transforms between frames in a ROS2 system. It provides a simple interface for listening for and accessing transforms, allowing nodes to easily interact with the tf2 system.
+\subsubsection{The robot\_state\_publisher node}\label{ros2-robot-state-publisher}
+The `robot\_state\_publisher` node in ROS2 is a tool used to publish the robot's state in the form of a tree of coordinate frames. It calculates the forward kinematics of a robot by combining joint angle values with the robot's URDF (Unified Robot Description Format), which is an XML file that describes the robot's kinematic and dynamic properties. 
+
+For example, consider a robot arm that has three revolute joints (joints that rotate around a fixed axis) and an end-effector attached to the third joint. The URDF file for this robot would describe the length of each link, the orientation of each joint, and the location of the end-effector relative to the third joint. The `robot\_state\_publisher` node would then use this information to calculate the transformation matrices between each link and joint, and ultimately the transformation matrix between the base link and end-effector.
+
+Once the transformation matrix is calculated, the `robot\_state\_publisher` node publishes it to the `/tf` topic. This transformation can be used by other nodes in the ROS2 system to determine the position and orientation of the end-effector relative to the base link, which can be useful for tasks such as robot control, path planning, and visualization.
+
+Overall, the `robot\_state\_publisher` node plays a crucial role in enabling the integration of various components of a robotic system in ROS2 by providing a common coordinate frame for all components to work with.
 
 \subsubsection{The /joint\_trajectory\_controller/follow\_joint\_trajectory action server}\label{ros2-joint-trajectory-controller}
 The $/joint\_trajectory\_controller/follow\_joint\_trajectory$ is an action server in ROS (Robot Operating System) that allows a client to send a joint trajectory command to a joint trajectory controller. This action server is part of the ros\_controllers package and is typically used to control the motion of a robot arm or any other mechanism with multiple joints.
@@ -537,39 +555,50 @@ rclpy.spin_until_future_complete(node, future)
 result = future.result()
 \end{minted}
 \end{enumerate}
-\subsubsection{The /joint\_states topic}\label{ros2-joint-state}
-The $/joint\_states$ topic is a standard ROS 2 topic that provides the current joint positions, velocities, and effort (torque or force) values for all joints in a robot. This topic is typically published by a robot's joint state publisher node, which reads the joint positions, velocities, and effort values from the robot's joint sensors and publishes them on the $/joint\_states$ topic.
 
-Here's an example Python script that subscribes to the /joint\_states topic and prints the current joint positions for a robot arm:
-\begin{minted}[fontsize=\scriptsize, breaklines]{python}
+\subsubsection{The tf\_ros.TransformListener}\label{ros2-transform-listener}
+The tf2\_ros.TransformListener is a ROS2 utility class that allows a node to receive the transform between two frames from the tf2 system. This class provides a simple way to listen for and access transforms between frames in a ROS2 system.
+
+To use the tf2\_ros.TransformListener, a node must first initialize a tf2\_ros.Buffer object. This buffer object is used to store and manage the transforms that the node receives from the tf2 system. Once the buffer is initialized, the node can then create an instance of the tf2\_ros.TransformListener class, passing in a reference to the buffer object.
+
+Here is an example of how to use the tf2\_ros.TransformListener to get the transform between two frames:
+\begin{listing}[H]
+\caption{Example of how to use TransformListener to obtain the transform between two frames.}
+\label{code:transformliseter}
+\begin{minted}[fontsize=\scriptsize]{python}
 import rclpy
-from rclpy.node import Node
-from sensor_msgs.msg import JointState
-
-class JointStateSubscriber(Node):
-    def __init__(self):
-        super().__init__('joint_state_subscriber')
-        self.subscription = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
-
-    def joint_state_callback(self, msg):
-        # Print the current joint positions
-        for i, name in enumerate(msg.name):
-            position = msg.position[i]
-            self.get_logger().info(f"Joint {name} position: {position}")
+import tf2_ros
 
 def main(args=None):
     rclpy.init(args=args)
-    node = JointStateSubscriber()
-    rclpy.spin(node)
-    node.destroy_node()
+
+    # Initialize the buffer and listener
+    buffer = tf2_ros.Buffer()
+    listener = tf2_ros.TransformListener(buffer)
+
+    # Wait for the transform to become available
+    try:
+        buffer.lookup_transform('map', 'robot', rclpy.time.Time())
+    except tf2_ros.TransformException as ex:
+        print(ex)
+
+    # Get the transform between map and robot
+    transform = buffer.lookup_transform('map', 'robot', rclpy.time.Time())
+
+    # Print the transform
+    print(transform)
+
     rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
-\end{minted}
-This script creates a $JointStateSubscriber$ node that subscribes to the $/joint\_states$ topic and defines a $joint\_state\_callback$ function that prints the current joint positions for each joint in the robot arm. The $create\_subscription$ method of the Node class is used to create a subscription to the $/joint\_states$ topic, and the spin method is called to start the ROS event loop and receive messages from the subscription.
 
-Assuming that the joint state publisher node is running and publishing joint state messages on the $/joint\_states$ topic, running this script will cause the current joint positions for each joint in the robot arm to be printed to the console whenever a new joint state message is received on the $/joint\_states$ topic.
+\end{minted}
+\end{listing} 
+
+In this example, the node initializes a tf2\_ros.Buffer object and a tf2\_ros.TransformListener object. The node then waits for the transform between the map and robot frames to become available. Once the transform is available, the node retrieves it from the buffer and prints it to the console.
+
+The tf2\_ros.TransformListener class is a useful tool for nodes that need to access transforms between frames in a ROS2 system. It provides a simple interface for listening for and accessing transforms, allowing nodes to easily interact with the tf2 system.
 
 \subsection{Unified Robot Description Format (URDF)}\label{urdf}
 Unified Robot Description Format is an XML-based file format used to describe the kinematics and dynamics of a robot for simulation or visualization purposes. The main purpose of URDF is to provide a standardized way to represent robots that can be easily shared and used across different robotics platforms and simulation tools.
@@ -620,65 +649,33 @@ RViz, RQt, and RQt Graph are three useful tools in the ROS ecosystem that allow 
 In summary, RViz, RQt, and RQt Graph are three powerful tools in the ROS ecosystem that allow developers to visualize, interact with, and analyze data from ROS nodes and topics. RViz provides 3D visualization capabilities, while RQt provides a suite of plugins for analyzing and debugging ROS nodes and topics. RQt Graph provides a visualization of the ROS network graph and data flow between nodes.
 
 
-\subsection{DDQN}
-
-Double Deep Q Learning (DDQN) \cite{42_hamdia2021efficient} is a Q-Learning algorithm extension that overcomes Q-value overestimation in standard Q-Learning. DDQN is a DRL method that combines a deep neural network with the Q-Learning technique to develop an optimum policy for an agent to make decisions in an environment.
-The Double Deep Q-Learning (DDQN) method is an extension of the classic Q-Learning algorithm, which is widely used in Reinforcement Learning (RL) for robotics and robotic arm control. Deep RL method DDQN combines two deep neural networks to estimate the Q-values of state-action pairings in an environment. In this section, we will go through the DDQN idea, its benefits, and how it may be applied in robotics and robotic arm control.
-Q-Learning is a well-known RL method that may be used to identify the best policy for an agent in a given environment. The agent in Q-Learning attempts to learn a function Q(s, a) that calculates the anticipated reward for doing an action in state s. The best policy is then found by choosing the action that maximizes the Q-value for a particular state. Q-Learning, on the other hand, can only be employed in tiny settings with a limited number of states and actions. It is unsuitable for big and complicated situations.
-Deep Q-Learning (DQL) is a Q-Learning variant that uses a deep neural network to estimate Q-values for state-action pairings in vast and complicated contexts. DQL has been demonstrated to be successful in a variety of difficult contexts, including video games and robotic control. However, it has been discovered that DQL can occasionally overstate Q-values, resulting in poor strategies.
-To overcome this issue, Double Deep Q-Learning (DDQN) was created, which estimates Q-values using two deep neural networks. One network, known as the target network, is used to produce Q-value targets, while the other, known as the online network, is used to generate Q-value estimates. To promote training stability, the Q-value objectives are updated less frequently than the Q-value estimations. This method decreases overestimation and enhances algorithm convergence.
-The DDQN algorithm is summarized below:
-\begin{enumerate}
-\item Set up two deep neural networks, one for the target network and one for the online network.
-\item Create a replay buffer to record the agent's experience tuples (state, action, reward, next state).
-\item Set the exploration strategy's parameters, such as the epsilon-greedy policy.
-\item For every episode:
-\begin{enumerate}
-\item Return the environment to its original state.
-\item Using the exploratory technique, choose an action.
-\item Carry out the activity and watch for the reward and the following state.
-\item Put the experience tuple into the replay buffer.
-\item Take a random sample of experience tuples from the replay buffer.
-\item Using the target network, compute the Q-value targets.
-\item Using the online network, compute the Q-value estimations.
-\item Determine the difference between the Q-value objectives and the Q-value estimations.
-\item To minimize loss, update the online network via backpropagation.
-\item Periodically update the target network with the weights of the online network.
-\item Repeat steps b–j until the episode is finished.
-\end{enumerate}
-\item Repeat step 4 for a fixed number of episodes or until the agent reaches a satisfactory level of performance.
-\end{enumerate}
-
-There are various advantages of using DDQN over standard Q-Learning and DQL. It decreases overestimation, enhances stability, and speeds up convergence. DDQN is also capable of dealing with vast and complicated settings with multidimensional state and action spaces. These characteristics make DDQN an appealing candidate for robotic control applications.
-DDQN may be used in robotics and robotic arm control to determine an optimum policy for the agent to complete certain tasks such as item grabbing or assembly. Without any prior understanding of the environment or the work, DDQN may be used to learn the policy from the ground up. The agent may investigate its surroundings and learn from its experiences in order to better its performance.
-
-\subsection{Machine Learning Algorithms}
-Machine learning is a branch of AI that entails teaching computers to learn from data without being explicitly programmed. Machine learning seeks to develop models that can make predictions or judgments based on input data. In this post, we will go over the fundamentals of machine learning, such as its many kinds, techniques, and applications. 
-There are several machine learning algorithms that are utilized in various sorts of machine learning jobs. Machine learning methods of many types can be applied to robotics and robotic arm control jobs. 
-
-A machine learning algorithm that can be used to operate robotic arms. Here are some examples of how to utilize decision trees in this context:
-    \begin{enumerate}
-    \item Classification of Arm Configurations: ML Algorithms can be used to categorize various arm configurations depending on sensor data input. A decision tree, for example, may be trained to classify various arm configurations based on the location and orientation of the arm joints.
-    \item Grasp Classification: Using sensor data as input, decision trees may be used to categorize several sorts of grasping actions. A decision tree, for example, may be taught to distinguish between power and precision grasps depending on the pressure applied to the item being clutched.
-    \item Object Recognition: Using sensor data as input, decision trees can be implemented to recognize various things. A decision tree, for example, may be trained to recognize different things based on their form and size, which could be beneficial for gripping and putting objects in precise spots.
-    \item Ideal Path Planning: Using input sensor data and the desired job, decision trees may be utilized to design the ideal path for the robotic arm to travel. A decision tree, for example, may be taught to identify the best path for the arm to take to pick up an object depending on its size and position.
-    \end{enumerate}
-Some machine learning algorithms and their uses in our context are:
-\begin{itemize}
-\item \textbf{Decision Trees:} Decision trees are used for classification jobs in which the purpose is to label incoming data.  In robotics, decision trees may be used for a number of tasks like object detection, path planning, and motion control. A decision tree, for example, might be used to identify different sorts of objects in a robot's surroundings or to decide the best course for a robot to take based on sensor data. Decision trees can be used to classify different arm configurations or grab types for robotic arm control.
-Based on sensor data input, decision trees may be used to identify various arm configurations or grip kinds. They may also be utilized to forecast the best path for the arm to take in order to complete a certain job.
-
-\item \textbf{Random Forests:} Random forests are an ensemble approach for improving the accuracy and resilience of classification problems by combining several decision trees. Random forests can be used in robotics to increase the accuracy and resilience of classification tasks. A random forest, for example, can be taught to identify different types of terrain based on sensor data input or to classify different sorts of items in a robot's surroundings. They can be used in robotic arm control to identify various items or to forecast the best-grabbing approach for certain things.
-
-\item \textbf{SVMs (Support Vector Machines):} SVMs are used for classification and regression problems. SVMs may be used in robotics for a range of tasks including object detection, path planning, and control. An SVM, for example, can be trained to recognize different sorts of objects based on their shape and size or to predict the best course for a robot to take depending on sensor data input. They can be used in robotic arm control to forecast the best path for the arm to take or to categorize various arm configurations.
-
-\item \textbf{Neural Networks:} A common deep learning approach, neural networks may be used for a range of tasks such as classification, regression, and reinforcement learning. In robotics, neural networks may be utilized for a range of tasks like object identification, motion control, and reinforcement learning. A neural network, for example, may be used to recognize different sorts of objects based on sensor data input or to learn and optimize the control of a robot's movement over time. They may be used in robotic arm control to understand complicated patterns and correlations in arm motions and forecast the best course for the arm to take.
-
-\item \textbf{Clustering algorithms:} these algorithms can be used to group together comparable data points, which is important in robotic arm control for finding similar grasping actions or arm configurations.
-
-\end{itemize}
-
-The choice of machine learning algorithm will depend on the specific task and data available in robotic arm control. It is important to select an algorithm that can effectively learn from the available data and perform the desired task accurately and efficiently. The application of these algorithms can greatly enhance the control and operation of robotic arms in various fields including manufacturing, logistics, and healthcare.
+%\subsection{Machine Learning Algorithms}
+%Machine learning is a branch of AI that entails teaching computers to learn from data without being explicitly programmed. Machine learning seeks to develop models that can make predictions or judgments based on input data. In this post, we will go over the fundamentals of machine learning, such as its many kinds, techniques, and applications. 
+%There are several machine learning algorithms that are utilized in various sorts of machine learning jobs. Machine learning methods of many types can be applied to robotics and robotic arm control jobs. 
+%
+%A machine learning algorithm that can be used to operate robotic arms. Here are some examples of how to utilize decision trees in this context:
+%    \begin{enumerate}
+%    \item Classification of Arm Configurations: ML Algorithms can be used to categorize various arm configurations depending on sensor data input. A decision tree, for example, may be trained to classify various arm configurations based on the location and orientation of the arm joints.
+%    \item Grasp Classification: Using sensor data as input, decision trees may be used to categorize several sorts of grasping actions. A decision tree, for example, may be taught to distinguish between power and precision grasps depending on the pressure applied to the item being clutched.
+%    \item Object Recognition: Using sensor data as input, decision trees can be implemented to recognize various things. A decision tree, for example, may be trained to recognize different things based on their form and size, which could be beneficial for gripping and putting objects in precise spots.
+%    \item Ideal Path Planning: Using input sensor data and the desired job, decision trees may be utilized to design the ideal path for the robotic arm to travel. A decision tree, for example, may be taught to identify the best path for the arm to take to pick up an object depending on its size and position.
+%    \end{enumerate}
+%Some machine learning algorithms and their uses in our context are:
+%\begin{itemize}
+%\item \textbf{Decision Trees:} Decision trees are used for classification jobs in which the purpose is to label incoming data.  In robotics, decision trees may be used for a number of tasks like object detection, path planning, and motion control. A decision tree, for example, might be used to identify different sorts of objects in a robot's surroundings or to decide the best course for a robot to take based on sensor data. Decision trees can be used to classify different arm configurations or grab types for robotic arm control.
+%Based on sensor data input, decision trees may be used to identify various arm configurations or grip kinds. They may also be utilized to forecast the best path for the arm to take in order to complete a certain job.
+%
+%\item \textbf{Random Forests:} Random forests are an ensemble approach for improving the accuracy and resilience of classification problems by combining several decision trees. Random forests can be used in robotics to increase the accuracy and resilience of classification tasks. A random forest, for example, can be taught to identify different types of terrain based on sensor data input or to classify different sorts of items in a robot's surroundings. They can be used in robotic arm control to identify various items or to forecast the best-grabbing approach for certain things.
+%
+%\item \textbf{SVMs (Support Vector Machines):} SVMs are used for classification and regression problems. SVMs may be used in robotics for a range of tasks including object detection, path planning, and control. An SVM, for example, can be trained to recognize different sorts of objects based on their shape and size or to predict the best course for a robot to take depending on sensor data input. They can be used in robotic arm control to forecast the best path for the arm to take or to categorize various arm configurations.
+%
+%\item \textbf{Neural Networks:} A common deep learning approach, neural networks may be used for a range of tasks such as classification, regression, and reinforcement learning. In robotics, neural networks may be utilized for a range of tasks like object identification, motion control, and reinforcement learning. A neural network, for example, may be used to recognize different sorts of objects based on sensor data input or to learn and optimize the control of a robot's movement over time. They may be used in robotic arm control to understand complicated patterns and correlations in arm motions and forecast the best course for the arm to take.
+%
+%\item \textbf{Clustering algorithms:} these algorithms can be used to group together comparable data points, which is important in robotic arm control for finding similar grasping actions or arm configurations.
+%
+%\end{itemize}
+%
+%The choice of machine learning algorithm will depend on the specific task and data available in robotic arm control. It is important to select an algorithm that can effectively learn from the available data and perform the desired task accurately and efficiently. The application of these algorithms can greatly enhance the control and operation of robotic arms in various fields including manufacturing, logistics, and healthcare.
 
 \subsection{Neural Networks}
 Neural networks are machine learning models inspired by the structure and function of the human brain. They are effective tools for addressing a wide range of complicated issues, including as image and audio recognition, natural language processing, and gameplay. This section will offer an overview of neural networks, covering their construction, training method, and applications.
@@ -756,18 +753,81 @@ To balance the exploration-exploitation trade-off, several ways can be applied, 
 \item \textbf{Thompson Sampling:} In this method, the agent keeps a probability distribution over the reward of each action and chooses an action based on a sample from that distribution. This technique strikes a balance between exploration and exploitation by choosing activities with a high likelihood of high rewards while also investigating actions with a low probability of high rewards.
 \end{enumerate}
 
-\hrule 
+\subsection{DDQN}\label{foundations:ddqn}
 
-In subsequent chapters, you can reference this one to avoid having to explain everything over and over again. This means that you just include things here that are necessary for the understanding of later chapters, nothing more.
-\subsection{Topic 01}\label{sec:grundlagen1}
-\hrule
+Double Deep Q Learning (DDQN) \cite{42_hamdia2021efficient} is a Q-Learning algorithm extension that overcomes Q-value overestimation in standard Q-Learning. DDQN is a DRL method that combines a deep neural network with the Q-Learning technique to develop an optimum policy for an agent to make decisions in an environment.
+The Double Deep Q-Learning (DDQN) method is an extension of the classic Q-Learning algorithm, which is widely used in Reinforcement Learning (RL) for robotics and robotic arm control. Deep RL method DDQN combines two deep neural networks to estimate the Q-values of state-action pairings in an environment.
+Q-Learning is a well-known RL method that may be used to identify the best policy for an agent in a given environment. The agent in Q-Learning attempts to learn a function $Q(s, a)$ that calculates the anticipated reward for doing an action in state $s$. The best policy is then found by choosing the action that maximizes the Q-value for a particular state. Q-Learning, on the other hand, can only be employed in tiny settings with a limited number of states and actions. It is unsuitable for big and complicated situations.
+Deep Q-Learning (DQL) is a Q-Learning variant that uses a deep neural network to estimate Q-values for state-action pairings in vast and complicated contexts. DQL has been demonstrated to be successful in a variety of difficult contexts, including video games and robotic control. However, it has been discovered that DQL can occasionally overstate Q-values, resulting in poor strategies.
+To overcome this issue, Double Deep Q-Learning (DDQN) was created, which estimates Q-values using two deep neural networks. One network, known as the target network, is used to produce Q-value targets, while the other, known as the policy network, is used to generate Q-value estimates. To promote training stability, the Q-value objectives are updated less frequently than the Q-value estimations. This method decreases overestimation and enhances algorithm convergence.
+To further improve learning, DDQN also uses a technique called "replay memory". This involves storing the agent's experiences in a buffer and randomly sampling from the buffer to train the neural network. By doing so, the agent can learn from a more diverse set of experiences, rather than just learning from the most recent experience. 
+The DDQN algorithm is summarized below:
+\begin{enumerate}
+\item  \label{itm:dqn_1} Initialize the replay memory buffer $D$ with capacity $N$.
+\item Initialize the policy Q-network with random weights $\theta$.
+\item Clone the policy Q-network and let that be the target Q-network with weights $\theta^{-} = \theta$.
+\item For each episode $e=1,2,...,E$ do the following:
+	\begin{enumerate}
+	\item Initialize the environment with initial state $s_0$.
+	\item For each step $t=1,2,...,T$ do the following:
+		\begin{enumerate}
+		\item With probability $\epsilon$ select a random action $a_t$, otherwise select $a_t=\arg\max_{a} Q(s_t, a; \theta)$.
+		\item Execute action $a_t$ and observe reward $r_t$ and next state $s_{t+1}$.
+		\item Store the experience $(s_t, a_t, r_t, s_{t+1})$ in the replay memory buffer $D$.
+		\item Sample a mini-batch of experiences $(s_j, a_j, r_j, s_{j+1})$ from the replay memory buffer $D$.
+		
+		\item Compute the Q-learning target value for each experience $(s_j, a_j, r_j, s_{j+1})$:
+		
+		 $y_j = 
+		 \begin{cases} 
+		 r_j & \text{if episode terminates at step } j+1 \\ 
+		 r_j + \gamma\max_{a'}Q(s_{j+1},a';\theta^{-}) & \text{otherwise} \end{cases}$.
+		
+		\item Compute the loss between the predicted Q-value and the target Q-value: $L(\theta) = \frac{1}{B}\sum_{j=1}^B(y_j-Q(s_j,a_j;\theta))^2$.
+		\item Update the policy Q-network weights using gradient descent: $\theta \leftarrow \theta - \alpha\nabla_\theta L(\theta)$.
+		\item Every $C$ steps update the target Q-network weights: $\theta^{-} \leftarrow \theta$.
+		\item Update the current state, set $s_t=s_{t+1}$.
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+
+%\begin{enumerate}
+%\item Set up two deep neural networks, one for the target network and one for the policy network.
+%\item Create a replay buffer to record the agent's experience tuples (state, action, reward, next state).
+%\item Set the exploration strategy's parameters, such as the epsilon-greedy policy.
+%\item For every episode:
+%\begin{enumerate}
+%\item Return the environment to its original state.
+%\item Using the exploratory technique, choose an action.
+%\item Carry out the activity and watch for the reward and the following state.
+%\item Put the experience tuple into the replay buffer.
+%\item Take a random sample of experience tuples from the replay buffer.
+%\item Using the target network, compute the Q-value targets.
+%\item Using the policy network, compute the Q-value estimations.
+%\item Determine the difference between the Q-value objectives and the Q-value estimations.
+%\item To minimize loss, update the online network via backpropagation.
+%\item Periodically update the target network with the weights of the policy network.
+%\item Repeat steps b–j until the episode is finished.
+%\end{enumerate}
+%\item Repeat step 4 for a fixed number of episodes or until the agent reaches a satisfactory level of performance.
+%\end{enumerate}
+
+There are various advantages of using DDQN over standard Q-Learning and DQL. It decreases overestimation, enhances stability, and speeds up convergence. DDQN is also capable of dealing with vast and complicated settings with multidimensional state and action spaces. These characteristics make DDQN an appealing candidate for robotic control applications.
+DDQN may be used in robotics and robotic arm control to determine an optimum policy for the agent to complete certain tasks such as item grabbing or assembly. Without any prior understanding of the environment or the work, DDQN may be used to learn the policy from the ground up. The agent may investigate its surroundings and learn from its experiences in order to better its performance.
+
+
+%\hrule 
+
+%In subsequent chapters, you can reference this one to avoid having to explain everything over and over again. This means that you just include things here that are necessary for the understanding of later chapters, nothing more.
+%\subsection{Topic 01}\label{sec:grundlagen1}
+%\hrule
 %
 \section{Implementation}\label{sec:umsetzung}
 \subsection{Environment Preparation}
 A SDF file containing the object the robotic arm has to learn to touch was created (Figure \ref{fig:can}).
 The robotic arm used in the simulation is the Kuka KR210. The necessary files to simulate such a robotic arm were taken from ~\cite{RoboND-Kinematics-Project}. 
 
-The first step is to create a ROS2 workspace and package in which we would place the simulation files, having a folder structure as the one in Figure \ref{fig:project_structure_1}.
+The first step is to create a ROS2 workspace and package to place the simulation files, having a folder structure as the one in Figure \ref{fig:project_structure_1}.
 
 \begin{figure}[H]
   \centering
@@ -778,7 +838,7 @@ The first step is to create a ROS2 workspace and package in which we would place
   \caption{World created in Gazebo and starting directory structure after copying the robotic arm simulation files.}
 \end{figure}
 
-With the simulation files in our package, we can use the \textit{ROS robot\_state\_publisher} node and Rviz \ref{rviz_rqt} to visualize the robotic arm, the result is shown in Figure \ref{fig:kuka1}.
+With the simulation files in place, the \textit{ROS robot\_state\_publisher} node \ref{ros2-robot-state-publisher} and Rviz \ref{rviz_rqt} to visualize the robotic arm, the result is shown in Figure \ref{fig:kuka1}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{kuka1}
@@ -790,7 +850,7 @@ With the simulation files in our package, we can use the \textit{ROS robot\_stat
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{rosgraph1}
+\includegraphics[width=0.9\linewidth]{rosgraph1}
 \caption{The ROS \textbf{robot\_state\_publisher} node takes the URDF file content and publishes it to the \textbf{/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.}
 \label{fig:rosgraph1}
 \end{figure}
@@ -845,7 +905,7 @@ The arm also has links that connect the joints, including the base, lower arm, u
   \caption{Links in the Kuka KR210.}
 \end{figure}
 
-After setting up the robotic arm, the following step is to add sensors to it and to configure it to work with ROS 2 and Gazebo.
+After setting up the robotic arm, the following step is to add sensors to it and to configure them to work with ROS 2 and Gazebo.
 \begin{itemize}
 \item To detect collisions between the robotic arm and the object it should learn to touch, a bumper sensor is added to links 4, 5, and 6. This is done by adding the code in Listing \ref{bumperSensorXml} to the URDF file.
 
@@ -854,7 +914,7 @@ After setting up the robotic arm, the following step is to add sensors to it and
 \item In the SDF file, the Gazebo ROS state plugin was added. This is done by adding the code in Listing \ref{gazeboRosStatePluginXml} in the SDF file. This plugin not only allows us to monitor our models' positions and velocities but also modify them programmatically.
 \end{itemize}
 
-Once everything mentioned is done we launch our SDF file in Gazebo and spawn the robotic arm into the world to finally have our setup as in Figure \ref{fig:kuka4}
+Once the robotic arm and the sensors are in place, the next step is to launch our SDF file in Gazebo and spawn the robotic arm into the world to finally have our setup as in Figure \ref{fig:kuka4}
 
 \begin{figure}[H]
 	\centering
@@ -863,7 +923,7 @@ Once everything mentioned is done we launch our SDF file in Gazebo and spawn the
 	\label{fig:kuka4}
 \end{figure}
 
-A launch file was created to spawn everything as in Figure \ref{fig:kuka4}, also the ROS nodes and topics in figures \ref{fig:rosgraph00}, \ref{fig:rosgraph01}, \ref{fig:rosgraph02}, \ref{fig:rosgraph03}, \ref{fig:rosgraph04} are created.
+A launch file was created to spawn the robotic arm in the gazebo world with the beer can as in Figure \ref{fig:kuka4}. Furthermore, the ROS nodes and topics in figures \ref{fig:rosgraph00}, \ref{fig:rosgraph01}, \ref{fig:rosgraph02}, \ref{fig:rosgraph03}, \ref{fig:rosgraph04} are initialized to be used later.
 
 
 \begin{figure}[H]
@@ -875,95 +935,96 @@ A launch file was created to spawn everything as in Figure \ref{fig:kuka4}, also
  
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{rosgraph01}
+\includegraphics[width=0.95\linewidth]{rosgraph01}
 \caption{The node \textit{/gazebo\_state/gazebo\_ros\_state} publishes the state of the models in the gazebo world to the topics \textit{/gazebo\_state/link\_states\_demo} and \textit{/gazebo\_state/model\_states\_demo} as specified in Listing \ref{gazeboRosStatePluginXml}}
 \label{fig:rosgraph01}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{rosgraph02}
-\caption{As a result of adding Listing \ref{cameraSensorXml} a node \textit{camera\_controller} is created and it publishes to the topics \textit{/camera/image\_raw/*}.}
+\includegraphics[width=0.85\linewidth]{rosgraph02_new}
+\caption{As a result of adding Listing \ref{cameraSensorXml} a node \textit{camera\_controller} is created and it publishes to the topics \textit{/camera/image\_raw}.}
 \label{fig:rosgraph02}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{rosgraph03}
+\includegraphics[width=0.95\linewidth]{rosgraph03_new}
 \caption{As a result of adding Listing \ref{bumperSensorXml} there are \textit{/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit{/contact\_sensor/bumper\_link\_4}, \textit{/contact\_sensor/bumper\_link\_5}, and\textit{ /contact\_sensor/bumper\_link\_6}. }
 \label{fig:rosgraph03}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{rosgraph04}
-\caption{The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm}.
+\includegraphics[width=0.95\linewidth]{rosgraph04_new}
+\caption{The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm.}
 \label{fig:rosgraph04}
 \end{figure}
 
-With the robotic arm spawn and the nodes and topics running to interact with it, the script to define the environment and the steps to be taken in the experiment is created. 
+With the robotic arm spawn and the nodes and topics running to interact with it, the next step is to create the classes that define the reinforcement learning environment.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\linewidth]{classDiagramComplete}
-\caption{Classes present in the python script that runs the environment experiments for the arm to learn to touch the object.}
+\includegraphics[width=0.95\linewidth]{uml_diagram_complete}
+\caption{Classes defining the reinforcement learning framework that will run the environment experiments for the arm to learn to touch the object.}
 \label{fig:classdiagramcomplete}
 \end{figure}
+Following there is a description of the classes in Figure \ref{fig:classdiagramcomplete} used to conduct the experiments.
+%The main components are:
+%\begin{itemize}
+%\item The action space is defined as angle variations of 0.03 radians for the Joints 1, 2 and 3. That is a space of 3 dimensional vectors whose components can only be three possible values (i.e. -0.03, 0, and 0.03).
+%\item The state space consists of four dimensional vectors whose components are the angle values of Joints 1, 2, and 3, and the distance between Link 6 and the object the arm has to touch.
+%\item The function computeReward in the EnvironmentManager class takes care of computing the reward, it is executed when the function takeAction in the EnvironmentManager class is executed. The computeReward function is as follows: 
+%
+%$reward = 
+% \begin{cases} 
+% 	100 	& \text{if the arm touches the object.} \\ 
+% 	1 		& \text{if episode terminates at step.} \\ 
+% 	-1 		& \text{if the arm moves away from the object.} 
+% \end{cases}$
+%
+%\item The ReplayMemory class keeps record of experiences, for every step it records the current state, the action taken, the reward, and the new state.
+%\item The EpsilonGreedyStrategy class provides the exploration probability, at the beginning the exploration probability is high and as the simulation continues this is defined to decay up to a minimum, at which point mostly exploitation is done.
+%\item The class NN defines the neural network used. The one used has two hidden layers with 32 and 64 nodes and ReLU as the activation function. The input and output layers are defined by the dimension of the state space and the number of actions in the action space respectively.
+%\item The Agent class takes care of selecting an action based on the exploration probability given by the EpsilonGreedyStrategy class.
+%
+%\end{itemize} 
 
-The main components are:
-\begin{itemize}
-\item The action space is defined as angle variations of 0.03 radians for the Joints 1, 2 and 3. That is a space of 3 dimensional vectors whose components can only be three possible values (i.e. -0.03, 0, and 0.03).
-\item The state space consists of four dimensional vectors whose components are the angle values of Joints 1, 2, and 3, and the distance between Link 6 and the object the arm has to touch.
-\item The function computeReward in the EnvironmentManager class takes care of computing the reward, it is executed when the function takeAction in the EnvironmentManager class is executed. The computeReward function is as follows: 
+%\subsection{The Double Deep Q Learning Algorithm}
+%Once we have our environment prepared, we are ready to implement the following Deep Q Learning Algorithm:
+%\begin{enumerate}
+%\item  \label{itm:dqn_1} Initialize the replay memory buffer $D$ with capacity $N$.
+%\item Initialize the policy Q-network with random weights $\theta$.
+%\item Clone the policy Q-network and let that be the target Q-network with weights $\theta^{-} = \theta$.
+%\item For each episode $e=1,2,...,E$ do the following:
+%	\begin{enumerate}
+%	\item Initialize the environment with initial state $s_0$.
+%	\item For each step $t=1,2,...,T$ do the following:
+%		\begin{enumerate}
+%		\item With probability $\epsilon$ select a random action $a_t$, otherwise select $a_t=\arg\max_{a} Q(s_t, a; \theta)$.
+%		\item Execute action $a_t$ and observe reward $r_t$ and next state $s_{t+1}$.
+%		\item Store the experience $(s_t, a_t, r_t, s_{t+1})$ in the replay memory buffer $D$.
+%		\item Sample a mini-batch of experiences $(s_j, a_j, r_j, s_{j+1})$ from the replay memory buffer $D$.
+%		
+%		\item Compute the Q-learning target value for each experience $(s_j, a_j, r_j, s_{j+1})$:
+%		
+%		 $y_j = 
+%		 \begin{cases} 
+%		 r_j & \text{if episode terminates at step } j+1 \\ 
+%		 r_j + \gamma\max_{a'}Q(s_{j+1},a';\theta^{-}) & \text{otherwise} \end{cases}$.
+%		
+%		\item Compute the loss between the predicted Q-value and the target Q-value: $L(\theta) = \frac{1}{B}\sum_{j=1}^B(y_j-Q(s_j,a_j;\theta))^2$.
+%		\item Update the policy Q-network weights using gradient descent: $\theta \leftarrow \theta - \alpha\nabla_\theta L(\theta)$.
+%		\item Every $C$ steps update the target Q-network weights: $\theta^{-} \leftarrow \theta$.
+%		\item Update the current state, set $s_t=s_{t+1}$.
+%		\end{enumerate}
+%	\end{enumerate}
+%\end{enumerate}
 
-$reward = 
- \begin{cases} 
- 	100 	& \text{if the arm touches the object.} \\ 
- 	1 		& \text{if episode terminates at step.} \\ 
- 	-1 		& \text{if the arm moves away from the object.} 
- \end{cases}$
-
-\item The ReplayMemory class keeps record of experiences, for every step it records the current state, the action taken, the reward, and the new state.
-\item The EpsilonGreedyStrategy class provides the exploration probability, at the beginning the exploration probability is high and as the simulation continues this is defined to decay up to a minimum, at which point mostly exploitation is done.
-\item The class NN defines the neural network used. The one used has two hidden layers with 32 and 64 nodes and ReLU as the activation function. The input and output layers are defined by the dimension of the state space and the number of actions in the action space respectively.
-\item The Agent class takes care of selecting an action based on the exploration probability given by the EpsilonGreedyStrategy class.
-
-\end{itemize} 
-
-\subsection{The Deep Q Learning Algorithm}
-Once we have our environment prepared, we are ready to implement the following Deep Q Learning Algorithm:
-\begin{enumerate}
-\item  \label{itm:dqn_1} Initialize the replay memory buffer $D$ with capacity $N$.
-\item Initialize the policy Q-network with random weights $\theta$.
-\item Clone the policy Q-network and let that be the target Q-network with weights $\theta^{-} = \theta$.
-\item For each episode $e=1,2,...,E$ do the following:
-	\begin{enumerate}
-	\item Initialize the environment with initial state $s_0$.
-	\item For each step $t=1,2,...,T$ do the following:
-		\begin{enumerate}
-		\item With probability $\epsilon$ select a random action $a_t$, otherwise select $a_t=\arg\max_{a} Q(s_t, a; \theta)$.
-		\item Execute action $a_t$ and observe reward $r_t$ and next state $s_{t+1}$.
-		\item Store the experience $(s_t, a_t, r_t, s_{t+1})$ in the replay memory buffer $D$.
-		\item Sample a mini-batch of experiences $(s_j, a_j, r_j, s_{j+1})$ from the replay memory buffer $D$.
-		
-		\item Compute the Q-learning target value for each experience $(s_j, a_j, r_j, s_{j+1})$:
-		
-		 $y_j = 
-		 \begin{cases} 
-		 r_j & \text{if episode terminates at step } j+1 \\ 
-		 r_j + \gamma\max_{a'}Q(s_{j+1},a';\theta^{-}) & \text{otherwise} \end{cases}$.
-		
-		\item Compute the loss between the predicted Q-value and the target Q-value: $L(\theta) = \frac{1}{B}\sum_{j=1}^B(y_j-Q(s_j,a_j;\theta))^2$.
-		\item Update the policy Q-network weights using gradient descent: $\theta \leftarrow \theta - \alpha\nabla_\theta L(\theta)$.
-		\item Every $C$ steps update the target Q-network weights: $\theta^{-} \leftarrow \theta$.
-		\item Update the current state, set $s_t=s_{t+1}$.
-		\end{enumerate}
-	\end{enumerate}
-\end{enumerate}
-
-\subsection{The Deep Q Network (DQN)}               
-PyTorch \cite{pytorch} was used for the neural network, specifically the \textit{nn.Module}. 
-The nn package contains a Module class which serves as the foundation for all neural network modules. This means that the used network and its layers will inherit from the Module class. To implement the DQN, the class NN that extends the nn.Module class is created. The DQN will be fed the current state as follows:
+\subsection{The NN class}      
+The NN class in Figure \ref{fig:classdiagramcomplete} implements the DQN used in this framework.         
+PyTorch \cite{pytorch} is used for the neural network, specifically the \textit{nn.Module}. 
+The $nn$ package contains a Module class which serves as the foundation for all neural network modules. This means that the used network and its layers will inherit from the Module class. To implement the DQN, the class NN that extends the nn.Module class is created. The DQN will be fed the current state as follows:
 \begin{align}
 	input &= (\theta_1, \theta_2, \theta_3, d) \label{eq:1}
 \end{align}
@@ -987,19 +1048,7 @@ A simple DQN with two fully connected layers and an output layer is used.
 
 In listing \ref{code:nn_class_1} The fully connected layers are referred to as $Linear$ layers in PyTorch.
 
-The first Linear layer will accept input with dimension of 4. This first layer will generate 32 outputs, which will serve as the input for the second Linear layer. The second Linear layer will have 64 outputs, and the output layer will have 27 outputs (as there are 27 possible actions as in Box 1), taking 64 inputs from the previous layer.
-
-\begin{tcolorbox}[label=mybox, titlebox=visible, title=Box 1. Possible actions that the agent can take]
-$A$ = \{(-0.03, -0.03, -0.03), (-0.03, -0.03, 0), (-0.03, -0.03, 0.03),
- (-0.03, 0, -0.03), (-0.03, 0, 0), (-0.03, 0, 0.03), 
- (-0.03, 0.03, -0.03), (-0.03, 0.03, 0), (-0.03, 0.03, 0.03),
-  (0, -0.03, -0.03), (0, -0.03, 0), (0, -0.03, 0.03), 
-  (0, 0, -0.03), (0, 0, 0), (0, 0, 0.03), (0, 0.03, -0.03), 
-  (0, 0.03, 0), (0, 0.03, 0.03), (0.03, -0.03, -0.03), 
-  (0.03, -0.03, 0), (0.03, -0.03, 0.03), (0.03, 0, -0.03), 
-  (0.03, 0, 0), (0.03, 0, 0.03), (0.03, 0.03, -0.03), 
-  (0.03, 0.03, 0), (0.03, 0.03, 0.03)\}
-\end{tcolorbox}
+The first Linear layer will accept input with dimension of 4. This first layer will generate 32 outputs, which will serve as the input for the second Linear layer. The second Linear layer will have 64 outputs, and the output layer will have 27 outputs, taking 64 inputs from the previous layer.
 
 The network outputs \textit{Q-values} that correspond to each possible action that the agent can take from a given state. Note that the network used does not have convolutional layers because no image processing takes place.
 The final step in defining the DQN class is to create a function called $forward()$. This function will carry out a forward pass through the network. It's important to keep in mind that $forward()$ is a necessary function for all PyTorch neural networks.
@@ -1017,8 +1066,8 @@ def forward(self, s):
 \end{listing} 
 When the network receives a state $s$; it passes it to the first fully connected layer and applies $relu$ to the output before sending it to the second fully connected layer. After that, $relu$ is applied before passing the result to the output layer. The $forward()$ function then returns the result obtained from the output layer.
 
-\subsection{The Replay Memory}
-To define the ReplayMemory class, the Experience class which defines $Experience=(s_j, a_j, r_j, s_j+1)$ is used. The capacity of the Replay Memory is the only parameter needed when creating it.
+\subsection{The Replay Memory class}
+To define the ReplayMemory class, the Experience class which defines $Experience=(s_j, a_j, r_j, s_{j+1})$ is used. The capacity of the Replay Memory is the only parameter needed when creating it.
 \begin{listing}[htbp]
 \caption{Implementation of the Replay Memory class.}
 \label{code:replay_memory}
@@ -1037,7 +1086,7 @@ class ReplayMemory:
 
 Using the code in Listing \ref{code:replay_memory}, ReplayMemory's capacity is initialized to $capacity$, and the $memory$ attribute is defined as a \textbf{deque} \ref{python:deque}. To add and store $experiences$ the $push$ function is defined, which is just a wrapper for the append built-in function in. When the number of experiences in $memory$ reaches $capacity$, new experiences are kept and old ones are removed. The $sample()$ function provides a batch of random experiences which is used to train the DQN. Finally, the function $canSample()$ tells us whether we can sample from memory or not.
 
-\subsection{The Epsilon Greedy Strategy}
+\subsection{The Epsilon Greedy Strategy class}
 To balance exploration and exploitation the epsilon greedy strategy is used. An exploration rate called $epsilon$ is defined. Epsilon is the probability that the agent will choose a random action (exploration). An $epsilon$ value of 1 means that the agent will explore the environment. As the agent learns $epsilon$ decays by a defined decay rate meaning that the agent knows more about the environment.
 \begin{listing}[H]
 \caption{Implementation of the EpsilonGreedyStrategy class.}
@@ -1054,7 +1103,7 @@ class EpsilonGreedyStrategy:
 \end{listing} 
 In Listing \ref{code:epsilon-greedy}, $start$, $end$, and $decay$ correspond to the starting, ending, and decay rate for $epsilon$. The function $get_exploration_rate()$ has the $currentStep$ of the agent as parameter and returns the calculated exploration rate.
 
-\subsection{The Agent}
+\subsection{The Agent class}
 The implemented Agent class in Listing \ref{code:agent} has a $strategy$ and $nActions$ as inputs. So, an instance of the EpsilonGreedyStrategy class, is needed to create the agent. The $nActions$ parameter refers to the number of possible actions that the agent can take from a given state. In this case, this number is always be twenty seven as all possible actions are written in Box 1.
 
 \begin{listing}[H]
@@ -1083,7 +1132,7 @@ The parameter $currentStep$ is set to zero at the beginning and indicates the cu
 The policy network refers to a deep Q-network that is trained to learn the optimal policy. In the $selectAction()$ function, the rate variable is set to the exploration rate returned from the epsilon greedy strategy that was passed in when creating the agent, and the $currentStep$ attribute of the agent is incremented by 1. 
 Then, we check whether the exploration rate is greater than a random number generated between 0 and 1. If it is, we explore the environment by randomly selecting an action from our action space $A$. If not, we exploit the environment by selecting the action that corresponds to the highest Q-value output from our policy network for the given state. To perform inference, the $torch.no\_grad()$ method is used to turn off gradient tracking since the model is only used for prediction, not training. During training, PyTorch tracks all the forward pass calculations that occur within the network. By turning off gradient tracking,  PyTorch does not to keep track of any forward pass calculations.
 
-\subsection{The Environment Manager}
+\subsection{The Environment Manager class}
 
 Finally the class that manages the environment is the EnvironmentManager class. This class implements the $rclpy.node.Node$ class in Python to create a node and interact with the other nodes in the environment.
 The following properties are initialized when the EnvironmentManager class is instantiated:
@@ -1134,31 +1183,81 @@ The $EnvironmentManager$ class implements the following methods :
 $reward = 
  \begin{cases} 
  	100 	& \text{if the arm touches the object.} \\ 
- 	1 		& \text{if episode terminates at current step.} \\ 
+ 	1 		& \text{if the arm moves closer to the object.} \\ 
  	-1 		& \text{if the arm moves away from the object.} 
  \end{cases}$
 \end{enumerate}
 
 
-% The $ are not needed here since the align environment is in math mode.
+\subsection{The Main Program}
+The main program implements the DDQN algorithm in \ref{foundations:ddqn}. The steps done in the Main Program are the following:
+\begin{enumerate}
+\item Run $rclpy.init$ which must be called before any other $rclpy$ function as it takes care of several important initialization steps. Once the initialization is complete, the rclpy library is ready to be used by Python nodes to communicate with other nodes and services in the ROS 2 system.
+\item  Initialize the hyper parameters:
+\begin{itemize}
+\item \textit{batchSize:} is the size for the batch used by the Replay Memory.
+\item \textit{gamma:} is the discount factor in the Bellman's Equation.
+\item \textit{epsStart:} is the starting value for the exploration rate.
+\item \textit{epsEnd: } is the ending value for the exploration rate.
+\item \textit{epsDecay:} is the decay rate over time for the exploration rate.
+\item \textit{targetUpdate:} is the number of episodes between updates for the target network weights with the policy network weights.
+\item \textit{memorySize:} is the capacity of the Replay Memory.
+\item \textit{lr:} is the learning rate used when training the DQN.
+\item \textit{numEpisodes:} The number of episodes we want to use for the experiment.
+\item \textit{maxStepsPerEpisode:} Number of episodes before the environment is reset.
+\end{itemize}
+\item Create the $strategy$, $replayMemory$, and $environment$ objects corresponding to the $EpsilonGreedyStrategy$, $ReplayMemory$, and $EnvironmentManager$ classes.
+\item Run the non-blocking $rclpy.spin\_once$ with the Environment object as parameter. This allows us to perform actions on the EnvironmentManager node, such as reading messages from topics or sending messages to other nodes.
+\item Create an Agent object, and two NN objects, one will be the \textit{policyNetwork}, and the other the \textit{targetNetwork}.
+\item Set the weights in the \textit{targetNetwork} equal to the weights in the \textit{policyNetwork}.
+\item Do the following for every episode:
+	\begin{itemize}
+		\item Reset the environment and obtain the current state:
+\begin{minted}[fontsize=\scriptsize]{python}
+environment.resetEnvironment()
+state = environment.getState()
+\end{minted}
+		\item Do the following for every step in the current episode:
+		\begin{itemize}
+			\item Select an action, perform the action and save the new state in the $nextState$ variable.
+\begin{minted}[fontsize=\scriptsize]{python}
+action = agent.selectAction(state, policyNetwork)
+reward = environment.takeAction(action)
+nextState = environment.getState()
+\end{minted}
+			\item Save the experience $(state, action, nextState, reward)$ into the $replayMemory$.
+\begin{minted}[fontsize=\scriptsize]{python}
+replayMemory.push(experience=Experience(state, action, nextState, reward))
+\end{minted}
+			\item Update $state$ with $nextState$ which now becomes the current state.
+\begin{minted}[fontsize=\scriptsize]{python}
+state = nextState
+\end{minted}
+			\item Sample experiences from $ReplayMemory$, compute the $currentQValues$ using the $policyNetwork$, and the $targetQValues$ using the $nextQValues$ given by the $targenNetwork$, the discount factor $gamma$, and the $rewards$ taken from the $replayMemory$
+\begin{minted}[fontsize=\scriptsize]{python}
+experiences = replayMemory.sample(batchSize)
+states, actions, rewards, nextStates = extractTensors(experiences)
+
+currentQValues = policyNetwork(states).gather(dim=1, index=actions.unsqueeze(-1))
+nextQValues = targetNetwork(nextStates).max(dim=1)[0].detach()
+targetQValues = nextQValues * gamma + rewards
+\end{minted}
+			\item Compute the loss using mean square error between $currentQValues$ and $targetQValues$ and apply gradient descent to update the weights in the $policyNetwork$.
+\begin{minted}[fontsize=\scriptsize]{python}
+loss = F.mse_loss(currentQValues, targetQValues.unsqueeze(1))
+optimizer.zero_grad()
+loss.backward()
+optimizer.step()
+\end{minted}
+			\item Stop if the $environment.done$ variable is true or if the maximum number of episodes has been reached.
+		\end{itemize} 
+		\item Update the $targetNetwork$ weights if $targetUpdate$ episodes have passed
+	\end{itemize}
+
+\end{enumerate}
 
 
-
-\subsection{Moving the robotic arm}
-The AnglesPublisher node was created \ref{mybox:1} to move the arm by publishing the target angles for the joints. To do this the Joint Trajectory Controller is used, this controller generates and executes trajectories for the robot joints. It subscribes to a JointTrajectory message that specifies the desired trajectory, and then generates a control signal to move the robot's joints along the trajectory. By publishing messages of type JointTrajectory to the joint\_trajectory topic the arm is moved.
-
-\subsection{Getting Images from the camera}
-The CameraSubscriber node was created to get images from the environment. The plugin previously used takes care of publishing the images to the topic /camera/image\_raw, the CameraSubscriber just subscribes to this topic and gets the images as messages of type Image.
-
-
-
-ROS control module is used to move the arm. ROS Control is a framework for building and controlling robots in ROS (Robot Operating System). It provides a standardized way to manage hardware interfaces, controllers, and state machines, making it easier to develop and integrate robot applications.
-
-The Joint State Broadcaster is a ROS node that broadcasts the state of robot joints. It reads joint positions, velocities, and efforts from a robot's hardware interfaces or controllers and publishes them as a JointState message on a ROS topic. This message contains the current state of all joints in the robot's model, allowing other ROS nodes to subscribe and use this information.
-
-The Joint Trajectory Controller is a ROS controller that generates and executes trajectories for robot joints. It subscribes to a JointTrajectory message that specifies the desired trajectory, and then generates a control signal to move the robot's joints along the trajectory. It can use different algorithms to generate this control signal, such as PID, computed-torque, or model-predictive control. This controller is often used in combination with the Joint State Broadcaster to provide closed-loop control of the robot's joints.
-
-Overall, the Joint State Broadcaster and Joint Trajectory Controller are two important components of ROS Control that enable the control of robot joints. The Joint State Broadcaster provides the current state of the joints to other ROS nodes, while the Joint Trajectory Controller generates and executes trajectories for the joints based on desired goals. Together, these components provide a powerful toolset for controlling robot motion in ROS. 
+\subsection{Technology Stack} 
 
 
 
