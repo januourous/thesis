@@ -30,8 +30,6 @@
 \usepackage{url}
 
 \usepackage{minted}
-\usepackage{graphicx}
-\usepackage{subfig}
 \usepackage{multicol}
 \usepackage{mdframed}
 \usepackage[most]{tcolorbox}
@@ -41,6 +39,10 @@
 \usepackage{color}
 \usepackage{colortbl}
 \usepackage{xcolor}
+\usepackage{subfig}
+\usepackage{graphicx}
+
+\newsavebox{\measurebox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Definition der Kopfzeile %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1194,7 +1196,7 @@ $reward =
 \end{enumerate}
 
 
-\subsection{The Main Program}
+\subsection{The Main Program}\label{main-program}
 The main program implements the DDQN algorithm in \ref{foundations:ddqn}. The steps done in the Main Program are the following:
 \begin{enumerate}
 \item Run $rclpy.init$ which must be called before any other $rclpy$ function as it takes care of several important initialization steps. Once the initialization is complete, the rclpy library is ready to be used by Python nodes to communicate with other nodes and services in the ROS 2 system.
@@ -1315,7 +1317,7 @@ ros2 run kuka_kr_210_pkg anglesPublisher 0.5 0.5 0.5 0.5 0.5 0.5
 After running the script specifying a target angle of 0.5 rads for all the joints, the results in Table \ref{table:final-angles} are obtained.
 
 Making use of the values in Table \ref{table:final-angles}, a measurement of \\
-$0.49999900427046 \pm 3.86729542790782 * 10^{-06}$ rad is obtained when the controller gets 0.5 rad as target value.
+$0.49999900427046 \pm 3.86729542790782 * 10^{-06} rad$ is obtained when the controller gets $0.5 rad$ as target value.
 \begin{figure}[H]
   \centering
   \subfloat[Kuka Kr210 in starting position.]{\includegraphics[width=0.49\textwidth]{kuka_start_position_new.png}\label{fig:kuka_start_position}}
@@ -1384,9 +1386,163 @@ To test if it is really possible to get images from the camera sensor, the scrip
   \caption{Image of the gazebo world and from the camera sensor after moving the arm.}
 \end{figure}
 
-The $cameraSubscriber.py$ subscribes to the $/camera/image_raw$ and as Figures \ref{fig:kuka_camera_2} and \ref{fig:kuka_camera_4} show, the script can obtain the images and in this case just shows them in a new window.
+The $cameraSubscriber.py$ subscribes to the $/camera/image\_raw$ and as Figures \ref{fig:kuka_camera_2} and \ref{fig:kuka_camera_4} show, the script can obtain the images and in this case just shows them in a new window.
+
+\subsubsection{Detecting Collisions}
+In this experiment the script $anglesPublisher.py$ is used to move the arm to touch the object (a can). While doing this the topics $/contact\_sensor/bumper\_link\_4$, \\ $/contact\_sensor/bumper\_link\_5$, and $/contact\_sensor/bumper\_link\_6$ are monitored using Rqt \ref{rviz_rqt} so collisions between the beer can and Links 4, 5, or 6 can be detected.
+After moving the arm to make the collision happen between the can and Link 6 of the arm as in Figure \ref{fig:rqtlink6collision}, it can be seen in Figure \ref{fig:rqtlink6collision} that for the topic $/contact\_sensor/bumper\_link\_6$ there is a message of type $ContactState$ in $states$ which indicates that the collisions sensor is working properly and we can rely on them in future experiments.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{link_6_collision}
+\caption{Collision between the can and Link 6 or end effector of the arm.}
+\label{fig:link6collision}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{rqt_link_6_collision}
+\caption{Monitoring the topics $/contact\_sensor/bumper\_link\_4$, $/contact\_sensor/bumper\_link\_5$, and $/contact\_sensor/bumper\_link\_6$ in Rqt \ref{rviz_rqt}. The first column is the name of the topics, and the second is the type of message they handle. }
+\label{fig:rqtlink6collision}
+\end{figure}
+
+\subsection{Learning to touch the object}
+\subsubsection{Experiment 1}
+In this experiment the Main Program \ref{main-program} was run with the parameters in Table \ref{tab:hyperparams-exp-1}. The experiment consists in finding out if the arm can learn to touch the can.
+\begin{table}[h]
+\centering
+\begin{tabular}{l l}
+\hline
+Parameter & Value \\
+\hline
+Discount Factor ($\gamma$) & 0.99 \\
+Batch Size & 512 \\
+Epsilon Start Value & 1 \\
+Epsilon Final & 0.01 \\
+Epsilon Decay Rate & 0.0001 \\
+Episodes before updating the Target Network & 10 \\
+Replay Memory size & 10240 \\
+Learning Rate & 0.001 \\
+Number of Episodes & 50 \\
+Maximum Steps per episode & 500 \\
+\hline
+\end{tabular}
+\caption{Hyperparameters values for the reinforcement learning algorithm in Experiment 1.}
+\label{tab:hyperparams-exp-1}
+\end{table}
+
+As the results in Figure \ref{fig:rewards_episodes_50_gamma_099} show, the arm learns to get a reward of over $125$ consistently from episode 25. Also in Figure \ref{fig:nSteps_episodes_50_gamma_099} can be seen that the number of steps per episode stay around or below 100. This means that the arm learns to touch the object.
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Sum of rewards in an episode or episode reward per Episode]
+  {\includegraphics[width=0.49\textwidth]{rewards_episodes_50_gamma_099.png}\label{fig:rewards_episodes_50_gamma_099}}
+  \hspace{0\textwidth}
+  \subfloat[Number of steps per episode.]
+  {\includegraphics[width=0.49\textwidth]{nSteps_episodes_50_gamma_099.png}\label{fig:nSteps_episodes_50_gamma_099}}
+  \caption{Reward per episode and number of steps per episode for experiment 1 with parameters in Table \ref{tab:hyperparams-exp-1}.}
+  \label{fig:experiment-1}
+\end{figure}
+\subsubsection{Experiment 2}
+This experiment is similar to Experiment 1, just the number of episodes changes to 100 to see if the learning of the arm can be improved.
+\begin{table}[H]
+\centering
+\begin{tabular}{l l}
+\hline
+Parameter & Value \\
+\hline
+Discount Factor ($\gamma$) & 0.99 \\
+Batch Size & 512 \\
+Epsilon Start Value & 1 \\
+Epsilon Final & 0.01 \\
+Epsilon Decay Rate & 0.0001 \\
+Episodes before updating the Target Network & 10 \\
+Replay Memory size & 10240 \\
+Learning Rate & 0.001 \\
+Number of Episodes & 100 \\
+Maximum Steps per episode & 500 \\
+\hline
+\end{tabular}
+\caption{Hyperparameters values for the reinforcement learning algorithm in Experiment 2.}
+\label{tab:hyperparams-exp-2}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\sbox{\measurebox}{%
+  \begin{minipage}[b]{.47\textwidth}
+  \subfloat
+    [Collision between Link 6 of the robotic arm and can at the end of Experiment 2.]
+    {\label{fig:kuka_collision_100_episodes}\includegraphics[width=\textwidth,height=15cm]{kuka_collision_100_episodes}}
+  \end{minipage}}
+\usebox{\measurebox}\qquad
+\begin{minipage}[b]{.47\textwidth}
+\centering
+\subfloat
+  [Sum of rewards in an episode or episode reward per Episode]
+  {\label{fig:rewards_episodes_100_gamma_099}\includegraphics[width=\textwidth,height=7.3cm]{rewards_episodes_100_gamma_099}} \\
+\subfloat
+  [Number of steps per episode.]
+  {\label{fig:nSteps_episodes_100_gamma_099}\includegraphics[width=\textwidth,height=7.3cm]{nSteps_episodes_100_gamma_099}}
+\end{minipage}
+\caption{Collision of the robotic arm and the can and Experiment 2 results.}
+\label{fig:experiment-2}
+\end{figure}
+
+\subsection{Experiment 3}
+This experiment was run using the parameters in Table \ref{tab:hyperparams-exp-3}
+\begin{table}[H]
+\centering
+\begin{tabular}{l l}
+\hline
+Parameter & Value \\
+\hline
+Discount Factor ($\gamma$) & 0.5 \\
+Batch Size & 512 \\
+Epsilon Start Value & 1 \\
+Epsilon Final & 0.01 \\
+Epsilon Decay Rate & 0.0001 \\
+Episodes before updating the Target Network & 10 \\
+Replay Memory size & 10240 \\
+Learning Rate & 0.001 \\
+Number of Episodes & 100 \\
+Maximum Steps per episode & 500 \\
+\hline
+\end{tabular}
+\caption{Hyperparameters values for the reinforcement learning algorithm in Experiment 3.}
+\label{tab:hyperparams-exp-3}
+\end{table}
+In addition to the total reward per episode and number of steps per episode, the exploration rate ($\epsilon$) was also monitored in this experiment as can be seen in Figure \ref{fig:epsilon_episodes_100_gamma_05}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{epsilon_episodes_100_gamma_05.png}
+\caption{Exploration rate ($\epsilon$) value at the beginning of each episode. }
+\label{fig:epsilon_episodes_100_gamma_05}
+\end{figure}
 
 
+\begin{figure}[H]
+\centering
+\sbox{\measurebox}{%
+  \begin{minipage}[b]{.47\textwidth}
+  \subfloat
+    [Collision between Link 6 of the robotic arm and can at the end of Experiment 3.]
+    {\label{fig:kuka_collision_100_episodes_gamma_05}\includegraphics[width=\textwidth,height=15cm]{kuka_collision_100_episodes_gamma_05.png}}
+  \end{minipage}}
+\usebox{\measurebox}\qquad
+\begin{minipage}[b]{.47\textwidth}
+\centering
+\subfloat
+  [Sum of rewards in an episode or episode reward per Episode]
+  {\label{fig:rewards_episodes_100_gamma_05}\includegraphics[width=\textwidth,height=7.3cm]{rewards_episodes_100_gamma_05}} \\
+\subfloat
+  [Number of steps per episode.]
+  {\label{fig:nSteps_episodes_100_gamma_05}\includegraphics[width=\textwidth,height=7.3cm]{nSteps_episodes_100_gamma_05}}
+\end{minipage}
+\caption{Collision of the robotic arm and the can and Experiment 3 results.}
+\label{fig:experiment-3}
+\end{figure}
+
+\subsection{Experiment 4}
 
 \par\noindent\rule{\textwidth}{0.4pt}
 Show here that the goals from the introduction were achieved (or not achieved), you need at least one experiment per goal. Use screenshots, diagrams, plots, photos, etc. as necessary.
