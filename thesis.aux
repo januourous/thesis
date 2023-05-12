@@ -93,7 +93,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.8}Double Q-Learning}{11}{subsubsection.1.1.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Problem statement}{11}{subsection.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Goals}{12}{subsection.1.3}\protected@file@percent }
-\newlabel{sec:ziele}{{1.3}{12}{Goals}{subsection.1.3}{}}
+\newlabel{sec:goals}{{1.3}{12}{Goals}{subsection.1.3}{}}
 \citation{james20163d}
 \citation{franceschetti2022robotic}
 \citation{malik2022deep}
@@ -245,9 +245,11 @@
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Development environment setup.\relax }}{53}{table.caption.23}\protected@file@percent }
 \newlabel{table:hardware-specs}{{1}{53}{Development environment setup.\relax }{table.caption.23}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{53}{section.4}\protected@file@percent }
-\newlabel{sec:exp}{{4}{53}{Experiments}{section.4}{}}
+\newlabel{experiments}{{4}{53}{Experiments}{section.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Testing the Environment}{53}{subsection.4.1}\protected@file@percent }
+\newlabel{experiment:testing-the-environment}{{4.1}{53}{Testing the Environment}{subsection.4.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Moving the Arm}{53}{subsubsection.4.1.1}\protected@file@percent }
+\newlabel{experiment:moving-the-arm}{{4.1.1}{53}{Moving the Arm}{subsubsection.4.1.1}{}}
 \newlabel{fig:kuka_start_position}{{19a}{54}{Subfigure 19a}{subfigure.19.1}{}}
 \newlabel{sub@fig:kuka_start_position}{{(a)}{a}{Subfigure 19a\relax }{subfigure.19.1}{}}
 \newlabel{fig:kuka_end_position1}{{19b}{54}{Subfigure 19b}{subfigure.19.2}{}}
@@ -258,13 +260,14 @@
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Final values for the joints angles after setting a target of 0.5 radians.\relax }}{55}{table.caption.25}\protected@file@percent }
 \newlabel{table:final-angles}{{2}{55}{Final values for the joints angles after setting a target of 0.5 radians.\relax }{table.caption.25}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Reading Images from the Camera Sensor}{55}{subsubsection.4.1.2}\protected@file@percent }
+\newlabel{experiment:reading-images}{{4.1.2}{55}{Reading Images from the Camera Sensor}{subsubsection.4.1.2}{}}
 \newlabel{fig:kuka_camera_1}{{20a}{56}{Subfigure 20a}{subfigure.20.1}{}}
 \newlabel{sub@fig:kuka_camera_1}{{(a)}{a}{Subfigure 20a\relax }{subfigure.20.1}{}}
 \newlabel{fig:kuka_camera_2}{{20b}{56}{Subfigure 20b}{subfigure.20.2}{}}
 \newlabel{sub@fig:kuka_camera_2}{{(b)}{b}{Subfigure 20b\relax }{subfigure.20.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Image of the gazebo world and from the camera sensor at starting position.\relax }}{56}{figure.caption.26}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Gazebo world and robotic arm at the beginning of the experiment.}}}{56}{subfigure.20.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script after moving the arm.}}}{56}{subfigure.20.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script before moving the arm.}}}{56}{subfigure.20.2}\protected@file@percent }
 \newlabel{fig:kuka_camera_3}{{21a}{56}{Subfigure 21a}{subfigure.21.1}{}}
 \newlabel{sub@fig:kuka_camera_3}{{(a)}{a}{Subfigure 21a\relax }{subfigure.21.1}{}}
 \newlabel{fig:kuka_camera_4}{{21b}{56}{Subfigure 21b}{subfigure.21.2}{}}
@@ -273,12 +276,15 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Gazebo world and robotic arm position after executing a moving command.}}}{56}{subfigure.21.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script after moving the arm.}}}{56}{subfigure.21.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Detecting Collisions}{57}{subsubsection.4.1.3}\protected@file@percent }
+\newlabel{experiment:detecting-collisions}{{4.1.3}{57}{Detecting Collisions}{subsubsection.4.1.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Collision between the can and Link 6 or end effector of the arm.\relax }}{57}{figure.caption.28}\protected@file@percent }
 \newlabel{fig:link6collision}{{22}{57}{Collision between the can and Link 6 or end effector of the arm.\relax }{figure.caption.28}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Monitoring the topics $/contact\_sensor/bumper\_link\_4$, $/contact\_sensor/bumper\_link\_5$, and $/contact\_sensor/bumper\_link\_6$ in Rqt \ref  {rviz_rqt}. The first column is the name of the topics, and the second is the type of message they handle. \relax }}{58}{figure.caption.29}\protected@file@percent }
 \newlabel{fig:rqtlink6collision}{{23}{58}{Monitoring the topics $/contact\_sensor/bumper\_link\_4$, $/contact\_sensor/bumper\_link\_5$, and $/contact\_sensor/bumper\_link\_6$ in Rqt \ref {rviz_rqt}. The first column is the name of the topics, and the second is the type of message they handle. \relax }{figure.caption.29}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Learning to touch the object}{58}{subsection.4.2}\protected@file@percent }
+\newlabel{experiment:learning-touch-object}{{4.2}{58}{Learning to touch the object}{subsection.4.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Experiment 1}{58}{subsubsection.4.2.1}\protected@file@percent }
+\newlabel{experiment:experiment-1}{{4.2.1}{58}{Experiment 1}{subsubsection.4.2.1}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Hyperparameters values for the reinforcement learning algorithm in Experiment 1.\relax }}{58}{table.caption.30}\protected@file@percent }
 \newlabel{tab:hyperparams-exp-1}{{3}{58}{Hyperparameters values for the reinforcement learning algorithm in Experiment 1.\relax }{table.caption.30}{}}
 \newlabel{fig:rewards_episodes_50_gamma_099}{{24a}{59}{Subfigure 24a}{subfigure.24.1}{}}
@@ -287,9 +293,10 @@
 \newlabel{sub@fig:nSteps_episodes_50_gamma_099}{{(b)}{b}{Subfigure 24b\relax }{subfigure.24.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Reward per episode and number of steps per episode for experiment 1 with parameters in Table \ref  {tab:hyperparams-exp-1}.\relax }}{59}{figure.caption.31}\protected@file@percent }
 \newlabel{fig:experiment-1}{{24}{59}{Reward per episode and number of steps per episode for experiment 1 with parameters in Table \ref {tab:hyperparams-exp-1}.\relax }{figure.caption.31}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per Episode}}}{59}{subfigure.24.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{59}{subfigure.24.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of steps per episode.}}}{59}{subfigure.24.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Experiment 2}{59}{subsubsection.4.2.2}\protected@file@percent }
+\newlabel{experiment:experiment-2}{{4.2.2}{59}{Experiment 2}{subsubsection.4.2.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Hyperparameters values for the reinforcement learning algorithm in Experiment 2.\relax }}{59}{table.caption.32}\protected@file@percent }
 \newlabel{tab:hyperparams-exp-2}{{4}{59}{Hyperparameters values for the reinforcement learning algorithm in Experiment 2.\relax }{table.caption.32}{}}
 \newlabel{fig:kuka_collision_100_episodes}{{25a}{60}{Subfigure 25a}{subfigure.25.1}{}}
@@ -303,7 +310,8 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 2.}}}{60}{subfigure.25.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per Episode}}}{60}{subfigure.25.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Number of steps per episode.}}}{60}{subfigure.25.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Experiment 3}{60}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Experiment 3}{60}{subsubsection.4.2.3}\protected@file@percent }
+\newlabel{experiment:experiment-3}{{4.2.3}{60}{Experiment 3}{subsubsection.4.2.3}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Hyperparameters values for the reinforcement learning algorithm in Experiment 3.\relax }}{61}{table.caption.34}\protected@file@percent }
 \newlabel{tab:hyperparams-exp-3}{{5}{61}{Hyperparameters values for the reinforcement learning algorithm in Experiment 3.\relax }{table.caption.34}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }}{61}{figure.caption.35}\protected@file@percent }
@@ -317,35 +325,66 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Collision of the robotic arm and the can and Experiment 3 results.\relax }}{62}{figure.caption.36}\protected@file@percent }
 \newlabel{fig:experiment-3}{{27}{62}{Collision of the robotic arm and the can and Experiment 3 results.\relax }{figure.caption.36}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 3.}}}{62}{subfigure.27.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per Episode}}}{62}{subfigure.27.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{62}{subfigure.27.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Number of steps per episode.}}}{62}{subfigure.27.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Experiment 4}{62}{subsection.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{63}{section.5}\protected@file@percent }
-\newlabel{mybox}{{5}{63}{Discussion}{section.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{63}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{63}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{63}{subsection.7.1}\protected@file@percent }
-\newlabel{eq:1}{{3}{63}{Mathematische Gleichungen}{equation.7.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{63}{subsection.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{64}{subsection.7.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{64}{subsection.7.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Logo der HAW Fulda\relax }}{64}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:bildchen}{{28}{64}{Logo der HAW Fulda\relax }{figure.caption.37}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{64}{subsection.7.5}\protected@file@percent }
-\newlabel{alg:dummy}{{1}{64}{So schreibt man einen Algorithmus}{algocf.1}{}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces How to write algorithms \relax }}{64}{algocf.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Experiment 4}{62}{subsubsection.4.2.4}\protected@file@percent }
+\newlabel{experiment:experiment-4}{{4.2.4}{62}{Experiment 4}{subsubsection.4.2.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Hyperparameters values for the reinforcement learning algorithm in Experiment 4.\relax }}{63}{table.caption.37}\protected@file@percent }
+\newlabel{tab:hyperparams-exp-4}{{6}{63}{Hyperparameters values for the reinforcement learning algorithm in Experiment 4.\relax }{table.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }}{63}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:epsilon_episodes_300_gamma_05}{{28}{63}{Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }{figure.caption.38}{}}
+\newlabel{fig:kuka_collision_300_episodes_gamma_05}{{29a}{64}{Subfigure 29a}{subfigure.29.1}{}}
+\newlabel{sub@fig:kuka_collision_300_episodes_gamma_05}{{(a)}{a}{Subfigure 29a\relax }{subfigure.29.1}{}}
+\newlabel{fig:rewards_episodes_300_gamma_05}{{29b}{64}{Subfigure 29b}{subfigure.29.2}{}}
+\newlabel{sub@fig:rewards_episodes_300_gamma_05}{{(b)}{b}{Subfigure 29b\relax }{subfigure.29.2}{}}
+\newlabel{fig:nSteps_episodes_300_gamma_05}{{29c}{64}{Subfigure 29c}{subfigure.29.3}{}}
+\newlabel{sub@fig:nSteps_episodes_300_gamma_05}{{(c)}{c}{Subfigure 29c\relax }{subfigure.29.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Collision of the robotic arm and the can and Experiment 4 results.\relax }}{64}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:experiment-4}{{29}{64}{Collision of the robotic arm and the can and Experiment 4 results.\relax }{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 4.}}}{64}{subfigure.29.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{64}{subfigure.29.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Number of steps per episode.}}}{64}{subfigure.29.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}Experiment 5}{64}{subsubsection.4.2.5}\protected@file@percent }
+\newlabel{experiment:experiment-5}{{4.2.5}{64}{Experiment 5}{subsubsection.4.2.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Hyperparameters values for the reinforcement learning algorithm in Experiment 5.\relax }}{65}{table.caption.40}\protected@file@percent }
+\newlabel{tab:hyperparams-exp-5}{{7}{65}{Hyperparameters values for the reinforcement learning algorithm in Experiment 5.\relax }{table.caption.40}{}}
+\newlabel{rewards_episodes_800_gamma_05}{{30a}{66}{Subfigure 30a}{subfigure.30.1}{}}
+\newlabel{sub@rewards_episodes_800_gamma_05}{{(a)}{a}{Subfigure 30a\relax }{subfigure.30.1}{}}
+\newlabel{nSteps_episodes_800_gamma_05}{{30b}{66}{Subfigure 30b}{subfigure.30.2}{}}
+\newlabel{sub@nSteps_episodes_800_gamma_05}{{(b)}{b}{Subfigure 30b\relax }{subfigure.30.2}{}}
+\newlabel{epsilon_episodes_800_gamma_05}{{30c}{66}{Subfigure 30c}{subfigure.30.3}{}}
+\newlabel{sub@epsilon_episodes_800_gamma_05}{{(c)}{c}{Subfigure 30c\relax }{subfigure.30.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Results for Experiment 5.\relax }}{66}{figure.caption.41}\protected@file@percent }
+\newlabel{fig:experiment-5}{{30}{66}{Results for Experiment 5.\relax }{figure.caption.41}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode.}}}{66}{subfigure.30.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of steps per episode.}}}{66}{subfigure.30.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Exploration rate ($\epsilon $) value at the beginning of each episode.}}}{66}{subfigure.30.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{66}{section.5}\protected@file@percent }
+\newlabel{box:mybox}{{5}{68}{Discussion}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{68}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{68}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{68}{subsection.7.1}\protected@file@percent }
+\newlabel{eq:1}{{3}{68}{Mathematische Gleichungen}{equation.7.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{68}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{68}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{69}{subsection.7.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Logo der HAW Fulda\relax }}{69}{figure.caption.42}\protected@file@percent }
+\newlabel{fig:bildchen}{{31}{69}{Logo der HAW Fulda\relax }{figure.caption.42}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{69}{subsection.7.5}\protected@file@percent }
+\newlabel{alg:dummy}{{1}{69}{So schreibt man einen Algorithmus}{algocf.1}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces How to write algorithms \relax }}{69}{algocf.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{69}{subsection.7.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Beispielstabelle \relax }}{69}{table.caption.43}\protected@file@percent }
+\newlabel{tab:beispiel}{{8}{69}{Beispielstabelle \relax }{table.caption.43}{}}
 \citation{clemen1989combining}
 \citation{shiny1}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{65}{subsection.7.6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Beispielstabelle \relax }}{65}{table.caption.38}\protected@file@percent }
-\newlabel{tab:beispiel}{{6}{65}{Beispielstabelle \relax }{table.caption.38}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{65}{subsection.7.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.8}Textformatierung}{65}{subsection.7.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.9}Zitieren}{65}{subsection.7.9}\protected@file@percent }
-\newlabel{sec:zitate}{{7.9}{65}{Zitieren}{subsection.7.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{65}{subsection.7.10}\protected@file@percent }
-\newlabel{sec:webquellen}{{7.10}{65}{Webquellen zitieren}{subsection.7.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{65}{subsection.7.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{70}{subsection.7.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.8}Textformatierung}{70}{subsection.7.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.9}Zitieren}{70}{subsection.7.9}\protected@file@percent }
+\newlabel{sec:zitate}{{7.9}{70}{Zitieren}{subsection.7.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{70}{subsection.7.10}\protected@file@percent }
+\newlabel{sec:webquellen}{{7.10}{70}{Webquellen zitieren}{subsection.7.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{70}{subsection.7.11}\protected@file@percent }
 \bibstyle{unsrt}
 \bibdata{literatur}
 \bibcite{yigit2020real}{1}
@@ -414,20 +453,20 @@
 \bibcite{RoboND-Kinematics-Project}{64}
 \bibcite{pytorch}{65}
 \bibcite{shiny1}{66}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Code Snippets}{71}{appendix.A}\protected@file@percent }
-\@writefile{lol}{\contentsline {listing}{\numberline {7}{\ignorespaces Bumper Sensor\relax }}{71}{listing.7}\protected@file@percent }
-\newlabel{bumperSensorXml}{{7}{71}{Bumper Sensor\relax }{listing.7}{}}
-\@writefile{lol}{\contentsline {listing}{\numberline {8}{\ignorespaces Camera Sensor\relax }}{72}{listing.8}\protected@file@percent }
-\newlabel{cameraSensorXml}{{8}{72}{Camera Sensor\relax }{listing.8}{}}
-\@writefile{lol}{\contentsline {listing}{\numberline {9}{\ignorespaces Gazebo ROS state plugin\relax }}{72}{listing.9}\protected@file@percent }
-\newlabel{gazeboRosStatePluginXml}{{9}{72}{Gazebo ROS state plugin\relax }{listing.9}{}}
-\@writefile{lol}{\contentsline {listing}{\numberline {10}{\ignorespaces Gazebo plugin and ROS2 controller configuration file.\relax }}{72}{listing.10}\protected@file@percent }
-\newlabel{gazeboPluginControllerConfigFile}{{10}{72}{Gazebo plugin and ROS2 controller configuration file.\relax }{listing.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Thesis defence}{75}{appendix.B}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C}Extras}{76}{appendix.C}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{76}{subsection.C.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{76}{subsection.C.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{77}{subsection.C.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Code Snippets}{76}{appendix.A}\protected@file@percent }
+\@writefile{lol}{\contentsline {listing}{\numberline {7}{\ignorespaces Bumper Sensor\relax }}{76}{listing.7}\protected@file@percent }
+\newlabel{bumperSensorXml}{{7}{76}{Bumper Sensor\relax }{listing.7}{}}
+\@writefile{lol}{\contentsline {listing}{\numberline {8}{\ignorespaces Camera Sensor\relax }}{77}{listing.8}\protected@file@percent }
+\newlabel{cameraSensorXml}{{8}{77}{Camera Sensor\relax }{listing.8}{}}
+\@writefile{lol}{\contentsline {listing}{\numberline {9}{\ignorespaces Gazebo ROS state plugin\relax }}{77}{listing.9}\protected@file@percent }
+\newlabel{gazeboRosStatePluginXml}{{9}{77}{Gazebo ROS state plugin\relax }{listing.9}{}}
+\@writefile{lol}{\contentsline {listing}{\numberline {10}{\ignorespaces Gazebo plugin and ROS2 controller configuration file.\relax }}{77}{listing.10}\protected@file@percent }
+\newlabel{gazeboPluginControllerConfigFile}{{10}{77}{Gazebo plugin and ROS2 controller configuration file.\relax }{listing.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Thesis defence}{80}{appendix.B}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Extras}{81}{appendix.C}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{81}{subsection.C.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{81}{subsection.C.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{82}{subsection.C.3}\protected@file@percent }
 \gdef\minted@oldcachelist{,
   default-pyg-prefix.pygstyle,
   default.pygstyle,
@@ -449,6 +488,7 @@
   6E9B1EFEB80B3C763E17D4063ADA57C00102E502927AACB428B4F294F23E2359.pygtex,
   8B3F4C5B6FADE8762C14FA12701C81090102E502927AACB428B4F294F23E2359.pygtex,
   60847CCF96F752E88D96038D37322C3F9F014CDCC252D787938A66F94A2C28CF.pygtex,
+  E8B7908242BC6D7BA9018CB9D08E6BE50102E502927AACB428B4F294F23E2359.pygtex,
   62950A08ECAB57B6D8323467A2C1D92B35DA72F391F0EE3A0648FBA0246F4FB8.pygtex,
   AB417D2570F9994312AF8F7AB1D1A35135DA72F391F0EE3A0648FBA0246F4FB8.pygtex,
   76A66E59FE24F1E11E5B86A8B289BAA535DA72F391F0EE3A0648FBA0246F4FB8.pygtex,

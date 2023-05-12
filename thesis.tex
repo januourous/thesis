@@ -41,7 +41,6 @@
 \usepackage{xcolor}
 \usepackage{subfig}
 \usepackage{graphicx}
-
 \newsavebox{\measurebox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Definition der Kopfzeile %%
@@ -296,7 +295,7 @@ We will utilize the Double Q Learning technique to address this issue since it 
 
 %What is the problem that is being addressed or solved? Why is it important or beneficial to find a solution to this problem? 
 %
-\subsection{Goals}\label{sec:ziele}
+\subsection{Goals}\label{sec:goals}
 The goal of this thesis is to develop a robotic arm that can learn to touch an object using the double Q-learning algorithm. The focus will be on creating the simulated environment as well as implementing and evaluating the algorithm's performance in the simulated environment, with the aim of demonstrating the effectiveness of the approach and the potential for real-world applications. The thesis will also explore the impact of different hyperparameters on the performance of the algorithm, and investigate ways to enhance the system's robustness and generalization capabilities. Ultimately, the goal is to provide insights into the use of reinforcement learning algorithms for robotic manipulation tasks and pave the way for further research in this area. Specifically the goals are:
 
 \begin{itemize}
@@ -1307,9 +1306,9 @@ Python Version & 3.8.10 \\
 
 %Please give code snippets only if they take up less that 0.25 pages, and only if it is unavoidable. Longer snippets go to the appendix and are referenced like this: see App.~\ref{Snippet}.
 
-\section{Experiments}\label{sec:exp}
-\subsection{Testing the Environment}
-\subsubsection{Moving the Arm}
+\section{Experiments}\label{experiments}
+\subsection{Testing the Environment}\label{experiment:testing-the-environment}
+\subsubsection{Moving the Arm} \label{experiment:moving-the-arm}
 The script $anglesPublisher.py$ defining the class $AnglesPublisher$ allows us to move the arm by making use of the $/joint\_trajectory\_controller/joint\_trajectory$ and specifying the joint angles in radians via command line. To collect the data in Table \ref{table:final-angles} the following was run 5 times:
 \begin{minted}[fontsize=\scriptsize,linenos=false,bgcolor=white]{bash}
 ros2 run kuka_kr_210_pkg anglesPublisher 0.5 0.5 0.5 0.5 0.5 0.5
@@ -1368,13 +1367,13 @@ Real Value (Radians) & Target Value (Radians) & Difference (Radians) \\
 \label{table:final-angles}
 \end{table}
 
-\subsubsection{Reading Images from the Camera Sensor}
+\subsubsection{Reading Images from the Camera Sensor}\label{experiment:reading-images}
 To test if it is really possible to get images from the camera sensor, the script $cameraSubscriber.py$ was created. 
 \begin{figure}[H]
   \centering
   \subfloat[Gazebo world and robotic arm at the beginning of the experiment.]{\includegraphics[width=0.49\textwidth]{kuka_camera_1_new.png}\label{fig:kuka_camera_1}}
   \hfill
-  \subfloat[Image captured by the cameraSubscriber.py script after moving the arm.]{\includegraphics[width=0.49\textwidth]{kuka_camera_2_new.png}\label{fig:kuka_camera_2}}
+  \subfloat[Image captured by the cameraSubscriber.py script before moving the arm.]{\includegraphics[width=0.49\textwidth]{kuka_camera_2_new.png}\label{fig:kuka_camera_2}}
   \caption{Image of the gazebo world and from the camera sensor at starting position.}
 \end{figure}
 
@@ -1388,7 +1387,7 @@ To test if it is really possible to get images from the camera sensor, the scrip
 
 The $cameraSubscriber.py$ subscribes to the $/camera/image\_raw$ and as Figures \ref{fig:kuka_camera_2} and \ref{fig:kuka_camera_4} show, the script can obtain the images and in this case just shows them in a new window.
 
-\subsubsection{Detecting Collisions}
+\subsubsection{Detecting Collisions}\label{experiment:detecting-collisions}
 In this experiment the script $anglesPublisher.py$ is used to move the arm to touch the object (a can). While doing this the topics $/contact\_sensor/bumper\_link\_4$, \\ $/contact\_sensor/bumper\_link\_5$, and $/contact\_sensor/bumper\_link\_6$ are monitored using Rqt \ref{rviz_rqt} so collisions between the beer can and Links 4, 5, or 6 can be detected.
 After moving the arm to make the collision happen between the can and Link 6 of the arm as in Figure \ref{fig:rqtlink6collision}, it can be seen in Figure \ref{fig:rqtlink6collision} that for the topic $/contact\_sensor/bumper\_link\_6$ there is a message of type $ContactState$ in $states$ which indicates that the collisions sensor is working properly and we can rely on them in future experiments.
 
@@ -1405,8 +1404,8 @@ After moving the arm to make the collision happen between the can and Link 6 of 
 \label{fig:rqtlink6collision}
 \end{figure}
 
-\subsection{Learning to touch the object}
-\subsubsection{Experiment 1}
+\subsection{Learning to touch the object}\label{experiment:learning-touch-object}
+\subsubsection{Experiment 1}\label{experiment:experiment-1}
 In this experiment the Main Program \ref{main-program} was run with the parameters in Table \ref{tab:hyperparams-exp-1}. The experiment consists in finding out if the arm can learn to touch the can.
 \begin{table}[h]
 \centering
@@ -1434,15 +1433,15 @@ As the results in Figure \ref{fig:rewards_episodes_50_gamma_099} show, the arm l
 
 \begin{figure}[H]
   \centering
-  \subfloat[Sum of rewards in an episode or episode reward per Episode]
+  \subfloat[Sum of rewards in an episode or episode reward per episode]
   {\includegraphics[width=0.49\textwidth]{rewards_episodes_50_gamma_099.png}\label{fig:rewards_episodes_50_gamma_099}}
-  \hspace{0\textwidth}
+  \hspace{0\textwidth}  
   \subfloat[Number of steps per episode.]
   {\includegraphics[width=0.49\textwidth]{nSteps_episodes_50_gamma_099.png}\label{fig:nSteps_episodes_50_gamma_099}}
   \caption{Reward per episode and number of steps per episode for experiment 1 with parameters in Table \ref{tab:hyperparams-exp-1}.}
   \label{fig:experiment-1}
 \end{figure}
-\subsubsection{Experiment 2}
+\subsubsection{Experiment 2}\label{experiment:experiment-2}
 This experiment is similar to Experiment 1, just the number of episodes changes to 100 to see if the learning of the arm can be improved.
 \begin{table}[H]
 \centering
@@ -1488,7 +1487,7 @@ Maximum Steps per episode & 500 \\
 \label{fig:experiment-2}
 \end{figure}
 
-\subsection{Experiment 3}
+\subsubsection{Experiment 3}\label{experiment:experiment-3}
 This experiment was run using the parameters in Table \ref{tab:hyperparams-exp-3}
 \begin{table}[H]
 \centering
@@ -1532,7 +1531,7 @@ In addition to the total reward per episode and number of steps per episode, the
 \begin{minipage}[b]{.47\textwidth}
 \centering
 \subfloat
-  [Sum of rewards in an episode or episode reward per Episode]
+  [Sum of rewards in an episode or episode reward per episode]
   {\label{fig:rewards_episodes_100_gamma_05}\includegraphics[width=\textwidth,height=7.3cm]{rewards_episodes_100_gamma_05}} \\
 \subfloat
   [Number of steps per episode.]
@@ -1542,18 +1541,119 @@ In addition to the total reward per episode and number of steps per episode, the
 \label{fig:experiment-3}
 \end{figure}
 
-\subsection{Experiment 4}
+\subsubsection{Experiment 4}\label{experiment:experiment-4}
+The experiment was run with parameters in Table \ref{tab:hyperparams-exp-4}.
+\begin{table}[H]
+\centering
+\begin{tabular}{l l}
+\hline
+Parameter & Value \\
+\hline
+Discount Factor ($\gamma$) & 0.5 \\
+Batch Size & 2048 \\
+Epsilon Start Value & 1 \\
+Epsilon Final & 0.01 \\
+Epsilon Decay Rate & 0.00001 \\
+Episodes before updating the Target Network & 5 \\
+Replay Memory size & 10240 \\
+Learning Rate & 0.001 \\
+Number of Episodes & 300 \\
+Maximum Steps per episode & 500 \\
+\hline
+\end{tabular}
+\caption{Hyperparameters values for the reinforcement learning algorithm in Experiment 4.}
+\label{tab:hyperparams-exp-4}
+\end{table}
+The exploration rate at the beginning of each episode is shown in Figure \ref{fig:epsilon_episodes_300_gamma_05}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{epsilon_episodes_300_gamma_05.png}
+\caption{Exploration rate ($\epsilon$) value at the beginning of each episode. }
+\label{fig:epsilon_episodes_300_gamma_05}
+\end{figure}
 
-\par\noindent\rule{\textwidth}{0.4pt}
-Show here that the goals from the introduction were achieved (or not achieved), you need at least one experiment per goal. Use screenshots, diagrams, plots, photos, etc. as necessary.
+\begin{figure}[H]
+\centering
+\sbox{\measurebox}{%
+  \begin{minipage}[b]{.47\textwidth}
+  \subfloat
+    [Collision between Link 6 of the robotic arm and can at the end of Experiment 4.]
+    {\label{fig:kuka_collision_300_episodes_gamma_05}\includegraphics[width=\textwidth,height=15cm]{kuka_collision_300_episodes_gamma_05.png}}
+  \end{minipage}}
+\usebox{\measurebox}\qquad
+\begin{minipage}[b]{.47\textwidth}
+\centering
+\subfloat
+  [Sum of rewards in an episode or episode reward per episode]
+  {\label{fig:rewards_episodes_300_gamma_05}\includegraphics[width=\textwidth,height=7.3cm]{rewards_episodes_300_gamma_05}} \\
+\subfloat
+  [Number of steps per episode.]
+  {\label{fig:nSteps_episodes_300_gamma_05}\includegraphics[width=\textwidth,height=7.3cm]{nSteps_episodes_300_gamma_05}}
+\end{minipage}
+\caption{Collision of the robotic arm and the can and Experiment 4 results.}
+\label{fig:experiment-4}
+\end{figure}
+
+\subsubsection{Experiment 5}\label{experiment:experiment-5}
+The experiment was run with parameters in Table \ref{tab:hyperparams-exp-5}.
+\begin{table}[H]
+\centering
+\begin{tabular}{l l}
+\hline
+Parameter & Value \\
+\hline
+Discount Factor ($\gamma$) & 0.5 \\
+Batch Size & 8184 \\
+Epsilon Start Value & 1 \\
+Epsilon Final & 0.01 \\
+Epsilon Decay Rate & 0.00002 \\
+Episodes before updating the Target Network & 5 \\
+Replay Memory size & 102400 \\
+Learning Rate & 0.001 \\
+Number of Episodes & 800 \\
+Maximum Steps per episode & 500 \\
+\hline
+\end{tabular}
+\caption{Hyperparameters values for the reinforcement learning algorithm in Experiment 5.}
+\label{tab:hyperparams-exp-5}
+\end{table}
+The experiment results can be seen in Figure \ref{fig:experiment-5}.
+\begin{figure}[H]
+  \centering
+  \subfloat[Sum of rewards in an episode or episode reward per episode.]{\label{rewards_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{rewards_episodes_800_gamma_05.png}}\\
+  \subfloat[Number of steps per episode.]{\label{nSteps_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{nSteps_episodes_800_gamma_05.png}} \\
+  \subfloat[Exploration rate ($\epsilon$) value at the beginning of each episode.]{\label{epsilon_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{epsilon_episodes_800_gamma_05.png}}
+  \caption{Results for Experiment 5.}
+  \label{fig:experiment-5}
+\end{figure}
+
+%\par\noindent\rule{\textwidth}{0.4pt}
+%Show here that the goals from the introduction were achieved (or not achieved), you need at least one experiment per goal. Use screenshots, diagrams, plots, photos, etc. as necessary.
 
 \section{Discussion}
+The results from the experiments \ref{experiment:moving-the-arm}, \ref{experiment:reading-images}, and \ref{experiment:detecting-collisions} show that a robotic arm simulation was successfully implemented. Furthermore, it is possible to interact with the simulation programmatically treating it as a Markov Decision Process. Experiment \ref{experiment:moving-the-arm} shows that we can rely on the used ROS 2 packages to control the position of the arm with an accuracy in the order of $10^{-06} rad$.
+Also experiment \ref{experiment:reading-images} creates new possibilities for future studies as the images from the camera sensor could be used instead of built in Gazebo and ROS plugins to know the position of the objects in the simulated world, making easier the transition from the simulation to the real world because it is easier to work with a camera instead of location sensors in the end effector of the arm and in the can; in fact, the idea of adding a sensor to the can in the real world is a little troublesome because ideally we should be able to just place any object in our world without having to alter it in any way. 
+In addition, Experiment \ref{experiment:detecting-collisions} proves that it is possible to use sensors in the simulation and perform actions based on the readings from this sensors. Thus, it safe to claim that Experiments in \ref{experiment:testing-the-environment} really represent a fully working simulation of a robotic arm in which not only Markov Decision Processes can be implemented, but also Reinforcement Learning algorithms can be run. And Experiments in \ref{experiment:learning-touch-object} are proof of that. For example, in Experiment 1 in \ref{experiment:experiment-1} in Figure \ref{fig:experiment-1} it can be seen that the arm consistently achieves higher rewards and finishes the episodes in less iterations as the simulation goes on, this proves that the arm learns about the environment and in time finds the can and learns to touch it. However, to know if the arm can learn a better way to touch the arm, Experiment 2 in \ref{experiment:experiment-2} is run. Here, we just let the experiment run 50 more steps compared to Experiment 1 in \ref{experiment:experiment-1}. As can be seen in Figure \ref{fig:rewards_episodes_100_gamma_099} in the last steps of the process, the total rewards does not significantly improves compared Figure \ref{fig:rewards_episodes_50_gamma_099}, neither does the number of steps the arm needs to touch the can when we compare Figures \ref{fig:nSteps_episodes_50_gamma_099} and \ref{fig:nSteps_episodes_100_gamma_099}. The goals in \ref{sec:goals} have been so far achieved as we have a working simulation of a robotic arm working, the simulated robotic arm learns to touch the can in the simulated world (Figure \ref{fig:kuka_collision_100_episodes}). Next let us examine if this can be improved and how the exploration-exploitation trade off is being dealt with. 
+
+Experiment 3 in \ref{experiment:experiment-3} examines the learning process with a discount factor of $\gamma = 0.5$ instead of a $\gamma = 0.99$ as in the previous experiments. The idea is to see if the learning process improves or gets worse. When comparing Figure \ref{fig:kuka_collision_100_episodes} and Figure \ref{fig:kuka_collision_100_episodes_gamma_05} we can see that even though the arm touches the can from different positions, it does learn to touch it. Moreover, by comparing Figures \ref{fig:rewards_episodes_100_gamma_05}, \ref{fig:nSteps_episodes_100_gamma_05} to Figures  \ref{fig:rewards_episodes_100_gamma_099}, \ref{fig:nSteps_episodes_100_gamma_099} we can see that the learning process is neither better or worse. On the other hand, Figure \ref{fig:epsilon_episodes_100_gamma_05} shows that during the whole performance there was some randomness due te the explore-exploit trade-off therefore there were always random actions in every episode.
+
+Experiment 4 in \ref{experiment:experiment-4} is an attempt to improve results i.e. obtaining higher rewards and finish the episode in fewer steps. To try this, the Batch size is increased to $2048$, the Decay rate for epsilon $\epsilon$ is reduced to $0.00001$, and the number of episodes is increased to $300$. With this parameters as can be seen in Figure \ref{fig:experiment-4}, the total rewards per episode in Figure \ref{fig:rewards_episodes_300_gamma_05} are not significantly better as the ones in Figure \ref{fig:rewards_episodes_100_gamma_05} since in both cases, they hover around a total reward value of $150$. But as can be seen in Figure \ref{fig:epsilon_episodes_100_gamma_05} the exploration rate in Experiment 4 was always above $0.6$ compared to the exploration rate in Figure \ref{fig:epsilon_episodes_100_gamma_05} in Experiment 3 which gets to values lower than $0.4$. It is important to note that as with higher exploration rates, more random actions take place and this random actions make the episode longer as the action does not necessarily aim to get the arm closer to the can. However to reach exploration rates similar to Experiment 3 and
+
+
+
+
+\hrule
 2-3 pages are a good idea here. Picks up goals from the introduction (see \ref{sec:ziele}) and experiments (see \ref{sec:exp}) and explains what was achieved and what was not (and why not in this case). Compares results with results from related work, see Sec.~\ref{sec:relwork}. Draws a preliminary conclusion for the whole thesis.
-\begin{tcolorbox}[label=mybox]
-This is some text.
+\begin{tcolorbox}\label{box:mybox}%[label=mybox]
+\begin{minted}[fontsize=\scriptsize]{python}
+action = agent.selectAction(state, policyNetwork)
+reward = environment.takeAction(action)
+nextState = environment.getState()
+print("hi")
+\end{minted}
 \end{tcolorbox}
 
-As we can see in box \ref{mybox}, ...
+As we can see in box \ref{box:mybox}, ...
 \section{Conclusion}
 Give an executive summary for important decision makers here, as well as an outlook (what would you do if you had another 3 months). 2-3 pages are ok here.
 

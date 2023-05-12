@@ -25,14 +25,14 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Kuka Kr210 after moving every joint to 0.5 rads}}}{54}{subfigure.19.2}%
 \contentsline {figure}{\numberline {20}{\ignorespaces Image of the gazebo world and from the camera sensor at starting position.\relax }}{56}{figure.caption.26}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gazebo world and robotic arm at the beginning of the experiment.}}}{56}{subfigure.20.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script after moving the arm.}}}{56}{subfigure.20.2}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script before moving the arm.}}}{56}{subfigure.20.2}%
 \contentsline {figure}{\numberline {21}{\ignorespaces Image of the gazebo world and from the camera sensor after moving the arm.\relax }}{56}{figure.caption.27}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gazebo world and robotic arm position after executing a moving command.}}}{56}{subfigure.21.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script after moving the arm.}}}{56}{subfigure.21.2}%
 \contentsline {figure}{\numberline {22}{\ignorespaces Collision between the can and Link 6 or end effector of the arm.\relax }}{57}{figure.caption.28}%
 \contentsline {figure}{\numberline {23}{\ignorespaces Monitoring the topics $/contact\_sensor/bumper\_link\_4$, $/contact\_sensor/bumper\_link\_5$, and $/contact\_sensor/bumper\_link\_6$ in Rqt \ref {rviz_rqt}. The first column is the name of the topics, and the second is the type of message they handle. \relax }}{58}{figure.caption.29}%
 \contentsline {figure}{\numberline {24}{\ignorespaces Reward per episode and number of steps per episode for experiment 1 with parameters in Table \ref {tab:hyperparams-exp-1}.\relax }}{59}{figure.caption.31}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per Episode}}}{59}{subfigure.24.1}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{59}{subfigure.24.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Number of steps per episode.}}}{59}{subfigure.24.2}%
 \contentsline {figure}{\numberline {25}{\ignorespaces Collision of the robotic arm and the can and Experiment 2 results.\relax }}{60}{figure.caption.33}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 2.}}}{60}{subfigure.25.1}%
@@ -41,6 +41,15 @@
 \contentsline {figure}{\numberline {26}{\ignorespaces Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }}{61}{figure.caption.35}%
 \contentsline {figure}{\numberline {27}{\ignorespaces Collision of the robotic arm and the can and Experiment 3 results.\relax }}{62}{figure.caption.36}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 3.}}}{62}{subfigure.27.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per Episode}}}{62}{subfigure.27.2}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{62}{subfigure.27.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Number of steps per episode.}}}{62}{subfigure.27.3}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Logo der HAW Fulda\relax }}{64}{figure.caption.37}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }}{63}{figure.caption.38}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Collision of the robotic arm and the can and Experiment 4 results.\relax }}{64}{figure.caption.39}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 4.}}}{64}{subfigure.29.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{64}{subfigure.29.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Number of steps per episode.}}}{64}{subfigure.29.3}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Results for Experiment 5.\relax }}{66}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode.}}}{66}{subfigure.30.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Number of steps per episode.}}}{66}{subfigure.30.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Exploration rate ($\epsilon $) value at the beginning of each episode.}}}{66}{subfigure.30.3}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Logo der HAW Fulda\relax }}{69}{figure.caption.42}%
