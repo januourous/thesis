@@ -477,6 +477,7 @@ As an example, let's consider a simple simulation scenario involving a two-wheel
 The $/joint\_states$ topic is a standard ROS 2 topic that provides the current joint positions, velocities, and effort (torque or force) values for all joints in a robot. This topic is typically published by a robot's joint state publisher node, which reads the joint positions, velocities, and effort values from the robot's joint sensors and publishes them on the $/joint\_states$ topic.
 
 Here's an example Python script that subscribes to the /joint\_states topic and prints the current joint positions for a robot arm:
+\begin{tcolorbox}\label{box:mybox-1}
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 import rclpy
 from rclpy.node import Node
@@ -503,6 +504,7 @@ def main(args=None):
 if __name__ == '__main__':
     main()
 \end{minted}
+\end{tcolorbox}
 This script creates a $JointStateSubscriber$ node that subscribes to the $/joint\_states$ topic and defines a $joint\_state\_callback$ function that prints the current joint positions for each joint in the robot arm. The $create\_subscription$ method of the Node class is used to create a subscription to the $/joint\_states$ topic, and the spin method is called to start the ROS event loop and receive messages from the subscription.
 
 Assuming that the joint state publisher node is running and publishing joint state messages on the $/joint\_states$ topic, running this script will cause the current joint positions for each joint in the robot arm to be printed to the console whenever a new joint state message is received on the $/joint\_states$ topic.
@@ -527,6 +529,7 @@ For example, assuming that we have a robotic arm with a joint trajectory control
 
 \begin{enumerate}
 \item Create a rclpy node that acts as the client for the\\ $/joint\_trajectory\_controller/follow\_joint\_trajectory$ action server. This node should import the necessary ROS libraries and create an instance of the $rclpy.action.ActionClient$ class to communicate with the server.
+\begin{tcolorbox}\label{box:mybox-2}
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 import rclpy
 from rclpy.action import ActionClient
@@ -536,7 +539,9 @@ rclpy.init(args=None)
 node = rclpy.create_node('joint_trajectory_controller_client')
 client = ActionClient(node, FollowJointTrajectory, '/joint_trajectory_controller/follow_joint_trajectory')
 \end{minted}
+\end{tcolorbox}
 \item Construct a $FollowJointTrajectory.Goal$ object that contains the desired trajectory for the robot arm. This object should contain a $JointTrajectory$ message, which specifies the joint positions, velocities, accelerations, and time stamps for the trajectory. Here's an example $FollowJointTrajectory.Goal$ object for a simple two-joint robot arm:
+\begin{tcolorbox}\label{box:mybox-3}
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
@@ -550,16 +555,21 @@ point2.positions = [1.0, 1.0]
 point2.time_from_start = rclpy.time.Duration(seconds=2.0).to_msg()
 goal_msg.trajectory.points = [point1, point2]
 \end{minted}
+\end{tcolorbox}
 This $FollowJointTrajectory.Goal$ object specifies a trajectory with two points, where the first point has joint positions of $[0.0, 0.0]$ and occurs 1 second after the start of the trajectory, and the second point has joint positions of $[1.0, 1.0]$ and occurs 2 seconds after the start of the trajectory.
 \item Send the $FollowJointTrajectory.Goal$ object to the $/joint\_trajectory\_controller/follow\_joint\_trajectory$ action server using the $send\_goal$ method of the $ActionClient$ object.
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 future = client.send_goal_async(goal_msg)
 \end{minted}
+\end{tcolorbox}
 \item Wait for the server to complete the trajectory by calling the result method of the Future object returned by the $send\_goal\_async$ method. This method will block until the server reports that the trajectory has been completed or an error occurs
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 rclpy.spin_until_future_complete(node, future)
 result = future.result()
 \end{minted}
+\end{tcolorbox}
 \end{enumerate}
 
 \subsubsection{The tf\_ros.TransformListener}\label{ros2-transform-listener}
@@ -571,6 +581,7 @@ Here is an example of how to use the tf2\_ros.TransformListener to get the trans
 \begin{listing}[H]
 \caption{Example of how to use TransformListener to obtain the transform between two frames.}
 \label{code:transformliseter}
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 import rclpy
 import tf2_ros
@@ -600,6 +611,7 @@ if __name__ == '__main__':
     main()
 
 \end{minted}
+\end{tcolorbox}
 \end{listing} 
 
 In this example, the node initializes a tf2\_ros.Buffer object and a tf2\_ros.TransformListener object. The node then waits for the transform between the map and robot frames to become available. Once the transform is available, the node retrieves it from the buffer and prints it to the console.
@@ -829,7 +841,7 @@ DDQN may be used in robotics and robotic arm control to determine an optimum pol
 %\hrule
 %
 \section{Implementation}\label{sec:umsetzung}
-\subsection{Environment Preparation}
+\subsection{Environment Preparation}\label{sec:env-preparation}
 A SDF file containing the object the robotic arm has to learn to touch was created (Figure \ref{fig:can}).
 The robotic arm used in the simulation is the Kuka KR210. The necessary files to simulate such a robotic arm were taken from ~\cite{RoboND-Kinematics-Project}. 
 
@@ -1041,6 +1053,7 @@ A simple DQN with two fully connected layers and an output layer is used.
 \begin{listing}[htbp]
 \caption{Used Deep Q Neural Network (DQN).}
 \label{code:nn_class_1}
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
  class NN(nn.Module):
      def __init__(self, nInputs=4, nOutputs=27):
@@ -1050,6 +1063,7 @@ A simple DQN with two fully connected layers and an output layer is used.
          self.fc2 = nn.Linear(in_features=32, out_features=64)
          self.out = nn.Linear(in_features=64, out_features=nOutputs)
 \end{minted}
+\end{tcolorbox}
 \end{listing} 
 
 In listing \ref{code:nn_class_1} The fully connected layers are referred to as $Linear$ layers in PyTorch.
@@ -1062,6 +1076,7 @@ The final step in defining the DQN class is to create a function called $forward
 \begin{listing}[htbp]
 \caption{Implementation of the $forward()$ function needed for the DQN.}
 \label{code:nn_class_2}
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 def forward(self, s):
     s = F.relu(self.fc1(s))
@@ -1069,6 +1084,7 @@ def forward(self, s):
     s = self.out(s)
     return s
 \end{minted}
+\end{tcolorbox}
 \end{listing} 
 When the network receives a state $s$; it passes it to the first fully connected layer and applies $relu$ to the output before sending it to the second fully connected layer. After that, $relu$ is applied before passing the result to the output layer. The $forward()$ function then returns the result obtained from the output layer.
 
@@ -1077,6 +1093,7 @@ To define the ReplayMemory class, the Experience class which defines $Experience
 \begin{listing}[htbp]
 \caption{Implementation of the Replay Memory class.}
 \label{code:replay_memory}
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 class ReplayMemory:
     def __init__(self, capacity):
@@ -1088,6 +1105,7 @@ class ReplayMemory:
     def canSample(self, batchSize):
         return len(self.memory) >= batchSize
 \end{minted}
+\end{tcolorbox}
 \end{listing} 
 
 Using the code in Listing \ref{code:replay_memory}, ReplayMemory's capacity is initialized to $capacity$, and the $memory$ attribute is defined as a \textbf{deque} \ref{python:deque}. To add and store $experiences$ the $push$ function is defined, which is just a wrapper for the append built-in function in. When the number of experiences in $memory$ reaches $capacity$, new experiences are kept and old ones are removed. The $sample()$ function provides a batch of random experiences which is used to train the DQN. Finally, the function $canSample()$ tells us whether we can sample from memory or not.
@@ -1097,6 +1115,7 @@ To balance exploration and exploitation the epsilon greedy strategy is used. An 
 \begin{listing}[H]
 \caption{Implementation of the EpsilonGreedyStrategy class.}
 \label{code:epsilon-greedy}
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 class EpsilonGreedyStrategy:
     def __init__(self, start, end, decay):
@@ -1106,6 +1125,7 @@ class EpsilonGreedyStrategy:
     def getExplorationRate(self, currentStep):
         return self.end + (self.start - self.end) * math.exp(-1. * currentStep * self.decay)
 \end{minted}
+\end{tcolorbox}
 \end{listing} 
 In Listing \ref{code:epsilon-greedy}, $start$, $end$, and $decay$ correspond to the starting, ending, and decay rate for $epsilon$. The function $get_exploration_rate()$ has the $currentStep$ of the agent as parameter and returns the calculated exploration rate.
 
@@ -1115,6 +1135,7 @@ The implemented Agent class in Listing \ref{code:agent} has a $strategy$ and $nA
 \begin{listing}[H]
 \caption{Implementation of the Agent class.}
 \label{code:agent}
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 class Agent:
     def __init__(self, strategy, nActions):
@@ -1131,6 +1152,7 @@ class Agent:
             	action = policyNetwork(state).argmax(dim=1)
         return action
 \end{minted}
+\end{tcolorbox}
 \end{listing} 
 
 The parameter $currentStep$ is set to zero at the beginning and indicates the current step of the agent in the environment.
@@ -1219,27 +1241,36 @@ The main program implements the DDQN algorithm in \ref{foundations:ddqn}. The st
 \item Do the following for every episode:
 	\begin{itemize}
 		\item Reset the environment and obtain the current state:
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 environment.resetEnvironment()
 state = environment.getState()
 \end{minted}
+\end{tcolorbox}
 		\item Do the following for every step in the current episode:
 		\begin{itemize}
 			\item Select an action, perform the action and save the new state in the $nextState$ variable.
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 action = agent.selectAction(state, policyNetwork)
 reward = environment.takeAction(action)
 nextState = environment.getState()
 \end{minted}
+\end{tcolorbox}
 			\item Save the experience $(state, action, nextState, reward)$ into the $replayMemory$.
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 replayMemory.push(experience=Experience(state, action, nextState, reward))
 \end{minted}
+\end{tcolorbox}
 			\item Update $state$ with $nextState$ which now becomes the current state.
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 state = nextState
 \end{minted}
+\end{tcolorbox}
 			\item Sample experiences from $ReplayMemory$, compute the $currentQValues$ using the $policyNetwork$, and the $targetQValues$ using the $nextQValues$ given by the $targenNetwork$, the discount factor $gamma$, and the $rewards$ taken from the $replayMemory$
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 experiences = replayMemory.sample(batchSize)
 states, actions, rewards, nextStates = extractTensors(experiences)
@@ -1248,13 +1279,16 @@ currentQValues = policyNetwork(states).gather(dim=1, index=actions.unsqueeze(-1)
 nextQValues = targetNetwork(nextStates).max(dim=1)[0].detach()
 targetQValues = nextQValues * gamma + rewards
 \end{minted}
+\end{tcolorbox}
 			\item Compute the loss using mean square error between $currentQValues$ and $targetQValues$ and apply gradient descent to update the weights in the $policyNetwork$.
+\begin{tcolorbox}
 \begin{minted}[fontsize=\scriptsize]{python}
 loss = F.mse_loss(currentQValues, targetQValues.unsqueeze(1))
 optimizer.zero_grad()
 loss.backward()
 optimizer.step()
 \end{minted}
+\end{tcolorbox}
 			\item Stop if the $environment.done$ variable is true or if the maximum number of episodes has been reached.
 		\end{itemize} 
 		\item Update the $targetNetwork$ weights if $targetUpdate$ episodes have passed
@@ -1310,9 +1344,11 @@ Python Version & 3.8.10 \\
 \subsection{Testing the Environment}\label{experiment:testing-the-environment}
 \subsubsection{Moving the Arm} \label{experiment:moving-the-arm}
 The script $anglesPublisher.py$ defining the class $AnglesPublisher$ allows us to move the arm by making use of the $/joint\_trajectory\_controller/joint\_trajectory$ and specifying the joint angles in radians via command line. To collect the data in Table \ref{table:final-angles} the following was run 5 times:
-\begin{minted}[fontsize=\scriptsize,linenos=false,bgcolor=white]{bash}
+\begin{tcolorbox}
+\begin{minted}[fontsize=\scriptsize,linenos=false]{bash}
 ros2 run kuka_kr_210_pkg anglesPublisher 0.5 0.5 0.5 0.5 0.5 0.5
 \end{minted}
+\end{tcolorbox}
 After running the script specifying a target angle of 0.5 rads for all the joints, the results in Table \ref{table:final-angles} are obtained.
 
 Making use of the values in Table \ref{table:final-angles}, a measurement of \\
@@ -1575,13 +1611,13 @@ The exploration rate at the beginning of each episode is shown in Figure \ref{fi
 \begin{figure}[H]
 \centering
 \sbox{\measurebox}{%
-  \begin{minipage}[b]{.47\textwidth}
+  \begin{minipage}[b]{.3\textwidth}
   \subfloat
     [Collision between Link 6 of the robotic arm and can at the end of Experiment 4.]
     {\label{fig:kuka_collision_300_episodes_gamma_05}\includegraphics[width=\textwidth,height=15cm]{kuka_collision_300_episodes_gamma_05.png}}
   \end{minipage}}
 \usebox{\measurebox}\qquad
-\begin{minipage}[b]{.47\textwidth}
+\begin{minipage}[b]{.64\textwidth}
 \centering
 \subfloat
   [Sum of rewards in an episode or episode reward per episode]
@@ -1620,9 +1656,9 @@ Maximum Steps per episode & 500 \\
 The experiment results can be seen in Figure \ref{fig:experiment-5}.
 \begin{figure}[H]
   \centering
-  \subfloat[Sum of rewards in an episode or episode reward per episode.]{\label{rewards_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{rewards_episodes_800_gamma_05.png}}\\
-  \subfloat[Number of steps per episode.]{\label{nSteps_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{nSteps_episodes_800_gamma_05.png}} \\
-  \subfloat[Exploration rate ($\epsilon$) value at the beginning of each episode.]{\label{epsilon_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{epsilon_episodes_800_gamma_05.png}}
+  \subfloat[Sum of rewards in an episode or episode reward per episode.]{\label{fig:rewards_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{rewards_episodes_800_gamma_05.png}}\\
+  \subfloat[Number of steps per episode.]{\label{fig:nSteps_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{nSteps_episodes_800_gamma_05.png}} \\
+  \subfloat[Exploration rate ($\epsilon$) value at the beginning of each episode.]{\label{fig:epsilon_episodes_800_gamma_05}\includegraphics[width=0.99\textwidth]{epsilon_episodes_800_gamma_05.png}}
   \caption{Results for Experiment 5.}
   \label{fig:experiment-5}
 \end{figure}
@@ -1631,19 +1667,27 @@ The experiment results can be seen in Figure \ref{fig:experiment-5}.
 %Show here that the goals from the introduction were achieved (or not achieved), you need at least one experiment per goal. Use screenshots, diagrams, plots, photos, etc. as necessary.
 
 \section{Discussion}
+In this thesis, we explored the use of DQN to train a robotic arm to to touch an object. Our experiments were performed on a simulated robotic arm in a virtual environment as in \ref{sec:env-preparation}.
 The results from the experiments \ref{experiment:moving-the-arm}, \ref{experiment:reading-images}, and \ref{experiment:detecting-collisions} show that a robotic arm simulation was successfully implemented. Furthermore, it is possible to interact with the simulation programmatically treating it as a Markov Decision Process. Experiment \ref{experiment:moving-the-arm} shows that we can rely on the used ROS 2 packages to control the position of the arm with an accuracy in the order of $10^{-06} rad$.
-Also experiment \ref{experiment:reading-images} creates new possibilities for future studies as the images from the camera sensor could be used instead of built in Gazebo and ROS plugins to know the position of the objects in the simulated world, making easier the transition from the simulation to the real world because it is easier to work with a camera instead of location sensors in the end effector of the arm and in the can; in fact, the idea of adding a sensor to the can in the real world is a little troublesome because ideally we should be able to just place any object in our world without having to alter it in any way. 
+Also experiment \ref{experiment:reading-images} creates new possibilities for future studies as the images from the camera sensor could be used instead of the built in Gazebo and ROS plugins to know the position of the objects in the simulated world, making easier the transition from the simulation to the real world because it is easier to work with a camera instead of location sensors in the end effector of the arm and in the can; in fact, the idea of adding a sensor to the can in the real world is a little troublesome because ideally we should be able to just place any object in our world without having to alter it in any way. 
 In addition, Experiment \ref{experiment:detecting-collisions} proves that it is possible to use sensors in the simulation and perform actions based on the readings from this sensors. Thus, it safe to claim that Experiments in \ref{experiment:testing-the-environment} really represent a fully working simulation of a robotic arm in which not only Markov Decision Processes can be implemented, but also Reinforcement Learning algorithms can be run. And Experiments in \ref{experiment:learning-touch-object} are proof of that. For example, in Experiment 1 in \ref{experiment:experiment-1} in Figure \ref{fig:experiment-1} it can be seen that the arm consistently achieves higher rewards and finishes the episodes in less iterations as the simulation goes on, this proves that the arm learns about the environment and in time finds the can and learns to touch it. However, to know if the arm can learn a better way to touch the arm, Experiment 2 in \ref{experiment:experiment-2} is run. Here, we just let the experiment run 50 more steps compared to Experiment 1 in \ref{experiment:experiment-1}. As can be seen in Figure \ref{fig:rewards_episodes_100_gamma_099} in the last steps of the process, the total rewards does not significantly improves compared Figure \ref{fig:rewards_episodes_50_gamma_099}, neither does the number of steps the arm needs to touch the can when we compare Figures \ref{fig:nSteps_episodes_50_gamma_099} and \ref{fig:nSteps_episodes_100_gamma_099}. The goals in \ref{sec:goals} have been so far achieved as we have a working simulation of a robotic arm working, the simulated robotic arm learns to touch the can in the simulated world (Figure \ref{fig:kuka_collision_100_episodes}). Next let us examine if this can be improved and how the exploration-exploitation trade off is being dealt with. 
 
 Experiment 3 in \ref{experiment:experiment-3} examines the learning process with a discount factor of $\gamma = 0.5$ instead of a $\gamma = 0.99$ as in the previous experiments. The idea is to see if the learning process improves or gets worse. When comparing Figure \ref{fig:kuka_collision_100_episodes} and Figure \ref{fig:kuka_collision_100_episodes_gamma_05} we can see that even though the arm touches the can from different positions, it does learn to touch it. Moreover, by comparing Figures \ref{fig:rewards_episodes_100_gamma_05}, \ref{fig:nSteps_episodes_100_gamma_05} to Figures  \ref{fig:rewards_episodes_100_gamma_099}, \ref{fig:nSteps_episodes_100_gamma_099} we can see that the learning process is neither better or worse. On the other hand, Figure \ref{fig:epsilon_episodes_100_gamma_05} shows that during the whole performance there was some randomness due te the explore-exploit trade-off therefore there were always random actions in every episode.
 
-Experiment 4 in \ref{experiment:experiment-4} is an attempt to improve results i.e. obtaining higher rewards and finish the episode in fewer steps. To try this, the Batch size is increased to $2048$, the Decay rate for epsilon $\epsilon$ is reduced to $0.00001$, and the number of episodes is increased to $300$. With this parameters as can be seen in Figure \ref{fig:experiment-4}, the total rewards per episode in Figure \ref{fig:rewards_episodes_300_gamma_05} are not significantly better as the ones in Figure \ref{fig:rewards_episodes_100_gamma_05} since in both cases, they hover around a total reward value of $150$. But as can be seen in Figure \ref{fig:epsilon_episodes_100_gamma_05} the exploration rate in Experiment 4 was always above $0.6$ compared to the exploration rate in Figure \ref{fig:epsilon_episodes_100_gamma_05} in Experiment 3 which gets to values lower than $0.4$. It is important to note that as with higher exploration rates, more random actions take place and this random actions make the episode longer as the action does not necessarily aim to get the arm closer to the can. However to reach exploration rates similar to Experiment 3 and
+Experiment 4 in \ref{experiment:experiment-4} is an attempt to improve results i.e. obtaining higher rewards and finish the episode in fewer steps. To try this, the Batch size is increased to $2048$, the Decay rate for epsilon $\epsilon$ is reduced to $0.00001$, and the number of episodes is increased to $300$. With this parameters as can be seen in Figure \ref{fig:experiment-4}, the total rewards per episode in Figure \ref{fig:rewards_episodes_300_gamma_05} are not significantly better as the ones in Figure \ref{fig:rewards_episodes_100_gamma_05} since in both cases, they hover around a total reward value of $150$. But as can be seen in Figure \ref{fig:epsilon_episodes_100_gamma_05} the exploration rate in Experiment 4 was always above $0.6$ compared to the exploration rate in Figure \ref{fig:epsilon_episodes_100_gamma_05} in Experiment 3 which gets to values lower than $0.4$. It is important to note that as with higher exploration rates, more random actions take place and this random actions make the episode longer as the action does not necessarily aim to get the arm closer to the can. 
+
+Experiment 5 in \ref{experiment:experiment-5} is designed to compare the total rewards and iterations per episodes with parameters that would let the simulation run for more time steps and consider more experiences when training the neural network. With the number of steps per episode set to $800$, a higher Batch size of $8184$ and a decay rate for epsilon of $0.00002$ it is possible to see total rewards of the robotic arm at exploration rates (Figure \ref{fig:epsilon_episodes_800_gamma_05}) that have similar values as those in Figure \ref{fig:epsilon_episodes_100_gamma_05}. Comparing the total rewards in Figures \ref{fig:rewards_episodes_300_gamma_05} and \ref{fig:rewards_episodes_800_gamma_05} it can be seen that the performance is not significantly different as the total reward still hovers between $120$ and $140$, and the number of steps per episode in Figure \ref{fig:nSteps_episodes_300_gamma_05} is around $75$ whereas in Figure \ref{fig:nSteps_episodes_800_gamma_05} it consistenly stays below $50$ from episode $500$. Therefore, even though the total rewards per episode are similar, the steps the agent takes to complete the episodes are less which means the arm learns more efficient set of movements to touch the can in Experiment 5 \ref{experiment:experiment-5} than in previous experiments.
+
+Our results show that the DQN approach was successful in training the robotic arm to complete the task of touching an object. The agent was able to learn a funtional policy over time and consistently achieve the desired objective. The performance of the trained agent was evaluated using two metrics: the total reward per episode and the number of episodes it took to reach the goal. The total reward per episode of the agent increased steadily during training and stabilized after approximately $200$ in Experiments \ref{experiment:experiment-4} and \ref{experiment:experiment-5}. The number of steps to complete an episode also decreased during training, indicating that the agent was learning to perform the task more efficiently.
+
+Several experiments were also conducted to analyze the impact of different hyperparameters on the performance of the DQN agent. Our findings suggest that the choice of hyperparameters, such as the discount factor, can affect the training. Additionally, increasing the size of the replay memory  improved the performance of the agent.
+
+One of the limitations of our study is that it was performed on a simulated robotic arm. The transferability of the learned policy to a physical robotic arm in the real world is an important aspect to consider in future work. Another limitation is the relatively simple task of just touching an object. Future work can investigate the use of DQN for more complex tasks, such as manipulation of objects in cluttered environments.
+
+In conclusion, the application of DQN to train a robotic arm to perform a specific task shows promising results. Our experiments demonstrate the effectiveness of this approach and provide insights into the impact of different hyperparameters on the training process. The results of this study can contribute to the development of more advanced reinforcement learning algorithms for robotics.
 
 
-
-
-\hrule
-2-3 pages are a good idea here. Picks up goals from the introduction (see \ref{sec:ziele}) and experiments (see \ref{sec:exp}) and explains what was achieved and what was not (and why not in this case). Compares results with results from related work, see Sec.~\ref{sec:relwork}. Draws a preliminary conclusion for the whole thesis.
+%2-3 pages are a good idea here. Picks up goals from the introduction (see \ref{sec:ziele}) and experiments (see \ref{sec:exp}) and explains what was achieved and what was not (and why not in this case). Compares results with results from related work, see Sec.~\ref{sec:relwork}. Draws a preliminary conclusion for the whole thesis.
 \begin{tcolorbox}\label{box:mybox}%[label=mybox]
 \begin{minted}[fontsize=\scriptsize]{python}
 action = agent.selectAction(state, policyNetwork)
@@ -1655,101 +1699,121 @@ print("hi")
 
 As we can see in box \ref{box:mybox}, ...
 \section{Conclusion}
-Give an executive summary for important decision makers here, as well as an outlook (what would you do if you had another 3 months). 2-3 pages are ok here.
+This thesis explored the application of the Double Q-Learning algorithm to a simulated robotic arm in a reinforcement learning setting. The theoretical foundation of the algorithm was introduced, implemented, and applied to a simple task using the Gazebo simulator and ROS2 libraries. The experimental results show that the Double Q-Learning algorithm works as the simulated arm learns to touch the can. This work contributes to the development of reinforcement learning algorithms for training robotic arms and provides not only a robust and efficient approach but also an alternative to solving complex tasks in the robotics area.
 
-\section{Using LaTeX, erase this chapter later}
+In the experiments, a simple task for the robotic arm to perform was designed, this task consists in moving the robotic arm to a given target location so it touches an object (a can). The robotic arm had six degrees of freedom; out which only three were manipulated in the experiments. The task required a combination of forward and backward movements of this joints. The state space was given by the three joint angles and the distance between the robotic arm and the can; whereas the action space was discrete and given by the combination of possible variations for the angles. The robotic arm was trained using the Double Q-Learning.
+
+Future work can explore the application of the algorithm to more complex tasks and environments as there are several possible avenues for future research in the field of reinforcement learning, DQN, and robotic arms. One possible direction is to explore the use the prioritized experience replay method, to improve the performance and stability of the robotic arm. Additionally, incorporating more complex reward functions, such as those that incorporate task completion time or energy efficiency, could also be explored.
+
+Another direction for future research is to investigate the use of deep reinforcement learning in more complex robotic tasks, such as manipulation and grasping. These tasks require more fine-grained control over the robotic arm's movements and may involve multiple objects or obstacles in the environment. Therefore, new approaches to reinforcement learning that can handle such complexity could be explored.
+
+The use of transfer learning in reinforcement learning for robotic arms is another potential topic to investigate. Transfer learning involves leveraging knowledge gained from one task to aid in learning a new task. This approach has shown promise in the field of deep learning, and its application to reinforcement learning in robotics could lead to more efficient learning and faster convergence.
+
+Also, the deployment of reinforcement learning in real-world robotic applications could also be explored. This involves overcoming several challenges, such as ensuring the safety and reliability of the robotic arm and dealing with noisy and uncertain sensory data. However, successful implementation of reinforcement learning in real world robotic applications could have significant practical applications in areas such as manufacturing, healthcare, and logistics.
+
+Finally, trying different hyper parameters combinations and comparing their different results seems the next logical step. However, also other reward function definitions could be used to see if better results can be achieved in the experiments. The use of the camera images and object detection algorithms instead of the sensors plugins in the experiments is also something that could be implemented.
+
+Regarding the simulated environment setup, a docker implementation of the whole reinforcement learning framework created in this thesis could be done since installing ROS2, Gazebo, and making them work together is not a straightforward process.
+
+In conclusion, the application of reinforcement learning and DQN to a simulated robotic arm has shown promising results in one single simple task and future work could also adapt this to complex behaviors and scenarios. However, there are still several directions for future research in this field, including exploring different variants of the DQN algorithm, investigating more complex robotic tasks, incorporating transfer learning, and deploying reinforcement learning in real-world robotic applications. In addition to that, implementation of object detection techniques and the use of images from the camera sensor as inputs to our DQN can be implemented as well as performing benchmarking using different hyper parameters.
+
+%\hrule
+%Give an executive summary for important decision makers here, as well as an outlook (what would you do if you had another 3 months). 2-3 pages are ok here.
+%\hrule
+
+%\section{Using LaTeX, erase this chapter later}
 %
-I was too lazy to translate this, it will be translated later. But I believe the ideas are clear!
+%I was too lazy to translate this, it will be translated later. But I believe the ideas are clear!
 %
-\subsection{Mathematische Gleichungen}
-Eine mehrzeilige Gleichung sieht so aus (die Symbole nach den und-Zeichen werden untereinander gesetzt). Die nonmber-Befehle verhindern dass die Gleichung nummertiert wird (Geschmackssache, ist nie falsch wenn eine Gleichung nummeriert ist). Aber: eine Gleichung auf die man refernziert (also die ein Label hat), muss nummeriert sein!
-\begin{align}
-    A &= \sum_{i=1}^N x_i \label{eq:1}\nonumber\\
-    B &= \frac{\pi}{2}
-\end{align}
+%\subsection{Mathematische Gleichungen}
+%Eine mehrzeilige Gleichung sieht so aus (die Symbole nach den und-Zeichen werden untereinander gesetzt). Die nonmber-Befehle verhindern dass die Gleichung nummertiert wird (Geschmackssache, ist nie falsch wenn eine Gleichung nummeriert ist). Aber: eine Gleichung auf die man refernziert (also die ein Label hat), muss nummeriert sein!
+%\begin{align}
+ %   A &= \sum_{i=1}^N x_i \label{eq:1}\nonumber\\
+  %  B &= \frac{\pi}{2}
+%\end{align}
 
-Eine inline-Gleichung: $x=45b + \frac{2}{3}\pi$. Der Text geht weiter! Auf inline-Gleichungen kann man keine Refernzen erstellen.
-
-\subsection{Das ist eine Auflistung}
-\begin{enumerate}
-\item Element 1
-\item Element 2
-\end{enumerate}
-
-\subsection{Das ist eine Bullet-Liste}
-\begin{itemize}
-\item Element 1
-\item Element 2
-\end{itemize}
-
-
-\subsection{Eine Grafik bindet man so ein}
-Zulässige Formate sind generell eps, pdf und png.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{logo.pdf}
-    \caption{Logo der HAW Fulda}
-    \label{fig:bildchen}
-\end{figure}
-
-\subsection{So schreibt man einen Algorithmus}
-
-\begin{algorithm}[H]
- \KwData{this text}
- \KwResult{how to write algorithm }
- initialization\;
- \While{not at end of this document}{
-  read current\;
-  \eIf{understand}{
-   go to next section\;
-   current section becomes this one\;
-   }{
-   go back to the beginning of current section\;
-  }
- }
- \caption{How to write algorithms\label{alg:dummy}
- }
-\end{algorithm}
-
-\subsection{So gestaltet man eine Tabelle}
-
-\begin{table}[H]
-\caption{Beispielstabelle\label{tab:beispiel}
-}
-\centering
-\begin{tabular}{llr}
-\hline
-A    & B & C \\
-\hline
-D      & per gram    & 11.65      \\
-          & each        & 1.01       \\
-E       & stuffed     & 32.54      \\
-F       & stuffed     & 73.23      \\
-G & frozen      & 8.39       \\
-\hline
-\end{tabular}
-\end{table}
-
-
-\subsection{Interne Referenzen}
-So wird ein Kapitel oder Unterkapitel referenziert: Kap.~\ref{sec:einleitung},
-Kap.~\ref{sec:webquellen}. Auf Gleichungen bezieht man sich so: Wie in Gl.~(\ref{eq:1}) gezeigt,
-sehen Gleichungen in der Regel gut aus. Auf Abb.~\ref{fig:bildchen} bezieht man sich so. Auf
-Tab.~\ref{tab:beispiel} referenziert man so. Algorithmen sind analog: siehe Alg.~\ref{alg:dummy}.
-Generell kann man alles zitieren was ein Label hat.
-
-\subsection{Textformatierung}
-\textbf{So wird dick geschrieben} und \textit{so kursiv}.
-
-\subsection{Zitieren}\label{sec:zitate}
-Generell zitiert man so: wie in \cite{clemen1989combining} gezeigt, blablaba. Für jedes zitierte Werk ist ein BibTex-Eintrag nötig! Eine gute Quelle ist Google Scholar!!
-
-\subsection{Webquellen zitieren}\label{sec:webquellen}
-So wird eine Webquelle zitiert: \cite{shiny1}, siehe auch den Eintag im BibTeX-File.
-Wichtig: für jede Web-Quelle ein BibTeX-Eintrag! Wenn Sie das auf die hier gezeigte Art machen, werden URLs (fast) automatisch getrennt. Kontrollieren Sie trotztdem die Literaturliste, es kann sein dass das nicht immer funktioniert.
-
-\subsection{Literaturverzichnis erstellen}
-Hierzu müssen BibTeX-Einträge in die Datei literatur.bib eingefügt werden. Die BibTeX-Keys sind jeweils Argumente für die cite-Kommandos! Wenn Sie literatur.bib ändern müssen Sie alles mindestens 5x compilieren: 3x mit latex, 1x mit BibTex und dann noch 2x mit LaTeX (in der Reihengfolge). Am besten Sie machen ein Skript dafür!
+%Eine inline-Gleichung: $x=45b + \frac{2}{3}\pi$. Der Text geht weiter! Auf inline-Gleichungen kann man keine Refernzen erstellen.
+%
+%\subsection{Das ist eine Auflistung}
+%\begin{enumerate}
+%\item Element 1
+%\item Element 2
+%\end{enumerate}
+%
+%\subsection{Das ist eine Bullet-Liste}
+%\begin{itemize}
+%\item Element 1
+%\item Element 2
+%\end{itemize}
+%
+%
+%\subsection{Eine Grafik bindet man so ein}
+%Zulässige Formate sind generell eps, pdf und png.
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=0.8\textwidth]{logo.pdf}
+%    \caption{Logo der HAW Fulda}
+%    \label{fig:bildchen}
+%\end{figure}
+%
+%\subsection{So schreibt man einen Algorithmus}
+%
+%\begin{algorithm}[H]
+% \KwData{this text}
+% \KwResult{how to write algorithm }
+% initialization\;
+% \While{not at end of this document}{
+%  read current\;
+%  \eIf{understand}{
+%   go to next section\;
+%   current section becomes this one\;
+%   }{
+%   go back to the beginning of current section\;
+%  }
+% }
+% \caption{How to write algorithms\label{alg:dummy}
+% }
+%\end{algorithm}
+%
+%\subsection{So gestaltet man eine Tabelle}
+%
+%\begin{table}[H]
+%\caption{Beispielstabelle\label{tab:beispiel}
+%}
+%\centering
+%\begin{tabular}{llr}
+%\hline
+%A    & B & C \\
+%\hline
+%D      & per gram    & 11.65      \\
+%          & each        & 1.01       \\
+%E       & stuffed     & 32.54      \\
+%F       & stuffed     & 73.23      \\
+%G & frozen      & 8.39       \\
+%\hline
+%\end{tabular}
+%\end{table}
+%
+%
+%\subsection{Interne Referenzen}
+%So wird ein Kapitel oder Unterkapitel referenziert: Kap.~\ref{sec:einleitung},
+%Kap.~\ref{sec:webquellen}. Auf Gleichungen bezieht man sich so: Wie in Gl.~(\ref{eq:1}) gezeigt,
+%sehen Gleichungen in der Regel gut aus. Auf Abb.~\ref{fig:bildchen} bezieht man sich so. Auf
+%Tab.~\ref{tab:beispiel} referenziert man so. Algorithmen sind analog: siehe Alg.~\ref{alg:dummy}.
+%Generell kann man alles zitieren was ein Label hat.
+%
+%\subsection{Textformatierung}
+%\textbf{So wird dick geschrieben} und \textit{so kursiv}.
+%
+%\subsection{Zitieren}\label{sec:zitate}
+%Generell zitiert man so: wie in \cite{clemen1989combining} gezeigt, blablaba. Für jedes zitierte Werk ist ein BibTex-Eintrag nötig! Eine gute Quelle ist Google Scholar!!
+%
+%\subsection{Webquellen zitieren}\label{sec:webquellen}
+%So wird eine Webquelle zitiert: \cite{shiny1}, siehe auch den Eintag im BibTeX-File.
+%Wichtig: für jede Web-Quelle ein BibTeX-Eintrag! Wenn Sie das auf die hier gezeigte Art machen, werden URLs (fast) automatisch getrennt. Kontrollieren Sie trotztdem die Literaturliste, es kann sein dass das nicht immer funktioniert.
+%
+%\subsection{Literaturverzichnis erstellen}
+%Hierzu müssen BibTeX-Einträge in die Datei literatur.bib eingefügt werden. Die BibTeX-Keys sind jeweils Argumente für die cite-Kommandos! Wenn Sie literatur.bib ändern müssen Sie alles mindestens 5x compilieren: 3x mit latex, 1x mit BibTex und dann noch 2x mit LaTeX (in der Reihengfolge). Am besten Sie machen ein Skript dafür!
 
 %\subsection{Erstellung eines PDFs im PDF-A Format}
 %Durch Einbinden geeigneter Packages (pdfx) wird diese Vorlage bereits als PDF-A erzeugt. Sie sollten allerdings die Metadaten in der Datei main.xmpdata anpassen!
@@ -1953,129 +2017,129 @@ Hierzu müssen BibTeX-Einträge in die Datei literatur.bib eingefügt werden. Di
 %    }
 %\end{figure}
 
-\section{Thesis defence}
-The defence is 15/20 minutes for Bachelor/Master, followed by questions and a discussion. Both examiners are present, and you can invite external persons since defences are generally public.
-
-Targetted group are non-computer scientists, e.g., from higher management, NOT the examiners. Means that at least $\frac 1 3$ if the presentation is introduction/context/problem statement. You should re-use text/images/graphs/etc from the corresponding chapters here!
-
-1 Slide per minute is a good guideline. If you can guess that some questions are going to be asked anyway, prepare some slides specifically for these questions, makes a good impression, and you can show them in the discussion time, not during the 15 minutes of the presentation.
-
-Defences are not graded, you can only pass or not pass. 
-
-Students are responsible for finding dates for the defence and coordinating this with both supervisors. 
-
-Some common advice is:
-\begin{itemize}
-    \item Speak slowly and loadly
-    \item If you do not have enough time left for all slides, leave some out rather than rushing through all of them!!
-    \item Slide numbers!
-    \item In presence: be there 10 minutes ahead of time to check projectors etc. Makes a very bad impression if this is not working. Same for online presentations: be there 5 minutes ahead of time to verify screen sharing works.
-    \item do not read text from the slides. These should contains key words only, and you explain the rest in free presentation
-    \item Defences can by all means be online, more convenient for companies
-    \item in presence: always carry a USB key with a PDF of your slides. If you have to use another PC than yours, PowerPoint slides may look very differently (fonts, page setup etc.)
-    \item No-Go: spelling errors on slides!!!
-    \item Do not use animations, they may not work in an online setting
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Eidesstattliche Erklärung
-%% muss angepasst werden
-%% in Erklaerung.tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{Erklaerung.tex}
-
-\section{Extras}
-\subsection{Markov Decision Process}
-A Markov Decision Process (MDP) is defined by a tuple $<S, A, P, R, \gamma>$, where:
-
-\begin{itemize}
-\item $S$ is the set of states in the environment
-\item $A$ is the set of actions that can be taken in each state
-\item $P$ is the state transition probability matrix, where $P_{ss'}^a = \mathbb{P}[S_{t+1} = s' \mid S_t = s, A_t = a]$
-\item $R$ is the reward function, where $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$
-\item $\gamma$ is the discount factor, where $\gamma \in [0, 1]$
-\end{itemize}
-
-The goal of an agent in a Markov Decision Process is to find a policy $\pi: S \rightarrow A$ that maximizes the expected discounted reward:
-
-\begin{equation*}
-V_\pi(s) = \mathbb{E}\pi\Bigg[\sum{k=0}^\infty \gamma^k R_{t+k+1} \Bigg| S_t = s\Bigg]
-\end{equation*}
-
-or the corresponding action-value function:
-
-\begin{equation*}
-Q_\pi(s, a) = \mathbb{E}\pi\Bigg[\sum{k=0}^\infty \gamma^k R_{t+k+1} \Bigg| S_t = s, A_t = a\Bigg]
-\end{equation*}
-
-\subsection{Q learning Algorithm}
-The Q-learning algorithm is an off-policy temporal difference learning algorithm for finding the optimal action-value function $Q^(s, a)$ in a Markov Decision Process (MDP). The algorithm updates an estimate of $Q^(s, a)$ by iteratively applying the following update rule:
-
-\begin{equation*}
-Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha\Big[ R_{t+1} + \gamma\max_{a} Q(s_{t+1}, a) - Q(s_t, a_t) \Big]
-\end{equation*}
-
-where $s_t$ and $a_t$ are the current state and action, $R_{t+1}$ is the reward received after taking action $a_t$ in state $s_t$ and transitioning to state $s_{t+1}$, $\alpha$ is the learning rate, and $\gamma$ is the discount factor.
-
-The Q-learning algorithm can be summarized as follows:
-
-\begin{enumerate}
-\item Initialize the Q-value function $Q(s, a)$ for all state-action pairs.
-\item Observe the current state $s_t$.
-\item Choose an action $a_t$ based on a policy, such as $\epsilon$-greedy or softmax.
-\item Take the action $a_t$ and observe the next state $s_{t+1}$ and reward $R_{t+1}$.
-\item Update the Q-value function using the update rule: $Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha\Big[ R_{t+1} + \gamma\max_{a} Q(s_{t+1}, a) - Q(s_t, a_t) \Big]$.
-\item Set $s_t = s_{t+1}$ and repeat from step 3 until the end of the episode or termination of the task.
-\end{enumerate}
-
-The Q-learning algorithm is guaranteed to converge to the optimal action-value function $Q^*(s, a)$ under certain conditions, such as the MDP being finite and the learning rate $\alpha$ decaying over time.
-
-\subsection{Deep Q Learning}
-Deep Q-learning is a variant of the Q-learning algorithm that uses a deep neural network to approximate the action-value function $Q(s, a)$ in a Markov Decision Process (MDP). The algorithm combines reinforcement learning with deep neural networks to enable learning in high-dimensional and continuous state spaces.
-
-The Deep Q-learning algorithm can be summarized as follows:
-
-\textbf{Algorithm: Deep Q-learning}
-
-\begin{enumerate}
-\item Initialize the replay memory buffer $D$ with capacity $N$.
-\item Initialize the Q-network with random weights $\theta$.
-\item Initialize the target Q-network with weights $\theta^{-} = \theta$.
-\item For each episode $e=1,2,...,E$ do the following:
-\begin{enumerate}
-\item Initialize the environment with initial state $s_0$.
-\item For each step $t=1,2,...,T$ do the following:
-\begin{enumerate}
-\item With probability $\epsilon$ select a random action $a_t$, otherwise select $a_t=\arg\max_{a} Q(s_t, a; \theta)$.
-\item Execute action $a_t$ and observe reward $r_t$ and next state $s_{t+1}$.
-\item Store the transition $(s_t, a_t, r_t, s_{t+1})$ in the replay memory buffer $D$.
-\item Sample a mini-batch of transitions $(s_j, a_j, r_j, s_{j+1})$ from the replay memory buffer $D$.
-
-\item Compute the Q-learning target for each transition $(s_j, a_j, r_j, s_{j+1})$:
-
- $y_j = \begin{cases} r_j & \text{if episode terminates at step } j+1 \\ r_j + \gamma\max_{a'}Q(s_{j+1},a';\theta^{-}) & \text{otherwise} \end{cases}$.
-
-\item Compute the loss between the predicted Q-value and the target Q-value: $L(\theta) = \frac{1}{B}\sum_{j=1}^B(y_j-Q(s_j,a_j;\theta))^2$.
-\item Update the Q-network weights using stochastic gradient descent: $\theta \leftarrow \theta - \alpha\nabla_\theta L(\theta)$.
-\item Every $C$ steps update the target Q-network weights: $\theta^{-} \leftarrow \tau\theta + (1-\tau)\theta^{-}$.
-\item Set $s_t=s_{t+1}$.
-\end{enumerate}
-\end{enumerate}
-\end{enumerate}
-
-In the Deep Q-learning algorithm, the replay memory buffer $D$ is used to store experiences in order to prevent overfitting and stabilize learning. The target Q-network is used to compute the target Q-value in the Q-learning update, and its weights are periodically updated from the Q-network to prevent target overestimation.
-
-The Deep Q-learning algorithm has been successfully applied to various tasks, such as playing Atari games, controlling robots, and playing board games.
-
-
-
-
-The Deep Q-learning algorithm uses experience replay and target networks to improve stability and convergence of the algorithm. Experience replay randomly samples transitions from the replay memory buffer to decorrelate the data and prevent overfitting. Target networks are used to stabilize the training by keeping a separate target network with fixed parameters and periodically updating it with the weights of the online network.
-
-The Deep Q-learning algorithm has been successfully applied to various tasks, such as playing Atari games, controlling robots, and playing board games.
-
-
-
+%\section{Thesis defence}
+%The defence is 15/20 minutes for Bachelor/Master, followed by questions and a discussion. Both examiners are present, and you can invite external persons since defences are generally public.
+%
+%Targetted group are non-computer scientists, e.g., from higher management, NOT the examiners. Means that at least $\frac 1 3$ if the presentation is introduction/context/problem statement. You should re-use text/images/graphs/etc from the corresponding chapters here!
+%
+%1 Slide per minute is a good guideline. If you can guess that some questions are going to be asked anyway, prepare some slides specifically for these questions, makes a good impression, and you can show them in the discussion time, not during the 15 minutes of the presentation.
+%
+%Defences are not graded, you can only pass or not pass. 
+%
+%Students are responsible for finding dates for the defence and coordinating this with both supervisors. 
+%
+%Some common advice is:
+%\begin{itemize}
+%    \item Speak slowly and loadly
+%    \item If you do not have enough time left for all slides, leave some out rather than rushing through all of them!!
+%    \item Slide numbers!
+%    \item In presence: be there 10 minutes ahead of time to check projectors etc. Makes a very bad impression if this is not working. Same for online presentations: be there 5 minutes ahead of time to verify screen sharing works.
+%    \item do not read text from the slides. These should contains key words only, and you explain the rest in free presentation
+%    \item Defences can by all means be online, more convenient for companies
+%    \item in presence: always carry a USB key with a PDF of your slides. If you have to use another PC than yours, PowerPoint slides may look very differently (fonts, page setup etc.)
+%    \item No-Go: spelling errors on slides!!!
+%    \item Do not use animations, they may not work in an online setting
+%\end{itemize}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Eidesstattliche Erklärung
+%%% muss angepasst werden
+%%% in Erklaerung.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{Erklaerung.tex}
+%
+%\section{Extras}
+%\subsection{Markov Decision Process}
+%A Markov Decision Process (MDP) is defined by a tuple $<S, A, P, R, \gamma>$, where:
+%
+%\begin{itemize}
+%\item $S$ is the set of states in the environment
+%\item $A$ is the set of actions that can be taken in each state
+%\item $P$ is the state transition probability matrix, where $P_{ss'}^a = \mathbb{P}[S_{t+1} = s' \mid S_t = s, A_t = a]$
+%\item $R$ is the reward function, where $R_s^a = \mathbb{E}[R_{t+1} \mid S_t = s, A_t = a]$
+%\item $\gamma$ is the discount factor, where $\gamma \in [0, 1]$
+%\end{itemize}
+%
+%The goal of an agent in a Markov Decision Process is to find a policy $\pi: S \rightarrow A$ that maximizes the expected discounted reward:
+%
+%\begin{equation*}
+%V_\pi(s) = \mathbb{E}\pi\Bigg[\sum{k=0}^\infty \gamma^k R_{t+k+1} \Bigg| S_t = s\Bigg]
+%\end{equation*}
+%
+%or the corresponding action-value function:
+%
+%\begin{equation*}
+%Q_\pi(s, a) = \mathbb{E}\pi\Bigg[\sum{k=0}^\infty \gamma^k R_{t+k+1} \Bigg| S_t = s, A_t = a\Bigg]
+%\end{equation*}
+%
+%\subsection{Q learning Algorithm}
+%The Q-learning algorithm is an off-policy temporal difference learning algorithm for finding the optimal action-value function $Q^(s, a)$ in a Markov Decision Process (MDP). The algorithm updates an estimate of $Q^(s, a)$ by iteratively applying the following update rule:
+%
+%\begin{equation*}
+%Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha\Big[ R_{t+1} + \gamma\max_{a} Q(s_{t+1}, a) - Q(s_t, a_t) \Big]
+%\end{equation*}
+%
+%where $s_t$ and $a_t$ are the current state and action, $R_{t+1}$ is the reward received after taking action $a_t$ in state $s_t$ and transitioning to state $s_{t+1}$, $\alpha$ is the learning rate, and $\gamma$ is the discount factor.
+%
+%The Q-learning algorithm can be summarized as follows:
+%
+%\begin{enumerate}
+%\item Initialize the Q-value function $Q(s, a)$ for all state-action pairs.
+%\item Observe the current state $s_t$.
+%\item Choose an action $a_t$ based on a policy, such as $\epsilon$-greedy or softmax.
+%\item Take the action $a_t$ and observe the next state $s_{t+1}$ and reward $R_{t+1}$.
+%\item Update the Q-value function using the update rule: $Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha\Big[ R_{t+1} + \gamma\max_{a} Q(s_{t+1}, a) - Q(s_t, a_t) \Big]$.
+%\item Set $s_t = s_{t+1}$ and repeat from step 3 until the end of the episode or termination of the task.
+%\end{enumerate}
+%
+%The Q-learning algorithm is guaranteed to converge to the optimal action-value function $Q^*(s, a)$ under certain conditions, such as the MDP being finite and the learning rate $\alpha$ decaying over time.
+%
+%\subsection{Deep Q Learning}
+%Deep Q-learning is a variant of the Q-learning algorithm that uses a deep neural network to approximate the action-value function $Q(s, a)$ in a Markov Decision Process (MDP). The algorithm combines reinforcement learning with deep neural networks to enable learning in high-dimensional and continuous state spaces.
+%
+%The Deep Q-learning algorithm can be summarized as follows:
+%
+%\textbf{Algorithm: Deep Q-learning}
+%
+%\begin{enumerate}
+%\item Initialize the replay memory buffer $D$ with capacity $N$.
+%\item Initialize the Q-network with random weights $\theta$.
+%\item Initialize the target Q-network with weights $\theta^{-} = \theta$.
+%\item For each episode $e=1,2,...,E$ do the following:
+%\begin{enumerate}
+%\item Initialize the environment with initial state $s_0$.
+%\item For each step $t=1,2,...,T$ do the following:
+%\begin{enumerate}
+%\item With probability $\epsilon$ select a random action $a_t$, otherwise select $a_t=\arg\max_{a} Q(s_t, a; \theta)$.
+%\item Execute action $a_t$ and observe reward $r_t$ and next state $s_{t+1}$.
+%\item Store the transition $(s_t, a_t, r_t, s_{t+1})$ in the replay memory buffer $D$.
+%\item Sample a mini-batch of transitions $(s_j, a_j, r_j, s_{j+1})$ from the replay memory buffer $D$.
+%
+%\item Compute the Q-learning target for each transition $(s_j, a_j, r_j, s_{j+1})$:
+%
+% $y_j = \begin{cases} r_j & \text{if episode terminates at step } j+1 \\ r_j + \gamma\max_{a'}Q(s_{j+1},a';\theta^{-}) & \text{otherwise} \end{cases}$.
+%
+%\item Compute the loss between the predicted Q-value and the target Q-value: $L(\theta) = \frac{1}{B}\sum_{j=1}^B(y_j-Q(s_j,a_j;\theta))^2$.
+%\item Update the Q-network weights using stochastic gradient descent: $\theta \leftarrow \theta - \alpha\nabla_\theta L(\theta)$.
+%\item Every $C$ steps update the target Q-network weights: $\theta^{-} \leftarrow \tau\theta + (1-\tau)\theta^{-}$.
+%\item Set $s_t=s_{t+1}$.
+%\end{enumerate}
+%\end{enumerate}
+%\end{enumerate}
+%
+%In the Deep Q-learning algorithm, the replay memory buffer $D$ is used to store experiences in order to prevent overfitting and stabilize learning. The target Q-network is used to compute the target Q-value in the Q-learning update, and its weights are periodically updated from the Q-network to prevent target overestimation.
+%
+%The Deep Q-learning algorithm has been successfully applied to various tasks, such as playing Atari games, controlling robots, and playing board games.
+%
+%
+%
+%
+%The Deep Q-learning algorithm uses experience replay and target networks to improve stability and convergence of the algorithm. Experience replay randomly samples transitions from the replay memory buffer to decorrelate the data and prevent overfitting. Target networks are used to stabilize the training by keeping a separate target network with fixed parameters and periodically updating it with the weights of the online network.
+%
+%The Deep Q-learning algorithm has been successfully applied to various tasks, such as playing Atari games, controlling robots, and playing board games.
+%
+%
+%
 
 
 

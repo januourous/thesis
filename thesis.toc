@@ -1,5 +1,5 @@
-\contentsline {section}{List of Figures}{V}{section*.2}%
-\contentsline {section}{List of Tables}{VI}{section*.3}%
+\contentsline {section}{List of Figures}{IV}{section*.2}%
+\contentsline {section}{List of Tables}{V}{section*.3}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Context}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Simulated Robotics}{2}{subsubsection.1.1.1}%
@@ -64,23 +64,6 @@
 \contentsline {subsubsection}{\numberline {4.2.3}Experiment 3}{60}{subsubsection.4.2.3}%
 \contentsline {subsubsection}{\numberline {4.2.4}Experiment 4}{62}{subsubsection.4.2.4}%
 \contentsline {subsubsection}{\numberline {4.2.5}Experiment 5}{64}{subsubsection.4.2.5}%
-\contentsline {section}{\numberline {5}Discussion}{66}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{68}{section.6}%
-\contentsline {section}{\numberline {7}Using LaTeX, erase this chapter later}{68}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Mathematische Gleichungen}{68}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Das ist eine Auflistung}{68}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Das ist eine Bullet-Liste}{68}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Eine Grafik bindet man so ein}{69}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}So schreibt man einen Algorithmus}{69}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}So gestaltet man eine Tabelle}{69}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Interne Referenzen}{70}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Textformatierung}{70}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Zitieren}{70}{subsection.7.9}%
-\contentsline {subsection}{\numberline {7.10}Webquellen zitieren}{70}{subsection.7.10}%
-\contentsline {subsection}{\numberline {7.11}Literaturverzichnis erstellen}{70}{subsection.7.11}%
+\contentsline {section}{\numberline {5}Discussion}{67}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{69}{section.6}%
 \contentsline {section}{\numberline {A}Code Snippets}{76}{appendix.A}%
-\contentsline {section}{\numberline {B}Thesis defence}{80}{appendix.B}%
-\contentsline {section}{\numberline {C}Extras}{81}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Markov Decision Process}{81}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Q learning Algorithm}{81}{subsection.C.2}%
-\contentsline {subsection}{\numberline {C.3}Deep Q Learning}{82}{subsection.C.3}%
