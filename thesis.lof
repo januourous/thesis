@@ -4,7 +4,7 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces Gazebo simulation of a Robotic Arm in a Pick and Place setup. \cite {mathworks2021}.\relax }}{7}{figure.caption.8}%
 \contentsline {figure}{\numberline {5}{\ignorespaces Agent Environment interaction in the Reinforcement Learning Model.\relax }}{8}{figure.caption.9}%
 \contentsline {figure}{\numberline {6}{\ignorespaces World created in Gazebo and starting directory structure after copying the robotic arm simulation files.\relax }}{37}{figure.caption.10}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Created SDF file in Gazebo which only contains the object to be touched by the robotic arm.}}}{37}{subfigure.6.1}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A can described the created SDF file in Gazebo which is the object to be touched by the robotic arm.}}}{37}{subfigure.6.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Project structure after copying the \textit {dae}, \textit {stl}, and \textit {urdf} files into our package.}}}{37}{subfigure.6.2}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Rviz2 kuka}}{38}{figure.caption.11}%
 \contentsline {figure}{\numberline {8}{\ignorespaces The ROS \textbf {robot\_state\_publisher} node takes the URDF file content and publishes it to the \textbf {/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.\relax }}{38}{figure.caption.12}%
