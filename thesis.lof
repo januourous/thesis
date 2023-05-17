@@ -1,54 +1,60 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Simulated urban scenario created in Gazebo \cite {yigit2020real}.\relax }}{3}{figure.caption.5}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Small Warehouse Gazebo simulation \cite {aws-robomaker-small-warehouse-world}.\relax }}{4}{figure.caption.6}%
-\contentsline {figure}{\numberline {3}{\ignorespaces A robot arm helps make engine components at a Volkswagen factory in Germany \cite {wamu2013}\relax }}{5}{figure.caption.7}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Gazebo simulation of a Robotic Arm in a Pick and Place setup. \cite {mathworks2021}.\relax }}{7}{figure.caption.8}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Agent Environment interaction in the Reinforcement Learning Model.\relax }}{8}{figure.caption.9}%
-\contentsline {figure}{\numberline {6}{\ignorespaces World created in Gazebo and starting directory structure after copying the robotic arm simulation files.\relax }}{37}{figure.caption.10}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A can described the created SDF file in Gazebo which is the object to be touched by the robotic arm.}}}{37}{subfigure.6.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Project structure after copying the \textit {dae}, \textit {stl}, and \textit {urdf} files into our package.}}}{37}{subfigure.6.2}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Rviz2 kuka}}{38}{figure.caption.11}%
-\contentsline {figure}{\numberline {8}{\ignorespaces The ROS \textbf {robot\_state\_publisher} node takes the URDF file content and publishes it to the \textbf {/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.\relax }}{38}{figure.caption.12}%
-\contentsline {figure}{\numberline {9}{\ignorespaces kuka kr210 joints}}{39}{figure.caption.13}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Links in the Kuka KR210.\relax }}{40}{figure.caption.14}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Links 1, 3 and 5 in the Kuka KR210.}}}{40}{subfigure.10.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Base Link, Link 2, 4 and 6 in the Kuka KR210.}}}{40}{subfigure.10.2}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Gazebo World}}{41}{figure.caption.15}%
-\contentsline {figure}{\numberline {12}{\ignorespaces The joint state broadcaster node publishes the current state of each joint in the robot's body to the ROS (Robot Operating System) network. This state includes the joint's position, velocity, and effort (torque) values. \relax }}{41}{figure.caption.16}%
-\contentsline {figure}{\numberline {13}{\ignorespaces The node \textit {/gazebo\_state/gazebo\_ros\_state} publishes the state of the models in the gazebo world to the topics \textit {/gazebo\_state/link\_states\_demo} and \textit {/gazebo\_state/model\_states\_demo} as specified in Listing \ref {gazeboRosStatePluginXml}\relax }}{42}{figure.caption.17}%
-\contentsline {figure}{\numberline {14}{\ignorespaces As a result of adding Listing \ref {cameraSensorXml} a node \textit {camera\_controller} is created and it publishes to the topics \textit {/camera/image\_raw}.\relax }}{42}{figure.caption.18}%
-\contentsline {figure}{\numberline {15}{\ignorespaces As a result of adding Listing \ref {bumperSensorXml} there are \textit {/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit {/contact\_sensor/bumper\_link\_4}, \textit {/contact\_sensor/bumper\_link\_5}, and\textit { /contact\_sensor/bumper\_link\_6}. \relax }}{42}{figure.caption.19}%
-\contentsline {figure}{\numberline {16}{\ignorespaces The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm.\relax }}{43}{figure.caption.20}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Classes defining the reinforcement learning framework that will run the environment experiments for the arm to learn to touch the object.\relax }}{44}{figure.caption.21}%
-\contentsline {figure}{\numberline {18}{\ignorespaces ROS nodes and topics active when running the main program.\relax }}{52}{figure.caption.22}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Robotic arm before and after publishing the target angles.\relax }}{54}{figure.caption.24}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kuka Kr210 in starting position.}}}{54}{subfigure.19.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Kuka Kr210 after moving every joint to 0.5 rads}}}{54}{subfigure.19.2}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Image of the gazebo world and from the camera sensor at starting position.\relax }}{56}{figure.caption.26}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gazebo world and robotic arm at the beginning of the experiment.}}}{56}{subfigure.20.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script before moving the arm.}}}{56}{subfigure.20.2}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Image of the gazebo world and from the camera sensor after moving the arm.\relax }}{56}{figure.caption.27}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gazebo world and robotic arm position after executing a moving command.}}}{56}{subfigure.21.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script after moving the arm.}}}{56}{subfigure.21.2}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Collision between the can and Link 6 or end effector of the arm.\relax }}{57}{figure.caption.28}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Monitoring the topics $/contact\_sensor/bumper\_link\_4$, $/contact\_sensor/bumper\_link\_5$, and $/contact\_sensor/bumper\_link\_6$ in Rqt \ref {rviz_rqt}. The first column is the name of the topics, and the second is the type of message they handle. \relax }}{58}{figure.caption.29}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Reward per episode and number of steps per episode for experiment 1 with parameters in Table \ref {tab:hyperparams-exp-1}.\relax }}{59}{figure.caption.31}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{59}{subfigure.24.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Number of steps per episode.}}}{59}{subfigure.24.2}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Collision of the robotic arm and the can and Experiment 2 results.\relax }}{60}{figure.caption.33}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 2.}}}{60}{subfigure.25.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per Episode}}}{60}{subfigure.25.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Number of steps per episode.}}}{60}{subfigure.25.3}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }}{61}{figure.caption.35}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Collision of the robotic arm and the can and Experiment 3 results.\relax }}{62}{figure.caption.36}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 3.}}}{62}{subfigure.27.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{62}{subfigure.27.2}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Simulated urban scenario created in Gazebo \cite {yigit2020real}.\relax }}{2}{figure.caption.5}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Small Warehouse Gazebo simulation \cite {aws-robomaker-small-warehouse-world}.\relax }}{3}{figure.caption.6}%
+\contentsline {figure}{\numberline {3}{\ignorespaces A robot arm helps make engine components at a Volkswagen factory in Germany \cite {wamu2013}\relax }}{4}{figure.caption.7}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Gazebo simulation of a Robotic Arm in a Pick and Place setup. \cite {mathworks2021}.\relax }}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Robotic arm Kuka KR210 moving closer and away from the target.\relax }}{8}{figure.caption.9}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Simulated robotic arm starting position.}}}{8}{subfigure.5.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Simulated robotic arm moving away from the target object.}}}{8}{subfigure.5.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Simulated robotic arm starting position.}}}{8}{subfigure.5.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Simulated robotic arm moving closer to the target object.}}}{8}{subfigure.5.4}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Simulated robotic arm touching the target object.\relax }}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Agent Environment interaction in the Reinforcement Learning Model.\relax }}{31}{figure.caption.11}%
+\contentsline {figure}{\numberline {8}{\ignorespaces World created in Gazebo and starting directory structure after copying the robotic arm simulation files.\relax }}{39}{figure.caption.12}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A can described the created SDF file in Gazebo which is the object to be touched by the robotic arm.}}}{39}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Project structure after copying the \textit {dae}, \textit {stl}, and \textit {urdf} files into our package.}}}{39}{subfigure.8.2}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Rviz2 kuka}}{40}{figure.caption.13}%
+\contentsline {figure}{\numberline {10}{\ignorespaces The robot\_state\_publisher node}}{40}{figure.caption.14}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Joints in the Kuka KR210.}}{41}{figure.caption.15}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Links in the Kuka KR210.\relax }}{42}{figure.caption.16}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Links 1, 3 and 5 in the Kuka KR210.}}}{42}{subfigure.12.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Base Link, Link 2, 4 and 6 in the Kuka KR210.}}}{42}{subfigure.12.2}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Gazebo World.}}{43}{figure.caption.17}%
+\contentsline {figure}{\numberline {14}{\ignorespaces The joint\_state\_broadcaster node.}}{43}{figure.caption.18}%
+\contentsline {figure}{\numberline {15}{\ignorespaces The gazebo\_ros\_state node.}}{44}{figure.caption.19}%
+\contentsline {figure}{\numberline {16}{\ignorespaces The camera\_controller node.}}{44}{figure.caption.20}%
+\contentsline {figure}{\numberline {17}{\ignorespaces The /contact\_sensor/gazebo\_ros\_bumper\_sensor node.}}{44}{figure.caption.21}%
+\contentsline {figure}{\numberline {18}{\ignorespaces The /joint\_trajectory\_controller node.}}{45}{figure.caption.22}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Classes and relationships in the reinforcement learning framework.}}{46}{figure.caption.23}%
+\contentsline {figure}{\numberline {20}{\ignorespaces ROS nodes and topics active when running the main program.\relax }}{54}{figure.caption.24}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Robotic arm before and after publishing the target angles.\relax }}{56}{figure.caption.26}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Kuka Kr210 in starting position.}}}{56}{subfigure.21.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Kuka Kr210 after moving every joint to 0.5 rads}}}{56}{subfigure.21.2}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Image of the gazebo world and from the camera sensor at starting position.\relax }}{58}{figure.caption.28}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gazebo world and robotic arm at the beginning of the experiment.}}}{58}{subfigure.22.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script before moving the arm.}}}{58}{subfigure.22.2}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Image of the gazebo world and from the camera sensor after moving the arm.\relax }}{58}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gazebo world and robotic arm position after executing a moving command.}}}{58}{subfigure.23.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Image captured by the cameraSubscriber.py script after moving the arm.}}}{58}{subfigure.23.2}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Collision between the can and Link 6 or end effector of the arm.\relax }}{59}{figure.caption.30}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Contact sensors monitoring with Rqt.}}{60}{figure.caption.31}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Reward per episode and number of steps per episode for experiment 1 with parameters in Table \ref {tab:hyperparams-exp-1}.\relax }}{61}{figure.caption.33}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{61}{subfigure.26.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Number of steps per episode.}}}{61}{subfigure.26.2}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Collision of the robotic arm and the can and Experiment 2 results.\relax }}{62}{figure.caption.35}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 2.}}}{62}{subfigure.27.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per Episode}}}{62}{subfigure.27.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Number of steps per episode.}}}{62}{subfigure.27.3}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }}{63}{figure.caption.38}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Collision of the robotic arm and the can and Experiment 4 results.\relax }}{64}{figure.caption.39}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 4.}}}{64}{subfigure.29.1}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }}{63}{figure.caption.37}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Collision of the robotic arm and the can and Experiment 3 results.\relax }}{64}{figure.caption.38}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 3.}}}{64}{subfigure.29.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{64}{subfigure.29.2}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Number of steps per episode.}}}{64}{subfigure.29.3}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Results for Experiment 5.\relax }}{66}{figure.caption.41}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode.}}}{66}{subfigure.30.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Number of steps per episode.}}}{66}{subfigure.30.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Exploration rate ($\epsilon $) value at the beginning of each episode.}}}{66}{subfigure.30.3}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Exploration rate ($\epsilon $) value at the beginning of each episode. \relax }}{65}{figure.caption.40}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Collision of the robotic arm and the can and Experiment 4 results.\relax }}{66}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Collision between Link 6 of the robotic arm and can at the end of Experiment 4.}}}{66}{subfigure.31.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode}}}{66}{subfigure.31.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Number of steps per episode.}}}{66}{subfigure.31.3}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Results for Experiment 5.\relax }}{68}{figure.caption.43}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Sum of rewards in an episode or episode reward per episode.}}}{68}{subfigure.32.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Number of steps per episode.}}}{68}{subfigure.32.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Exploration rate ($\epsilon $) value at the beginning of each episode.}}}{68}{subfigure.32.3}%

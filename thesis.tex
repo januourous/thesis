@@ -175,8 +175,6 @@ Many different concepts and methodologies can be used to break down reinforcemen
 %What is the context of the presented work? If you work in a company, present the company first. Then the broad scientific or technological background in which the work is embedded should be presented and explained.
 \subsubsection{Simulated Robotics} 
 Simulated robotics is a rapidly developing field of study that strives to create intelligent systems that can communicate with virtual worlds in a manner that is comparable to how actual robots communicate with the real world \cite{4_choi2021use}. Compared to traditional robots, simulated robotics has many benefits, such as lower costs, more flexibility, and the ability to test and improve algorithms in a secure setting. Simulated robotic systems can be applied to a variety of tasks, from straightforward ones like object detection and manipulation to more difficult ones including autonomous navigation, group decision-making, and experience-based learning.  
-The application of virtual environments for autonomous vehicle training and testing is an illustration of simulated robotics \cite{5_elmquist2021sensor}. To train and test the computer programs that operate autonomous vehicles, researchers can develop realistic simulations of numerous driving circumstances and scenarios, like traffic patterns, atmospheric conditions, and unforeseen incidents. With this strategy, researchers may evaluate the dependability and safety of autonomous vehicles in a safe setting before placing them on public roads. The application of virtual environments to train and test robots for search and rescue missions is another illustration of simulated robotics \cite{6_sampedro2019fully}. In order to train and test robotics that can aid in rescue operations, researchers can develop simulations of emergencies such as earthquakes or floods. With this method, researchers may test the efficacy and security of various robotic systems and algorithms in a range of circumstances without endangering human responders.
-Systems for industrial automation can also be developed using simulated robotics. For instance, manufacturers can build and test robotic assembly lines, improve production workflows, and spot possible bottlenecks or safety risks using simulations. Before installing physical systems in the real world, this method enables manufacturers to optimize their procedures and increase productivity.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{gazebo_city}
@@ -184,8 +182,8 @@ Systems for industrial automation can also be developed using simulated robotics
 \label{fig:gazebocity}
 \end{figure}
 
-
-
+The application of virtual environments for autonomous vehicle training and testing is an illustration of simulated robotics \cite{5_elmquist2021sensor}. To train and test the computer programs that operate autonomous vehicles, researchers can develop realistic simulations of numerous driving circumstances and scenarios, like traffic patterns, atmospheric conditions, and unforeseen incidents. With this strategy, researchers may evaluate the dependability and safety of autonomous vehicles in a safe setting before placing them on public roads. The application of virtual environments to train and test robots for search and rescue missions is another illustration of simulated robotics \cite{6_sampedro2019fully}. In order to train and test robotics that can aid in rescue operations, researchers can develop simulations of emergencies such as earthquakes or floods. With this method, researchers may test the efficacy and security of various robotic systems and algorithms in a range of circumstances without endangering human responders.
+Systems for industrial automation can also be developed using simulated robotics. For instance, manufacturers can build and test robotic assembly lines, improve production workflows, and spot possible bottlenecks or safety risks using simulations. Before installing physical systems in the real world, this method enables manufacturers to optimize their procedures and increase productivity.
 
 \subsubsection{Industrial Automation}
 Automation of industrial processes, such as manufacturing and construction, via the use of technological devices and control systems is known as industrial automation \cite{7_leitao2016industrial}. Industrial automation can be accomplished utilizing simulated robotic arms to carry out operations that would typically be carried out by human workers or actual robots. This entails creating the algorithms and control frameworks necessary for the virtual robotic arm to move and handle items precisely and effectively, as well as incorporating the virtual arm into a larger system that is capable of carrying out difficult tasks on its own.
@@ -201,27 +199,27 @@ Applications for simulated robotic arms in industrial automation include materia
 
 \subsubsection{Robotic Arm}
 Traditionally developed industrial robots have been confined to closed cells or limited-access warehouse areas \cite{9_lucchi2020robo}. They typically perform repetitive operations on standardized objects without human interaction. Programming these robots is usually a time-consuming process that requires specialized knowledge of the machine's software. However, current trends in robotics aim to make robots capable of operating in dynamic and open environments where they can work alongside humans. This presents new challenges that require equipping the robot with sensors to perceive its surroundings and interact with objects. However, integrating and utilizing sensor data for planning the robot's actions is not an easy task.
-A robotic arm functions like a human arm and is a mechanical system that typically includes an end effector for manipulating and interacting with the environment \cite{10_ohta2018design}. Robotic arms have various applications in industrial and service fields, such as pick and place, exploration, manufacturing, laboratory research, and space exploration. The 6 degrees of freedom allow the arm to pivot in six different directions, similar to a human arm. In industrial robotic arms, the mechanical structure and control mechanism are major factors of concern.
-These arms are commonly used in a variety of applications, such as manufacturing, assembly, material handling, and surgery. Robotic arms can be controlled by various means, including joystick or slider controls, keyboard-based interfaces, and programmed motions. They can be programmed to perform repetitive tasks with high precision and speed, which makes them ideal for use in industrial settings where consistency and efficiency are crucial. These arms can be equipped with various end-effectors, such as grippers, cameras, or welding tools, depending on the specific task that needs to be performed. They can also be designed to have multiple joints or degrees of freedom, which enables them to move in a wide range of directions and perform complex tasks. Advancements in robotics technology have led to the development of lightweight and portable robotic arms that can be easily integrated into various systems \cite{11_singh2013evolution}. These arms are becoming increasingly popular in areas such as healthcare and rehabilitation, where they can assist with tasks such as lifting and moving patients.
-The primary focus of current research efforts is on training the robot’s arm to carry out various tasks autonomously using deep learning technologies. However, due to the massive amount of data required to teach a robot effectively, a data-driven approach is necessary. This can be challenging to achieve using a physical robotic arm. Therefore, developers have turned to robot simulation software \cite{12_oRobotics}, \cite{13_pybullet} to overcome the limitations of data-intensive AI approaches and to provide a stable environment \cite{14_banks1999introduction}. In a simulated environment, it is possible to control every aspect of the world, including impractical factors in reality. Moreover, there is no risk of damaging robots or human operators in simulations, and time control allows for faster data collection.
-
+A robotic arm functions like a human arm and is a mechanical system that typically includes an end effector for manipulating and interacting with the environment \cite{10_ohta2018design}. Robotic arms have various applications in industrial and service fields, such as pick and place, exploration, manufacturing, laboratory research, and space exploration. An arm with 6 degrees of freedom can pivot in six different directions, similar to a human arm. In industrial robotic arms, the mechanical structure and control mechanism are major factors of concern.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{robotic_arm_real_world}
+\includegraphics[width=0.9\linewidth]{robotic_arm_real_world}
 \caption{A robot arm helps make engine components at a Volkswagen factory in Germany \cite{wamu2013}}
 \label{fig:roboticarmrealworld}
 \end{figure}
+These arms are commonly used in a variety of applications, such as manufacturing, assembly, material handling, and surgery. Robotic arms can be controlled by various means, including joystick or slider controls, keyboard-based interfaces, and programmed motions. They can be programmed to perform repetitive tasks with high precision and speed, which makes them ideal for use in industrial settings where consistency and efficiency are crucial. These arms can be equipped with various end effectors, such as grippers, cameras, or welding tools, depending on the specific task that needs to be performed. They can also be designed to have multiple joints or degrees of freedom, which enables them to move in a wide range of directions and perform complex tasks. Advancements in robotics technology have led to the development of lightweight and portable robotic arms that can be easily integrated into various systems \cite{11_singh2013evolution}. These arms are becoming increasingly popular in areas such as healthcare and rehabilitation, where they can assist with tasks such as lifting and moving patients.
 
+The primary focus of current research efforts is on training the robot’s arm to carry out various tasks autonomously using deep learning technologies. However, due to the massive amount of data required to teach a robot effectively, a data-driven approach is necessary. This can be challenging to achieve using a physical robotic arm. Therefore, developers have turned to robot simulation software \cite{12_oRobotics}, \cite{13_pybullet} to overcome the limitations of data-intensive AI approaches and to provide a stable environment \cite{14_banks1999introduction}. In a simulated environment, it is possible to control every aspect of the world, including impractical factors in reality. Moreover, there is no risk of damaging robots or human operators in simulations, and time control allows for faster data collection.
 
-
-\subsubsection{Robot Operating System (ROS)}
+\subsubsection{Robot Operating System (ROS) and Gazebo}
 The Robot Operating System (ROS) is a set of software libraries and tools that enables developers to build robotic applications \cite{15_quigley2009ros}. It provides a framework for writing and running code across multiple computers and devices, making it easier to create complex robotic systems. ROS was first developed in 2007 by Willow Garage, at robotics research lab \cite{16_cousins2014willow}. Since then, it has become widely adopted by the robotics community and is now supported by the Open Robotics organization. It offers a comprehensive platform for managing robotic systems. Originally designed to facilitate research in robotics, ROS is a unique framework. To grasp the fundamentals of the ROS framework, it is essential to comprehend the concept of message communication between nodes using topics.
 One of the key features of ROS is its ability to handle communication between different components of a robotic system, such as sensors, actuators, and controllers \cite{17_emmi2014new}. This communication is done using a publish-subscribe messaging system, which allows components to share data and commands in real-time. ROS also provides a wide range of tools and libraries for tasks such as perception, navigation, and manipulation, which can be used to build complex robotic applications. These tools include algorithms for object recognition, path planning, and motion control, among others. Another advantage of ROS is its open-source nature, which means that developers can contribute to the development of the software and share their own code with the community. This has led to a large and active community of developers working on ROS, which has helped to drive its development and adoption.
 
-\subsubsection{Simulations}
-Simulations serve as an entry point for Digital Twins, which are highly accurate depictions of the physical world \cite{19_lu2020digital}. These Twins can aid in boosting manufacturing output and improving the flexibility of supply chains. To streamline the implementation of manufacturing processes during production line changes, digital twinning involves linking simulation software to an actual self-governing robotic system. A robotic arm digital twin solution is showcased in a recent study \cite{20_tavares2018flexible}, where the authors employed ROS \cite{21_ros} to achieve smooth functioning between the virtual and real worlds. Simulating software has its limitations as it cannot accurately represent the real world due to the imperfections in their physics engines. Additionally, simulations have the advantage of providing perfect data with no interference, which has supported the exploration of deep learning approaches in robotics research.
-Simulations are a powerful tool for designing and testing robotic arms. They allow engineers to create virtual models of robotic arms and simulate their behavior in different scenarios, without the need for a physical prototype. In a robotic arm simulation, the arm's mechanical structure, control system, and sensors are modeled in a virtual environment. The simulation can then be used to test the arm's performance in various tasks, such as picking and placing objects, assembling parts, or performing complex movements. One of the key benefits of using simulations for robotic arm design is that they can help identify potential issues or inefficiencies before a physical prototype is built \cite{22_browning2001applying}. This can save time and resources, as well as improve the overall design of the arm. Simulations can also be used to optimize the control system of a robotic arm. By simulating the arm's behavior in different scenarios, engineers can identify the optimal control strategy for achieving a specific task or movement. 
-The ROS framework includes a useful tool called RVIZ, which enables us to observe the robot's pose or estimation in a 3D environment \cite{23_kulkarni2021visual}. With the correct configuration of the URDF file, the robot model can be visualized in RVIZ.  Furthermore, simulations can help train and test algorithms for robotic arm control, such as RL methods or deep learning approaches. This can be done by running simulations with different environments and scenarios and using the resulting data to train and refine the algorithms.
+Gazebo is like a virtual playground for robots. It is a special computer program that lets you create a digital world where robots can move around and interact. It is like a video game, but instead of playing as a character, we get to control and test robots.
+In Gazebo, we can build different environments like houses, parks, or even other planets. We can also design and customize our own robots with different shapes, sizes, and abilities. Once we have our world set up and our robots ready, we can make them move, perform tasks, and see how they interact with the surroundings.
+
+Gazebo is useful because it allows us to experiment and learn about robotics without having to build and test everything in the real world. We can try out different robot designs, program them to do specific tasks, and see how they behave in different situations. It helps engineers and researchers save time and resources by simulating and testing their ideas virtually.
+
+So, Gazebo is a computer program that lets us create worlds for robots to explore and learn in. It can be seen as a virtual playground where we can build robots and see how they work before bringing them to life in the real world.
 
 \begin{figure}[H]
 \centering
@@ -230,57 +228,45 @@ The ROS framework includes a useful tool called RVIZ, which enables us to observ
 \label{fig:gazeboroboticarm}
 \end{figure}
 
+\subsubsection{Simulations}
+Simulations serve as an entry point for Digital Twins, which are highly accurate depictions of the physical world \cite{19_lu2020digital}. These Twins can aid in boosting manufacturing output and improving the flexibility of supply chains. To streamline the implementation of manufacturing processes during production line changes, digital twinning involves linking simulation software to an actual self-governing robotic system. A robotic arm digital twin solution is showcased in a recent study \cite{20_tavares2018flexible}, where the authors employed ROS \cite{21_ros} to achieve smooth functioning between the virtual and real worlds. Simulating software has its limitations as it cannot accurately represent the real world due to the imperfections in their physics engines. 
+
+Additionally, simulations have the advantage of providing perfect data with no interference, which has supported the exploration of deep learning approaches in robotics research.
+Simulations are a powerful tool for designing and testing robotic arms. They allow engineers to create virtual models of robotic arms and simulate their behavior in different scenarios, without the need for a physical prototype. In a robotic arm simulation, the arm's mechanical structure, control system, and sensors are modeled in a virtual environment. The simulation can then be used to test the arm's performance in various tasks, such as picking and placing objects, assembling parts, or performing complex movements. One of the key benefits of using simulations for robotic arm design is that they can help identify potential issues or inefficiencies before a physical prototype is built \cite{22_browning2001applying}. This can save time and resources, as well as improve the overall design of the arm. Simulations can also be used to optimize the control system of a robotic arm. By simulating the arm's behavior in different scenarios, engineers can identify the optimal control strategy for achieving a specific task or movement. 
+
+The ROS framework includes a useful tool called RViz, which enables us to observe the robot's pose or estimation in a 3D environment \cite{23_kulkarni2021visual}. With the correct configuration of the URDF file, the robot model can be visualized in RViz.  Furthermore, simulations can help train and test algorithms for robotic arm control, such as RL methods or deep learning approaches. This can be done by running simulations with different environments and scenarios and using the resulting data to train and refine the algorithms.
 
 \subsubsection{Reinforcement Learning}
-Artificial neural networks (ANNs) are gaining importance in the field of robotics. In 2016, Levine et al.'s study \cite{24_ball2017comprehensive} provided encouraging outcomes, indicating a direction toward a more straightforward approach to constructing robot behaviors. The end-to-end approach described in the study is more scalable than traditional programming methods. To meet the demand for autonomous systems that cater to societal needs, it is necessary to replace conventional, unsophisticated autonomous systems with intelligent ones. Intelligent systems can take on various forms of intervention, such as aiding humans with image and video analysis, language translation, simplifying sentences, solving math problems, managing portfolios, undertaking monotonous tasks in the manufacturing industry, driving cars, flying helicopters, and more. 
-The complexity of certain tasks makes it impractical to solve them by specifying a set of rules due to the vast number of rules required, and programming an agent's behavior in advance is also difficult. However, machine learning techniques can be used to develop learned agents capable of addressing these challenges. Supervised learning techniques require large amounts of labeled data for training, making them less practical for certain scenarios. Unsupervised learning, on the other hand, is not well-suited to situations that involve interaction with the environment.
-Reinforcement learning (RL) \cite{24_ball2017comprehensive} presents new opportunities for addressing various challenges. In the past, RL techniques were only effective in domains where handcrafted features or low-dimensional input were utilized, and could only handle discrete state and action spaces. However, recent advancements in Deep Learning (DL) have yielded promising results in several fields such as speech, vision, wireless communication, natural language translation, and assistive devices. These advancements in DL-based techniques have made it possible to overcome the challenges faced by RL, and to process raw data for better performance.
-The progress in deep learning techniques has paved the way for resolving the difficulties encountered in RL and processing raw data. The latest developments that merge RL with deep learning, such as those highlighted in \cite{26_bonsai}, \cite{27_mnih2016asynchronous} increase their suitability to domains where handcrafted features are not present, and the state or action space is either vast or continuous. Such advanced methods can address both perception and planning issues, whereas RL can only handle the planning problem and deep learning only the perception problem.
-Rewarding or punishing agents for their actions, reinforcement learning (RL) is a kind of machine learning that enables agents to learn through interactions with an environment. RL deals with the development of decision-making algorithms. Its main focus is on creating a set of actions that an agent can perform in a specific environment. At each time step, the agent takes an action and receives feedback in the form of an observation and a reward. The ultimate goal of RL is to maximize the agent's total reward through a learning process that involves experimentation and feedback. 
-In the learning process, an agent creates a policy. The agent begins in a particular state $S_t$ of the environment, performs an action $A_t$, and transitions to another state $S_t+1$. The agent receives scalar feedback in the form of a reward $R_t+1$ after taking the action $A_t$. This cycle is repeated many times during the learning process, as illustrated in Figure \ref{fig:mdp1}.
+Reinforcement learning is like teaching a computer how to learn and make decisions, just like humans learn from experiences. Consider the robotic arm in this thesis, we want to train it to perform a simple task which is touching an object. We do not give the robotic arm a list of instructions for every situation; instead, we want the robotic arm to learn on its own.
+
+In reinforcement learning, the robot interacts with its environment. It takes actions, and based on those actions, it receives feedback in the form of rewards or punishments. Just like when humans do something good, they get a reward, and when they do something bad, they might get scolded.
+
+The robot's goal is to figure out the best actions to take in different situations to maximize its rewards. It starts by trying random actions and seeing what happens. Over time, it learns from the feedback and adjusts its actions to get more rewards and fewer punishments. 
+\begin{figure}[H]
+  \centering
+  \subfloat[Simulated robotic arm starting position.]{\includegraphics[width=0.4\textwidth]{intro_kuka01_n}\label{fig:intro_kuka01_n}}
+  \subfloat[Simulated robotic arm moving away from the target object.]{\includegraphics[width=0.4\textwidth]{intro_kuka02_n}\label{fig:intro_kuka02_n}}
+  \\
+  \subfloat[Simulated robotic arm starting position.]{\includegraphics[width=0.4\textwidth]{intro_kuka01_n}\label{fig:intro_kuka0103_n}}
+  \subfloat[Simulated robotic arm moving closer to the target object.]{\includegraphics[width=0.4\textwidth]{intro_kuka03_n}\label{fig:intro_kuka03_n}}
+  \caption{Robotic arm Kuka KR210 moving closer and away from the target.}
+  \label{fig:intro_kuka}
+\end{figure}
+For example, in the process of trying random actions; in Figure \ref{fig:intro_kuka}, when the robotic arm moves from Figure \ref{fig:intro_kuka01_n} to Figure \ref{fig:intro_kuka02_n} it gets away from the target object so in this case the robotic arm is punished with a negative reward. On the other hand, when it moves from Figure \ref{fig:intro_kuka0103_n} to Figure \ref{fig:intro_kuka03_n} it gets closer to the target object, and therefore it receives a positive reward.
+It can be seen as a game where the robotic arm is the player, the environment is the game world, and the rewards are the points it earns. The more points it earns, the better it gets at playing the game. 
+In our example, consider Figure \ref{fig:introkuka04} when the robotic arm finally touches the target object it gets the highest possible reward and ends the game victoriously.
+To help the robot learn, we use special algorithms that guide its decision-making instead of just random actions. These algorithms learn from the experiences and feedback, just like humans learn from our mistakes and successes.
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{mdp1}
-\caption{Agent Environment interaction in the Reinforcement Learning Model.}
-\label{fig:mdp1}
+\includegraphics[width=0.35\linewidth]{intro_kuka04_n}
+\caption{Simulated robotic arm touching the target object.}
+\label{fig:introkuka04}
 \end{figure}
 
-% \par\noindent\rule{\textwidth}{0.4pt}
- The action space represents the possible actions that the agent can take in a given state. In the past, the tabular approach was used to store state and action values. However, in environments with a large number of states or actions, the approximation approach has replaced the tabular method. Neural networks are commonly used as approximation methods. There are two types of action spaces:
- \begin{itemize}
-\item \textbf{ Discrete action space:} A discrete action space is one in which the set of possible actions is finite and well-defined. The agent can choose only one of the available actions at a time. For example, in a game of tic-tac-toe, the action space consists of the nine possible positions on the board where a player can place their mark ($X$ or $O$). This is a discrete action space because there are a finite number of possible actions (9) and the actions are well-defined (placing a mark in a specific location on the board).
-\item \textbf{ Continuous action space:} A continuous action space is one in which the set of possible actions is infinite and not well-defined. The agent can choose any action within a continuous range of values. For example, in a self-driving car scenario, the action space might consist of the possible steering angles and accelerations that the car can take at any given moment. This is a continuous action space because the possible actions are not well-defined, as the car can take any steering angle or acceleration within a continuous range of values.
- \end{itemize}
+Reinforcement learning is exciting because it allows machines to learn and adapt without us telling them exactly what to do. They explore, learn from their actions, and become better at solving problems. It is like watching our pet robot grow smarter and more capable over time.
 
-% \par\noindent\rule{\textwidth}{0.4pt}
-Deep Reinforcement Learning (DRL) is a field of study in which neural networks are utilized as function approximators to improve the performance of RL. Recently, several DRL techniques have achieved remarkable success in learning complex behavior skills and solving challenging control tasks in high-dimensional state-space \cite{28_wu2017scalable} environments. However, many benchmarked environments such as Atari \cite{29_mnih2013playing} and Mujoco \cite{30_todorov2012mujoco} lack complexity or realism, which is often present in robotics. Additionally, these benchmarked environments \cite{31_nogueira2017autonomously} do not use commonly used tools in the field such as ROS.
-The research conducted in the previous work requires a considerable amount of effort for each specific robot, and therefore, the scalability of previous methods for modular robots is questionable. Consequently, trial and error learning process is often needed to apply the previous research to real-world robots. Training robotic arms to carry out certain actions, including touching an object in a virtual environment, is an intriguing use of RL. The robotic arm in this scenario must navigate a complicated state space while selecting actions that would maximize its reward while avoiding collisions with the environment. 
-
-\subsubsection{Deep Reinforcement Learning}
-Deep Reinforcement Learning (DRL) leverages deep learning architectures as function approximators to tackle high-dimensional data and address the challenge of approximating in the presence of large state and action spaces \cite{32_boute2022deep}. Unlike traditional methods such as decision trees or SVMs, DRL employs neural networks to map states to actions, enabling it to handle high-dimensional data types such as images, videos, and time-series data. The approach also utilizes deep learning techniques such as convolutional or recurrent neural networks to address the limitations of traditional artificial neural networks which are unable to handle such data and often ignore input data topology. Prior research has focused on addressing various challenges in applying DRL to different fields, particularly control problems and games like Atari. Some of the key tasks involved in DRL include:
-\begin{itemize}
-\item  \textbf{Exploration Exploitation: }The exploration refers to trying a new action, whereas exploitation makes use of learned knowledge to decide the action.
-\item \textbf{Generalization:} Generalization, on the other hand, refers to the capability of the agent to adapt to new environments, which can range from one task to another or from simulation to a real-life situation.
-\item \textbf{Finding Policy:} Finding a valuable policy involves identifying important states and actions that can help in learning an optimal policy for decision-making.
-\item \textbf{Finding a catastrophe:} Discovering a catastrophic event is crucial, as such events may cause significant harm. These events may include physical harm, offensive tweets, false stories, and so on. Avoiding such occurrences can help to improve the policy.
-\item \textbf{Handling Overestimation:} Overestimation occurs when inaccurate computation of action value takes place, often due to the use of the max operation in Q learning. It is important to handle overestimation to ensure that accurate values are computed.
-\item \textbf{Reducing Sample Size:} Deep reinforcement learning (DRL) requires a large number of samples for effective training, which may not always be feasible in real-world scenarios. This poses a challenge for DRL applications that deal with limited data availability.
-\item \textbf{Detection and prevention of overfitting:} overfitting is a common issue in DRL, especially when using high-capacity deep learning models. Overfitting occurs when the agent is too sensitive to small perturbations in the environment.
-\item \textbf{Robust Learning:} In recent years, there has been a growing interest in incorporating robustness into the DRL system using techniques such as deep learning. Researchers have proposed various adversarial attacks and defense mechanisms to address this challenge. Therefore, enhancing the robustness of DRL systems has become an active research topic in the community.
-\end{itemize}
- 
-The field of Reinforcement Learning (RL) has seen significant contributions from various researchers who have proposed different network architectures and action selection criteria. Some methods include trial and error without human intervention, learning via demonstrations, learning via criticism, and learning with adversaries to tackle complex problems. Despite these advancements, the challenge of discovering an optimal policy that is both robust and able to meet multiple goals remains a topic of active research and an open area of investigation.
-
-\subsubsection{Double Q-Learning}
-The Q-learning algorithm, a well-liked RL method, has a version called double Q-learning \cite{33_ogunniyi2014energy}. The fundamental tenet of Q-learning is to acquire knowledge of a function $Q(s,a)$, which denotes the anticipated reward for performing action in a given state s. The agent employs this feature to determine the optimal course of action in each state. However, Q-learning may be hampered by an overestimation of the Q-values, which could result in ineffective policies. This problem is addressed by double Q-learning, which estimates the greatest expected reward by switching between two different Q-functions.
-In the context of a robotic arm, The robotic arm would operate as the agent in a Double Q-learning simulation \cite{34_weng2020mean}, interacting with its surroundings and receiving rewards or punishments as a result of its actions. The orientation and position of the robotic arm, along with the location and characteristics of the object it is attempting to touch, would all be included in the state space. The robotic arm's range of potential motions for approaching the object would make up the action space. The goal of the reward function is to persuade the robotic arm to touch the target without causing a collision or any other unfavorable outcomes.
-The Double Q-learning method is used by the robotic arm to investigate its environment during training and modify its Q-functions in response to incentives. By estimating the expected reward for every action using the two Q-functions, the algorithm would select the action featuring the largest expected reward. The robotic arm would develop a policy that enables it to consistently touch the target by continuing this process over a large number of attempts. In this thesis, we explore the use of Double Q-Learning in a simulated robotic arm to learn effective control policies for the arm.
-%The simulated robotic arm used in this study consists of three joints, each of which can rotate through an angle of 360 degrees
-%\cite{35_megalingam2013kinect}. The objective of the arm is to reach a target position specified by the RL algorithm. The state of the arm is represented by the joint angles, and the action is the change in joint angles to reach the target position. The reward function is defined as the negative Euclidean distance between the current position of the arm and the target position. The implementation of Double Q-Learning involves maintaining two Q-functions, Q1 and Q2, which are updated alternately. In each update, one of the Q-functions is used to select the best action, while the other Q-function is used to evaluate the selected action. This approach reduces the overestimation of action values, leading to more accurate estimation of the optimal policy.
-%When compared, the performance of Double Q-Learning with that of Q-Learning and the Double Q-Learning outperformed Q-Learning in terms of convergence speed and final performance. The Double Q-Learning algorithm was able to learn an effective control policy for the robotic arm, enabling it to reach the target position with high accuracy and minimal error. To further evaluate the effectiveness of Double Q-Learning, we conducted experiments to test its robustness to changes in the target position and the reward function. We found that Double Q-Learning was able to adapt to changes in the target position and reward function, demonstrating its ability to learn a robust control policy for the robotic arm.
-
-
-\subsection{Problem statement}
+\subsection{Problem Statement}
 
 Many studies have demonstrated that utilizing reinforcement learning (RL) presented a viable solution for addressing the limitations of conventional methods in tackling intricate robotics tasks. Numerous AI experts have created various frameworks and toolkits to examine and assess their algorithms' effectiveness in solving challenging problems \cite{36_wu2020ethical}. Although the outcomes were remarkable, these applications were generally limited to simulated environments and seldom deployed in real-world scenarios. Numerous researchers are presently focused on a highly promising mission of bridging the gap between simulation and reality. However, proficiency in various domains is crucial in the intricate field of RL, which might be an obstacle to entry for roboticists.
 For problems involving an agent interacting with the environment to maximize a reward signal, RL, a potent branch of machine learning (ML), is used. Gaming, robotics, and finance are just a few of the industries where RL has been successfully used. RL has been applied to robotics to tackle a variety of problems, including grasping, manipulating, and navigating. One of these tasks involves teaching a virtual robotic arm to touch an object using reinforcement learning.
@@ -299,7 +285,7 @@ We will utilize the Double Q Learning technique to address this issue since it 
 The goal of this thesis is to develop a robotic arm that can learn to touch an object using the double Q-learning algorithm. The focus will be on creating the simulated environment as well as implementing and evaluating the algorithm's performance in the simulated environment, with the aim of demonstrating the effectiveness of the approach and the potential for real-world applications. The thesis will also explore the impact of different hyperparameters on the performance of the algorithm, and investigate ways to enhance the system's robustness and generalization capabilities. Ultimately, the goal is to provide insights into the use of reinforcement learning algorithms for robotic manipulation tasks and pave the way for further research in this area. Specifically the goals are:
 
 \begin{itemize}
-\item Creating a robotic arm simulation in Gazebo and ROS2 that can be treated as a Markov Decision Process, that will enable future integration of various reinforcement learning algorithms.
+\item Creating a robotic arm simulation in Gazebo and ROS 2 that can be treated as a Markov Decision Process, that will enable future integration of various reinforcement learning algorithms.
 \item Training a robotic arm, using the Double Q-learning algorithm to learn to touch an object.
 \item Defining an appropriate reward mechanism to motivate the robotic arm to effectively touch the target.
 \item Tackling the exploration vs exploration problem in the case of a simulated robotic arm learning to touch an object.
@@ -339,9 +325,9 @@ Finally in \cite{abdi2022computer} the authors combine computer vision, Q-learni
 The main contributions of this work can be listed as follows:
 %Here, you present a bullet ist of your personal contributions to the topic of the thesis. For example: 
 \begin{itemize}
-    \item Implementation of a simulated robotic arm environment that in Gazebo compatible with ROS2 that publishes images, and other sensor reading from the simulated environment to topics accessible from outside the simulation.
-    \item Implementation of the Double Q learning algorithm in the ROS2 framework.
-    \item Implementation of a communication pipeline between the robotic arm simulation in Gazebo and the reinforcement learning algorithm in ROS2 so that these two can interact with each other.
+    \item Implementation of a simulated robotic arm environment that in Gazebo compatible with ROS 2 that publishes images, and other sensor reading from the simulated environment to topics accessible from outside the simulation.
+    \item Implementation of the Double Q learning algorithm in the ROS 2 framework.
+    \item Implementation of a communication pipeline between the robotic arm simulation in Gazebo and the reinforcement learning algorithm in ROS 2 so that these two can interact with each other.
 \end{itemize}
 
 \section{Foundations}\label{sec:grundlagen}
@@ -367,7 +353,7 @@ Python's popularity in robotics is growing due to its simplicity of use, adaptab
 \item Integration with other languages: Python can readily integrate with other programming languages used in robotics, such as C++ and MATLAB. This enables robotics engineers, regardless of programming language, to employ the finest tools for the job.
 \end{enumerate}
 
-\subsubsection{Python Deque Data Structure}{\label{python:deque}}
+\subsubsection{The Python Deque Data Structure}{\label{python:deque}}
 A \texttt{deque} in Python is a double-ended queue data structure that allows efficient adding and removing of elements from both ends. It is provided as a built-in class in the \texttt{collections} module \cite{python-docs}.
 
 The following are the main methods available for a \texttt{deque}:
@@ -397,62 +383,62 @@ Gazebo is commonly used for simulating robotic arms in robotics research and dev
 
 \subsection{ROS 2}
 A collection of ROS software packages available for download is referred to as a ROS distribution, backed by the non-profit organization, Open-Source Robotics Foundations (OSRF) \cite{18_ebeid2018survey}. The ROS organization periodically updates these packages and assigns distinct titles to each distribution.
-ROS2 (Robot Operating System 2) \cite{40_phueakthong2021development} is the second edition of the popular open-source robotics middleware framework, ROS, launched in 2017 to address some of the limits and issues of the original ROS framework. ROS2's primary features and benefits include the following:
+ROS 2 (Robot Operating System 2) \cite{40_phueakthong2021development} is the second edition of the popular open-source robotics middleware framework, ROS, launched in 2017 to address some of the limits and issues of the original ROS framework. ROS 2's primary features and benefits include the following:
 \begin{enumerate}
-\item Enhanced real-time performance: In comparison to the original ROS middleware, ROS2 incorporates a new middleware layer called the Data Distribution Service (DDS), which delivers enhanced real-time speed and stability.
-\item Improved support for multi-robot systems: ROS2 introduces the ROS2 Multi-Robot System (MRS) architecture, which improves communication and coordination between numerous robots.
-\item ROS2 features support for Transport Layer Security (TLS) and X.509 certificates, which enables increased security and authentication for node-to-node connections.
-\item Better non-Unix platform compatibility: ROS2 has enhanced support for non-Unix systems such as Windows and macOS.
-\item ROS2 features better development tools and documentation, making it easier for developers to get started with the framework.
+\item Enhanced real-time performance: In comparison to the original ROS middleware, ROS 2 incorporates a new middleware layer called the Data Distribution Service (DDS), which delivers enhanced real-time speed and stability.
+\item Improved support for multi-robot systems: ROS 2 introduces the ROS 2 Multi-Robot System (MRS) architecture, which improves communication and coordination between numerous robots.
+\item ROS 2 features support for Transport Layer Security (TLS) and X.509 certificates, which enables increased security and authentication for node-to-node connections.
+\item Better non-Unix platform compatibility: ROS 2 has enhanced support for non-Unix systems such as Windows and macOS.
+\item ROS 2 features better development tools and documentation, making it easier for developers to get started with the framework.
 \end{enumerate}
 
-Conclusively, ROS2 is intended to provide a more robust, dependable, and adaptable platform for developing and deploying robotic systems. It is interoperable with a broad range of robotic hardware and software platforms, and it has a big and active development and user community.
-In robotics research and development, ROS2 is often used to operate robotic arms. Developers may use ROS2 to design a software stack that contains the control algorithms, sensors, and communication interfaces needed to control the robotic arm. ROS2 is a flexible and modular design that enables developers to construct software modules known as nodes that connect with one another via a publish-subscribe messaging model. For example, one node may be in charge of reading sensor data from the robotic arm, while another node may be in charge of operating the motors of the arm depending on the sensor data. A large selection of software libraries and tools referred to as packages, are also offered by ROS2 and may be used to create and test robotic arm control software. For instance, the \textit{ros\_control} package offers a variety of hardware interfaces and controllers for interacting with robotic arm hardware, while the \textit{MoveIt} package offers a set of motion planning and control algorithms for robotic arms. Developers often begin by specifying the hardware interface for the arm, which comprises the joints, motors, and sensors, in order to control a robotic arm using ROS2. Then, using ROS2 nodes and packages, they create the control algorithms and sensor interfaces needed to control the arm. Finally, before implementing their robotic arm control software on the MoveItactual robot, engineers may test and evaluate it using simulation tools like Gazebo. This enables the software to be developed and iterated upon quickly without endangering the physical robot or its surroundings.
+Conclusively, ROS 2 is intended to provide a more robust, dependable, and adaptable platform for developing and deploying robotic systems. It is interoperable with a broad range of robotic hardware and software platforms, and it has a big and active development and user community.
+In robotics research and development, ROS 2 is often used to operate robotic arms. Developers may use ROS 2 to design a software stack that contains the control algorithms, sensors, and communication interfaces needed to control the robotic arm. ROS 2 is a flexible and modular design that enables developers to construct software modules known as nodes that connect with one another via a publish-subscribe messaging model. For example, one node may be in charge of reading sensor data from the robotic arm, while another node may be in charge of operating the motors of the arm depending on the sensor data. A large selection of software libraries and tools referred to as packages, are also offered by ROS 2 and may be used to create and test robotic arm control software. For instance, the \textit{ros\_control} package offers a variety of hardware interfaces and controllers for interacting with robotic arm hardware, while the \textit{MoveIt} package offers a set of motion planning and control algorithms for robotic arms. Developers often begin by specifying the hardware interface for the arm, which comprises the joints, motors, and sensors, in order to control a robotic arm using ROS 2. Then, using ROS 2 nodes and packages, they create the control algorithms and sensor interfaces needed to control the arm. Finally, before implementing their robotic arm control software on the MoveItactual robot, engineers may test and evaluate it using simulation tools like Gazebo. This enables the software to be developed and iterated upon quickly without endangering the physical robot or its surroundings.
 
-\subsubsection{ROS2 Nodes}\label{ros2-nodes}
-ROS2 nodes are the fundamental building blocks of a ROS2 system. A node is a process that performs computation and communicates with other nodes in the ROS2 system. In ROS2, nodes are implemented using the rclpy.node.Node class in Python. This class provides a way to create a node and interact with the ROS2 middleware. It provides methods to create publishers, subscribers, services, clients, timers, and parameters. By inheriting from this class, a Python class can become a ROS2 node and use these methods to interact with the ROS2 system.
-To create a ROS2 node, one needs to create a ROS2 package and a Python file inside it. The Python file should inherit from the $rclpy.node.Node$ class and override its $\_\_init\_\_()$ method to create publishers, subscribers, services, clients, timers, and parameters. The $main()$ function initializes the ROS2 system, creates an instance of the Python class, and spins the node to process callbacks. Finally, the $rclpy.shutdown()$ function is called to shut down the ROS2 system.\cite{ros2docs}
-ROS2 nodes can be created using object-oriented programming (OOP) techniques. OOP is the recommended way to write a node in ROS2, and it works pretty well. OOP allows for better code organization, encapsulation, and reusability. It also makes it easier to write testable code.
-In conclusion, ROS2 nodes are the fundamental building blocks of a ROS2 system. They are implemented using the rclpy.node.Node class in Python. By inheriting from this class, a Python class can become a ROS2 node and use its methods to interact with the ROS2 system. OOP is the recommended way to write a node in ROS2, and it allows for better code organization, encapsulation, and reusability.
+\subsubsection{ROS 2 Nodes}\label{ros2-nodes}
+ROS 2 nodes are the fundamental building blocks of a ROS 2 system. A node is a process that performs computation and communicates with other nodes in the ROS 2 system. In ROS 2, nodes are implemented using the rclpy.node.Node class in Python. This class provides a way to create a node and interact with the ROS 2 middleware. It provides methods to create publishers, subscribers, services, clients, timers, and parameters. By inheriting from this class, a Python class can become a ROS 2 node and use these methods to interact with the ROS 2 system.
+To create a ROS 2 node, one needs to create a ROS 2 package and a Python file inside it. The Python file should inherit from the $rclpy.node.Node$ class and override its $\_\_init\_\_()$ method to create publishers, subscribers, services, clients, timers, and parameters. The $main()$ function initializes the ROS 2 system, creates an instance of the Python class, and spins the node to process callbacks. Finally, the $rclpy.shutdown()$ function is called to shut down the ROS 2 system.\cite{ros2docs}
+ROS 2 nodes can be created using object-oriented programming (OOP) techniques. OOP is the recommended way to write a node in ROS 2, and it works pretty well. OOP allows for better code organization, encapsulation, and reusability. It also makes it easier to write testable code.
+In conclusion, ROS 2 nodes are the fundamental building blocks of a ROS 2 system. They are implemented using the rclpy.node.Node class in Python. By inheriting from this class, a Python class can become a ROS 2 node and use its methods to interact with the ROS 2 system. OOP is the recommended way to write a node in ROS 2, and it allows for better code organization, encapsulation, and reusability.
 
-\subsubsection{ROS2 Services}\label{ros2-services}
-ROS2 services provide a way for nodes to communicate with each other by requesting and providing specific functionalities or operations. This is done through a client-server communication model where the node requesting the service acts as the client and the node providing the service acts as the server.
+\subsubsection{ROS 2 Services}\label{ros2-services}
+ROS 2 services provide a way for nodes to communicate with each other by requesting and providing specific functionalities or operations. This is done through a client-server communication model where the node requesting the service acts as the client and the node providing the service acts as the server.
 
-One advantage of ROS2 services is their ability to handle both synchronous and asynchronous communication. Synchronous communication blocks the client node until a response is received from the server node. Asynchronous communication allows the client node to continue with other operations while waiting for a response from the server node.
+One advantage of ROS 2 services is their ability to handle both synchronous and asynchronous communication. Synchronous communication blocks the client node until a response is received from the server node. Asynchronous communication allows the client node to continue with other operations while waiting for a response from the server node.
 
-ROS2 services also provide a way to handle errors that may occur during service communication. In the case of a failure, the server node can send an error message to the client node, indicating the reason for the failure. This makes it easier for developers to debug their code and troubleshoot issues that may arise.
+ROS 2 services also provide a way to handle errors that may occur during service communication. In the case of a failure, the server node can send an error message to the client node, indicating the reason for the failure. This makes it easier for developers to debug their code and troubleshoot issues that may arise.
 
-ROS2 services can easily scale. Multiple nodes can request the same service from a single server node, which can handle all requests concurrently. This can improve the overall performance of the system and reduce latency.
+ROS 2 services can easily scale. Multiple nodes can request the same service from a single server node, which can handle all requests concurrently. This can improve the overall performance of the system and reduce latency.
 
-However, ROS2 services also have some limitations. For example, they do not support streaming data or continuous communication. They are intended for point-to-point communication, where a client node requests a specific operation from a server node and receives a single response.
+However, ROS 2 services also have some limitations. For example, they do not support streaming data or continuous communication. They are intended for point-to-point communication, where a client node requests a specific operation from a server node and receives a single response.
 
-In summary, ROS2 services provide a flexible and reliable way for nodes to communicate with each other by requesting and providing specific functionalities or operations. They are suitable for point-to-point communication and can handle both synchronous and asynchronous communication, making them a valuable tool for ROS2 developers.
+In summary, ROS 2 services provide a flexible and reliable way for nodes to communicate with each other by requesting and providing specific functionalities or operations. They are suitable for point-to-point communication and can handle both synchronous and asynchronous communication, making them a valuable tool for ROS 2 developers.
 
-\subsubsection{ROS2 Topics}\label{ros2-topics}
-ROS2 topics provide a way for nodes to communicate with each other by exchanging messages on a specific topic. This is done through a publish-subscribe communication model where the node publishing the message acts as the publisher and the node receiving the message acts as the subscriber.
+\subsubsection{ROS 2 Topics}\label{ros2-topics}
+ROS 2 topics provide a way for nodes to communicate with each other by exchanging messages on a specific topic. This is done through a publish-subscribe communication model where the node publishing the message acts as the publisher and the node receiving the message acts as the subscriber.
 
-ROS2 topics can handle asynchronous communication. This means that the publisher node does not have to wait for the subscriber node to receive the message before continuing with other operations. This can improve the overall performance of the system and reduce latency.
+ROS 2 topics can handle asynchronous communication. This means that the publisher node does not have to wait for the subscriber node to receive the message before continuing with other operations. This can improve the overall performance of the system and reduce latency.
 
-ROS2 topics also provide a way to handle errors that may occur during message communication. In the case of a failure, the subscriber node can request that the publisher node resend the message or ignore the message and continue receiving subsequent messages. This makes it easier for developers to debug their code and troubleshoot issues that may arise.
+ROS 2 topics also provide a way to handle errors that may occur during message communication. In the case of a failure, the subscriber node can request that the publisher node resend the message or ignore the message and continue receiving subsequent messages. This makes it easier for developers to debug their code and troubleshoot issues that may arise.
 
-Another advantage of ROS2 topics is their flexibility. Multiple nodes can subscribe to the same topic, and publishers can send messages to multiple subscribers simultaneously. This can improve the overall efficiency of the system and reduce the amount of code required to implement certain functionalities.
+Another advantage of ROS 2 topics is their flexibility. Multiple nodes can subscribe to the same topic, and publishers can send messages to multiple subscribers simultaneously. This can improve the overall efficiency of the system and reduce the amount of code required to implement certain functionalities.
 
-One limitation of ROS2 topics is that they do not provide any mechanism for ensuring that messages are received in a particular order, and they do not guarantee message delivery. Additionally, topics are not suitable for point-to-point communication, as any node subscribed to a topic will receive all messages published on that topic.
+One limitation of ROS 2 topics is that they do not provide any mechanism for ensuring that messages are received in a particular order, and they do not guarantee message delivery. Additionally, topics are not suitable for point-to-point communication, as any node subscribed to a topic will receive all messages published on that topic.
 
-Finally, ROS2 topics provide a flexible and reliable way for nodes to communicate with each other by exchanging messages on a specific topic. They are suitable for asynchronous communication, and can handle multiple subscribers and publishers, making them a valuable tool for ROS2 developers. However, they have some limitations and may not be suitable for all communication scenarios.
+Finally, ROS 2 topics provide a flexible and reliable way for nodes to communicate with each other by exchanging messages on a specific topic. They are suitable for asynchronous communication, and can handle multiple subscribers and publishers, making them a valuable tool for ROS 2 developers. However, they have some limitations and may not be suitable for all communication scenarios.
 
-\subsubsection{ROS2 Actions}\label{ros2-actions}
-ROS2 actions provide a way for nodes to communicate with each other by executing a specific goal and receiving a result. This is done through an action client-server communication model where the node requesting the action acts as the client and the node executing the action acts as the server.
+\subsubsection{ROS 2 Actions}\label{ros2-actions}
+ROS 2 actions provide a way for nodes to communicate with each other by executing a specific goal and receiving a result. This is done through an action client-server communication model where the node requesting the action acts as the client and the node executing the action acts as the server.
 
-One advantage of ROS2 actions is their ability to handle long-running operations. Unlike ROS2 services, which are intended for point-to-point communication, ROS2 actions can handle operations that may take a significant amount of time to complete. This makes them ideal for tasks such as robot arm motion planning, where the task may take several seconds or even minutes to complete.
+One advantage of ROS 2 actions is their ability to handle long-running operations. Unlike ROS 2 services, which are intended for point-to-point communication, ROS 2 actions can handle operations that may take a significant amount of time to complete. This makes them ideal for tasks such as robot arm motion planning, where the task may take several seconds or even minutes to complete.
 
-ROS2 actions also provide a way to handle feedback during the execution of an action. The server node can send periodic updates to the client node, indicating the progress of the operation. This makes it easier for developers to monitor the execution of an action and respond to any issues that may arise.
+ROS 2 actions also provide a way to handle feedback during the execution of an action. The server node can send periodic updates to the client node, indicating the progress of the operation. This makes it easier for developers to monitor the execution of an action and respond to any issues that may arise.
 
-Another advantage of ROS2 actions is their ability to handle cancel requests. If the client node needs to abort the execution of an action, it can send a cancel request to the server node. The server node can then gracefully stop the execution of the action and return a result indicating that the action was canceled.
+Another advantage of ROS 2 actions is their ability to handle cancel requests. If the client node needs to abort the execution of an action, it can send a cancel request to the server node. The server node can then gracefully stop the execution of the action and return a result indicating that the action was canceled.
 
-However, ROS2 actions also have some limitations. For example, they are more complex than ROS2 topics and services and require more code to implement. Additionally, they are not suitable for operations that do not have a clear goal and result, such as continuous data streams.
+However, ROS 2 actions also have some limitations. For example, they are more complex than ROS 2 topics and services and require more code to implement. Additionally, they are not suitable for operations that do not have a clear goal and result, such as continuous data streams.
 
-In the end, ROS2 actions provide a powerful and flexible way for nodes to communicate with each other by executing long-running operations and providing feedback and cancellation capabilities. They are suitable for tasks that require a clear goal and result, such as robot arm motion planning, and can handle operations that may take several seconds or minutes to complete. However, they are more complex to implement than ROS2 topics and services and may not be suitable for all communication scenarios.
+In the end, ROS 2 actions provide a powerful and flexible way for nodes to communicate with each other by executing long-running operations and providing feedback and cancellation capabilities. They are suitable for tasks that require a clear goal and result, such as robot arm motion planning, and can handle operations that may take several seconds or minutes to complete. However, they are more complex to implement than ROS 2 topics and services and may not be suitable for all communication scenarios.
 
 \subsubsection{The gazebo\_ros package}
 Gazebo\_ros is an essential package for robotics researchers and developers as it enables the testing and verification of algorithms and systems on simulated robots.
@@ -509,16 +495,16 @@ This script creates a $JointStateSubscriber$ node that subscribes to the $/joint
 
 Assuming that the joint state publisher node is running and publishing joint state messages on the $/joint\_states$ topic, running this script will cause the current joint positions for each joint in the robot arm to be printed to the console whenever a new joint state message is received on the $/joint\_states$ topic.
 
-\subsubsection{The robot\_state\_publisher node}\label{ros2-robot-state-publisher}
-The `robot\_state\_publisher` node in ROS2 is a tool used to publish the robot's state in the form of a tree of coordinate frames. It calculates the forward kinematics of a robot by combining joint angle values with the robot's URDF (Unified Robot Description Format), which is an XML file that describes the robot's kinematic and dynamic properties. 
+\subsubsection{The /robot\_state\_publisher node}\label{ros2-robot-state-publisher}
+The `robot\_state\_publisher` node in ROS 2 is a tool used to publish the robot's state in the form of a tree of coordinate frames. It calculates the forward kinematics of a robot by combining joint angle values with the robot's URDF (Unified Robot Description Format), which is an XML file that describes the robot's kinematic and dynamic properties. 
 
-For example, consider a robot arm that has three revolute joints (joints that rotate around a fixed axis) and an end-effector attached to the third joint. The URDF file for this robot would describe the length of each link, the orientation of each joint, and the location of the end-effector relative to the third joint. The `robot\_state\_publisher` node would then use this information to calculate the transformation matrices between each link and joint, and ultimately the transformation matrix between the base link and end-effector.
+For example, consider a robot arm that has three revolute joints (joints that rotate around a fixed axis) and an end effector attached to the third joint. The URDF file for this robot would describe the length of each link, the orientation of each joint, and the location of the end effector relative to the third joint. The `robot\_state\_publisher` node would then use this information to calculate the transformation matrices between each link and joint, and ultimately the transformation matrix between the base link and end effector.
 
-Once the transformation matrix is calculated, the `robot\_state\_publisher` node publishes it to the `/tf` topic. This transformation can be used by other nodes in the ROS2 system to determine the position and orientation of the end-effector relative to the base link, which can be useful for tasks such as robot control, path planning, and visualization.
+Once the transformation matrix is calculated, the `robot\_state\_publisher` node publishes it to the `/tf` topic. This transformation can be used by other nodes in the ROS 2 system to determine the position and orientation of the end effector relative to the base link, which can be useful for tasks such as robot control, path planning, and visualization.
 
-Overall, the `robot\_state\_publisher` node plays a crucial role in enabling the integration of various components of a robotic system in ROS2 by providing a common coordinate frame for all components to work with.
+Overall, the `robot\_state\_publisher` node plays a crucial role in enabling the integration of various components of a robotic system in ROS 2 by providing a common coordinate frame for all components to work with.
 
-\subsubsection{The /joint\_trajectory\_controller/follow\_joint\_trajectory action server}\label{ros2-joint-trajectory-controller}
+\subsubsection{The /joint\_trajectory\_controller/follow\_joint\_trajectory server}\label{ros2-joint-trajectory-controller}
 The $/joint\_trajectory\_controller/follow\_joint\_trajectory$ is an action server in ROS (Robot Operating System) that allows a client to send a joint trajectory command to a joint trajectory controller. This action server is part of the ros\_controllers package and is typically used to control the motion of a robot arm or any other mechanism with multiple joints.
 
 The joint trajectory command is specified in a FollowJointTrajectory.Goal message, which contains a JointTrajectory message that specifies the desired joint positions, velocities, accelerations, and time stamps. The joint trajectory controller then uses this command to interpolate a trajectory and generate the corresponding joint motion for the robot.
@@ -573,7 +559,7 @@ result = future.result()
 \end{enumerate}
 
 \subsubsection{The tf\_ros.TransformListener}\label{ros2-transform-listener}
-The tf2\_ros.TransformListener is a ROS2 utility class that allows a node to receive the transform between two frames from the tf2 system. This class provides a simple way to listen for and access transforms between frames in a ROS2 system.
+The tf2\_ros.TransformListener is a ROS 2 utility class that allows a node to receive the transform between two frames from the tf2 system. This class provides a simple way to listen for and access transforms between frames in a ROS 2 system.
 
 To use the tf2\_ros.TransformListener, a node must first initialize a tf2\_ros.Buffer object. This buffer object is used to store and manage the transforms that the node receives from the tf2 system. Once the buffer is initialized, the node can then create an instance of the tf2\_ros.TransformListener class, passing in a reference to the buffer object.
 
@@ -616,7 +602,7 @@ if __name__ == '__main__':
 
 In this example, the node initializes a tf2\_ros.Buffer object and a tf2\_ros.TransformListener object. The node then waits for the transform between the map and robot frames to become available. Once the transform is available, the node retrieves it from the buffer and prints it to the console.
 
-The tf2\_ros.TransformListener class is a useful tool for nodes that need to access transforms between frames in a ROS2 system. It provides a simple interface for listening for and accessing transforms, allowing nodes to easily interact with the tf2 system.
+The tf2\_ros.TransformListener class is a useful tool for nodes that need to access transforms between frames in a ROS 2 system. It provides a simple interface for listening for and accessing transforms, allowing nodes to easily interact with the tf2 system.
 
 \subsection{Unified Robot Description Format (URDF)}\label{urdf}
 Unified Robot Description Format is an XML-based file format used to describe the kinematics and dynamics of a robot for simulation or visualization purposes. The main purpose of URDF is to provide a standardized way to represent robots that can be easily shared and used across different robotics platforms and simulation tools.
@@ -728,13 +714,57 @@ Neural networks have several applications in domains such as computer vision, na
 Because of their capacity to learn from data and make predictions or judgments based on that data, neural networks are commonly utilized in robotics. They are useful for a wide range of applications including object detection, path planning, motion control, and manipulation. 
 Object recognition is one of the most popular applications of neural networks in robotics. Neural networks may be trained on vast datasets of images to recognize distinct objects and categories them. This can be applied to jobs like picking and arranging things, in which a robot must detect and grip an object in a chaotic environment.
 Neural networks can additionally be employed for route planning, which is the process of identifying a safe and efficient way for a robot to go from one site to another. By training a neural network on a dataset of maps and obstacle configurations, the network can learn to anticipate the optimum path for the robot to take.
-Neural networks can be used in motion control to regulate the movement of robotic joints and end-effectors. By training a neural network on a dataset of joint angles and related end-effector locations, the network may learn to anticipate the joint angles necessary to move the end-effector to a desired position \cite{44_villegas2018neural}.
+Neural networks can be used in motion control to regulate the movement of robotic joints and end effectors. By training a neural network on a dataset of joint angles and related end effector locations, the network may learn to anticipate the joint angles necessary to move the end effector to a desired position \cite{44_villegas2018neural}.
 Manipulation tasks, such as grasping and assembling, are another use of neural networks in robotics. A neural network may learn to anticipate the optimum gripping stance for a particular item by training it on a dataset of grasping poses and matching object attributes.
 
 \subsubsection{Neural Network for the robotic arm}
 In robotics, neural networks may be used to control the movement of robotic arms, among other things. One typical way is to employ a neural network as an arm controller, in which the network receives sensor readings and generates control signals to move the arm to a desired position.
-A neural network must be trained on a dataset of sensor readings and matching arm positions before it can be used for arms control. The network's inputs might comprise joint angles, velocities, and end-effector locations, with the output being the joint torques necessary to move the arm to the desired position.
+A neural network must be trained on a dataset of sensor readings and matching arm positions before it can be used for arms control. The network's inputs might comprise joint angles, velocities, and end effector locations, with the output being the joint torques necessary to move the arm to the desired position.
 The training method generally consists of iteratively modifying the network's weights to minimize the gap between the network's expected and true outputs. This may be accomplished through the use of various optimization techniques, such as stochastic gradient descent. Once trained, the network may be utilized to operate the arm in real time. The network receives sensor values from the arm and predicts the control signals required to move the arm to the desired position. The control signals may then be delivered to the arm's actuators, causing the arm to move. Other tasks connected to robotic arms, such as object identification and grasping, can also be performed using neural networks. A neural network, for example, may be trained on a collection of photographs of items and their related grasping stances and then used to predict the optimal gripping pose for a specific object.
+
+\subsection{Reinforcement Learning}
+Artificial neural networks (ANNs) are gaining importance in the field of robotics. In 2016, Levine et al.'s study \cite{24_ball2017comprehensive} provided encouraging outcomes, indicating a direction toward a more straightforward approach to constructing robot behaviors. The end-to-end approach described in the study is more scalable than traditional programming methods. To meet the demand for autonomous systems that cater to societal needs, it is necessary to replace conventional, unsophisticated autonomous systems with intelligent ones. Intelligent systems can take on various forms of intervention, such as aiding humans with image and video analysis, language translation, simplifying sentences, solving math problems, managing portfolios, undertaking monotonous tasks in the manufacturing industry, driving cars, flying helicopters, and more. 
+The complexity of certain tasks makes it impractical to solve them by specifying a set of rules due to the vast number of rules required, and programming an agent's behavior in advance is also difficult. However, machine learning techniques can be used to develop learned agents capable of addressing these challenges. Supervised learning techniques require large amounts of labeled data for training, making them less practical for certain scenarios. Unsupervised learning, on the other hand, is not well-suited to situations that involve interaction with the environment.
+Reinforcement learning (RL) \cite{24_ball2017comprehensive} presents new opportunities for addressing various challenges. In the past, RL techniques were only effective in domains where handcrafted features or low-dimensional input were utilized, and could only handle discrete state and action spaces. However, recent advancements in Deep Learning (DL) have yielded promising results in several fields such as speech, vision, wireless communication, natural language translation, and assistive devices. These advancements in DL-based techniques have made it possible to overcome the challenges faced by RL, and to process raw data for better performance.
+The progress in deep learning techniques has paved the way for resolving the difficulties encountered in RL and processing raw data. The latest developments that merge RL with deep learning, such as those highlighted in  \cite{27_mnih2016asynchronous} increase their suitability to domains where handcrafted features are not present, and the state or action space is either vast or continuous. Such advanced methods can address both perception and planning issues, whereas RL can only handle the planning problem and deep learning only the perception problem.
+Rewarding or punishing agents for their actions, reinforcement learning (RL) is a kind of machine learning that enables agents to learn through interactions with an environment. RL deals with the development of decision-making algorithms. Its main focus is on creating a set of actions that an agent can perform in a specific environment. At each time step, the agent takes an action and receives feedback in the form of an observation and a reward. The ultimate goal of RL is to maximize the agent's total reward through a learning process that involves experimentation and feedback. 
+In the learning process, an agent creates a policy. The agent begins in a particular state $S_t$ of the environment, performs an action $A_t$, and transitions to another state $S_{t+1}$. The agent receives scalar feedback in the form of a reward $R_{t+1}$ after taking the action $A_t$. This cycle is repeated many times during the learning process, as illustrated in Figure \ref{fig:mdp1}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{mdp1}
+\caption{Agent Environment interaction in the Reinforcement Learning Model.}
+\label{fig:mdp1}
+\end{figure}
+
+% \par\noindent\rule{\textwidth}{0.4pt}
+ The action space represents the possible actions that the agent can take in a given state. In the past, the tabular approach was used to store state and action values. However, in environments with a large number of states or actions, the approximation approach has replaced the tabular method. Neural networks are commonly used as approximation methods. There are two types of action spaces:
+ \begin{itemize}
+\item \textbf{ Discrete action space:} A discrete action space is one in which the set of possible actions is finite and well-defined. The agent can choose only one of the available actions at a time. For example, in a game of tic-tac-toe, the action space consists of the nine possible positions on the board where a player can place their mark ($X$ or $O$). This is a discrete action space because there are a finite number of possible actions (9) and the actions are well-defined (placing a mark in a specific location on the board).
+\item \textbf{ Continuous action space:} A continuous action space is one in which the set of possible actions is infinite and not well-defined. The agent can choose any action within a continuous range of values. For example, in a self-driving car scenario, the action space might consist of the possible steering angles and accelerations that the car can take at any given moment. This is a continuous action space because the possible actions are not well-defined, as the car can take any steering angle or acceleration within a continuous range of values.
+ \end{itemize}
+
+% \par\noindent\rule{\textwidth}{0.4pt}
+Deep Reinforcement Learning (DRL) is a field of study in which neural networks are utilized as function approximators to improve the performance of RL. Recently, several DRL techniques have achieved remarkable success in learning complex behavior skills and solving challenging control tasks in high-dimensional state-space \cite{28_wu2017scalable} environments. However, many benchmarked environments such as Atari \cite{29_mnih2013playing} and Mujoco \cite{30_todorov2012mujoco} lack complexity or realism, which is often present in robotics. Additionally, these benchmarked environments \cite{31_nogueira2017autonomously} do not use commonly used tools in the field such as ROS.
+The research conducted in the previous work requires a considerable amount of effort for each specific robot, and therefore, the scalability of previous methods for modular robots is questionable. Consequently, trial and error learning process is often needed to apply the previous research to real-world robots. Training robotic arms to carry out certain actions, including touching an object in a virtual environment, is an intriguing use of RL. The robotic arm in this scenario must navigate a complicated state space while selecting actions that would maximize its reward while avoiding collisions with the environment. 
+
+\subsubsection{Deep Reinforcement Learning}
+Deep Reinforcement Learning (DRL) leverages deep learning architectures as function approximators to tackle high-dimensional data and address the challenge of approximating in the presence of large state and action spaces \cite{32_boute2022deep}. Unlike traditional methods such as decision trees or SVMs, DRL employs neural networks to map states to actions, enabling it to handle high-dimensional data types such as images, videos, and time-series data. The approach also utilizes deep learning techniques such as convolutional or recurrent neural networks to address the limitations of traditional artificial neural networks which are unable to handle such data and often ignore input data topology. Prior research has focused on addressing various challenges in applying DRL to different fields, particularly control problems and games like Atari. Some of the key tasks involved in DRL include:
+\begin{itemize}
+\item  \textbf{Exploration Exploitation: }The exploration refers to trying a new action, whereas exploitation makes use of learned knowledge to decide the action.
+\item \textbf{Generalization:} Generalization, on the other hand, refers to the capability of the agent to adapt to new environments, which can range from one task to another or from simulation to a real-life situation.
+\item \textbf{Finding Policy:} Finding a valuable policy involves identifying important states and actions that can help in learning an optimal policy for decision-making.
+\item \textbf{Finding a catastrophe:} Discovering a catastrophic event is crucial, as such events may cause significant harm. These events may include physical harm, offensive tweets, false stories, and so on. Avoiding such occurrences can help to improve the policy.
+\item \textbf{Handling Overestimation:} Overestimation occurs when inaccurate computation of action value takes place, often due to the use of the max operation in Q learning. It is important to handle overestimation to ensure that accurate values are computed.
+\item \textbf{Reducing Sample Size:} Deep reinforcement learning (DRL) requires a large number of samples for effective training, which may not always be feasible in real-world scenarios. This poses a challenge for DRL applications that deal with limited data availability.
+\item \textbf{Detection and prevention of overfitting:} overfitting is a common issue in DRL, especially when using high-capacity deep learning models. Overfitting occurs when the agent is too sensitive to small perturbations in the environment.
+\item \textbf{Robust Learning:} In recent years, there has been a growing interest in incorporating robustness into the DRL system using techniques such as deep learning. Researchers have proposed various adversarial attacks and defense mechanisms to address this challenge. Therefore, enhancing the robustness of DRL systems has become an active research topic in the community.
+\end{itemize}
+ 
+The field of Reinforcement Learning (RL) has seen significant contributions from various researchers who have proposed different network architectures and action selection criteria. Some methods include trial and error without human intervention, learning via demonstrations, learning via criticism, and learning with adversaries to tackle complex problems. Despite these advancements, the challenge of discovering an optimal policy that is both robust and able to meet multiple goals remains a topic of active research and an open area of investigation.
+
+%The simulated robotic arm used in this study consists of three joints, each of which can rotate through an angle of 360 degrees
+%\cite{35_megalingam2013kinect}. The objective of the arm is to reach a target position specified by the RL algorithm. The state of the arm is represented by the joint angles, and the action is the change in joint angles to reach the target position. The reward function is defined as the negative Euclidean distance between the current position of the arm and the target position. The implementation of Double Q-Learning involves maintaining two Q-functions, Q1 and Q2, which are updated alternately. In each update, one of the Q-functions is used to select the best action, while the other Q-function is used to evaluate the selected action. This approach reduces the overestimation of action values, leading to more accurate estimation of the optimal policy.
+%When compared, the performance of Double Q-Learning with that of Q-Learning and the Double Q-Learning outperformed Q-Learning in terms of convergence speed and final performance. The Double Q-Learning algorithm was able to learn an effective control policy for the robotic arm, enabling it to reach the target position with high accuracy and minimal error. To further evaluate the effectiveness of Double Q-Learning, we conducted experiments to test its robustness to changes in the target position and the reward function. We found that Double Q-Learning was able to adapt to changes in the target position and reward function, demonstrating its ability to learn a robust control policy for the robotic arm.
 
 \subsection{Reinforcement Learning Algorithms and The Markov Decision Process (MDP)}
 Reinforcement learning (RL) methods are particularly well-suited for robotics applications, such as robotic arm control. RL algorithms learn to control the arm by picking actions that maximize a reward signal, which may be a measure of how successfully the arm performs a task or how far it progresses toward a goal. Here are some popular RL algorithms used in robotics and for operating robotic arms:
@@ -771,8 +801,17 @@ To balance the exploration-exploitation trade-off, several ways can be applied, 
 \item \textbf{Thompson Sampling:} In this method, the agent keeps a probability distribution over the reward of each action and chooses an action based on a sample from that distribution. This technique strikes a balance between exploration and exploitation by choosing activities with a high likelihood of high rewards while also investigating actions with a low probability of high rewards.
 \end{enumerate}
 
-\subsection{DDQN}\label{foundations:ddqn}
 
+%\subsubsection{Double Q-Learning}
+
+%The simulated robotic arm used in this study consists of three joints, each of which can rotate through an angle of 360 degrees
+%\cite{35_megalingam2013kinect}. The objective of the arm is to reach a target position specified by the RL algorithm. The state of the arm is represented by the joint angles, and the action is the change in joint angles to reach the target position. The reward function is defined as the negative Euclidean distance between the current position of the arm and the target position. The implementation of Double Q-Learning involves maintaining two Q-functions, Q1 and Q2, which are updated alternately. In each update, one of the Q-functions is used to select the best action, while the other Q-function is used to evaluate the selected action. This approach reduces the overestimation of action values, leading to more accurate estimation of the optimal policy.
+%When compared, the performance of Double Q-Learning with that of Q-Learning and the Double Q-Learning outperformed Q-Learning in terms of convergence speed and final performance. The Double Q-Learning algorithm was able to learn an effective control policy for the robotic arm, enabling it to reach the target position with high accuracy and minimal error. To further evaluate the effectiveness of Double Q-Learning, we conducted experiments to test its robustness to changes in the target position and the reward function. We found that Double Q-Learning was able to adapt to changes in the target position and reward function, demonstrating its ability to learn a robust control policy for the robotic arm.
+
+
+
+\subsection{Double Deep Q Learning (DDQN)}\label{foundations:ddqn}
+%The Q-learning algorithm, a well-liked RL method, has a version called double Q-learning \cite{33_ogunniyi2014energy}. The fundamental tenet of Q-learning is to acquire knowledge of a function $Q(s,a)$, which denotes the anticipated reward for performing action in a given state s. The agent employs this feature to determine the optimal course of action in each state. However, Q-learning may be hampered by an overestimation of the Q-values, which could result in ineffective policies. This problem is addressed by double Q-learning, which estimates the greatest expected reward by switching between two different Q-functions.
 Double Deep Q Learning (DDQN) \cite{42_hamdia2021efficient} is a Q-Learning algorithm extension that overcomes Q-value overestimation in standard Q-Learning. DDQN is a DRL method that combines a deep neural network with the Q-Learning technique to develop an optimum policy for an agent to make decisions in an environment.
 The Double Deep Q-Learning (DDQN) method is an extension of the classic Q-Learning algorithm, which is widely used in Reinforcement Learning (RL) for robotics and robotic arm control. Deep RL method DDQN combines two deep neural networks to estimate the Q-values of state-action pairings in an environment.
 Q-Learning is a well-known RL method that may be used to identify the best policy for an agent in a given environment. The agent in Q-Learning attempts to learn a function $Q(s, a)$ that calculates the anticipated reward for doing an action in state $s$. The best policy is then found by choosing the action that maximizes the Q-value for a particular state. Q-Learning, on the other hand, can only be employed in tiny settings with a limited number of states and actions. It is unsuitable for big and complicated situations.
@@ -833,7 +872,8 @@ The DDQN algorithm is summarized below:
 There are various advantages of using DDQN over standard Q-Learning and DQL. It decreases overestimation, enhances stability, and speeds up convergence. DDQN is also capable of dealing with vast and complicated settings with multidimensional state and action spaces. These characteristics make DDQN an appealing candidate for robotic control applications.
 DDQN may be used in robotics and robotic arm control to determine an optimum policy for the agent to complete certain tasks such as item grabbing or assembly. Without any prior understanding of the environment or the work, DDQN may be used to learn the policy from the ground up. The agent may investigate its surroundings and learn from its experiences in order to better its performance.
 
-
+In this work, the simulated robotic arm would operate as the agent in a Double Q-learning framework, interacting with its surroundings and receiving rewards or punishments as a result of its actions. The orientation and position of the robotic arm, along with the location and characteristics of the object it is attempting to touch, would all be included in the state space. The robotic arm's range of potential motions for approaching the object would make up the action space. The goal of the reward function is to persuade the robotic arm to touch the target without causing a collision or any other unfavorable outcomes.
+The Double Q-learning method is used by the robotic arm to investigate its environment during training and modify its Q-functions in response to incentives. By estimating the expected reward for every action using the two Q-functions, the algorithm would select the action featuring the largest expected reward. The robotic arm would develop a policy that enables it to consistently touch the target by continuing this process over a large number of attempts. In next chapters, we explore and present results for the use of Double Q-Learning in a simulated robotic arm to learn effective control policies for the arm.
 %\hrule 
 
 %In subsequent chapters, you can reference this one to avoid having to explain everything over and over again. This means that you just include things here that are necessary for the understanding of later chapters, nothing more.
@@ -845,8 +885,11 @@ DDQN may be used in robotics and robotic arm control to determine an optimum pol
 A SDF file containing the object the robotic arm has to learn to touch was created (Figure \ref{fig:can}).
 The robotic arm used in the simulation is the Kuka KR210. The necessary files to simulate such a robotic arm were taken from ~\cite{RoboND-Kinematics-Project}. 
 
-The first step is to create a ROS2 workspace and package to place the simulation files, having a folder structure as the one in Figure \ref{fig:project_structure_1}.
+The first step is to create a ROS 2 workspace and package to place the simulation files, having a folder structure as the one in Figure \ref{fig:project_structure_1}.
 
+With the simulation files in place, the \textit{ROS robot\_state\_publisher} node \ref{ros2-robot-state-publisher} and Rviz \ref{rviz_rqt} are used to visualize the robotic arm, the result is shown in Figure \ref{fig:kuka1}.
+
+The \textit{robot\_state\_publisher} node takes the \textit{urdf} file as an input and publishes its content to a \textit{/robot\_description} topic to which \textit{RViz} subscribes to get the \textit{URDF} content and show it (Figure \ref{fig:rosgraph1}). 
 \begin{figure}[H]
   \centering
  % \includegraphics[width=0.3\linewidth]{project_structure_1}
@@ -856,20 +899,17 @@ The first step is to create a ROS2 workspace and package to place the simulation
   \caption{World created in Gazebo and starting directory structure after copying the robotic arm simulation files.}
 \end{figure}
 
-With the simulation files in place, the \textit{ROS robot\_state\_publisher} node \ref{ros2-robot-state-publisher} and Rviz \ref{rviz_rqt} to visualize the robotic arm, the result is shown in Figure \ref{fig:kuka1}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{kuka1}
-	\caption[Rviz2 kuka]{Kuka KR210 in Rviz2.}
+	\caption[Rviz2 kuka]{Kuka KR210 in RViz2.}
 	\label{fig:kuka1}
 \end{figure}
-
-\textit{ROS robot\_state\_publisher} node takes the \textit{urdf} file as an input and publishes its content to a \textit{/robot\_description} topic to which \textit{Rviz} subscribes to get the \textit{urdf} content and show it (Figure \ref{fig:rosgraph1}). 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{rosgraph1}
-\caption{The ROS \textbf{robot\_state\_publisher} node takes the URDF file content and publishes it to the \textbf{/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.}
+\caption[The robot\_state\_publisher node]{The ROS \textbf{robot\_state\_publisher} node takes the URDF file content and publishes it to the \textbf{/robot\_description} topic to which Rviz subscribes and gets the robotic arm information to finally show it.}
 \label{fig:rosgraph1}
 \end{figure}
 
@@ -891,11 +931,11 @@ The robotic arm consists of six joints and seven links that connect them. The si
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{kuka5}
-	\caption[kuka kr210 joints]{Joints and axis around which they allow movement in the Kuka KR210 arm.}
+	\caption[Joints in the Kuka KR210.]{Joints and axis around which they allow movement in the Kuka KR210 arm.}
 	\label{fig:kuka5}
 \end{figure}
 
-The arm also has links that connect the joints, including the base, lower arm, upper arm, wrist, and end-effector. These links are designed to provide strength and rigidity to the robot arm while allowing for smooth and precise movement. These links are:
+The arm also has links that connect the joints, including the base, lower arm, upper arm, wrist, and end effector. These links are designed to provide strength and rigidity to the robot arm while allowing for smooth and precise movement. These links are:
 
 \begin{itemize}
 	\item \textbf{Base Link:} This is the fixed part of the robot that is attached to the ground.
@@ -937,7 +977,7 @@ Once the robotic arm and the sensors are in place, the next step is to launch ou
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\linewidth]{kuka4}
-	\caption[Gazebo World]{Gazebo world containing the robotic arm, the object to be touched, plus the sensors and plugins added.}
+	\caption[Gazebo World.]{Gazebo world containing the robotic arm, the object to be touched, plus the sensors and plugins added.}
 	\label{fig:kuka4}
 \end{figure}
 
@@ -947,44 +987,53 @@ A launch file was created to spawn the robotic arm in the gazebo world with the 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth]{rosgraph00}
-\caption{The joint state broadcaster node publishes the current state of each joint in the robot's body to the ROS (Robot Operating System) network. This state includes the joint's position, velocity, and effort (torque) values. }
+\caption[The joint\_state\_broadcaster node.]{The joint state broadcaster node publishes the current state of each joint in the robot's body to the ROS (Robot Operating System) network. This state includes the joint's position, velocity, and effort (torque) values. }
 \label{fig:rosgraph00}
 \end{figure}
  
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\linewidth]{rosgraph01}
-\caption{The node \textit{/gazebo\_state/gazebo\_ros\_state} publishes the state of the models in the gazebo world to the topics \textit{/gazebo\_state/link\_states\_demo} and \textit{/gazebo\_state/model\_states\_demo} as specified in Listing \ref{gazeboRosStatePluginXml}}
+\includegraphics[width=0.95\linewidth]{rosgraph01_n}
+\caption[The gazebo\_ros\_state node.]{The node \textit{/gazebo\_state/gazebo\_ros\_state} publishes the state of the models in the gazebo world to the topics \textit{/gazebo\_state/link\_states\_demo} and \textit{/gazebo\_state/model\_states\_demo} as specified in Listing \ref{gazeboRosStatePluginXml}}
 \label{fig:rosgraph01}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.85\linewidth]{rosgraph02_new}
-\caption{As a result of adding Listing \ref{cameraSensorXml} a node \textit{camera\_controller} is created and it publishes to the topics \textit{/camera/image\_raw}.}
+\caption[The camera\_controller node.]{As a result of adding Listing \ref{cameraSensorXml} a node \textit{camera\_controller} is created and it publishes to the topics \textit{/camera/image\_raw}.}
 \label{fig:rosgraph02}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth]{rosgraph03_new}
-\caption{As a result of adding Listing \ref{bumperSensorXml} there are \textit{/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit{/contact\_sensor/bumper\_link\_4}, \textit{/contact\_sensor/bumper\_link\_5}, and\textit{ /contact\_sensor/bumper\_link\_6}. }
+\caption[The /contact\_sensor/gazebo\_ros\_bumper\_sensor node.]{As a result of adding Listing \ref{bumperSensorXml} there are \textit{/contact\_sensor/gazebo\_ros\_bumper\_sensor} nodes publishing the collision details to the topics \textit{/contact\_sensor/bumper\_link\_4}, \textit{/contact\_sensor/bumper\_link\_5}, and\textit{ /contact\_sensor/bumper\_link\_6}. }
 \label{fig:rosgraph03}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth]{rosgraph04_new}
-\caption{The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm.}
+\caption[The /joint\_trajectory\_controller node.]{The joint trajectory controller node is responsible for generating and executing a trajectory plan for the robot's joints. This is the node used to send the desired positions when controlling the robotic arm.}
 \label{fig:rosgraph04}
 \end{figure}
 
 With the robotic arm spawn and the nodes and topics running to interact with it, the next step is to create the classes that define the reinforcement learning environment.
 
+\subsection{The NN class}      
+The NN class in Figure \ref{fig:classdiagramcomplete} implements the DQN used in this framework.         
+PyTorch \cite{pytorch} is used for the neural network, specifically the \textit{nn.Module}. 
+The $nn$ package contains a Module class which serves as the foundation for all neural network modules. This means that the used network and its layers will inherit from the Module class. To implement the DQN, the class NN that extends the nn.Module class is created. The DQN will be fed the current state as follows:
+\begin{align}
+	input &= (\theta_1, \theta_2, \theta_3, d) \label{eq:1}
+\end{align}
+
+where, $\theta_1, \theta_2, and \theta_3$ represent the joint angles of the robotic arm, and $d$ represents the distance between the end effector of the arm and the object. 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth]{uml_diagram_complete}
-\caption{Classes defining the reinforcement learning framework that will run the environment experiments for the arm to learn to touch the object.}
+\caption[Classes and relationships in the reinforcement learning framework.]{Classes defining the reinforcement learning framework that will run the environment experiments for the arm to learn to touch the object.}
 \label{fig:classdiagramcomplete}
 \end{figure}
 Following there is a description of the classes in Figure \ref{fig:classdiagramcomplete} used to conduct the experiments.
@@ -1038,16 +1087,6 @@ Following there is a description of the classes in Figure \ref{fig:classdiagramc
 %		\end{enumerate}
 %	\end{enumerate}
 %\end{enumerate}
-
-\subsection{The NN class}      
-The NN class in Figure \ref{fig:classdiagramcomplete} implements the DQN used in this framework.         
-PyTorch \cite{pytorch} is used for the neural network, specifically the \textit{nn.Module}. 
-The $nn$ package contains a Module class which serves as the foundation for all neural network modules. This means that the used network and its layers will inherit from the Module class. To implement the DQN, the class NN that extends the nn.Module class is created. The DQN will be fed the current state as follows:
-\begin{align}
-	input &= (\theta_1, \theta_2, \theta_3, d) \label{eq:1}
-\end{align}
-
-where, $\theta_1, \theta_2, and \theta_3$ represent the joint angles of the robotic arm, and $d$ represents the distance between the end effector of the arm and the object. 
 
 A simple DQN with two fully connected layers and an output layer is used.
 \begin{listing}[htbp]
@@ -1198,13 +1237,13 @@ where $\theta$ is the $angleDiff$ defined in ~\ref{env-manager:angle-diff}.
 
 The $EnvironmentManager$ class implements the following methods :
 \begin{enumerate}
-\item The $jointStateSubscriptionCallback()$ is a callback defined when creating the property $jointStateSubscription$ \ref{env-manager:joint-state-subscription}. This method calculates the $distance$ property in \ref{env-manager:distance}. This method is executed every time a new message is received in the $/joint\_states$ topic. That is, every time the arm moves.
-\item The $modelSubscriptionCallback$ is a callback defined when creating the property $modelSubscription$ \ref{env-manager:model-subscription}. This method is executed every time a new message is received in the $/gazebo\_state/model\_states\_demo$ topic. It is used to obtain the position of the object in the world.
+\item The $jointStateSubscriptionCallback()$ method is a callback function defined when creating the property $jointStateSubscription$ \ref{env-manager:joint-state-subscription}. This method calculates the $distance$ property in \ref{env-manager:distance}. This method is executed every time a new message is received in the $/joint\_states$ topic. That is, every time the arm moves.
+\item The $modelSubscriptionCallback()$ method is a callback function defined when creating the property $modelSubscription$ \ref{env-manager:model-subscription}. This method is executed every time a new message is received in the $/gazebo\_state/model\_states\_demo$ topic. It is used to obtain the position of the object in the world.
 \item\label{env-manager:move-arm-to-position} The $moveArmToPosition(self, positions)$ function is used to move the arm to a certain position. The argument $positions$ is the end position of the joints. It works by using the $trajectoryActionClient$ property in \ref{env-manager:trajectory-action-client}.
 \item\label{env-manager:move-model-to-position} The $moveModelToPosition(self, model, x, y, z)$ method is used to move the object to a certain position $(x, y, z)$. It works by using the $modelClient$ property in \ref{env-manager:model-client}.
-\item The $resetEnvironment$ method moves the arm to the starting position $positions = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]$ using \ref{env-manager:move-arm-to-position}, moves the object to the starting position by using \ref{env-manager:move-model-to-position}, and sets the $done$ and $collision$ property to false. 
-\item The $contactSensorCallback4$, $contactSensorCallback5$, and $contactSensorCallback6$ methods are executed when a collision between the Links 4, 5 o 6 and the object happens respectively.
-\item The $getState$ method returns the current state of the environment. The state is composed of the first three joints angles and the distance between the end effector or Link 6 and the object. 
+\item The $resetEnvironment()$ method moves the arm to the starting position $positions = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]$ using \ref{env-manager:move-arm-to-position}, moves the object to the starting position by using \ref{env-manager:move-model-to-position}, and sets the $done$ and $collision$ property to false. 
+\item The $contactSensorCallback4()$, $contactSensorCallback5()$, and $contactSensorCallback6()$ methods are executed when a collision between the Links 4, 5 o 6 and the object happens respectively.
+\item The $getState()$ method returns the current state of the environment. The state is composed of the first three joints angles and the distance between the end effector or Link 6 and the object. 
 \item The $takeAction(actionIndex)$ method takes the $actionIndex$ parameter which identifies the action to be taken. Its responsibility is to move the arm according to the action given and returns the $reward$ which is consequence of the given action.
 \item The $computeReward(previousDistance)$ computes the reward in the current state given the $previousDistance$. The $previousDistance$ is compared with the current distance between the End Effector or Link6 and the object to know if the arm is getting closer to the object or not. The reward is computed as follows:\\
 
@@ -1322,8 +1361,9 @@ Memory / Disk Capacity & 16GB / 500GB \\
 Graphics Card (GPU) & NVIDIA GeForce GTX 1660 Ti \\
 GPU Memory (VRAM) & 6GB \\
 \rowcolor{gray!10}
-Robot Operating System
-(ROS) Version & ROS 2 Foxy \\
+Robot Operating System (ROS) Version & ROS 2 Foxy \\
+Gazebo Version & Gazebo multi-robot simulator, version 11.11.0 \\
+\rowcolor{gray!10}
 Python Version & 3.8.10 \\
 
 \hline
@@ -1355,9 +1395,10 @@ Making use of the values in Table \ref{table:final-angles}, a measurement of \\
 $0.49999900427046 \pm 3.86729542790782 * 10^{-06} rad$ is obtained when the controller gets $0.5 rad$ as target value.
 \begin{figure}[H]
   \centering
-  \subfloat[Kuka Kr210 in starting position.]{\includegraphics[width=0.49\textwidth]{kuka_start_position_new.png}\label{fig:kuka_start_position}}
-  \hfill
-  \subfloat[Kuka Kr210 after moving every joint to 0.5 rads]{\includegraphics[width=0.49\textwidth]{kuka_end_position1_new.png}\label{fig:kuka_end_position1}}
+  \subfloat[Kuka Kr210 in starting position.]{\includegraphics[width=0.6\textwidth]{kuka_start_position_new.png}\label{fig:kuka_start_position}}
+  %\hfill
+  \\
+  \subfloat[Kuka Kr210 after moving every joint to 0.5 rads]{\includegraphics[width=0.6\textwidth]{kuka_end_position1_new.png}\label{fig:kuka_end_position1}}
   \caption{Robotic arm before and after publishing the target angles.}
 \end{figure}
 
@@ -1399,7 +1440,7 @@ Real Value (Radians) & Target Value (Radians) & Difference (Radians) \\
 0.499997811745674 & 0.5 & 0.0000021882543261853 \\
 \hline
 \end{tabular}
-\caption{Final values for the joints angles after setting a target of 0.5 radians.}
+\caption{Final values for the joints' angles after setting a target of 0.5 radians.}
 \label{table:final-angles}
 \end{table}
 
@@ -1436,7 +1477,7 @@ After moving the arm to make the collision happen between the can and Link 6 of 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{rqt_link_6_collision}
-\caption{Monitoring the topics $/contact\_sensor/bumper\_link\_4$, $/contact\_sensor/bumper\_link\_5$, and $/contact\_sensor/bumper\_link\_6$ in Rqt \ref{rviz_rqt}. The first column is the name of the topics, and the second is the type of message they handle. }
+\caption[Contact sensors monitoring with Rqt.]{Monitoring the topics \textit{/contact\_sensor/bumper\_link\_4}, \\ \textit{ /contact\_sensor/bumper\_link\_5}, and \textit{/contact\_sensor/bumper\_link\_6} in Rqt \ref{rviz_rqt}. The first column is the name of the topics, and the second is the type of message they handle. }
 \label{fig:rqtlink6collision}
 \end{figure}
 
@@ -1699,7 +1740,7 @@ In conclusion, the application of DQN to train a robotic arm to perform a specif
 %
 %As we can see in box \ref{box:mybox}, ...
 \section{Conclusion}
-This thesis explored the application of the Double Q-Learning algorithm to a simulated robotic arm in a reinforcement learning setting. The theoretical foundation of the algorithm was introduced, implemented, and applied to a simple task using the Gazebo simulator and ROS2 libraries. The experimental results show that the Double Q-Learning algorithm works as the simulated arm learns to touch the can. This work contributes to the development of reinforcement learning algorithms for training robotic arms and provides not only a robust and efficient approach but also an alternative to solving complex tasks in the robotics area.
+This thesis explored the application of the Double Q-Learning algorithm to a simulated robotic arm in a reinforcement learning setting. The theoretical foundation of the algorithm was introduced, implemented, and applied to a simple task using the Gazebo simulator and ROS 2 libraries. The experimental results show that the Double Q-Learning algorithm works as the simulated arm learns to touch the can. This work contributes to the development of reinforcement learning algorithms for training robotic arms and provides not only a robust and efficient approach but also an alternative to solving complex tasks in the robotics area.
 
 In the experiments, a simple task for the robotic arm to perform was designed, this task consists in moving the robotic arm to a given target location so it touches an object (a can). The robotic arm had six degrees of freedom; out which only three were manipulated in the experiments. The task required a combination of forward and backward movements of this joints. The state space was given by the three joint angles and the distance between the robotic arm and the can; whereas the action space was discrete and given by the combination of possible variations for the angles. The robotic arm was trained using the Double Q-Learning.
 
@@ -1713,7 +1754,7 @@ Also, the deployment of reinforcement learning in real-world robotic application
 
 Finally, trying different hyper parameters combinations and comparing their different results seems the next logical step. However, also other reward function definitions could be used to see if better results can be achieved in the experiments. The use of the camera images and object detection algorithms instead of the sensors plugins in the experiments is also something that could be implemented.
 
-Regarding the simulated environment setup, a docker implementation of the whole reinforcement learning framework created in this thesis could be done since installing ROS2, Gazebo, and making them work together is not a straightforward process.
+Regarding the simulated environment setup, a docker implementation of the whole reinforcement learning framework created in this thesis could be done since installing ROS 2, Gazebo, and making them work together is not a straightforward process.
 
 In conclusion, the application of reinforcement learning and DQN to a simulated robotic arm has shown promising results in one single simple task and future work could also adapt this to complex behaviors and scenarios. However, there are still several directions for future research in this field, including exploring different variants of the DQN algorithm, investigating more complex robotic tasks, incorporating transfer learning, and deploying reinforcement learning in real-world robotic applications. In addition to that, implementation of object detection techniques and the use of images from the camera sensor as inputs to our DQN can be implemented as well as performing benchmarking using different hyper parameters.
 
