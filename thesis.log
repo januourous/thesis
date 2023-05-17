@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  15 MAY 2023 01:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  16 MAY 2023 14:43
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1715,13 +1715,6 @@ ed the $\OML/cmm/m/it/12 modelClientGetState$
  []
 
 
-Overfull \hbox (46.33696pt too wide) in paragraph at lines 1193--1194
-[]\T1/ppl/m/n/12 The prop-erty $\OML/cmm/m/it/12 modelSubscription$ \T1/ppl/m/n
-/12 de-fines a sub-scrip-tion to the $\OML/cmm/m/it/12 =gazebo[]tate=model[]tat
-es[]emo$
- []
-
-
 Overfull \hbox (1.66716pt too wide) in paragraph at lines 1201--1202
 []\T1/ppl/m/n/12 The $\OML/cmm/m/it/12 jointStateSubscriptionCallback\OT1/cmr/m
 /n/12 ()$ \T1/ppl/m/n/12 is a call-back de-fined when cre-at-ing the prop-
@@ -2042,10 +2035,10 @@ runsystem(rm thesis.pyg)...executed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2155.
  ) 
 Here is how much of TeX's memory you used:
- 38813 strings out of 483107
- 732496 string characters out of 5964630
- 1050792 words of memory out of 5000000
- 52660 multiletter control sequences out of 15000+600000
+ 38812 strings out of 483107
+ 732477 string characters out of 5964630
+ 1050793 words of memory out of 5000000
+ 52659 multiletter control sequences out of 15000+600000
  567019 words of font info for 88 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  64i,12n,103p,1867b,2514s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2065,7 +2058,7 @@ onts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (83 pages, 7158725 bytes).
+Output written on thesis.pdf (83 pages, 7158366 bytes).
 PDF statistics:
  1475 PDF objects out of 1728 (max. 8388607)
  385 named destinations out of 1000 (max. 500000)

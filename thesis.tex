@@ -477,7 +477,7 @@ As an example, let's consider a simple simulation scenario involving a two-wheel
 The $/joint\_states$ topic is a standard ROS 2 topic that provides the current joint positions, velocities, and effort (torque or force) values for all joints in a robot. This topic is typically published by a robot's joint state publisher node, which reads the joint positions, velocities, and effort values from the robot's joint sensors and publishes them on the $/joint\_states$ topic.
 
 Here's an example Python script that subscribes to the /joint\_states topic and prints the current joint positions for a robot arm:
-\begin{tcolorbox}\label{box:mybox-1}
+\begin{tcolorbox}[]\label{box:mybox-1}
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 import rclpy
 from rclpy.node import Node
@@ -529,7 +529,7 @@ For example, assuming that we have a robotic arm with a joint trajectory control
 
 \begin{enumerate}
 \item Create a rclpy node that acts as the client for the\\ $/joint\_trajectory\_controller/follow\_joint\_trajectory$ action server. This node should import the necessary ROS libraries and create an instance of the $rclpy.action.ActionClient$ class to communicate with the server.
-\begin{tcolorbox}\label{box:mybox-2}
+\begin{tcolorbox}[]\label{box:mybox-2}
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 import rclpy
 from rclpy.action import ActionClient
@@ -541,7 +541,7 @@ client = ActionClient(node, FollowJointTrajectory, '/joint_trajectory_controller
 \end{minted}
 \end{tcolorbox}
 \item Construct a $FollowJointTrajectory.Goal$ object that contains the desired trajectory for the robot arm. This object should contain a $JointTrajectory$ message, which specifies the joint positions, velocities, accelerations, and time stamps for the trajectory. Here's an example $FollowJointTrajectory.Goal$ object for a simple two-joint robot arm:
-\begin{tcolorbox}\label{box:mybox-3}
+\begin{tcolorbox}[]\label{box:mybox-3}
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
@@ -558,13 +558,13 @@ goal_msg.trajectory.points = [point1, point2]
 \end{tcolorbox}
 This $FollowJointTrajectory.Goal$ object specifies a trajectory with two points, where the first point has joint positions of $[0.0, 0.0]$ and occurs 1 second after the start of the trajectory, and the second point has joint positions of $[1.0, 1.0]$ and occurs 2 seconds after the start of the trajectory.
 \item Send the $FollowJointTrajectory.Goal$ object to the \\ $/joint\_trajectory\_controller/follow\_joint\_trajectory$ action server using the \\ $send\_goal$ method of the $ActionClient$ object.
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 future = client.send_goal_async(goal_msg)
 \end{minted}
 \end{tcolorbox}
 \item Wait for the server to complete the trajectory by calling the result method of the Future object returned by the $send\_goal\_async$ method. This method will block until the server reports that the trajectory has been completed or an error occurs
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize, breaklines]{python}
 rclpy.spin_until_future_complete(node, future)
 result = future.result()
@@ -578,10 +578,10 @@ The tf2\_ros.TransformListener is a ROS2 utility class that allows a node to rec
 To use the tf2\_ros.TransformListener, a node must first initialize a tf2\_ros.Buffer object. This buffer object is used to store and manage the transforms that the node receives from the tf2 system. Once the buffer is initialized, the node can then create an instance of the tf2\_ros.TransformListener class, passing in a reference to the buffer object.
 
 Here is an example of how to use the tf2\_ros.TransformListener to get the transform between two frames:
-\begin{listing}[H]
+\begin{listing}
 \caption{Example of how to use TransformListener to obtain the transform between two frames.}
 \label{code:transformliseter}
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 import rclpy
 import tf2_ros
@@ -1053,7 +1053,7 @@ A simple DQN with two fully connected layers and an output layer is used.
 \begin{listing}[htbp]
 \caption{Used Deep Q Neural Network (DQN).}
 \label{code:nn_class_1}
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
  class NN(nn.Module):
      def __init__(self, nInputs=4, nOutputs=27):
@@ -1076,7 +1076,7 @@ The final step in defining the DQN class is to create a function called $forward
 \begin{listing}[htbp]
 \caption{Implementation of the $forward()$ function needed for the DQN.}
 \label{code:nn_class_2}
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 def forward(self, s):
     s = F.relu(self.fc1(s))
@@ -1093,7 +1093,7 @@ To define the ReplayMemory class, the Experience class which defines $Experience
 \begin{listing}[htbp]
 \caption{Implementation of the Replay Memory class.}
 \label{code:replay_memory}
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 class ReplayMemory:
     def __init__(self, capacity):
@@ -1115,7 +1115,7 @@ To balance exploration and exploitation the epsilon greedy strategy is used. An 
 \begin{listing}[H]
 \caption{Implementation of the EpsilonGreedyStrategy class.}
 \label{code:epsilon-greedy}
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 class EpsilonGreedyStrategy:
     def __init__(self, start, end, decay):
@@ -1135,7 +1135,7 @@ The implemented Agent class in Listing \ref{code:agent} has a $strategy$ and $nA
 \begin{listing}[H]
 \caption{Implementation of the Agent class.}
 \label{code:agent}
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 class Agent:
     def __init__(self, strategy, nActions):
@@ -1190,7 +1190,7 @@ where $\theta$ is the $angleDiff$ defined in ~\ref{env-manager:angle-diff}.
 \item\label{env-manager:client-get-state} The $modelClientGetState$ is a service client for the \textit{gazebo\_state/get\_entity\_state} service, it is used to obtain the object's position programmatically.
 \item The properties $modelX$, $modelY$, and $modelZ$ store the $(x, y, z)$ coordinates of the object. When the environment manager class is instantiated the $modelClientGetState$ in ~\ref{env-manager:client-get-state} property is used to obtain these values.
 \item\label{env-manager:trajectory-action-client} The property $trajectoryActionClient$ is an action client. It is used to send messages to the $/joint\_trajectory\_controller/follow\_joint\_trajectory$ server in order to move the arm. The messages are of type $FollowJointTrajectory$ as in \ref{ros2-joint-trajectory-controller}.
-\item\label{env-manager:model-subscription} The property $modelSubscription$ defines a subscription to the $/gazebo_state/model_states_demo$ topic and is used to check the position of the object programmatically.
+\item\label{env-manager:model-subscription} The property $modelSubscription$ defines a subscription to the \\ $/gazebo\_state/model\_states\_demo$ topic and is used to check the position of the object programmatically.
 \item\label{env-manager:joint-state-subscription} The property $jointStateSubscription$ is a subscription to the $/joint\_states$ topic. It is created and used later as in \ref{ros2-joint-state}
 \item The property $contactSensorSubscription$ is a subscription to the collision sensor topic. 
 \item The property $collision$ indicates if there is a collision in the simulated environment.
@@ -1241,7 +1241,7 @@ The main program implements the DDQN algorithm in \ref{foundations:ddqn}. The st
 \item Do the following for every episode:
 	\begin{itemize}
 		\item Reset the environment and obtain the current state:
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 environment.resetEnvironment()
 state = environment.getState()
@@ -1250,7 +1250,7 @@ state = environment.getState()
 		\item Do the following for every step in the current episode:
 		\begin{itemize}
 			\item Select an action, perform the action and save the new state in the $nextState$ variable.
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 action = agent.selectAction(state, policyNetwork)
 reward = environment.takeAction(action)
@@ -1258,20 +1258,20 @@ nextState = environment.getState()
 \end{minted}
 \end{tcolorbox}
 			\item Save the experience $(state, action, nextState, reward)$ into the $replayMemory$.
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 replayMemory.push(experience=Experience(state, action, nextState, reward))
 \end{minted}
 \end{tcolorbox}
 			\item Update $state$ with $nextState$ which now becomes the current state.
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 state = nextState
 \end{minted}
 \end{tcolorbox}
 			\item Sample experiences from $ReplayMemory$, compute the $currentQValues$ using the $policyNetwork$, and the $targetQValues$ using the $nextQValues$ given by the $targenNetwork$, the discount factor $gamma$, and the $rewards$ taken from the $replayMemory$
-\begin{tcolorbox}
-\begin{minted}[fontsize=\scriptsize]{python}
+\begin{tcolorbox}[]
+\begin{minted}[fontsize=\scriptsize, breaklines]{python}
 experiences = replayMemory.sample(batchSize)
 states, actions, rewards, nextStates = extractTensors(experiences)
 
@@ -1281,7 +1281,7 @@ targetQValues = nextQValues * gamma + rewards
 \end{minted}
 \end{tcolorbox}
 			\item Compute the loss using mean square error between $currentQValues$ and $targetQValues$ and apply gradient descent to update the weights in the $policyNetwork$.
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize]{python}
 loss = F.mse_loss(currentQValues, targetQValues.unsqueeze(1))
 optimizer.zero_grad()
@@ -1344,7 +1344,7 @@ Python Version & 3.8.10 \\
 \subsection{Testing the Environment}\label{experiment:testing-the-environment}
 \subsubsection{Moving the Arm} \label{experiment:moving-the-arm}
 The script $anglesPublisher.py$ defining the class $AnglesPublisher$ allows us to move the arm by making use of the $/joint\_trajectory\_controller/joint\_trajectory$ and specifying the joint angles in radians via command line. To collect the data in Table \ref{table:final-angles} the following was run 5 times:
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize,linenos=false]{bash}
 ros2 run kuka_kr_210_pkg anglesPublisher 0.5 0.5 0.5 0.5 0.5 0.5
 \end{minted}
@@ -1832,7 +1832,7 @@ In conclusion, the application of reinforcement learning and DQN to a simulated 
 \appendix
 \section{Code Snippets}
 \begin{listing}[H]
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize,linenos=false,escapeinside=||,samepage]{xml} 
   <gazebo reference="link_4">
     <!-- contact sensor -->
@@ -1892,7 +1892,7 @@ In conclusion, the application of reinforcement learning and DQN to a simulated 
 \end{listing}
 
 \begin{listing}[H]
-\begin{tcolorbox}
+\begin{tcolorbox}[]
 \begin{minted}[fontsize=\scriptsize,linenos=false,escapeinside=||,samepage]{xml} 
 <plugin name='gazebo_ros_state' filename='libgazebo_ros_state.so'>
   <ros>
@@ -1922,7 +1922,7 @@ In conclusion, the application of reinforcement learning and DQN to a simulated 
 %\end{listing}
 %
 %%\begin{mdframed}[linecolor=black, topline=false, bottomline=false,leftline=false, rightline=false, backgroundcolor=white]
-%\begin{tcolorbox}[breakable, title=Titulo]\label{box:code}
+%\begin{tcolorbox}[, title=Titulo]\label{box:code}
 %\begin{minted}[fontsize=\scriptsize,linenos=false,escapeinside=||,]{xml} 
 %  <ros2_control name="GazeboSystem" type="system">
 %    <hardware>
