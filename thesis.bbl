@@ -180,72 +180,6 @@ M.~Kulkarni, P.~Junare, M.~Deshmukh, and P.~P. Rege.
 \newblock In {\em 2021 IEEE 6th International Conference on Computing,
   Communication and Automation (ICCCA)}, pages 478--482. IEEE, 2021.
 
-\bibitem{24_ball2017comprehensive}
-J.~E. Ball, D.~T. Anderson, and C.~S. Chan.
-\newblock Comprehensive survey of deep learning in remote sensing: theories,
-  tools, and challenges for the community.
-\newblock {\em Journal of Applied Remote Sensing}, 11(4):042609--042609, 2017.
-
-\bibitem{26_bonsai}
-Microsoft.
-\newblock Bonsai: Drl for industrial applications.
-\newblock \url{https://www.bons.ai/} and
-  \url{https://aischool.microsoft.com/en-us/autonomous-systems/learning-paths},
-  2014.
-\newblock [Online; accessed 30-May-2019].
-
-\bibitem{27_mnih2016asynchronous}
-V.~Mnih, A.~P. Badia, M.~Mirza, A.~Graves, T.~Lillicrap, T.~Harley, D.~Silver,
-  and K.~Kavukcuoglu.
-\newblock Asynchronous methods for deep reinforcement learning.
-\newblock In {\em International Conference on Machine Learning}, pages
-  1928--1937, 2016.
-
-\bibitem{28_wu2017scalable}
-Yuxi Wu, Elman Mansimov, Roger~B Grosse, Shun Liao, and Jimmy Ba.
-\newblock Scalable trust-region method for deep reinforcement learning using
-  kronecker-factored approximation.
-\newblock In {\em Advances in Neural Information Processing Systems}, pages
-  5285--5294, 2017.
-
-\bibitem{29_mnih2013playing}
-Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis
-  Antonoglou, Daan Wierstra, and Martin Riedmiller.
-\newblock Playing atari with deep reinforcement learning.
-\newblock {\em arXiv preprint arXiv:1312.5602}, 2013.
-
-\bibitem{30_todorov2012mujoco}
-Emanuel Todorov, Tom Erez, and Yuval Tassa.
-\newblock Mujoco: A physics engine for model-based control.
-\newblock In {\em Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ
-  International Conference on}, pages 5026--5033. IEEE, 2012.
-
-\bibitem{31_nogueira2017autonomously}
-Tiago Nogueira, Simone Fratini, and Klaus Schilling.
-\newblock Autonomously controlling flexible timelines: From domain-independent
-  planning to robust execution.
-\newblock In {\em 2017 IEEE Aerospace Conference}, pages 1--15. IEEE, March
-  2017.
-
-\bibitem{32_boute2022deep}
-Robert~N Boute, Joren Gijsbrechts, Willem Van~Jaarsveld, and Jeroen
-  Vanvuchelen.
-\newblock Deep reinforcement learning for inventory control: A roadmap.
-\newblock {\em European Journal of Operational Research}, 298(2):401--412,
-  2022.
-
-\bibitem{33_ogunniyi2014energy}
-Samuel Ogunniyi.
-\newblock Energy efficient path planning: the effectiveness of q-learning
-  algorithm in saving energy.
-\newblock Master's thesis, University of Cape Town, 2014.
-
-\bibitem{34_weng2020mean}
-Wenbo Weng, Himanshu Gupta, Nan He, Leslie Ying, and Rayadurgam Srikant.
-\newblock The mean-squared error of double q-learning.
-\newblock In {\em Advances in Neural Information Processing Systems},
-  volume~33, pages 6815--6826, 2020.
-
 \bibitem{36_wu2020ethical}
 Wei Wu, Tingting Huang, and Ke~Gong.
 \newblock Ethical principles and governance technology development of ai in
@@ -303,12 +237,6 @@ Gonzalo Echeverria, Nicolas Lassabe, Arnaud Degroote, and Severin Lemaignan.
 \newblock In {\em 2011 IEEE International Conference on Robotics and
   Automation}, pages 46--51. IEEE, 2011.
 
-\bibitem{18_ebeid2018survey}
-Emad Ebeid, Michael Skriver, Kristian~H Terkildsen, Kjeld Jensen, and
-  Ulrik~Pagh Schultz.
-\newblock A survey of open-source uav flight controllers and flight simulators.
-\newblock {\em Microprocessors and Microsystems}, 61:11--20, 2018.
-
 \bibitem{40_phueakthong2021development}
 Pattaraporn Phueakthong and Jinda Varagul.
 \newblock A development of mobile robot based on ros2 for navigation
@@ -332,12 +260,6 @@ Pattaraporn Phueakthong and Jinda Varagul.
 {Trimble Inc.}
 \newblock Sketchup, 2000--\emph{present}.
 
-\bibitem{42_hamdia2021efficient}
-Khaled~M Hamdia, Xiaoying Zhuang, and Timon Rabczuk.
-\newblock An efficient optimization approach for designing machine learning
-  models based on genetic algorithm.
-\newblock {\em Neural Computing and Applications}, 33:1923--1933, 2021.
-
 \bibitem{43_hamdia2021efficient}
 K.~M. Hamdia, X.~Zhuang, and T.~Rabczuk.
 \newblock An efficient optimization approach for designing machine learning
@@ -349,6 +271,52 @@ R.~Villegas, J.~Yang, D.~Ceylan, and H.~Lee.
 \newblock Neural kinematic networks for unsupervised motion retargetting.
 \newblock In {\em Proceedings of the IEEE conference on computer vision and
   pattern recognition}, pages 8639--8648, 2018.
+
+\bibitem{24_ball2017comprehensive}
+J.~E. Ball, D.~T. Anderson, and C.~S. Chan.
+\newblock Comprehensive survey of deep learning in remote sensing: theories,
+  tools, and challenges for the community.
+\newblock {\em Journal of Applied Remote Sensing}, 11(4):042609--042609, 2017.
+
+\bibitem{27_mnih2016asynchronous}
+V.~Mnih, A.~P. Badia, M.~Mirza, A.~Graves, T.~Lillicrap, T.~Harley, D.~Silver,
+  and K.~Kavukcuoglu.
+\newblock Asynchronous methods for deep reinforcement learning.
+\newblock In {\em International Conference on Machine Learning}, pages
+  1928--1937, 2016.
+
+\bibitem{28_wu2017scalable}
+Yuxi Wu, Elman Mansimov, Roger~B Grosse, Shun Liao, and Jimmy Ba.
+\newblock Scalable trust-region method for deep reinforcement learning using
+  kronecker-factored approximation.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  5285--5294, 2017.
+
+\bibitem{29_mnih2013playing}
+Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis
+  Antonoglou, Daan Wierstra, and Martin Riedmiller.
+\newblock Playing atari with deep reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1312.5602}, 2013.
+
+\bibitem{30_todorov2012mujoco}
+Emanuel Todorov, Tom Erez, and Yuval Tassa.
+\newblock Mujoco: A physics engine for model-based control.
+\newblock In {\em Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ
+  International Conference on}, pages 5026--5033. IEEE, 2012.
+
+\bibitem{31_nogueira2017autonomously}
+Tiago Nogueira, Simone Fratini, and Klaus Schilling.
+\newblock Autonomously controlling flexible timelines: From domain-independent
+  planning to robust execution.
+\newblock In {\em 2017 IEEE Aerospace Conference}, pages 1--15. IEEE, March
+  2017.
+
+\bibitem{32_boute2022deep}
+Robert~N Boute, Joren Gijsbrechts, Willem Van~Jaarsveld, and Jeroen
+  Vanvuchelen.
+\newblock Deep reinforcement learning for inventory control: A roadmap.
+\newblock {\em European Journal of Operational Research}, 298(2):401--412,
+  2022.
 
 \bibitem{45_1_lim2020federated}
 H.~K. Lim, J.~B. Kim, J.~S. Heo, and Y.~H. Han.
@@ -407,10 +375,5 @@ Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory
   Chintala.
 \newblock Pytorch: An imperative style, high-performance deep learning library.
 \newblock \url{https://pytorch.org/}, 2019.
-
-\bibitem{shiny1}
-RStudio.
-\newblock Welcome to shiny.
-\newblock \url{https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/}.
 
 \end{thebibliography}

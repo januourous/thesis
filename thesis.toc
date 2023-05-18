@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {1.1}Context}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Simulated Robotics}{2}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Industrial Automation}{3}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}Robotic Arm}{4}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.3}Robotic Arms}{4}{subsubsection.1.1.3}%
 \contentsline {subsubsection}{\numberline {1.1.4}Robot Operating System (ROS) and Gazebo}{5}{subsubsection.1.1.4}%
 \contentsline {subsubsection}{\numberline {1.1.5}Simulations}{6}{subsubsection.1.1.5}%
 \contentsline {subsubsection}{\numberline {1.1.6}Reinforcement Learning}{7}{subsubsection.1.1.6}%

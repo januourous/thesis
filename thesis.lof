@@ -10,8 +10,8 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces Simulated robotic arm touching the target object.\relax }}{9}{figure.caption.10}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Agent Environment interaction in the Reinforcement Learning Model.\relax }}{31}{figure.caption.11}%
 \contentsline {figure}{\numberline {8}{\ignorespaces World created in Gazebo and starting directory structure after copying the robotic arm simulation files.\relax }}{39}{figure.caption.12}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A can described the created SDF file in Gazebo which is the object to be touched by the robotic arm.}}}{39}{subfigure.8.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Project structure after copying the \textit {dae}, \textit {stl}, and \textit {urdf} files into our package.}}}{39}{subfigure.8.2}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Can described in the SDF file in Gazebo which is the object to be touched by the robotic arm.}}}{39}{subfigure.8.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Project structure after copying the \textit {DAE}, \textit {STL}, and \textit {URDF} files into our package.}}}{39}{subfigure.8.2}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Rviz2 kuka}}{40}{figure.caption.13}%
 \contentsline {figure}{\numberline {10}{\ignorespaces The robot\_state\_publisher node}}{40}{figure.caption.14}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Joints in the Kuka KR210.}}{41}{figure.caption.15}%
