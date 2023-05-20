@@ -46,11 +46,11 @@
 \contentsline {subsection}{\numberline {2.12}Double Deep Q Learning (DDQN)}{36}{subsection.2.12}%
 \contentsline {section}{\numberline {3}Implementation}{38}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Environment Preparation}{38}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}The NN class}{45}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}The Replay Memory class}{47}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.2}The NN class}{47}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}The Replay Memory class}{48}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}The Epsilon Greedy Strategy class}{48}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}The Agent class}{49}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}The Environment Manager class}{49}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.6}The Environment Manager class}{50}{subsection.3.6}%
 \contentsline {subsection}{\numberline {3.7}The Main Program}{52}{subsection.3.7}%
 \contentsline {subsection}{\numberline {3.8}Hardware and Development Environment}{55}{subsection.3.8}%
 \contentsline {section}{\numberline {4}Experiments}{55}{section.4}%
