@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  22 MAY 2023 12:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  22 MAY 2023 20:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1996,19 +1996,19 @@ $[]\T1/ppl/m/n/12 , 2021.  Ac-
 [73
 
 ] [74]
-Underfull \hbox (badness 1067) in paragraph at lines 195--200
+Underfull \hbox (badness 1067) in paragraph at lines 193--198
 []\T1/ppl/m/n/12 Andrea Franceschetti, Elisa Tosello, Nicola Cas-ta-man, and St
 e-fano Ghi-doni.
  []
 
 [75]
-Underfull \hbox (badness 1681) in paragraph at lines 296--300
+Underfull \hbox (badness 1681) in paragraph at lines 290--294
 []\T1/ppl/m/n/12 Volodymyr Mnih, Ko-ray Kavukcuoglu, David Sil-ver, Alex Graves
 , Ioan-nis
  []
 
 [76]
-Underfull \hbox (badness 4699) in paragraph at lines 365--369
+Underfull \hbox (badness 4699) in paragraph at lines 360--364
 []\T1/ppl/m/n/12 Udacity.  Robond-kinematics-project.  []$\T1/pcr/m/n/12 https 
 : / / github . com / udacity /
  []
@@ -2065,9 +2065,9 @@ onts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
 uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (85 pages, 7362846 bytes).
+Output written on thesis.pdf (85 pages, 7362567 bytes).
 PDF statistics:
- 1484 PDF objects out of 1728 (max. 8388607)
+ 1483 PDF objects out of 1728 (max. 8388607)
  387 named destinations out of 1000 (max. 500000)
  966 words of extra memory for PDF output out of 10000 (max. 10000000)
 

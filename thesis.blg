@@ -3,51 +3,59 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: unsrt.bst
 Database file #1: literatur.bib
+Warning--I'm ignoring 10_ohta2018design's extra "journal" field
+--line 108 of file literatur.bib
 Warning--entry type for "ros2docs" isn't style-file defined
---line 576 of file literatur.bib
-Name 1 in "L. P. Kaelbling, M. L. Littman, and A. R. Moore" has a comma at the end for entry kaelblingLittmanAndMoore
-while executing---line 944 of file unsrt.bst
+--line 628 of file literatur.bib
+Warning--empty booktitle in yigit2020real
+Warning--empty journal in 11_singh2013evolution
 Warning--empty publisher in 14_banks1999introduction
-Warning--can't use both volume and number fields in 15_quigley2009ros
+Warning--empty booktitle in 15_quigley2009ros
+Warning--empty booktitle in 38_abbyasov2020automatic
+Warning--empty booktitle in 44_villegas2018neural
+Warning--empty booktitle in 27_mnih2016asynchronous
+Warning--empty booktitle in 28_wu2017scalable
+Warning--empty journal in 29_mnih2013playing
+Warning--empty journal in 48_schulman2017proximal
 You've used 60 entries,
             1791 wiz_defined-function locations,
-            782 strings with 15644 characters,
-and the built_in function-call counts, 15518 in all, are:
-= -- 1370
-> -- 766
-< -- 18
-+ -- 280
-- -- 220
-* -- 1020
-:= -- 2380
-add.period$ -- 193
+            768 strings with 15470 characters,
+and the built_in function-call counts, 13817 in all, are:
+= -- 1089
+> -- 814
+< -- 14
++ -- 295
+- -- 235
+* -- 910
+:= -- 2236
+add.period$ -- 186
 call.type$ -- 60
 change.case$ -- 58
 chr.to.int$ -- 0
-cite$ -- 62
-duplicate$ -- 680
-empty$ -- 1486
-format.name$ -- 220
-if$ -- 3532
+cite$ -- 70
+duplicate$ -- 605
+empty$ -- 1327
+format.name$ -- 235
+if$ -- 3079
 int.to.chr$ -- 0
 int.to.str$ -- 60
 missing$ -- 50
-newline$ -- 305
-num.names$ -- 60
-pop$ -- 223
+newline$ -- 304
+num.names$ -- 64
+pop$ -- 240
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 370
+skip$ -- 297
 stack$ -- 0
-substring$ -- 999
-swap$ -- 220
-text.length$ -- 18
+substring$ -- 604
+swap$ -- 148
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
-while$ -- 145
+warning$ -- 10
+while$ -- 112
 width$ -- 62
-write$ -- 658
-(There was 1 error message)
+write$ -- 638
+(There were 12 warnings)

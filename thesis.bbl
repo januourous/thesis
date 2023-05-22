@@ -1,9 +1,9 @@
 \begin{thebibliography}{10}
 
 \bibitem{yigit2020real}
-Abdullah Yigit, Gorkem Guzel, and Hakan Guler.
+Leticia~Oyuki Rojas~Pérez, Roberto Munguia-Silva, and Jose Martinez-Carranza.
 \newblock Real-time landing zone detection for uavs using single aerial images.
-\newblock {\em Sensors}, 20(9):2694, 2020.
+\newblock 11 2018.
 
 \bibitem{aws-robomaker-small-warehouse-world}
 Amazon~Web Services.
@@ -36,11 +36,11 @@ S~O'Sullivan, N~Nevejans, C~Allen, A~Blyth, S~Leonard, U~Pagallo, and
   assisted surgery}, 15(1):e1968, 2019.
 
 \bibitem{2_roldan2018robots}
-Juan~Jos{\'e} Rold{\'a}n, Juan del Cerro, David Garz{\'o}n-Ramos, Pablo
-  Garcia-Aunon, M{\'o}nica Garz{\'o}n, Jonathan De~Le{\'o}n, and Antonio
-  Barrientos.
+Juan~Jesús Roldán, Jaime del Cerro, David Garzón‐Ramos, Pablo
+  Garcia‐Aunon, Mario Garzón, Jorge de~León, and Antonio Barrientos.
 \newblock Robots in agriculture: State of art and practical experiences.
-\newblock In {\em Service robots}, pages 67--90. Springer, 2018.
+\newblock In Antonio J.~R. Neves, editor, {\em Service Robots}, chapter~4.
+  IntechOpen, Rijeka, 2017.
 
 \bibitem{3_bostrom2018ethics}
 Nick Bostrom and Eliezer Yudkowsky.
@@ -54,26 +54,28 @@ R.~S. Sutton and A.~G. Barto.
 \newblock MIT Press, 2018.
 
 \bibitem{kaelblingLittmanAndMoore}
-M.~L.~Littman L.~P.~Kaelbling and A.~R. Moore.
+L.~P. Kaelbling, M.~L. Littman, and A.~W. Moore.
 \newblock Reinforcement learning: A survey.
 \newblock {\em Journal of Artificial Intelligence Research}, 4:237--285, 1996.
 
 \bibitem{4_choi2021use}
-Hyungtae Choi, Colin Crump, Colin Duriez, Anna Elmquist, Gregory Hager,
-  Dongheui Han, and Jeff Trinkle.
+HeeSun Choi, Cindy Crump, Christian Duriez, Asher Elmquist, Gregory Hager,
+  David Han, Frank Hearl, Jessica Hodgins, Abhinandan Jain, Frederick Leve,
+  Chen Li, Franziska Meier, Dan Negrut, Ludovic Righetti, Alberto Rodriguez,
+  Jie Tan, and Jeff Trinkle.
 \newblock On the use of simulation in robotics: Opportunities, challenges, and
   suggestions for moving forward.
 \newblock {\em Proceedings of the National Academy of Sciences},
   118(1):e1907856118, 2021.
 
 \bibitem{5_elmquist2021sensor}
-Anna Elmquist, Radu Serban, and Dan Negrut.
+Asher Elmquist, Radu Serban, and Dan Negrut.
 \newblock A sensor simulation framework for training and testing robots and
   autonomous vehicles.
 \newblock {\em Journal of Autonomous Vehicles and Systems}, 1(2), 2021.
 
 \bibitem{6_sampedro2019fully}
-Carlos Sampedro, Alejandro Rodriguez-Ramos, Hriday Bavle, Adolfo Carrio, Pablo
+Carlos Sampedro, Alejandro Rodriguez-Ramos, Hriday Bavle, Adrian Carrio, Paloma
   de~la Puente, and Pascual Campoy.
 \newblock A fully-autonomous aerial robot for search and rescue applications in
   indoor environments using learning-based techniques.
@@ -86,42 +88,39 @@ Paulo Leit{\~a}o, Armando~Walter Colombo, and Stamatis Karnouskos.
 \newblock {\em Computers in Industry}, 81:11--25, 2016.
 
 \bibitem{8_javaid2021substantial}
-Muhammad Javaid, Abid Haleem, Ravi~Pratap Singh, and Rakesh Suman.
+Mohd Javaid, Abid Haleem, Ravi~Pratap Singh, and Rajiv Suman.
 \newblock Substantial capabilities of robotics in enhancing industry 4.0
   implementation.
 \newblock {\em Cognitive Robotics}, 1:58--75, 2021.
 
 \bibitem{9_lucchi2020robo}
-Marco Lucchi, Florian Zindler, Stephanie M{\"u}hlbacher-Karrer, and Hannes
+Matteo Lucchi, Friedemann Zindler, Stephan M{\"{u}}hlbacher{-}Karrer, and Horst
   Pichler.
-\newblock Robo-gym--an open source toolkit for distributed deep reinforcement
+\newblock robo-gym - an open source toolkit for distributed deep reinforcement
   learning on real and simulated robots.
-\newblock In {\em 2020 IEEE/RSJ International Conference on Intelligent Robots
-  and Systems (IROS)}, pages 5364--5371. IEEE, 2020.
+\newblock {\em CoRR}, abs/2007.02753, 2020.
 
 \bibitem{10_ohta2018design}
-Patrick Ohta, Lorenzo Valle, Jared King, Katherine Low, Jeeyeon Yi,
-  Christopher~G Atkeson, and Yun~Seong Park.
+Preston Ohta, Luis Valle, Jonathan King, Kevin Low, Jaehyun Yi, Christopher~G.
+  Atkeson, and Yong-Lae Park.
 \newblock Design of a lightweight soft robotic arm using pneumatic artificial
   muscles and inflatable sleeves.
 \newblock {\em Soft Robotics}, 5(2):204--215, 2018.
 
 \bibitem{11_singh2013evolution}
-B~Singh, N~Sellappan, and P~Kumaradhas.
+Balkeshwar Singh, N.~Sellappan, and Poomani Kumaradhas.
 \newblock Evolution of industrial robots and their applications.
-\newblock {\em International Journal of Emerging Technology and Advanced
-  Engineering}, 3(5):763--768, 2013.
+\newblock 2013.
 
 \bibitem{12_oRobotics}
-{O. Robotics}.
+{Open Robotics}.
 \newblock Ignition robotics.
 \newblock \url{https://ignitionrobotics.org/home}, Accessed: 2023-04-24.
 
 \bibitem{13_pybullet}
-Erwin Coumans and Yun Bai.
-\newblock {Pybullet, a python module for physics simulation for games, robotics
-  and machine learning}.
-\newblock \url{http://pybullet.org}, 2016--2021.
+Erwin Coumans and Yunfei Bai.
+\newblock Pybullet, a python module for physics simulation for games, robotics
+  and machine learning, 2016.
 
 \bibitem{14_banks1999introduction}
 Jerry Banks.
@@ -130,10 +129,9 @@ Jerry Banks.
 
 \bibitem{15_quigley2009ros}
 Morgan Quigley, Ken Conley, Brian Gerkey, Josh Faust, Tully Foote, Jeremy
-  Leibs, and Andrew~Y Ng.
+  Leibs, Rob Wheeler, and Andrew Ng.
 \newblock Ros: an open-source robot operating system.
-\newblock In {\em ICRA workshop on open source software}, volume~3, page~5, May
-  2009.
+\newblock volume~3, 01 2009.
 
 \bibitem{16_cousins2014willow}
 Steve Cousins.
@@ -141,17 +139,17 @@ Steve Cousins.
 \newblock {\em IEEE Robotics \& Automation Magazine}, 21(1):16--20, 2014.
 
 \bibitem{17_emmi2014new}
-Luis Emmi, Mariano Gonzalez-de Soto, Gonzalo Pajares, and Pablo Gonzalez-de
+Luis Emmi, Mariano Gonzalez~de Soto, Gonzalo Pajares, and Pablo Gonzalez~de
   Santos.
 \newblock New trends in robotics for agriculture: integration and assessment of
   a real fleet of robots.
 \newblock {\em The Scientific World Journal}, 2014, 2014.
 
 \bibitem{19_lu2020digital}
-Yuxin Lu, Chen Liu, K~I-K Wang, He~Huang, and Xiaofei Xu.
+Yuqian Lu, Chao Liu, Kevin I-Kai Wang, Huiyue Huang, and Xun Xu.
 \newblock Digital twin-driven smart manufacturing: Connotation, reference
   model, applications and research issues.
-\newblock {\em Robotics and Computer-Integrated Manufacturing}, 61:101837, Feb
+\newblock {\em Robotics and Computer-Integrated Manufacturing}, 61:101837,
   2020.
 
 \bibitem{20_tavares2018flexible}
@@ -217,32 +215,31 @@ Ali Abdi, Mohammad~Hassan Ranjbar, and Ju~Hong Park.
 \newblock Accessed: May 2, 2023.
 
 \bibitem{37_wang2019various}
-Zhihua Wang, Kehan Liu, Jian Li, Yuchao Zhu, and Yifei Zhang.
+Zhaobin Wang, Ke~Liu, Jian Li, Ying Zhu, and Yaonan Zhang.
 \newblock Various frameworks and libraries of machine learning and deep
   learning: a survey.
 \newblock {\em Archives of computational methods in engineering}, pages 1--24,
   2019.
 
 \bibitem{38_abbyasov2020automatic}
-Bulat Abbyasov, Roman Lavrenov, Andrey Zakiev, Konstantin Yakovlev, Mikhail
-  Svinin, and Evgeny Magid.
+Bulat Abbyasov, Roman Lavrenov, Aufar Zakiev, Konstantin Yakovlev, Mikhail
+  Svinin, and Evgeni Magid.
 \newblock Automatic tool for gazebo world construction: from a grayscale image
   to a 3d solid model.
-\newblock In {\em 2020 IEEE International Conference on Robotics and Automation
-  (ICRA)}, pages 7226--7232. IEEE, 2020.
+\newblock 06 2020.
 
 \bibitem{39_echeverria2011modular}
-Gonzalo Echeverria, Nicolas Lassabe, Arnaud Degroote, and Severin Lemaignan.
+Gilberto Echeverria, Nicolas Lassabe, Arnaud Degroote, and Séverin Lemaignan.
 \newblock Modular open robots simulation engine: Morse.
 \newblock In {\em 2011 IEEE International Conference on Robotics and
-  Automation}, pages 46--51. IEEE, 2011.
+  Automation}, pages 46--51, 2011.
 
 \bibitem{40_phueakthong2021development}
-Pattaraporn Phueakthong and Jinda Varagul.
+Phuwanat Phueakthong and Jittima Varagul.
 \newblock A development of mobile robot based on ros2 for navigation
   application.
 \newblock In {\em 2021 International Electronics Symposium (IES)}, pages
-  517--520. IEEE, 2021.
+  517--520, 2021.
 
 \bibitem{ros2docs}
 {Open Robotics}.
@@ -261,84 +258,80 @@ Pattaraporn Phueakthong and Jinda Varagul.
 \newblock Sketchup, 2000--\emph{present}.
 
 \bibitem{43_hamdia2021efficient}
-K.~M. Hamdia, X.~Zhuang, and T.~Rabczuk.
+Khader Hamdia, Xiaoying Zhuang, and Timon Rabczuk.
 \newblock An efficient optimization approach for designing machine learning
   models based on genetic algorithm.
-\newblock {\em Neural Computing and Applications}, 33:1923--1933, 2021.
+\newblock {\em Neural Computing and Applications}, 33, 03 2021.
 
 \bibitem{44_villegas2018neural}
-R.~Villegas, J.~Yang, D.~Ceylan, and H.~Lee.
+Ruben Villegas, Jimei Yang, Duygu Ceylan, and Honglak Lee.
 \newblock Neural kinematic networks for unsupervised motion retargetting.
-\newblock In {\em Proceedings of the IEEE conference on computer vision and
-  pattern recognition}, pages 8639--8648, 2018.
+\newblock volume abs/1804.05653, 2018.
 
 \bibitem{24_ball2017comprehensive}
-J.~E. Ball, D.~T. Anderson, and C.~S. Chan.
+John~E. Ball, Derek~T. Anderson, and Chee~Seng Chan.
 \newblock Comprehensive survey of deep learning in remote sensing: theories,
   tools, and challenges for the community.
-\newblock {\em Journal of Applied Remote Sensing}, 11(4):042609--042609, 2017.
+\newblock {\em Journal of Applied Remote Sensing}, 11(04):1, sep 2017.
 
 \bibitem{27_mnih2016asynchronous}
-V.~Mnih, A.~P. Badia, M.~Mirza, A.~Graves, T.~Lillicrap, T.~Harley, D.~Silver,
-  and K.~Kavukcuoglu.
+Volodymyr Mnih, Adrià~Puigdomènech Badia, Mehdi Mirza, Alex Graves,
+  Timothy~P. Lillicrap, Tim Harley, David Silver, and Koray Kavukcuoglu.
 \newblock Asynchronous methods for deep reinforcement learning.
-\newblock In {\em International Conference on Machine Learning}, pages
-  1928--1937, 2016.
+\newblock 2016.
 
 \bibitem{28_wu2017scalable}
-Yuxi Wu, Elman Mansimov, Roger~B Grosse, Shun Liao, and Jimmy Ba.
+Yuhuai Wu, Elman Mansimov, Shun Liao, Roger Grosse, and Jimmy Ba.
 \newblock Scalable trust-region method for deep reinforcement learning using
   kronecker-factored approximation.
-\newblock In {\em Advances in Neural Information Processing Systems}, pages
-  5285--5294, 2017.
+\newblock 2017.
 
 \bibitem{29_mnih2013playing}
 Volodymyr Mnih, Koray Kavukcuoglu, David Silver, Alex Graves, Ioannis
   Antonoglou, Daan Wierstra, and Martin Riedmiller.
 \newblock Playing atari with deep reinforcement learning.
-\newblock {\em arXiv preprint arXiv:1312.5602}, 2013.
+\newblock 2013.
 
 \bibitem{30_todorov2012mujoco}
 Emanuel Todorov, Tom Erez, and Yuval Tassa.
 \newblock Mujoco: A physics engine for model-based control.
-\newblock In {\em Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ
-  International Conference on}, pages 5026--5033. IEEE, 2012.
+\newblock In {\em 2012 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems}, pages 5026--5033, 2012.
 
 \bibitem{31_nogueira2017autonomously}
 Tiago Nogueira, Simone Fratini, and Klaus Schilling.
 \newblock Autonomously controlling flexible timelines: From domain-independent
   planning to robust execution.
-\newblock In {\em 2017 IEEE Aerospace Conference}, pages 1--15. IEEE, March
-  2017.
+\newblock In {\em 2017 IEEE Aerospace Conference}, pages 1--15, 2017.
 
 \bibitem{32_boute2022deep}
-Robert~N Boute, Joren Gijsbrechts, Willem Van~Jaarsveld, and Jeroen
+Robert~N. Boute, Joren Gijsbrechts, Willem {van Jaarsveld}, and Nathalie
   Vanvuchelen.
 \newblock Deep reinforcement learning for inventory control: A roadmap.
 \newblock {\em European Journal of Operational Research}, 298(2):401--412,
   2022.
 
 \bibitem{45_1_lim2020federated}
-H.~K. Lim, J.~B. Kim, J.~S. Heo, and Y.~H. Han.
+Hyun-Kyo Lim, Ju-Bong Kim, Joo-Seong Heo, and Youn-Hee Han.
 \newblock Federated reinforcement learning for training control policies on
   multiple iot devices.
-\newblock {\em Sensors}, 20(5):1359, 2020.
+\newblock {\em Sensors}, 20(5), 2020.
 
 \bibitem{45_kim2020motion}
-M.~Kim, D.~K. Han, J.~H. Park, and J.~S. Kim.
+MyeongSeop Kim, Dong-Ki Han, Jae-Han Park, and Jung-Su Kim.
 \newblock Motion planning of robot manipulators for a smoother path using a
   twin delayed deep deterministic policy gradient with hindsight experience
   replay.
-\newblock {\em Applied Sciences}, 10(2):575, 2020.
+\newblock {\em Applied Sciences}, 10(2), 2020.
 
 \bibitem{46_han2023survey}
-D.~Han, B.~Mulyana, V.~Stankovic, and S.~Cheng.
+Dong Han, Beni Mulyana, Vladimir Stankovic, and Samuel Cheng.
 \newblock A survey on deep reinforcement learning algorithms for robotic
   manipulation.
-\newblock {\em Sensors}, 23(7):3762, 2023.
+\newblock {\em Sensors}, 23(7), 2023.
 
 \bibitem{47_gupta2021deep}
-Shubhanshu Gupta, Gaurav Singal, and Deepak Garg.
+Surbhi Gupta, Gaurav Singal, and Deepak Garg.
 \newblock Deep reinforcement learning techniques in diversified domains: a
   survey.
 \newblock {\em Archives of Computational Methods in Engineering},
@@ -347,19 +340,21 @@ Shubhanshu Gupta, Gaurav Singal, and Deepak Garg.
 \bibitem{48_schulman2017proximal}
 John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
 \newblock Proximal policy optimization algorithms.
-\newblock {\em arXiv preprint arXiv:1707.06347}, 2017.
+\newblock 2017.
 
 \bibitem{49_delage2010percentile}
 Erick Delage and Shie Mannor.
 \newblock Percentile optimization for markov decision processes with parameter
   uncertainty.
-\newblock {\em Operations research}, 58(1):203--213, 2010.
+\newblock {\em Operations Research}, 58(1):203--213, 2010.
 
 \bibitem{50_kaufmann2012bayesian}
-Emilie Kaufmann, Olivier Capp{\'e}, and Aur{\'e}lien Garivier.
+Emilie Kaufmann, Olivier Cappe, and Aurelien Garivier.
 \newblock On bayesian upper confidence bounds for bandit problems.
-\newblock In {\em Artificial Intelligence and Statistics}, pages 592--600.
-  PMLR, 2012.
+\newblock In Neil~D. Lawrence and Mark Girolami, editors, {\em Proceedings of
+  the Fifteenth International Conference on Artificial Intelligence and
+  Statistics}, volume~22 of {\em Proceedings of Machine Learning Research},
+  pages 592--600, La Palma, Canary Islands, 21--23 Apr 2012. PMLR.
 
 \bibitem{RoboND-Kinematics-Project}
 Udacity.
