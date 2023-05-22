@@ -498,7 +498,7 @@ Assuming that the joint state publisher node is running and publishing joint sta
 \subsubsection{The /robot\_state\_publisher node}\label{ros2-robot-state-publisher}
 The $robot\_state\_publisher$ node in ROS 2 is a tool used to publish the robot's state in the form of a tree of coordinate frames. It calculates the forward kinematics of a robot by combining joint angle values with the robot's URDF (Unified Robot Description Format), which is an XML file that describes the robot's kinematic and dynamic properties. 
 
-For example, consider a robot arm that has three revolute joints (joints that rotate around a fixed axis) and an end effector attached to the third joint. The URDF file for this robot would describe the length of each link, the orientation of each joint, and the location of the end effector relative to the third joint. The $robot\_state\_publisher$ node would then use this information to calculate the transformation matrices between each link and joint, and ultimately the transformation matrix between the base link and end effector.
+For example, consider a robot arm that has three revolute joints (joints that rotate around a fixed axis) and an end effector attached to the third joint. The \textit{URDF} file for this robot would describe the length of each link, the orientation of each joint, and the location of the end effector relative to the third joint. The $robot\_state\_publisher$ node would then use this information to calculate the transformation matrices between each link and joint, and ultimately the transformation matrix between the base link and end effector.
 
 Once the transformation matrix is calculated, the $robot\_state\_publisher$ node publishes it to the $/tf$ topic. This transformation can be used by other nodes in the ROS 2 system to determine the position and orientation of the end effector relative to the base link, which can be useful for tasks such as robot control, path planning, and visualization.
 
@@ -882,7 +882,7 @@ The Double Q-learning method is used by the robotic arm to investigate its envir
 %
 \section{Implementation}\label{sec:umsetzung}
 \subsection{Environment Preparation}\label{sec:env-preparation}
-A SDF file containing the object the robotic arm has to learn to touch was created and when launched in Gazebo, it looks like Figure \ref{fig:can}.
+A SDF file \ref{sdf} containing the object the robotic arm has to learn to touch was created and when launched in Gazebo, it looks like Figure \ref{fig:can}.
 
 The robotic arm used in the simulation is the Kuka KR210. The necessary files to simulate such a robotic arm were taken from ~\cite{RoboND-Kinematics-Project}. From this repository, we need the \textit{DAE}, \textit{STL}, and \textit{URDF} files to make the robotic arm work.
 
