@@ -5,12 +5,18 @@ The style file: unsrt.bst
 Database file #1: literatur.bib
 Warning--I'm ignoring 10_ohta2018design's extra "journal" field
 --line 108 of file literatur.bib
+I was expecting a `,' or a `}'---line 191 of file literatur.bib
+ :   
+ :   pages={541--552}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--entry type for "ros2docs" isn't style-file defined
---line 628 of file literatur.bib
+--line 634 of file literatur.bib
 Warning--empty booktitle in yigit2020real
 Warning--empty journal in 11_singh2013evolution
 Warning--empty publisher in 14_banks1999introduction
 Warning--empty booktitle in 15_quigley2009ros
+Warning--empty journal in 20_tavares2018flexible
 Warning--empty booktitle in 38_abbyasov2020automatic
 Warning--empty booktitle in 44_villegas2018neural
 Warning--empty booktitle in 27_mnih2016asynchronous
@@ -19,24 +25,24 @@ Warning--empty journal in 29_mnih2013playing
 Warning--empty journal in 48_schulman2017proximal
 You've used 60 entries,
             1791 wiz_defined-function locations,
-            768 strings with 15470 characters,
-and the built_in function-call counts, 13817 in all, are:
-= -- 1089
-> -- 814
-< -- 14
-+ -- 295
-- -- 235
-* -- 910
-:= -- 2236
+            774 strings with 15879 characters,
+and the built_in function-call counts, 13726 in all, are:
+= -- 1067
+> -- 834
+< -- 13
++ -- 301
+- -- 241
+* -- 916
+:= -- 2238
 add.period$ -- 186
 call.type$ -- 60
 change.case$ -- 58
 chr.to.int$ -- 0
-cite$ -- 70
-duplicate$ -- 605
-empty$ -- 1327
-format.name$ -- 235
-if$ -- 3079
+cite$ -- 71
+duplicate$ -- 595
+empty$ -- 1312
+format.name$ -- 241
+if$ -- 3046
 int.to.chr$ -- 0
 int.to.str$ -- 60
 missing$ -- 50
@@ -46,16 +52,16 @@ pop$ -- 240
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 297
+skip$ -- 286
 stack$ -- 0
-substring$ -- 604
-swap$ -- 148
-text.length$ -- 14
+substring$ -- 572
+swap$ -- 138
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 10
-while$ -- 112
+warning$ -- 11
+while$ -- 109
 width$ -- 62
-write$ -- 638
-(There were 12 warnings)
+write$ -- 637
+(There was 1 error message)

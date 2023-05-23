@@ -49,12 +49,12 @@ Nick Bostrom and Eliezer Yudkowsky.
   Chapman and Hall/CRC, 2018.
 
 \bibitem{suttonAndBarto}
-R.~S. Sutton and A.~G. Barto.
+Richard~S Sutton and Andrew~G Barto.
 \newblock {\em Reinforcement Learning: An Introduction}.
 \newblock MIT Press, 2018.
 
 \bibitem{kaelblingLittmanAndMoore}
-L.~P. Kaelbling, M.~L. Littman, and A.~W. Moore.
+Leslie~Pack Kaelbling, Michael~L. Littman, and Andrew~W. Moore.
 \newblock Reinforcement learning: A survey.
 \newblock {\em Journal of Artificial Intelligence Research}, 4:237--285, 1996.
 
@@ -153,10 +153,11 @@ Yuqian Lu, Chao Liu, Kevin I-Kai Wang, Huiyue Huang, and Xun Xu.
   2020.
 
 \bibitem{20_tavares2018flexible}
-P.~Tavares, J.~Silva, P.~Costa, G.~Veiga, and A.~Moreira.
+Pedro Tavares, Joao~Andr{\'e} Silva, Pedro Costa, Germano Veiga, and
+  Ant{\'o}nio~Paulo Moreira.
 \newblock Flexible work cell simulator using digital twin methodology for
   highly complex systems in industry 4.0.
-\newblock {\em Nov}, pages 541--552, 2018.
+\newblock 2018.
 
 \bibitem{21_ros}
 {Stanford Artificial Intelligence Laboratory et al.}
@@ -172,7 +173,7 @@ T.~R. Browning.
   2001.
 
 \bibitem{23_kulkarni2021visual}
-M.~Kulkarni, P.~Junare, M.~Deshmukh, and P.~P. Rege.
+Mihir Kulkarni, Pranay Junare, Mihir Deshmukh, and Priti~P. Rege.
 \newblock Visual slam combined with object detection for autonomous indoor
   navigation using kinect v2 and ros.
 \newblock In {\em 2021 IEEE 6th International Conference on Computing,
@@ -187,7 +188,7 @@ Wei Wu, Tingting Huang, and Ke~Gong.
 \bibitem{james20163d}
 Stephen James and Edward Johns.
 \newblock 3d simulation for robot arm control with deep q-learning.
-\newblock {\em arXiv preprint arXiv:1609.03759}, 2016.
+\newblock {\em CoRR}, abs/1609.03759, 2016.
 
 \bibitem{franceschetti2022robotic}
 Andrea Franceschetti, Elisa Tosello, Nicola Castaman, and Stefano Ghidoni.
@@ -242,20 +243,23 @@ Phuwanat Phueakthong and Jittima Varagul.
   517--520, 2021.
 
 \bibitem{ros2docs}
-{Open Robotics}.
-\newblock {ROS 2 Documentation}, 2021.
+Steven Macenski, Tully Foote, Brian Gerkey, Chris Lalancette, and William
+  Woodall.
+\newblock Robot operating system 2: Design, architecture, and uses in the wild,
+  may 2022.
 
 \bibitem{Blender}
-{Blender Foundation}.
-\newblock Blender, 1998--\emph{present}.
+Roland. Hess.
+\newblock Blender foundations: The essential guide to learning blender 2.6,
+  2010.
 
 \bibitem{Maya}
-{Autodesk}.
-\newblock Autodesk maya, 1998--\emph{present}.
+Kelly. Murdock.
+\newblock Autodesk maya 2023 basics guide, 2022.
 
 \bibitem{SketchUp}
-{Trimble Inc.}
-\newblock Sketchup, 2000--\emph{present}.
+Bill Fane, Mark Harrison, and Josh Reilly.
+\newblock Sketchup for dummies, 2020.
 
 \bibitem{43_hamdia2021efficient}
 Khader Hamdia, Xiaoying Zhuang, and Timon Rabczuk.
