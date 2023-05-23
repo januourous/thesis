@@ -25,15 +25,15 @@ Warning--empty journal in 29_mnih2013playing
 Warning--empty journal in 48_schulman2017proximal
 You've used 60 entries,
             1791 wiz_defined-function locations,
-            774 strings with 15879 characters,
-and the built_in function-call counts, 13726 in all, are:
+            774 strings with 15920 characters,
+and the built_in function-call counts, 13752 in all, are:
 = -- 1067
-> -- 834
+> -- 840
 < -- 13
-+ -- 301
-- -- 241
-* -- 916
-:= -- 2238
++ -- 303
+- -- 243
+* -- 920
+:= -- 2244
 add.period$ -- 186
 call.type$ -- 60
 change.case$ -- 58
@@ -41,8 +41,8 @@ chr.to.int$ -- 0
 cite$ -- 71
 duplicate$ -- 595
 empty$ -- 1312
-format.name$ -- 241
-if$ -- 3046
+format.name$ -- 243
+if$ -- 3050
 int.to.chr$ -- 0
 int.to.str$ -- 60
 missing$ -- 50

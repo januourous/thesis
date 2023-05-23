@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  23 MAY 2023 10:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.27)  23 MAY 2023 11:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1375,35 +1375,14 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count409
-Package epstopdf Info: Source file: <logo.eps>
-(epstopdf)                    date: 2023-03-27 15:33:27
-(epstopdf)                    size: 180030 bytes
-(epstopdf)             Output file: <logo-eps-converted-to.pdf>
-(epstopdf)                    date: 2023-03-27 15:40:56
-(epstopdf)                    size: 13501 bytes
-(epstopdf)             Command: <epstopdf --outfile=logo-eps-converted-to.pdf l
-ogo.eps>
-(epstopdf)             \includegraphics on input line 109.
-Package epstopdf Info: Output file is already uptodate.
-<logo-eps-converted-to.pdf, id=321, 569.12625pt x 142.5325pt>
-File: logo-eps-converted-to.pdf Graphic file (type pdf)
-<use logo-eps-converted-to.pdf>
-Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 109.
-(pdftex.def)             Requested size: 368.57838pt x 92.31007pt.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 10
-9.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
-File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-) [1
-
- <./logo-eps-converted-to.pdf>] [1
+ [1
 
 
-] (./thesis.toc
+
+]
+(./thesis.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
@@ -1428,44 +1407,40 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout12 = `thesis.lot'.
 
  [5]
-<gazebo_city.png, id=529, 639.89063pt x 332.74312pt>
+<gazebo_city.png, id=519, 639.89063pt x 332.74312pt>
 File: gazebo_city.png Graphic file (type png)
 <use gazebo_city.png>
 Package pdftex.def Info: gazebo_city.png  used on input line 180.
 (pdftex.def)             Requested size: 414.6463pt x 215.6204pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.183 \end{figure}
-                   [1
+ [1
 
 
 ] [2 <./gazebo_city.png (PNG copy)>]
-<gazebo_city1.png, id=552, 1166.10657pt x 664.73344pt>
+<gazebo_city1.png, id=543, 1166.10657pt x 664.73344pt>
 File: gazebo_city1.png Graphic file (type png)
 <use gazebo_city1.png>
 Package pdftex.def Info: gazebo_city1.png  used on input line 194.
 (pdftex.def)             Requested size: 414.6463pt x 236.36238pt.
-<robotic_arm_real_world.png, id=557, 572.1375pt x 322.20375pt>
+<robotic_arm_real_world.png, id=548, 572.1375pt x 322.20375pt>
 File: robotic_arm_real_world.png Graphic file (type png)
 <use robotic_arm_real_world.png>
 Package pdftex.def Info: robotic_arm_real_world.png  used on input line 205.
 (pdftex.def)             Requested size: 414.6463pt x 233.51552pt.
- [3 <./gazebo_city1.png (PNG copy)>] [4 <./robotic_arm_real_world.png (PNG copy
-)>] [5]
-<gazebo_robotic_arm.png, id=590, 776.9025pt x 540.51938pt>
+
+[3 <./gazebo_city1.png (PNG copy)>] [4 <./robotic_arm_real_world.png (PNG copy)
+>] [5]
+<gazebo_robotic_arm.png, id=581, 776.9025pt x 540.51938pt>
 File: gazebo_robotic_arm.png Graphic file (type png)
 <use gazebo_robotic_arm.png>
 Package pdftex.def Info: gazebo_robotic_arm.png  used on input line 226.
 (pdftex.def)             Requested size: 414.6463pt x 288.48633pt.
  [6 <./gazebo_robotic_arm.png (PNG copy)>]
-<intro_kuka01_n.png, id=603, 225.84375pt x 301.125pt>
+<intro_kuka01_n.png, id=594, 225.84375pt x 301.125pt>
 File: intro_kuka01_n.png Graphic file (type png)
 <use intro_kuka01_n.png>
 Package pdftex.def Info: intro_kuka01_n.png  used on input line 247.
 (pdftex.def)             Requested size: 184.28568pt x 245.72945pt.
-<intro_kuka02_n.png, id=604, 225.84375pt x 301.125pt>
+<intro_kuka02_n.png, id=595, 225.84375pt x 301.125pt>
 File: intro_kuka02_n.png Graphic file (type png)
 <use intro_kuka02_n.png>
 Package pdftex.def Info: intro_kuka02_n.png  used on input line 248.
@@ -1474,13 +1449,13 @@ File: intro_kuka01_n.png Graphic file (type png)
 <use intro_kuka01_n.png>
 Package pdftex.def Info: intro_kuka01_n.png  used on input line 250.
 (pdftex.def)             Requested size: 184.28568pt x 245.72945pt.
-<intro_kuka03_n.png, id=605, 225.84375pt x 301.125pt>
+<intro_kuka03_n.png, id=596, 225.84375pt x 301.125pt>
 File: intro_kuka03_n.png Graphic file (type png)
 <use intro_kuka03_n.png>
 Package pdftex.def Info: intro_kuka03_n.png  used on input line 251.
 (pdftex.def)             Requested size: 184.28568pt x 245.72945pt.
  [7] [8 <./intro_kuka01_n.png> <./intro_kuka02_n.png> <./intro_kuka03_n.png>]
-<intro_kuka04_n.png, id=629, 225.84375pt x 301.125pt>
+<intro_kuka04_n.png, id=620, 225.84375pt x 301.125pt>
 File: intro_kuka04_n.png Graphic file (type png)
 <use intro_kuka04_n.png>
 Package pdftex.def Info: intro_kuka04_n.png  used on input line 262.
@@ -1568,7 +1543,7 @@ t line 568.
 
 (./_minted-thesis/3FD6D320635699AAA6FD8C5BFD8FE71D0102E502927AACB428B4F294F23E2
 359.pygtex) [24] [25] [26] [27] [28] [29]
-<mdp1.png, id=798, 552.56438pt x 199.49532pt>
+<mdp1.png, id=789, 552.56438pt x 199.49532pt>
 File: mdp1.png Graphic file (type png)
 <use mdp1.png>
 Package pdftex.def Info: mdp1.png  used on input line 734.
@@ -1590,12 +1565,12 @@ n/12 (\OML/cmm/m/it/12 s[]; a\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 ^^R\OT1/cmr/m/n
  []
 
 [37]
-<can.png, id=895, 58.71938pt x 84.315pt>
+<can.png, id=885, 58.71938pt x 84.315pt>
 File: can.png Graphic file (type png)
 <use can.png>
 Package pdftex.def Info: can.png  used on input line 897.
 (pdftex.def)             Requested size: 216.53954pt x 310.93002pt.
-<project_structure_1.png, id=896, 211.54031pt x 410.2828pt>
+<project_structure_1.png, id=886, 211.54031pt x 410.2828pt>
 File: project_structure_1.png Graphic file (type png)
 <use project_structure_1.png>
 Package pdftex.def Info: project_structure_1.png  used on input line 899.
@@ -1608,70 +1583,70 @@ m/n/12 topic
  []
 
 [38]
-<kuka1.png, id=904, 376.40625pt x 301.125pt>
+<kuka1.png, id=895, 376.40625pt x 301.125pt>
 File: kuka1.png Graphic file (type png)
 <use kuka1.png>
 Package pdftex.def Info: kuka1.png  used on input line 905.
 (pdftex.def)             Requested size: 322.50345pt x 258.02051pt.
  [39 <./can.png (PNG copy)> <./project_structure_1.png (PNG copy)>]
-<rosgraph1.png, id=909, 615.0478pt x 144.54pt>
+<rosgraph1.png, id=900, 615.0478pt x 144.54pt>
 File: rosgraph1.png Graphic file (type png)
 <use rosgraph1.png>
 Package pdftex.def Info: rosgraph1.png  used on input line 912.
 (pdftex.def)             Requested size: 414.6463pt x 97.44559pt.
 
 [40 <./kuka1.png> <./rosgraph1.png (PNG copy)>]
-<kuka5.png, id=915, 376.40625pt x 301.125pt>
+<kuka5.png, id=906, 376.40625pt x 301.125pt>
 File: kuka5.png Graphic file (type png)
 <use kuka5.png>
 Package pdftex.def Info: kuka5.png  used on input line 936.
 (pdftex.def)             Requested size: 414.6463pt x 331.73933pt.
  [41 <./kuka5.png>]
-<kuka6.png, id=933, 376.40625pt x 301.125pt>
+<kuka6.png, id=924, 376.40625pt x 301.125pt>
 File: kuka6.png Graphic file (type png)
 <use kuka6.png>
 Package pdftex.def Info: kuka6.png  used on input line 962.
 (pdftex.def)             Requested size: 207.32315pt x 165.86278pt.
-<kuka7.png, id=934, 376.40625pt x 301.125pt>
+<kuka7.png, id=925, 376.40625pt x 301.125pt>
 File: kuka7.png Graphic file (type png)
 <use kuka7.png>
 Package pdftex.def Info: kuka7.png  used on input line 964.
 (pdftex.def)             Requested size: 207.32315pt x 165.86278pt.
  [42 <./kuka6.png> <./kuka7.png>]
-<kuka4.png, id=945, 1045.65656pt x 539.01375pt>
+<kuka4.png, id=936, 1045.65656pt x 539.01375pt>
 File: kuka4.png Graphic file (type png)
 <use kuka4.png>
 Package pdftex.def Info: kuka4.png  used on input line 981.
 (pdftex.def)             Requested size: 437.68376pt x 225.61932pt.
-<rosgraph00.png, id=952, 841.64438pt x 194.97844pt>
+<rosgraph00.png, id=943, 841.64438pt x 194.97844pt>
 File: rosgraph00.png Graphic file (type png)
 <use rosgraph00.png>
 Package pdftex.def Info: rosgraph00.png  used on input line 991.
 (pdftex.def)             Requested size: 437.68376pt x 101.39531pt.
  [43 <./kuka4.png (PNG copy)>]
-<rosgraph01_n.png, id=960, 693.34032pt x 149.05687pt>
+<rosgraph01_n.png, id=950, 693.34032pt x 149.05687pt>
 File: rosgraph01_n.png Graphic file (type png)
 <use rosgraph01_n.png>
 Package pdftex.def Info: rosgraph01_n.png  used on input line 998.
 (pdftex.def)             Requested size: 437.68376pt x 94.09737pt.
-<rosgraph02_new.png, id=963, 414.04688pt x 124.96687pt>
+<rosgraph02_new.png, id=953, 414.04688pt x 124.96687pt>
 File: rosgraph02_new.png Graphic file (type png)
 <use rosgraph02_new.png>
 Package pdftex.def Info: rosgraph02_new.png  used on input line 1005.
 (pdftex.def)             Requested size: 437.68376pt x 132.10385pt.
-<rosgraph03_new.png, id=966, 807.7678pt x 295.85532pt>
+<rosgraph03_new.png, id=956, 807.7678pt x 295.85532pt>
 File: rosgraph03_new.png Graphic file (type png)
 <use rosgraph03_new.png>
 Package pdftex.def Info: rosgraph03_new.png  used on input line 1012.
 (pdftex.def)             Requested size: 437.68376pt x 160.31024pt.
  [44 <./rosgraph00.png (PNG copy)> <./rosgraph01_n.png (PNG copy)> <./rosgraph0
 2_new.png (PNG copy)>]
-<rosgraph04_new.png, id=973, 997.47656pt x 411.03563pt>
+<rosgraph04_new.png, id=964, 997.47656pt x 411.03563pt>
 File: rosgraph04_new.png Graphic file (type png)
 <use rosgraph04_new.png>
 Package pdftex.def Info: rosgraph04_new.png  used on input line 1019.
 (pdftex.def)             Requested size: 437.68376pt x 180.35448pt.
-<uml_diagram_complete.png, id=975, 653.44125pt x 863.225pt>
+<uml_diagram_complete.png, id=966, 653.44125pt x 863.225pt>
 File: uml_diagram_complete.png Graphic file (type png)
 <use uml_diagram_complete.png>
 Package pdftex.def Info: uml_diagram_complete.png  used on input line 1030.
@@ -1795,7 +1770,7 @@ m/m/it/12 replayMemory$\T1/ppl/m/n/12 .
 
 (./_minted-thesis/8B3F4C5B6FADE8762C14FA12701C81090102E502927AACB428B4F294F23E2
 359.pygtex)
-<rosgraph_latest.png, id=1081, 2591.18062pt x 1059.96pt>
+<rosgraph_latest.png, id=1072, 2591.18062pt x 1059.96pt>
 File: rosgraph_latest.png Graphic file (type png)
 <use rosgraph_latest.png>
 Package pdftex.def Info: rosgraph_latest.png  used on input line 1347.
@@ -1811,23 +1786,23 @@ Overfull \hbox (13.92188pt too wide) in paragraph at lines 1356--1379
 
 (./_minted-thesis/60847CCF96F752E88D96038D37322C3F9F014CDCC252D787938A66F94A2C2
 8CF.pygtex)
-<kuka_start_position_new.png, id=1090, 376.40625pt x 376.40625pt>
+<kuka_start_position_new.png, id=1081, 376.40625pt x 376.40625pt>
 File: kuka_start_position_new.png Graphic file (type png)
 <use kuka_start_position_new.png>
 Package pdftex.def Info: kuka_start_position_new.png  used on input line 1406.
 (pdftex.def)             Requested size: 276.43555pt x 276.4571pt.
-<kuka_end_position1_new.png, id=1091, 376.40625pt x 376.40625pt>
+<kuka_end_position1_new.png, id=1082, 376.40625pt x 376.40625pt>
 File: kuka_end_position1_new.png Graphic file (type png)
 <use kuka_end_position1_new.png>
 Package pdftex.def Info: kuka_end_position1_new.png  used on input line 1409.
 (pdftex.def)             Requested size: 276.43555pt x 276.4571pt.
  [55] [56 <./kuka_start_position_new.png> <./kuka_end_position1_new.png>]
-<kuka_camera_1_new.png, id=1103, 376.40625pt x 376.40625pt>
+<kuka_camera_1_new.png, id=1094, 376.40625pt x 376.40625pt>
 File: kuka_camera_1_new.png Graphic file (type png)
 <use kuka_camera_1_new.png>
 Package pdftex.def Info: kuka_camera_1_new.png  used on input line 1459.
 (pdftex.def)             Requested size: 225.75594pt x 225.75932pt.
-<kuka_camera_2_new.png, id=1104, 376.40625pt x 376.40625pt>
+<kuka_camera_2_new.png, id=1095, 376.40625pt x 376.40625pt>
 File: kuka_camera_2_new.png Graphic file (type png)
 <use kuka_camera_2_new.png>
 Package pdftex.def Info: kuka_camera_2_new.png  used on input line 1461.
@@ -1839,36 +1814,36 @@ era sen-sor, the script $\OML/cmm/m/it/12 cameraSubscriber:py$
  []
 
 [57]
-<kuka_camera_3_new.png, id=1109, 376.40625pt x 376.40625pt>
+<kuka_camera_3_new.png, id=1100, 376.40625pt x 376.40625pt>
 File: kuka_camera_3_new.png Graphic file (type png)
 <use kuka_camera_3_new.png>
 Package pdftex.def Info: kuka_camera_3_new.png  used on input line 1467.
 (pdftex.def)             Requested size: 225.75594pt x 225.75932pt.
-<kuka_camera_4_new.png, id=1110, 376.40625pt x 376.40625pt>
+<kuka_camera_4_new.png, id=1101, 376.40625pt x 376.40625pt>
 File: kuka_camera_4_new.png Graphic file (type png)
 <use kuka_camera_4_new.png>
 Package pdftex.def Info: kuka_camera_4_new.png  used on input line 1469.
 (pdftex.def)             Requested size: 225.75594pt x 225.75932pt.
  [58 <./kuka_camera_1_new.png> <./kuka_camera_2_new.png> <./kuka_camera_3_new.p
 ng> <./kuka_camera_4_new.png>]
-<link_6_collision.png, id=1124, 379.4175pt x 572.89032pt>
+<link_6_collision.png, id=1115, 379.4175pt x 572.89032pt>
 File: link_6_collision.png Graphic file (type png)
 <use link_6_collision.png>
 Package pdftex.def Info: link_6_collision.png  used on input line 1481.
 (pdftex.def)             Requested size: 184.28568pt x 278.26231pt.
-<rqt_link_6_collision.png, id=1125, 590.205pt x 232.61906pt>
+<rqt_link_6_collision.png, id=1116, 590.205pt x 232.61906pt>
 File: rqt_link_6_collision.png Graphic file (type png)
 <use rqt_link_6_collision.png>
 Package pdftex.def Info: rqt_link_6_collision.png  used on input line 1487.
 (pdftex.def)             Requested size: 414.6463pt x 163.42853pt.
  [59 <./link_6_collision.png (PNG copy)>]
-<rewards_episodes_50_gamma_099.png, id=1136, 462.528pt x 346.896pt>
+<rewards_episodes_50_gamma_099.png, id=1127, 462.528pt x 346.896pt>
 File: rewards_episodes_50_gamma_099.png Graphic file (type png)
 <use rewards_episodes_50_gamma_099.png>
 Package pdftex.def Info: rewards_episodes_50_gamma_099.png  used on input line 
 1522.
 (pdftex.def)             Requested size: 225.75594pt x 169.31886pt.
-<nSteps_episodes_50_gamma_099.png, id=1137, 462.528pt x 346.896pt>
+<nSteps_episodes_50_gamma_099.png, id=1128, 462.528pt x 346.896pt>
 File: nSteps_episodes_50_gamma_099.png Graphic file (type png)
 <use nSteps_episodes_50_gamma_099.png>
 Package pdftex.def Info: nSteps_episodes_50_gamma_099.png  used on input line 1
@@ -1876,19 +1851,19 @@ Package pdftex.def Info: nSteps_episodes_50_gamma_099.png  used on input line 1
 (pdftex.def)             Requested size: 225.75594pt x 169.31886pt.
 
 [60 <./rqt_link_6_collision.png (PNG copy)>]
-<kuka_collision_100_episodes.png, id=1146, 271.0125pt x 594.72188pt>
+<kuka_collision_100_episodes.png, id=1137, 271.0125pt x 594.72188pt>
 File: kuka_collision_100_episodes.png Graphic file (type png)
 <use kuka_collision_100_episodes.png>
 Package pdftex.def Info: kuka_collision_100_episodes.png  used on input line 15
 60.
 (pdftex.def)             Requested size: 216.54562pt x 426.78377pt.
-<rewards_episodes_100_gamma_099.png, id=1147, 462.528pt x 346.896pt>
+<rewards_episodes_100_gamma_099.png, id=1138, 462.528pt x 346.896pt>
 File: rewards_episodes_100_gamma_099.png Graphic file (type png)
 <use rewards_episodes_100_gamma_099.png>
 Package pdftex.def Info: rewards_episodes_100_gamma_099.png  used on input line
  1566.
 (pdftex.def)             Requested size: 216.54126pt x 207.70515pt.
-<nSteps_episodes_100_gamma_099.png, id=1148, 462.528pt x 346.896pt>
+<nSteps_episodes_100_gamma_099.png, id=1139, 462.528pt x 346.896pt>
 File: nSteps_episodes_100_gamma_099.png Graphic file (type png)
 <use nSteps_episodes_100_gamma_099.png>
 Package pdftex.def Info: nSteps_episodes_100_gamma_099.png  used on input line 
@@ -1897,25 +1872,25 @@ Package pdftex.def Info: nSteps_episodes_100_gamma_099.png  used on input line
  [61 <./rewards_episodes_50_gamma_099.png> <./nSteps_episodes_50_gamma_099.png>
 ] [62 <./kuka_collision_100_episodes.png (PNG copy)> <./rewards_episodes_100_ga
 mma_099.png> <./nSteps_episodes_100_gamma_099.png>]
-<epsilon_episodes_100_gamma_05.png, id=1167, 1056.5874pt x 432.8973pt>
+<epsilon_episodes_100_gamma_05.png, id=1158, 1056.5874pt x 432.8973pt>
 File: epsilon_episodes_100_gamma_05.png Graphic file (type png)
 <use epsilon_episodes_100_gamma_05.png>
 Package pdftex.def Info: epsilon_episodes_100_gamma_05.png  used on input line 
 1601.
 (pdftex.def)             Requested size: 414.6463pt x 169.88614pt.
-<kuka_collision_100_episodes_gamma_05.png, id=1168, 262.73157pt x 536.75531pt>
+<kuka_collision_100_episodes_gamma_05.png, id=1159, 262.73157pt x 536.75531pt>
 File: kuka_collision_100_episodes_gamma_05.png Graphic file (type png)
 <use kuka_collision_100_episodes_gamma_05.png>
 Package pdftex.def Info: kuka_collision_100_episodes_gamma_05.png  used on inpu
 t line 1614.
 (pdftex.def)             Requested size: 216.54773pt x 426.79214pt.
-<rewards_episodes_100_gamma_05.png, id=1169, 462.528pt x 346.896pt>
+<rewards_episodes_100_gamma_05.png, id=1160, 462.528pt x 346.896pt>
 File: rewards_episodes_100_gamma_05.png Graphic file (type png)
 <use rewards_episodes_100_gamma_05.png>
 Package pdftex.def Info: rewards_episodes_100_gamma_05.png  used on input line 
 1620.
 (pdftex.def)             Requested size: 216.54126pt x 207.70515pt.
-<nSteps_episodes_100_gamma_05.png, id=1170, 462.528pt x 346.896pt>
+<nSteps_episodes_100_gamma_05.png, id=1161, 462.528pt x 346.896pt>
 File: nSteps_episodes_100_gamma_05.png Graphic file (type png)
 <use nSteps_episodes_100_gamma_05.png>
 Package pdftex.def Info: nSteps_episodes_100_gamma_05.png  used on input line 1
@@ -1924,25 +1899,25 @@ Package pdftex.def Info: nSteps_episodes_100_gamma_05.png  used on input line 1
  [63 <./epsilon_episodes_100_gamma_05.png>] [64 <./kuka_collision_100_episodes_
 gamma_05.png (PNG copy)> <./rewards_episodes_100_gamma_05.png> <./nSteps_episod
 es_100_gamma_05.png>]
-<epsilon_episodes_300_gamma_05.png, id=1187, 462.528pt x 346.896pt>
+<epsilon_episodes_300_gamma_05.png, id=1178, 462.528pt x 346.896pt>
 File: epsilon_episodes_300_gamma_05.png Graphic file (type png)
 <use epsilon_episodes_300_gamma_05.png>
 Package pdftex.def Info: epsilon_episodes_300_gamma_05.png  used on input line 
 1655.
 (pdftex.def)             Requested size: 414.6463pt x 311.00195pt.
-<kuka_collision_300_episodes_gamma_05.png, id=1188, 223.58531pt x 549.55313pt>
+<kuka_collision_300_episodes_gamma_05.png, id=1179, 223.58531pt x 549.55313pt>
 File: kuka_collision_300_episodes_gamma_05.png Graphic file (type png)
 <use kuka_collision_300_episodes_gamma_05.png>
 Package pdftex.def Info: kuka_collision_300_episodes_gamma_05.png  used on inpu
 t line 1667.
 (pdftex.def)             Requested size: 138.21887pt x 426.8049pt.
-<rewards_episodes_300_gamma_05.png, id=1189, 1381.8024pt x 588.2778pt>
+<rewards_episodes_300_gamma_05.png, id=1180, 1381.8024pt x 588.2778pt>
 File: rewards_episodes_300_gamma_05.png Graphic file (type png)
 <use rewards_episodes_300_gamma_05.png>
 Package pdftex.def Info: rewards_episodes_300_gamma_05.png  used on input line 
 1673.
 (pdftex.def)             Requested size: 294.84676pt x 207.70456pt.
-<nSteps_episodes_300_gamma_05.png, id=1190, 1373.8527pt x 585.387pt>
+<nSteps_episodes_300_gamma_05.png, id=1181, 1373.8527pt x 585.387pt>
 File: nSteps_episodes_300_gamma_05.png Graphic file (type png)
 <use nSteps_episodes_300_gamma_05.png>
 Package pdftex.def Info: nSteps_episodes_300_gamma_05.png  used on input line 1
@@ -1951,19 +1926,19 @@ Package pdftex.def Info: nSteps_episodes_300_gamma_05.png  used on input line 1
  [65 <./epsilon_episodes_300_gamma_05.png>] [66 <./kuka_collision_300_episodes_
 gamma_05.png (PNG copy)> <./rewards_episodes_300_gamma_05.png> <./nSteps_episod
 es_300_gamma_05.png>]
-<rewards_episodes_800_gamma_05.png, id=1207, 1386.1386pt x 586.1097pt>
+<rewards_episodes_800_gamma_05.png, id=1198, 1386.1386pt x 586.1097pt>
 File: rewards_episodes_800_gamma_05.png Graphic file (type png)
 <use rewards_episodes_800_gamma_05.png>
 Package pdftex.def Info: rewards_episodes_800_gamma_05.png  used on input line 
 1708.
 (pdftex.def)             Requested size: 456.11655pt x 192.8623pt.
-<nSteps_episodes_800_gamma_05.png, id=1208, 1380.357pt x 583.9416pt>
+<nSteps_episodes_800_gamma_05.png, id=1199, 1380.357pt x 583.9416pt>
 File: nSteps_episodes_800_gamma_05.png Graphic file (type png)
 <use nSteps_episodes_800_gamma_05.png>
 Package pdftex.def Info: nSteps_episodes_800_gamma_05.png  used on input line 1
 709.
 (pdftex.def)             Requested size: 456.11655pt x 192.9508pt.
-<epsilon_episodes_800_gamma_05.png, id=1209, 1386.8613pt x 374.3586pt>
+<epsilon_episodes_800_gamma_05.png, id=1200, 1386.8613pt x 374.3586pt>
 File: epsilon_episodes_800_gamma_05.png Graphic file (type png)
 <use epsilon_episodes_800_gamma_05.png>
 Package pdftex.def Info: epsilon_episodes_800_gamma_05.png  used on input line 
@@ -2048,11 +2023,11 @@ runsystem(rm thesis.pyg)...executed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2204.
  ) 
 Here is how much of TeX's memory you used:
- 38852 strings out of 483107
- 733214 string characters out of 5964630
+ 38787 strings out of 483107
+ 732328 string characters out of 5964630
  1048123 words of memory out of 5000000
- 52697 multiletter control sequences out of 15000+600000
- 567019 words of font info for 88 fonts, out of 8000000 for 9000
+ 52643 multiletter control sequences out of 15000+600000
+ 556840 words of font info for 80 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  64i,12n,103p,1890b,2514s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -2068,12 +2043,12 @@ y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
-uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (85 pages, 7362047 bytes).
+rw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/
+uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+
+Output written on thesis.pdf (84 pages, 7340625 bytes).
 PDF statistics:
- 1483 PDF objects out of 1728 (max. 8388607)
+ 1469 PDF objects out of 1728 (max. 8388607)
  387 named destinations out of 1000 (max. 500000)
- 966 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 961 words of extra memory for PDF output out of 10000 (max. 10000000)
 
